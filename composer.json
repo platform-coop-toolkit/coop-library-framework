@@ -1,10 +1,14 @@
 {
-  "name": "10up/tenup-scaffold",
-  "description": "10up Scaffold",
+  "name": "platform-coop-toolkit/learning-commons-framework",
+  "description": "Framework for the Platform Cooperativism Learning Commons.",
   "authors": [
     {
-      "name": "Author",
-      "email": "info@10up.com"
+      "name": "Jonathan Hung",
+      "email": "jhung@ocadu.ca"
+    },
+    {
+      "name": "Ned Zimmerman",
+      "email": "nzimmerman@ocadu.ca"
     }
   ],
   "require": {
@@ -12,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TenUpScaffold\\": "includes/classes/"
+      "LearningCommonsFramework\\": "includes/classes/"
     }
   },
   "require-dev": {

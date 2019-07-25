@@ -2,10 +2,10 @@
 /**
  * Core plugin functionality.
  *
- * @package TenUpScaffold
+ * @package LearningCommonsFramework
  */
 
-namespace TenUpScaffold\Core;
+namespace LearningCommonsFramework\Core;
 
 use \WP_Error as WP_Error;
 
@@ -31,7 +31,7 @@ function setup() {
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 
-	do_action( 'tenup_scaffold_loaded' );
+	do_action( 'LEARNING_COMMONS_FRAMEWORK_loaded' );
 }
 
 /**
@@ -40,9 +40,9 @@ function setup() {
  * @return void
  */
 function i18n() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), 'tenup-scaffold' );
-	load_textdomain( 'tenup-scaffold', WP_LANG_DIR . '/tenup-scaffold/tenup-scaffold-' . $locale . '.mo' );
-	load_plugin_textdomain( 'tenup-scaffold', false, plugin_basename( TENUP_SCAFFOLD_PATH ) . '/languages/' );
+	$locale = apply_filters( 'plugin_locale', get_locale(), 'learning-commons-framework' );
+	load_textdomain( 'learning-commons-framework', WP_LANG_DIR . '/learning-commons-framework/learning-commons-framework-' . $locale . '.mo' );
+	load_plugin_textdomain( 'learning-commons-framework', false, plugin_basename( LEARNING_COMMONS_FRAMEWORK_PATH ) . '/languages/' );
 }
 
 /**
@@ -51,7 +51,7 @@ function i18n() {
  * @return void
  */
 function init() {
-	do_action( 'tenup_scaffold_init' );
+	do_action( 'LEARNING_COMMONS_FRAMEWORK_init' );
 }
 
 /**
@@ -97,7 +97,7 @@ function get_enqueue_contexts() {
 function script_url( $script, $context ) {
 
 	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
-		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in TenUpScaffold script loader.' );
+		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in LearningCommonsFramework script loader.' );
 	}
 
 	return "dist/js/${script}.js";
@@ -115,10 +115,10 @@ function script_url( $script, $context ) {
 function style_url( $stylesheet, $context ) {
 
 	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
-		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in TenUpScaffold stylesheet loader.' );
+		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in LearningCommonsFramework stylesheet loader.' );
 	}
 
-	return TENUP_SCAFFOLD_URL . "dist/css/${stylesheet}.css";
+	return LEARNING_COMMONS_FRAMEWORK_URL . "dist/css/${stylesheet}.css";
 
 }
 
@@ -130,18 +130,18 @@ function style_url( $stylesheet, $context ) {
 function scripts() {
 
 	wp_enqueue_script(
-		'tenup_scaffold_shared',
+		'LEARNING_COMMONS_FRAMEWORK_shared',
 		script_url( 'shared', 'shared' ),
 		[],
-		TENUP_SCAFFOLD_VERSION,
+		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
 
 	wp_enqueue_script(
-		'tenup_scaffold_frontend',
+		'LEARNING_COMMONS_FRAMEWORK_frontend',
 		script_url( 'frontend', 'frontend' ),
 		[],
-		TENUP_SCAFFOLD_VERSION,
+		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
 
@@ -155,18 +155,18 @@ function scripts() {
 function admin_scripts() {
 
 	wp_enqueue_script(
-		'tenup_scaffold_shared',
+		'LEARNING_COMMONS_FRAMEWORK_shared',
 		script_url( 'shared', 'shared' ),
 		[],
-		TENUP_SCAFFOLD_VERSION,
+		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
 
 	wp_enqueue_script(
-		'tenup_scaffold_admin',
+		'LEARNING_COMMONS_FRAMEWORK_admin',
 		script_url( 'admin', 'admin' ),
 		[],
-		TENUP_SCAFFOLD_VERSION,
+		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
 
@@ -180,25 +180,25 @@ function admin_scripts() {
 function styles() {
 
 	wp_enqueue_style(
-		'tenup_scaffold_shared',
+		'LEARNING_COMMONS_FRAMEWORK_shared',
 		style_url( 'shared-style', 'shared' ),
 		[],
-		TENUP_SCAFFOLD_VERSION
+		LEARNING_COMMONS_FRAMEWORK_VERSION
 	);
 
 	if ( is_admin() ) {
 		wp_enqueue_style(
-			'tenup_scaffold_admin',
+			'LEARNING_COMMONS_FRAMEWORK_admin',
 			style_url( 'admin-style', 'admin' ),
 			[],
-			TENUP_SCAFFOLD_VERSION
+			LEARNING_COMMONS_FRAMEWORK_VERSION
 		);
 	} else {
 		wp_enqueue_style(
-			'tenup_scaffold_frontend',
+			'LEARNING_COMMONS_FRAMEWORK_frontend',
 			style_url( 'style', 'frontend' ),
 			[],
-			TENUP_SCAFFOLD_VERSION
+			LEARNING_COMMONS_FRAMEWORK_VERSION
 		);
 	}
 
@@ -212,17 +212,17 @@ function styles() {
 function admin_styles() {
 
 	wp_enqueue_style(
-		'tenup_scaffold_shared',
+		'LEARNING_COMMONS_FRAMEWORK_shared',
 		style_url( 'shared-style', 'shared' ),
 		[],
-		TENUP_SCAFFOLD_VERSION
+		LEARNING_COMMONS_FRAMEWORK_VERSION
 	);
 
 	wp_enqueue_style(
-		'tenup_scaffold_admin',
+		'LEARNING_COMMONS_FRAMEWORK_admin',
 		style_url( 'admin-style', 'admin' ),
 		[],
-		TENUP_SCAFFOLD_VERSION
+		LEARNING_COMMONS_FRAMEWORK_VERSION
 	);
 
 }
@@ -238,7 +238,7 @@ function mce_css( $stylesheets ) {
 		$stylesheets .= ',';
 	}
 
-	return $stylesheets . TENUP_SCAFFOLD_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
+	return $stylesheets . LEARNING_COMMONS_FRAMEWORK_URL . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ?
 			'assets/css/frontend/editor-style.css' :
 			'dist/css/editor-style.min.css' );
 }

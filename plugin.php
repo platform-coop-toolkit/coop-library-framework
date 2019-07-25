@@ -1,34 +1,34 @@
 <?php
 /**
- * Plugin Name: TenUpScaffold
+ * Plugin Name: LearningCommonsFramework
  * Plugin URI:
  * Description:
  * Version:     0.1.0
  * Author:      10up
  * Author URI:  https://10up.com
- * Text Domain: tenup-scaffold
+ * Text Domain: learning-commons-framework
  * Domain Path: /languages
  *
- * @package TenUpScaffold
+ * @package LearningCommonsFramework
  */
 
 // Useful global constants.
-define( 'TENUP_SCAFFOLD_VERSION', '0.1.0' );
-define( 'TENUP_SCAFFOLD_URL', plugin_dir_url( __FILE__ ) );
-define( 'TENUP_SCAFFOLD_PATH', plugin_dir_path( __FILE__ ) );
-define( 'TENUP_SCAFFOLD_INC', TENUP_SCAFFOLD_PATH . 'includes/' );
+define( 'LEARNING_COMMONS_FRAMEWORK_VERSION', '0.1.0' );
+define( 'LEARNING_COMMONS_FRAMEWORK_URL', plugin_dir_url( __FILE__ ) );
+define( 'LEARNING_COMMONS_FRAMEWORK_PATH', plugin_dir_path( __FILE__ ) );
+define( 'LEARNING_COMMONS_FRAMEWORK_INC', LEARNING_COMMONS_FRAMEWORK_PATH . 'includes/' );
 
 // Include files.
-require_once TENUP_SCAFFOLD_INC . 'functions/core.php';
+require_once LEARNING_COMMONS_FRAMEWORK_INC . 'functions/core.php';
 
 // Activation/Deactivation.
-register_activation_hook( __FILE__, '\TenUpScaffold\Core\activate' );
-register_deactivation_hook( __FILE__, '\TenUpScaffold\Core\deactivate' );
+register_activation_hook( __FILE__, '\LearningCommonsFramework\Core\activate' );
+register_deactivation_hook( __FILE__, '\LearningCommonsFramework\Core\deactivate' );
 
 // Bootstrap.
-TenUpScaffold\Core\setup();
+LearningCommonsFramework\Core\setup();
 
 // Require Composer autoloader if it exists.
-if ( file_exists( TENUP_SCAFFOLD_PATH . '/vendor/autoload.php' ) ) {
-	require_once TENUP_SCAFFOLD_PATH . 'vendor/autoload.php';
+if ( file_exists( LEARNING_COMMONS_FRAMEWORK_PATH . '/vendor/autoload.php' ) ) {
+	require_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/autoload.php';
 }
