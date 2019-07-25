@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: LearningCommonsFramework
- * Plugin URI:
- * Description:
- * Version:     0.1.0
- * Author:      10up
- * Author URI:  https://10up.com
+ * Plugin Name: Learning Commons Framework
+ * Plugin URI: https://github.com/platform-coop-toolkit/learning-commons-framework/
+ * Description: Block and Custom Post Type utilities for the Platform Cooperativism Learning Commons.
+ * Version: 1.0.0-alpha
+ * Author: Platform Cooperative Development Kit
+ * Author URI:  https://github.com/platform-coop-toolkit/
  * Text Domain: learning-commons-framework
  * Domain Path: /languages
  *
@@ -13,7 +13,7 @@
  */
 
 // Useful global constants.
-define( 'LEARNING_COMMONS_FRAMEWORK_VERSION', '0.1.0' );
+define( 'LEARNING_COMMONS_FRAMEWORK_VERSION', '1.0.0-alpha' );
 define( 'LEARNING_COMMONS_FRAMEWORK_URL', plugin_dir_url( __FILE__ ) );
 define( 'LEARNING_COMMONS_FRAMEWORK_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LEARNING_COMMONS_FRAMEWORK_INC', LEARNING_COMMONS_FRAMEWORK_PATH . 'includes/' );

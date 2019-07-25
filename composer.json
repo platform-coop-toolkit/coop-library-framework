@@ -3,14 +3,11 @@
   "description": "Framework for the Platform Cooperativism Learning Commons.",
   "authors": [
     {
-      "name": "Jonathan Hung",
-      "email": "jhung@ocadu.ca"
-    },
-    {
-      "name": "Ned Zimmerman",
-      "email": "nzimmerman@ocadu.ca"
+      "name": "Platform Cooperative Development Kit",
+      "email": "info@platform.coop"
     }
   ],
+  "license": "BSD-3-Clause",
   "require": {
     "php": ">=7.0"
   },
