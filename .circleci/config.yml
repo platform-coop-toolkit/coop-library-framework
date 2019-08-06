@@ -40,3 +40,4 @@ jobs:
 
       # run tests with phpcs
       - run: composer lint
+      - run: npm run lint
