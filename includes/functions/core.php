@@ -32,9 +32,6 @@ function setup() {
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 
-	// Filter messages for `lc-resource` post_type.
-	add_filter( 'post_updated_messages', $n( 'resource_updated_messages' ) );
-
 	do_action( 'learning_commons_framework_loaded' );
 }
 
@@ -55,94 +52,20 @@ function i18n() {
  * @return void
  */
 function resource_init() {
-	register_post_type(
+	register_extended_post_type(
 		'lc-resource',
 		array(
-			'labels'                => array(
-				'name'                  => __( 'Resources', 'learning-commons-framework' ),
-				'singular_name'         => __( 'Resource', 'learning-commons-framework' ),
-				'all_items'             => __( 'All Resources', 'learning-commons-framework' ),
-				'archives'              => __( 'Resource Archives', 'learning-commons-framework' ),
-				'attributes'            => __( 'Resource Attributes', 'learning-commons-framework' ),
-				'insert_into_item'      => __( 'Insert into Resource', 'learning-commons-framework' ),
-				'uploaded_to_this_item' => __( 'Uploaded to this Resource', 'learning-commons-framework' ),
-				'featured_image'        => _x( 'Featured Image', 'lc-resource', 'learning-commons-framework' ),
-				'set_featured_image'    => _x( 'Set featured image', 'lc-resource', 'learning-commons-framework' ),
-				'remove_featured_image' => _x( 'Remove featured image', 'lc-resource', 'learning-commons-framework' ),
-				'use_featured_image'    => _x( 'Use as featured image', 'lc-resource', 'learning-commons-framework' ),
-				'filter_items_list'     => __( 'Filter Resources list', 'learning-commons-framework' ),
-				'items_list_navigation' => __( 'Resources list navigation', 'learning-commons-framework' ),
-				'items_list'            => __( 'Resources list', 'learning-commons-framework' ),
-				'new_item'              => __( 'New Resource', 'learning-commons-framework' ),
-				'add_new'               => __( 'Add New', 'learning-commons-framework' ),
-				'add_new_item'          => __( 'Add New Resource', 'learning-commons-framework' ),
-				'edit_item'             => __( 'Edit Resource', 'learning-commons-framework' ),
-				'view_item'             => __( 'View Resource', 'learning-commons-framework' ),
-				'view_items'            => __( 'View Resources', 'learning-commons-framework' ),
-				'search_items'          => __( 'Search Resources', 'learning-commons-framework' ),
-				'not_found'             => __( 'No Resources found', 'learning-commons-framework' ),
-				'not_found_in_trash'    => __( 'No Resources found in trash', 'learning-commons-framework' ),
-				'parent_item_colon'     => __( 'Parent Resource:', 'learning-commons-framework' ),
-				'menu_name'             => __( 'Resources', 'learning-commons-framework' ),
-			),
-			'public'                => true,
-			'hierarchical'          => false,
-			'show_ui'               => true,
-			'show_in_nav_menus'     => true,
-			'supports'              => array( 'title', 'editor' ),
-			'has_archive'           => true,
-			'rewrite'               => true,
-			'query_var'             => true,
-			'menu_position'         => 5,
-			'menu_icon'             => 'dashicons-archive',
-			'show_in_rest'          => true,
-			'rest_base'             => 'lc-resource',
-			'rest_controller_class' => 'WP_REST_Posts_Controller',
+			'menu_position' => 5,
+			'menu_icon'     => 'dashicons-archive',
+			'show_in_rest'  => true,
+			'supports'      => [ 'title', 'editor' ],
+		),
+		array(
+			'singular' => 'Resource',
+			'plural'   => 'Resources',
+			'slug'     => 'resource',
 		)
 	);
-}
-
-/**
- * Sets the post updated messages for the `lc-resource` post type.
- *
- * @param  array $messages Post updated messages.
- * @return array Messages for the `lc-resource` post type.
- */
-function resource_updated_messages( $messages ) {
-	global $post;
-
-	$permalink = get_permalink( $post );
-
-	$messages['lc-resource'] = array(
-		0  => '', // Unused. Messages start at index 1.
-		/* translators: %s: post permalink */
-		1  => sprintf( __( 'Resource updated. <a target="_blank" href="%s">View Resource</a>', 'learning-commons-framework' ), esc_url( $permalink ) ),
-		2  => __( 'Custom field updated.', 'learning-commons-framework' ),
-		3  => __( 'Custom field deleted.', 'learning-commons-framework' ),
-		4  => __( 'Resource updated.', 'learning-commons-framework' ),
-		// @codingStandardsIgnoreStart
-		/* translators: %s: date and time of the revision */
-		5  => isset( $_GET['revision'] ) ? sprintf( __( 'Resource restored to revision from %s', 'learning-commons-framework' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-		// @codingStandardsIgnoreEnd
-		/* translators: %s: post permalink */
-		6  => sprintf( __( 'Resource published. <a href="%s">View Resource</a>', 'learning-commons-framework' ), esc_url( $permalink ) ),
-		7  => __( 'Resource saved.', 'learning-commons-framework' ),
-		/* translators: %s: post permalink */
-		8  => sprintf( __( 'Resource submitted. <a target="_blank" href="%s">Preview Resource</a>', 'learning-commons-framework' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
-		9  => sprintf(
-			/* translators: 1: Publish box date format, see https://secure.php.net/date 2: Post permalink */
-			__( 'Resource scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Resource</a>', 'learning-commons-framework' ),
-			date_i18n(
-				__( 'M j, Y @ G:i', 'learning-commons-framework' ),
-				strtotime( $post->post_date )
-			),
-			esc_url( $permalink )
-		),
-		/* translators: %s: post permalink */
-		10 => sprintf( __( 'Resource draft updated. <a target="_blank" href="%s">Preview Resource</a>', 'learning-commons-framework' ), esc_url( add_query_arg( 'preview', 'true', $permalink ) ) ),
-	);
-
-	return $messages;
 }
 
 /**
