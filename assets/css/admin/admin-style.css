@@ -1,3 +1,7 @@
 /**
  * LearningCommonsFramework - Admin Styles
  */
+
+#dashboard_right_now li a.cpt-lc_resource-count::before {
+	content: "\f480";
+}

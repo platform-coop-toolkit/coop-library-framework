@@ -26,6 +26,8 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'block_scripts' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'block_styles' ) );
 
 	// Editor styles. add_editor_style() doesn't work outside of a theme.
 	add_filter( 'mce_css', $n( 'mce_css' ) );
@@ -53,18 +55,35 @@ function i18n() {
  */
 function resource_init() {
 	register_extended_post_type(
-		'lc-resource',
+		'lc_resource',
 		array(
 			'menu_position' => 5,
 			'menu_icon'     => 'dashicons-archive',
+			'rest_base'     => 'resources',
 			'show_in_rest'  => true,
-			'supports'      => [ 'title', 'editor' ],
+			'supports'      => [ 'title', 'editor', 'custom-fields' ],
 		),
 		array(
-			'singular' => 'Resource',
-			'plural'   => 'Resources',
+			'singular' => __( 'Resource', 'learning_commons_framework' ),
+			'plural'   => __( 'Resources', 'learning_commons_framework' ),
 			'slug'     => 'resource',
 		)
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publication_date',
+		[
+			'type'         => 'string',
+			'description'  => 'The publication date of the resource in YYYY-MM-DD format.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	$post_type_object           = get_post_type_object( 'lc_resource' );
+	$post_type_object->template = array(
+		array( 'learning-commons-framework/publication-date' ),
 	);
 }
 
@@ -123,7 +142,7 @@ function script_url( $script, $context ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in LearningCommonsFramework script loader.' );
 	}
 
-	return "dist/js/${script}.js";
+	return LEARNING_COMMONS_FRAMEWORK_URL . "dist/js/${script}.js";
 
 }
 
@@ -153,7 +172,7 @@ function style_url( $stylesheet, $context ) {
 function scripts() {
 
 	wp_enqueue_script(
-		'LEARNING_COMMONS_FRAMEWORK_shared',
+		'learning_commons_framework_shared',
 		script_url( 'shared', 'shared' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
@@ -161,7 +180,7 @@ function scripts() {
 	);
 
 	wp_enqueue_script(
-		'LEARNING_COMMONS_FRAMEWORK_frontend',
+		'learning_commons_framework_frontend',
 		script_url( 'frontend', 'frontend' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
@@ -178,7 +197,7 @@ function scripts() {
 function admin_scripts() {
 
 	wp_enqueue_script(
-		'LEARNING_COMMONS_FRAMEWORK_shared',
+		'learning_commons_framework_shared',
 		script_url( 'shared', 'shared' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
@@ -186,9 +205,26 @@ function admin_scripts() {
 	);
 
 	wp_enqueue_script(
-		'LEARNING_COMMONS_FRAMEWORK_admin',
+		'learning_commons_framework_admin',
 		script_url( 'admin', 'admin' ),
 		[],
+		LEARNING_COMMONS_FRAMEWORK_VERSION,
+		true
+	);
+
+}
+
+/**
+ * Enqueue scripts for blocks.
+ *
+ * @return void
+ */
+function block_scripts() {
+
+	wp_enqueue_script(
+		'learning_commons_framework_blocks',
+		script_url( 'blocks', 'admin' ),
+		[ 'wp-blocks', 'wp-element', 'wp-components' ],
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
@@ -203,7 +239,7 @@ function admin_scripts() {
 function styles() {
 
 	wp_enqueue_style(
-		'LEARNING_COMMONS_FRAMEWORK_shared',
+		'learning_commons_framework_shared',
 		style_url( 'shared-style', 'shared' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION
@@ -211,14 +247,14 @@ function styles() {
 
 	if ( is_admin() ) {
 		wp_enqueue_style(
-			'LEARNING_COMMONS_FRAMEWORK_admin',
+			'learning_commons_framework_admin',
 			style_url( 'admin-style', 'admin' ),
 			[],
 			LEARNING_COMMONS_FRAMEWORK_VERSION
 		);
 	} else {
 		wp_enqueue_style(
-			'LEARNING_COMMONS_FRAMEWORK_frontend',
+			'learning_commons_framework_frontend',
 			style_url( 'style', 'frontend' ),
 			[],
 			LEARNING_COMMONS_FRAMEWORK_VERSION
@@ -235,15 +271,31 @@ function styles() {
 function admin_styles() {
 
 	wp_enqueue_style(
-		'LEARNING_COMMONS_FRAMEWORK_shared',
+		'learning_commons_framework_shared',
 		style_url( 'shared-style', 'shared' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION
 	);
 
 	wp_enqueue_style(
-		'LEARNING_COMMONS_FRAMEWORK_admin',
+		'learning_commons_framework_admin',
 		style_url( 'admin-style', 'admin' ),
+		[],
+		LEARNING_COMMONS_FRAMEWORK_VERSION
+	);
+
+}
+
+/**
+ * Enqueue styles for blocks.
+ *
+ * @return void
+ */
+function block_styles() {
+
+	wp_enqueue_style(
+		'learning_commons_framework_blocks',
+		style_url( 'block-style', 'admin' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION
 	);
