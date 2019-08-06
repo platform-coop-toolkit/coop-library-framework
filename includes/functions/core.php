@@ -22,6 +22,7 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'init', $n( 'resource_init' ) );
+	add_action( 'cmb2_admin_init', $n( 'resource_data_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
@@ -59,11 +60,11 @@ function resource_init() {
 			'menu_icon'     => 'dashicons-archive',
 			'rest_base'     => 'resources',
 			'show_in_rest'  => true,
-			'supports'      => [ 'title', 'editor', 'custom-fields' ],
+			'supports'      => [ 'title', 'editor' ],
 		),
 		array(
-			'singular' => __( 'Resource', 'learning_commons_framework' ),
-			'plural'   => __( 'Resources', 'learning_commons_framework' ),
+			'singular' => __( 'Resource', 'learning-commons-framework' ),
+			'plural'   => __( 'Resources', 'learning-commons-framework' ),
 			'slug'     => 'resource',
 		)
 	);
@@ -83,6 +84,42 @@ function resource_init() {
 	$post_type_object->template = array(
 		array( 'learning-commons-framework/publication-date' ),
 	);
+}
+
+/**
+ * Register the Resource Data metabox.
+ *
+ * @return void
+ */
+function resource_data_init() {
+	$prefix = 'lc_resource_';
+
+	$cmb = new_cmb2_box( array(
+		'id'            => 'resource_data',
+		'title'         => __( 'Resource Data', 'learning-commons-framework' ),
+		'object_types'  => array( 'lc_resource', ),
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true,
+	) );
+
+	// TODO: Required.
+	$cmb->add_field( array(
+		'name'        => __( 'Publication Date', 'learning-commons-framework' ),
+		'description' => __( 'The publication date of the resource in YYYY-MM-DD format.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'publication_date',
+		'type'        => 'text_date',
+		'date_format' => 'Y-m-d',
+	) );
+
+	// TODO: Required.
+	$cmb->add_field( array(
+		'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
+		'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'permanent_link',
+		'type'        => 'text_url',
+		'protocols'   => array( 'http', 'https' ),
+	) );
 }
 
 /**

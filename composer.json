@@ -10,14 +10,16 @@
   ],
   "require": {
     "php": ">=7.0",
-    "johnbillion/extended-cpts": "^4.2"
+    "johnbillion/extended-cpts": "^4.2",
+    "cmb2/cmb2": "^2.6"
   },
   "require-dev": {
     "10up/phpcs-composer": "dev-master",
-    "10up/wp_mock": "^0.4.2",
+    "10up/wp_mock": "^0.4",
     "phpunit/phpunit": "^7.0"
   },
   "autoload": {
+    "files": ["vendor/cmb2/cmb2/init.php"],
     "psr-4": {
       "LearningCommonsFramework\\": "includes/classes/"
     }
