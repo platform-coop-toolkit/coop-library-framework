@@ -5,13 +5,11 @@ module.exports = {
 	entries: {
 		// JS files.
 		'admin': './assets/js/admin/admin.js',
-		'blocks': './assets/js/blocks/blocks.js',
 		'frontend': './assets/js/frontend/frontend.js',
 		'shared': './assets/js/shared/shared.js',
 
 		// CSS files.
 		'admin-style': './assets/css/admin/admin-style.css',
-		'block-style': './assets/css/blocks/block-style.css',
 		'editor-style': './assets/css/frontend/editor-style.css',
 		'shared-style': './assets/css/shared/shared-style.css',
 		'style': './assets/css/frontend/style.css',

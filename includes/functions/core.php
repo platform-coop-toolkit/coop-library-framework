@@ -26,8 +26,6 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
-	add_action( 'enqueue_block_editor_assets', $n( 'block_scripts' ) );
-	add_action( 'enqueue_block_editor_assets', $n( 'block_styles' ) );
 
 	// Editor styles. add_editor_style() doesn't work outside of a theme.
 	add_filter( 'mce_css', $n( 'mce_css' ) );
@@ -215,23 +213,6 @@ function admin_scripts() {
 }
 
 /**
- * Enqueue scripts for blocks.
- *
- * @return void
- */
-function block_scripts() {
-
-	wp_enqueue_script(
-		'learning_commons_framework_blocks',
-		script_url( 'blocks', 'admin' ),
-		[ 'wp-blocks', 'wp-element', 'wp-components' ],
-		LEARNING_COMMONS_FRAMEWORK_VERSION,
-		true
-	);
-
-}
-
-/**
  * Enqueue styles for front-end.
  *
  * @return void
@@ -280,22 +261,6 @@ function admin_styles() {
 	wp_enqueue_style(
 		'learning_commons_framework_admin',
 		style_url( 'admin-style', 'admin' ),
-		[],
-		LEARNING_COMMONS_FRAMEWORK_VERSION
-	);
-
-}
-
-/**
- * Enqueue styles for blocks.
- *
- * @return void
- */
-function block_styles() {
-
-	wp_enqueue_style(
-		'learning_commons_framework_blocks',
-		style_url( 'block-style', 'admin' ),
 		[],
 		LEARNING_COMMONS_FRAMEWORK_VERSION
 	);
