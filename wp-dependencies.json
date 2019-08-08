@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Classic Editor",
+    "host": "wordpress",
+    "slug": "classic-editor/classic-editor.php",
+    "uri": "https://wordpress.org/plugins/classic-editor/",
+    "optional": false
+  },
+  {
+    "name": "Classic Editor Addon",
+    "host": "wordpress",
+    "slug": "classic-editor-addon/classic-editor-addon.php",
+    "uri": "https://wordpress.org/plugins/classic-editor-addon/",
+    "optional": false
+  },
+  {
+    "name": "Disable Blog",
+    "host": "wordpress",
+    "slug": "disable-blog/disable-blog.php",
+    "uri": "https://wordpress.org/plugins/disable-blog/",
+    "optional": false
+  },
+  {
+    "name": "Disable Comments",
+    "host": "wordpress",
+    "slug": "disable-comments/disable-comments.php",
+    "uri": "https://wordpress.org/plugins/disable-comments/",
+    "optional": false
+  },
+  {
+    "name": "Polylang",
+    "host": "wordpress",
+    "slug": "polylang/polylang.php",
+    "uri": "https://wordpress.org/plugins/polylang/",
+    "optional": false
+  }
+]

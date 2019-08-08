@@ -105,6 +105,32 @@ function resource_data_init() {
 
 	// TODO: Required.
 	$cmb->add_field( array(
+		'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
+		'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'permanent_link',
+		'type'        => 'text_url',
+		'protocols'   => array( 'http', 'https' ),
+	) );
+
+	$tmp = get_terms( 'term_language', [ 'hide_empty' => false ] );
+	$langs = [];
+	foreach($tmp as $lang) {
+		$langs[ str_replace('pll_', '', $lang->slug) ] = $lang->name;
+	}
+
+	// TODO: Required.
+	$cmb->add_field( array(
+		'name'             => __( 'Language', 'learning-commons-framework' ),
+		'description'      => __( 'The language of the resource.', 'learning-commons-framework' ),
+		'id'               => $prefix . 'language',
+		'type'             => 'select',
+		'show_option_none' => true,
+		'default'          => 'en',
+		'options'          => $langs,
+	) );
+
+	// TODO: Required.
+	$cmb->add_field( array(
 		'name'        => __( 'Publication Date', 'learning-commons-framework' ),
 		'description' => __( 'The publication date of the resource in YYYY-MM-DD format.', 'learning-commons-framework' ),
 		'id'          => $prefix . 'publication_date',
@@ -112,11 +138,62 @@ function resource_data_init() {
 		'date_format' => 'Y-m-d',
 	) );
 
+	// TODO: Don't save any revisions if they are empty.
+	$group_field_id = $cmb->add_field( array(
+		'id'          => $prefix . 'revisions',
+		'type'        => 'group',
+		'description' => __( 'Revisions of the resource.', 'learning-commons-framework' ),
+		'options'     => array(
+			'group_title'       => __( 'Revision {#}', 'learning-commons-framework' ),
+			'add_button'        => __( 'Add Another Revision', 'learning-commons-framework' ),
+			'remove_button'     => __( 'Remove Revision', 'learning-commons-framework' ),
+			'sortable'          => true,
+			'closed'         => true,
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove this revision?', 'learning-commons-framework' ),
+		),
+	) );
+
 	// TODO: Required.
+	$cmb->add_group_field( $group_field_id, array(
+		'name'        => __( 'Revision Date', 'learning-commons-framework' ),
+		'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'revision_date',
+		'type'        => 'text_date',
+		'date_format' => 'Y-m-d',
+	) );
+
+	$cmb->add_group_field( $group_field_id, array(
+		'name'        => __( 'Revision Description', 'learning-commons-framework' ),
+		'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'revision_description',
+		'type'        => 'textarea_small',
+	) );
+
 	$cmb->add_field( array(
-		'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
-		'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
-		'id'          => $prefix . 'permanent_link',
+		'name'        => __( 'Publisher Name', 'learning-commons-framework' ),
+		'description' => __( 'The publisher of the resource.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'publisher_name',
+		'type'        => 'text',
+	) );
+
+	$cmb->add_field( array(
+		'name'        => __( 'Publisher City', 'learning-commons-framework' ),
+		'description' => __( 'The town or city where the publisher of the resource is located.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'publisher_locality',
+		'type'        => 'text',
+	) );
+
+	$cmb->add_field( array(
+		'name'        => __( 'Publisher Country', 'learning-commons-framework' ),
+		'description' => __( 'The country where the publisher of the resource is located.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'publisher_country',
+		'type'        => 'text',
+	) );
+
+	$cmb->add_field( array(
+		'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
+		'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
+		'id'          => $prefix . 'publisher_link',
 		'type'        => 'text_url',
 		'protocols'   => array( 'http', 'https' ),
 	) );

@@ -10,8 +10,9 @@
   ],
   "require": {
     "php": ">=7.0",
-    "johnbillion/extended-cpts": "^4.2",
-    "cmb2/cmb2": "^2.6"
+    "afragen/wp-dependency-installer": "^1.4",
+    "cmb2/cmb2": "^2.6",
+    "johnbillion/extended-cpts": "^4.2"
   },
   "require-dev": {
     "10up/phpcs-composer": "dev-master",
