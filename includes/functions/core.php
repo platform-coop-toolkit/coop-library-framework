@@ -22,7 +22,7 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'init', $n( 'resource_init' ) );
-	add_action( 'cmb2_admin_init', $n( 'resource_data_init' ) );
+	add_action( 'init', $n( 'topic_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
@@ -32,6 +32,9 @@ function setup() {
 	add_filter( 'mce_css', $n( 'mce_css' ) );
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
+	// Ensure resources and topics are translatable.
+	add_filter( 'pll_get_post_types', $n( 'add_resource_to_pll' ), 10, 2 );
+	add_filter( 'pll_get_taxonomies', $n( 'add_topic_to_pll' ), 10, 2 );
 
 	do_action( 'learning_commons_framework_loaded' );
 }
@@ -65,162 +68,65 @@ function resource_init() {
 		array(
 			'singular' => __( 'Resource', 'learning-commons-framework' ),
 			'plural'   => __( 'Resources', 'learning-commons-framework' ),
-			'slug'     => 'resource',
+			'slug'     => 'resources',
 		)
-	);
-
-	register_post_meta(
-		'lc_resource',
-		'lc_resource_publication_date',
-		[
-			'type'         => 'string',
-			'description'  => 'The publication date of the resource in YYYY-MM-DD format.',
-			'single'       => true,
-			'show_in_rest' => true,
-		]
-	);
-
-	$post_type_object           = get_post_type_object( 'lc_resource' );
-	$post_type_object->template = array(
-		array( 'learning-commons-framework/publication-date' ),
 	);
 }
 
 /**
- * Register the Resource Data metabox.
+ * Add the `lc_resource` post type to Polylang, ensuring it is translatable.
  *
- * @return void
+ * @param array $post_types An array of post types.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
  */
-function resource_data_init() {
-	$prefix = 'lc_resource_';
-
-	$cmb = new_cmb2_box(
-		array(
-			'id'           => 'resource_data',
-			'title'        => __( 'Resource Data', 'learning-commons-framework' ),
-			'object_types' => array( 'lc_resource' ),
-			'context'      => 'normal',
-			'priority'     => 'high',
-			'show_names'   => true,
-		)
-	);
-
-	// TODO: Required.
-	$cmb->add_field(
-		array(
-			'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
-			'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'permanent_link',
-			'type'        => 'text_url',
-			'protocols'   => array( 'http', 'https' ),
-		)
-	);
-
-	$tmp   = get_terms( 'term_language', [ 'hide_empty' => false ] );
-	$langs = [];
-	foreach ( $tmp as $lang ) {
-		$langs[ str_replace( 'pll_', '', $lang->slug ) ] = $lang->name;
+function add_resource_to_pll( $post_types, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $post_types['lc_resource'] );
+	} else {
+		$post_types['lc_resource'] = 'lc_resource';
 	}
+	return $post_types;
+}
 
-	// TODO: Required.
-	$cmb->add_field(
+/**
+ * Registers the `lc_topic` taxonomy,
+ * for use with 'lc_resource'.
+ */
+function topic_init() {
+	register_extended_taxonomy(
+		'lc_topic',
+		array( 'lc_resource' ),
 		array(
-			'name'             => __( 'Source Language', 'learning-commons-framework' ),
-			'description'      => __( 'The original language of the resource.', 'learning-commons-framework' ),
-			'id'               => $prefix . 'source_language',
-			'type'             => 'select',
-			'show_option_none' => true,
-			'default'          => 'en',
-			'options'          => $langs,
+			'hierarchical'          => true,
+			'show_in_rest'          => true,
+			'rest_base'             => 'topics',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+		),
+		array(
+			'singular' => __( 'Topic', 'learning-commons-framework' ),
+			'plural'   => __( 'Topics', 'learning-commons-framework' ),
+			'slug'     => 'topics',
 		)
 	);
+}
 
-	// TODO: Required.
-	$cmb->add_field(
-		array(
-			'name'        => __( 'Publication Date', 'learning-commons-framework' ),
-			'description' => __( 'The publication date of the resource in YYYY-MM-DD format.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publication_date',
-			'type'        => 'text_date',
-			'date_format' => 'Y-m-d',
-		)
-	);
-
-	// TODO: Don't save any revisions if they are empty.
-	$group_field_id = $cmb->add_field(
-		array(
-			'id'          => $prefix . 'revisions',
-			'type'        => 'group',
-			'description' => __( 'Revisions of the resource.', 'learning-commons-framework' ),
-			'options'     => array(
-				'group_title'    => __( 'Revision {#}', 'learning-commons-framework' ),
-				'add_button'     => __( 'Add Another Revision', 'learning-commons-framework' ),
-				'remove_button'  => __( 'Remove Revision', 'learning-commons-framework' ),
-				'sortable'       => true,
-				'closed'         => true,
-				'remove_confirm' => esc_html__( 'Are you sure you want to remove this revision?', 'learning-commons-framework' ),
-			),
-		)
-	);
-
-	// TODO: Required.
-	$cmb->add_group_field(
-		$group_field_id,
-		array(
-			'name'        => __( 'Revision Date', 'learning-commons-framework' ),
-			'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'revision_date',
-			'type'        => 'text_date',
-			'date_format' => 'Y-m-d',
-		)
-	);
-
-	$cmb->add_group_field(
-		$group_field_id,
-		array(
-			'name'        => __( 'Revision Description', 'learning-commons-framework' ),
-			'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'revision_description',
-			'type'        => 'textarea_small',
-		)
-	);
-
-	$cmb->add_field(
-		array(
-			'name'        => __( 'Publisher Name', 'learning-commons-framework' ),
-			'description' => __( 'The publisher of the resource.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_name',
-			'type'        => 'text',
-		)
-	);
-
-	$cmb->add_field(
-		array(
-			'name'        => __( 'Publisher City', 'learning-commons-framework' ),
-			'description' => __( 'The town or city where the publisher of the resource is located.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_locality',
-			'type'        => 'text',
-		)
-	);
-
-	$cmb->add_field(
-		array(
-			'name'        => __( 'Publisher Country', 'learning-commons-framework' ),
-			'description' => __( 'The country where the publisher of the resource is located.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_country',
-			'type'        => 'text',
-		)
-	);
-
-	$cmb->add_field(
-		array(
-			'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
-			'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_link',
-			'type'        => 'text_url',
-			'protocols'   => array( 'http', 'https' ),
-		)
-	);
+/**
+ * Add the `lc_topic` taxonomy to Polylang, ensuring it is translatable.
+ *
+ * @param array $taxonomies An array of taxonomies.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
+ */
+function add_topic_to_pll( $taxonomies, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $taxonomies['lc_topic'] );
+	} else {
+		$taxonomies['lc_topic'] = 'lc_topic';
+	}
+	return $taxonomies;
 }
 
 /**

@@ -20,6 +20,7 @@ define( 'LEARNING_COMMONS_FRAMEWORK_INC', LEARNING_COMMONS_FRAMEWORK_PATH . 'inc
 
 // Include files.
 require_once LEARNING_COMMONS_FRAMEWORK_INC . 'functions/core.php';
+require_once LEARNING_COMMONS_FRAMEWORK_INC . 'functions/metadata.php';
 
 // Activation/Deactivation.
 register_activation_hook( __FILE__, '\LearningCommonsFramework\Core\activate' );
@@ -27,6 +28,7 @@ register_deactivation_hook( __FILE__, '\LearningCommonsFramework\Core\deactivate
 
 // Bootstrap.
 LearningCommonsFramework\Core\setup();
+LearningCommonsFramework\Metadata\setup();
 
 // Require Composer autoloader if it exists.
 if ( file_exists( LEARNING_COMMONS_FRAMEWORK_PATH . '/vendor/autoload.php' ) ) {
