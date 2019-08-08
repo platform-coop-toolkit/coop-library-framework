@@ -33,5 +33,8 @@ if ( file_exists( LEARNING_COMMONS_FRAMEWORK_PATH . '/vendor/autoload.php' ) ) {
 	require_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/autoload.php';
 }
 
+// Load CMB2.
+require_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/cmb2/cmb2/init.php';
+
 // Run dependency installer.
 WP_Dependency_Installer::instance()->run( __DIR__ );

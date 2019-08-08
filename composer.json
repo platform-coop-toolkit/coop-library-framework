@@ -20,7 +20,6 @@
     "phpunit/phpunit": "^7.0"
   },
   "autoload": {
-    "files": ["vendor/cmb2/cmb2/init.php"],
     "psr-4": {
       "LearningCommonsFramework\\": "includes/classes/"
     }
