@@ -125,9 +125,9 @@ function resource_data_init() {
 	// TODO: Required.
 	$cmb->add_field(
 		array(
-			'name'             => __( 'Language', 'learning-commons-framework' ),
-			'description'      => __( 'The language of the resource.', 'learning-commons-framework' ),
-			'id'               => $prefix . 'language',
+			'name'             => __( 'Source Language', 'learning-commons-framework' ),
+			'description'      => __( 'The original language of the resource.', 'learning-commons-framework' ),
+			'id'               => $prefix . 'source_language',
 			'type'             => 'select',
 			'show_option_none' => true,
 			'default'          => 'en',
