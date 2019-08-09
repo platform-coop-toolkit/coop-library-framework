@@ -32,6 +32,8 @@ function setup() {
 	add_filter( 'mce_css', $n( 'mce_css' ) );
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
+	// Show all languages by default
+	add_filter( 'pre_get_posts', $n( 'show_all_langs' ) );
 	// Ensure resources and topics are translatable.
 	add_filter( 'pll_get_post_types', $n( 'add_resource_to_pll' ), 10, 2 );
 	add_filter( 'pll_get_taxonomies', $n( 'add_topic_to_pll' ), 10, 2 );
@@ -88,6 +90,19 @@ function add_resource_to_pll( $post_types, $is_settings ) {
 		$post_types['lc_resource'] = 'lc_resource';
 	}
 	return $post_types;
+}
+
+/**
+ * Show resources in all languages by default.
+ *
+ * @param \WP_Query $query The current query.
+ *
+ * @return void
+ */
+function show_all_langs( $query ) {
+	if ( is_post_type_archive( 'lc_resource' ) ) {
+		$query->set( 'lang', '' );
+	}
 }
 
 /**
@@ -160,7 +175,6 @@ function deactivate() {
 
 }
 
-
 /**
  * The list of knows contexts for enqueuing scripts/styles.
  *
@@ -179,7 +193,6 @@ function get_enqueue_contexts() {
  * @return string|WP_Error URL
  */
 function script_url( $script, $context ) {
-
 	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in LearningCommonsFramework script loader.' );
 	}
@@ -197,13 +210,11 @@ function script_url( $script, $context ) {
  * @return string URL
  */
 function style_url( $stylesheet, $context ) {
-
 	if ( ! in_array( $context, get_enqueue_contexts(), true ) ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in LearningCommonsFramework stylesheet loader.' );
 	}
 
 	return LEARNING_COMMONS_FRAMEWORK_URL . "dist/css/${stylesheet}.css";
-
 }
 
 /**
@@ -212,7 +223,6 @@ function style_url( $stylesheet, $context ) {
  * @return void
  */
 function scripts() {
-
 	wp_enqueue_script(
 		'learning_commons_framework_shared',
 		script_url( 'shared', 'shared' ),
@@ -228,7 +238,6 @@ function scripts() {
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
-
 }
 
 /**
@@ -237,7 +246,6 @@ function scripts() {
  * @return void
  */
 function admin_scripts() {
-
 	wp_enqueue_script(
 		'learning_commons_framework_shared',
 		script_url( 'shared', 'shared' ),
@@ -253,7 +261,6 @@ function admin_scripts() {
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
-
 }
 
 /**
@@ -262,7 +269,6 @@ function admin_scripts() {
  * @return void
  */
 function styles() {
-
 	wp_enqueue_style(
 		'learning_commons_framework_shared',
 		style_url( 'shared-style', 'shared' ),
@@ -285,7 +291,6 @@ function styles() {
 			LEARNING_COMMONS_FRAMEWORK_VERSION
 		);
 	}
-
 }
 
 /**
@@ -294,7 +299,6 @@ function styles() {
  * @return void
  */
 function admin_styles() {
-
 	wp_enqueue_style(
 		'learning_commons_framework_shared',
 		style_url( 'shared-style', 'shared' ),

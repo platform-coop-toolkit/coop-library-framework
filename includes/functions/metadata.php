@@ -93,7 +93,6 @@ function resource_data_init() {
 		)
 	);
 
-	// TODO: Required.
 	$cmb->add_field(
 		array(
 			'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
@@ -110,7 +109,6 @@ function resource_data_init() {
 		$langs[ str_replace( 'pll_', '', $lang->slug ) ] = $lang->name;
 	}
 
-	// TODO: Required.
 	$cmb->add_field(
 		array(
 			'name'             => __( 'Source Language', 'learning-commons-framework' ),
@@ -120,10 +118,12 @@ function resource_data_init() {
 			'show_option_none' => true,
 			'default'          => 'en',
 			'options'          => $langs,
+			'attributes'       => [
+				'data-validation' => 'required',
+			],
 		)
 	);
 
-	// TODO: Required.
 	$cmb->add_field(
 		array(
 			'name'        => __( 'Publication Date', 'learning-commons-framework' ),
@@ -131,6 +131,9 @@ function resource_data_init() {
 			'id'          => $prefix . 'publication_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
+			'attributes'  => [
+				'data-validation' => 'required',
+			],
 		)
 	);
 
@@ -151,7 +154,6 @@ function resource_data_init() {
 		)
 	);
 
-	// TODO: Required.
 	$cmb->add_group_field(
 		$group_field_id,
 		array(
@@ -160,6 +162,9 @@ function resource_data_init() {
 			'id'          => $prefix . 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
+			'attributes'  => [
+				'data-validation' => 'required',
+			],
 		)
 	);
 
