@@ -45,7 +45,7 @@
     "@10up/eslint-config": "^1.0.9",
     "@10up/stylelint-config": "^1.0.7",
     "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
