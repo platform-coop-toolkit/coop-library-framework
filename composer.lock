@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "johnbillion/extended-cpts",
-            "version": "4.2.5",
+            "version": "4.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/extended-cpts.git",
-                "reference": "3f582bbb19bec814360bd8b0ee8f52c95183d96a"
+                "reference": "ffbda9b2ebc7738040567e805d17b2cc9f2fbb69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/3f582bbb19bec814360bd8b0ee8f52c95183d96a",
-                "reference": "3f582bbb19bec814360bd8b0ee8f52c95183d96a",
+                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/ffbda9b2ebc7738040567e805d17b2cc9f2fbb69",
+                "reference": "ffbda9b2ebc7738040567e805d17b2cc9f2fbb69",
                 "shasum": ""
             },
             "require": {
@@ -26,8 +26,8 @@
             "require-dev": {
                 "automattic/phpcs-neutron-standard": "^1.5",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5",
+                "johnbillion/falsey-assertequals-detector": "^2",
                 "johnbillion/php-docs-standards": "^1",
-                "johnkary/phpunit-speedtrap": "^2",
                 "phpcompatibility/phpcompatibility-wp": "^2",
                 "phpunit/phpunit": "^6",
                 "roots/wordpress": "*",
@@ -44,6 +44,9 @@
                 "wordpress-install-dir": "tests/wordpress"
             },
             "autoload": {
+                "psr-4": {
+                    "ExtCPTs\\Tests\\": "tests/phpunit"
+                },
                 "files": [
                     "extended-cpts.php"
                 ]
@@ -60,7 +63,7 @@
             ],
             "description": "A library which provides extended functionality to WordPress custom post types and taxonomies.",
             "homepage": "https://github.com/johnbillion/extended-cpts/",
-            "time": "2019-06-27T21:06:36+00:00"
+            "time": "2019-08-08T13:24:04+00:00"
         }
     ],
     "packages-dev": [
