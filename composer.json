@@ -15,7 +15,7 @@
   "require-dev": {
     "10up/phpcs-composer": "dev-master",
     "10up/wp_mock": "^0.4.2",
-    "phpunit/phpunit": "^7.0"
+    "phpunit/phpunit": "^8.3"
   },
   "autoload": {
     "psr-4": {
