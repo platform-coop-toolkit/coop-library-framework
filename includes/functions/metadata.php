@@ -42,12 +42,40 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_source_language',
+		'lc_resource_author',
 		[
 			'type'         => 'string',
-			'description'  => 'The original language of the resource.',
+			'description'  => 'The author of the resource.',
 			'single'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => [
+				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+			],
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_editor',
+		[
+			'type'         => 'string',
+			'description'  => 'The editor of the resource.',
+			'single'       => true,
+			'show_in_rest' => [
+				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+			],
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_translator',
+		[
+			'type'         => 'string',
+			'description'  => 'The translator of the resource.',
+			'single'       => true,
+			'show_in_rest' => [
+				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+			],
 		]
 	);
 
@@ -69,9 +97,46 @@ function register_meta() {
 			'type'         => 'string',
 			'description'  => 'Revisions of the resource.',
 			'single'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => [
+				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_revisions',
+			],
 		]
 	);
+}
+
+/**
+ * Prepare `lc_resource_authors`, `lc_resource_editors`, and `lc_resource_translators`
+ * for REST API access.
+ *
+ * @param mixed $value The metadata value.
+ *
+ * @return array
+ */
+function prepare_contributors( $value ) {
+	$result = [];
+	if ( is_array( $value ) ) {
+		foreach ( $value as $v ) {
+			$result[] = $v;
+		}
+	}
+	return $result;
+}
+
+/**
+ * Prepare `lc_resource_revisions` for REST API access.
+ *
+ * @param mixed $value The metadata value.
+ *
+ * @return array
+ */
+function prepare_revisions( $value ) {
+	$result = [];
+	if ( is_array( $value ) ) {
+		foreach ( $value as $v ) {
+			$result[] = $v['lc_resource_revision_date'] . ': ' . $v['lc_resource_revision_description'];
+		}
+	}
+	return $result;
 }
 
 /**
@@ -103,24 +168,45 @@ function resource_data_init() {
 		)
 	);
 
-	$tmp   = get_terms( 'term_language', [ 'hide_empty' => false ] );
-	$langs = [];
-	foreach ( $tmp as $lang ) {
-		$langs[ str_replace( 'pll_', '', $lang->slug ) ] = $lang->name;
-	}
-
+	// TODO: Don't save any authors if they are empty.
 	$cmb->add_field(
 		array(
-			'name'             => __( 'Source Language', 'learning-commons-framework' ),
-			'description'      => __( 'The original language of the resource.', 'learning-commons-framework' ),
-			'id'               => $prefix . 'source_language',
-			'type'             => 'select',
-			'show_option_none' => true,
-			'default'          => 'en',
-			'options'          => $langs,
-			'attributes'       => [
-				'data-validation' => 'required',
-			],
+			'name'        => __( 'Author', 'learning-commons-framework' ),
+			'description' => __( 'The author of the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'author',
+			'type'        => 'text',
+			'repeatable'  => true,
+			'text'        => array(
+				'add_row_text' => __( 'Add Author', 'learning-commons-framework' ),
+			),
+		)
+	);
+
+	// TODO: Don't save any authors if they are empty.
+	$cmb->add_field(
+		array(
+			'name'        => __( 'Editor', 'learning-commons-framework' ),
+			'description' => __( 'The editor of the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'editor',
+			'type'        => 'text',
+			'repeatable'  => true,
+			'text'        => array(
+				'add_row_text' => __( 'Add Editor', 'learning-commons-framework' ),
+			),
+		)
+	);
+
+	// TODO: Don't save any translators if they are empty.
+	$cmb->add_field(
+		array(
+			'name'        => __( 'Translator', 'learning-commons-framework' ),
+			'description' => __( 'The translator of the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'translator',
+			'type'        => 'text',
+			'repeatable'  => true,
+			'text'        => array(
+				'add_row_text' => __( 'Add Translator', 'learning-commons-framework' ),
+			),
 		)
 	);
 
@@ -145,7 +231,7 @@ function resource_data_init() {
 			'description' => __( 'Revisions of the resource.', 'learning-commons-framework' ),
 			'options'     => array(
 				'group_title'    => __( 'Revision {#}', 'learning-commons-framework' ),
-				'add_button'     => __( 'Add Another Revision', 'learning-commons-framework' ),
+				'add_button'     => __( 'Add Revision', 'learning-commons-framework' ),
 				'remove_button'  => __( 'Remove Revision', 'learning-commons-framework' ),
 				'sortable'       => true,
 				'closed'         => true,

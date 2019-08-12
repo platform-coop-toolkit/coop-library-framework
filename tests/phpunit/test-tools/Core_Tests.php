@@ -28,7 +28,7 @@ class Core_Tests extends Base\TestCase {
 		// Setup
 		\WP_Mock::expectActionAdded( 'init', 'LearningCommonsFramework\Core\i18n' );
 		\WP_Mock::expectActionAdded( 'init', 'LearningCommonsFramework\Core\init' );
-		\WP_Mock::expectAction( 'LEARNING_COMMONS_FRAMEWORK_loaded' );
+		\WP_Mock::expectAction( 'learning_commons_framework_loaded' );
 
 		// Act
 		setup();
@@ -74,7 +74,7 @@ class Core_Tests extends Base\TestCase {
 	 */
 	public function test_init() {
 		// Setup
-		\WP_Mock::expectAction( 'LEARNING_COMMONS_FRAMEWORK_init' );
+		\WP_Mock::expectAction( 'learning_commons_framework_init' );
 
 		// Act
 		init();

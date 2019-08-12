@@ -33,5 +33,23 @@
     "slug": "polylang/polylang.php",
     "uri": "https://wordpress.org/plugins/polylang/",
     "optional": false
+  },
+  {
+    "name": "WP GraphQL",
+    "host": "github",
+    "slug": "wp-graphql/wp-graphql.php",
+    "uri": "wp-graphql/qp-graphql",
+    "branch": "master",
+    "optional": false,
+    "token": null
+  },
+  {
+    "name": "WP GraphQL Polylang",
+    "host": "github",
+    "slug": "wp-graphql-polylang/wp-graphql-polylang.php",
+    "uri": "valu-digital/qp-graphql-polylang",
+    "branch": "master",
+    "optional": false,
+    "token": null
   }
 ]

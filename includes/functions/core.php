@@ -22,7 +22,13 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'init', $n( 'resource_init' ) );
+	add_action( 'init', $n( 'coop_type_init' ) );
+	add_action( 'init', $n( 'sector_init' ) );
+	add_action( 'init', $n( 'region_init' ) );
 	add_action( 'init', $n( 'topic_init' ) );
+	add_action( 'init', $n( 'goal_init' ) );
+	add_action( 'init', $n( 'format_init' ) );
+
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
@@ -36,7 +42,12 @@ function setup() {
 	add_filter( 'pre_get_posts', $n( 'show_all_langs' ) );
 	// Ensure resources and topics are translatable.
 	add_filter( 'pll_get_post_types', $n( 'add_resource_to_pll' ), 10, 2 );
+	add_filter( 'pll_get_taxonomies', $n( 'add_coop_type_to_pll' ), 10, 2 );
+	add_filter( 'pll_get_taxonomies', $n( 'add_sector_to_pll' ), 10, 2 );
+	add_filter( 'pll_get_taxonomies', $n( 'add_region_to_pll' ), 10, 2 );
 	add_filter( 'pll_get_taxonomies', $n( 'add_topic_to_pll' ), 10, 2 );
+	add_filter( 'pll_get_taxonomies', $n( 'add_goal_to_pll' ), 10, 2 );
+	add_filter( 'pll_get_taxonomies', $n( 'add_format_to_pll' ), 10, 2 );
 
 	do_action( 'learning_commons_framework_loaded' );
 }
@@ -61,11 +72,14 @@ function resource_init() {
 	register_extended_post_type(
 		'lc_resource',
 		array(
-			'menu_position' => 5,
-			'menu_icon'     => 'dashicons-archive',
-			'rest_base'     => 'resources',
-			'show_in_rest'  => true,
-			'supports'      => [ 'title', 'editor' ],
+			'menu_position'       => 5,
+			'menu_icon'           => 'dashicons-archive',
+			'rest_base'           => 'resources',
+			'show_in_graphql'     => true,
+			'show_in_rest'        => true,
+			'supports'            => [ 'title', 'editor', 'custom-fields' ],
+			'graphql_single_name' => __( 'Resource', 'learning-commons-framework' ),
+			'graphql_plural_name' => __( 'Resources', 'learning-commons-framework' ),
 		),
 		array(
 			'singular' => __( 'Resource', 'learning-commons-framework' ),
@@ -115,9 +129,12 @@ function topic_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => true,
+			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'topics',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'graphql_single_name'   => __( 'Topic', 'learning-commons-framework' ),
+			'graphql_plural_name'   => __( 'Topics', 'learning-commons-framework' ),
 		),
 		array(
 			'singular' => __( 'Topic', 'learning-commons-framework' ),
@@ -140,6 +157,218 @@ function add_topic_to_pll( $taxonomies, $is_settings ) {
 		unset( $taxonomies['lc_topic'] );
 	} else {
 		$taxonomies['lc_topic'] = 'lc_topic';
+	}
+	return $taxonomies;
+}
+
+/**
+ * Registers the `lc_goal` taxonomy,
+ * for use with 'lc_resource'.
+ */
+function goal_init() {
+	register_extended_taxonomy(
+		'lc_goal',
+		array( 'lc_resource' ),
+		array(
+			'hierarchical'          => false,
+			'show_in_graphql'       => true,
+			'show_in_rest'          => true,
+			'rest_base'             => 'goals',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'graphql_single_name'   => __( 'Goal', 'learning-commons-framework' ),
+			'graphql_plural_name'   => __( 'Goals', 'learning-commons-framework' ),
+		),
+		array(
+			'singular' => __( 'Goal', 'learning-commons-framework' ),
+			'plural'   => __( 'Goals', 'learning-commons-framework' ),
+			'slug'     => 'goals',
+		)
+	);
+}
+
+/**
+ * Add the `lc_goal` taxonomy to Polylang, ensuring it is translatable.
+ *
+ * @param array $taxonomies An array of taxonomies.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
+ */
+function add_goal_to_pll( $taxonomies, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $taxonomies['lc_goal'] );
+	} else {
+		$taxonomies['lc_goal'] = 'lc_goal';
+	}
+	return $taxonomies;
+}
+
+
+/**
+ * Registers the `lc_region` taxonomy,
+ * for use with 'lc_resource'.
+ */
+function region_init() {
+	register_extended_taxonomy(
+		'lc_region',
+		array( 'lc_resource' ),
+		array(
+			'hierarchical'          => true,
+			'show_in_graphql'       => true,
+			'show_in_rest'          => true,
+			'rest_base'             => 'regions',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'graphql_single_name'   => __( 'Region', 'learning-commons-framework' ),
+			'graphql_plural_name'   => __( 'Regions', 'learning-commons-framework' ),
+		),
+		array(
+			'singular' => __( 'Region', 'learning-commons-framework' ),
+			'plural'   => __( 'Regions', 'learning-commons-framework' ),
+			'slug'     => 'regions',
+		)
+	);
+}
+
+/**
+ * Add the `lc_region` taxonomy to Polylang, ensuring it is translatable.
+ *
+ * @param array $taxonomies An array of taxonomies.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
+ */
+function add_region_to_pll( $taxonomies, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $taxonomies['lc_region'] );
+	} else {
+		$taxonomies['lc_region'] = 'lc_region';
+	}
+	return $taxonomies;
+}
+
+
+/**
+ * Registers the `lc_sector` taxonomy,
+ * for use with 'lc_resource'.
+ */
+function sector_init() {
+	register_extended_taxonomy(
+		'lc_sector',
+		array( 'lc_resource' ),
+		array(
+			'hierarchical'          => true,
+			'show_in_graphql'       => true,
+			'show_in_rest'          => true,
+			'rest_base'             => 'sectors',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'graphql_single_name'   => __( 'Sector', 'learning-commons-framework' ),
+			'graphql_plural_name'   => __( 'Sectors', 'learning-commons-framework' ),
+		),
+		array(
+			'singular' => __( 'Sector', 'learning-commons-framework' ),
+			'plural'   => __( 'Sectors', 'learning-commons-framework' ),
+			'slug'     => 'sectors',
+		)
+	);
+}
+
+/**
+ * Add the `lc_sector` taxonomy to Polylang, ensuring it is translatable.
+ *
+ * @param array $taxonomies An array of taxonomies.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
+ */
+function add_sector_to_pll( $taxonomies, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $taxonomies['lc_sector'] );
+	} else {
+		$taxonomies['lc_sector'] = 'lc_sector';
+	}
+	return $taxonomies;
+}
+
+/**
+ * Registers the `lc_sector` taxonomy,
+ * for use with 'lc_resource'.
+ */
+function coop_type_init() {
+	register_extended_taxonomy(
+		'lc_coop_type',
+		array( 'lc_resource' ),
+		array(
+			'hierarchical'          => true,
+			'show_in_graphql'       => true,
+			'show_in_rest'          => true,
+			'rest_base'             => 'coop-types',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'graphql_single_name'   => __( 'Co-op Type', 'learning-commons-framework' ),
+			'graphql_plural_name'   => __( 'Co-op Types', 'learning-commons-framework' ),
+		),
+		array(
+			'singular' => __( 'Co-op Type', 'learning-commons-framework' ),
+			'plural'   => __( 'Co-op Types', 'learning-commons-framework' ),
+			'slug'     => 'coop-types',
+		)
+	);
+}
+
+/**
+ * Add the `lc_coop_type` taxonomy to Polylang, ensuring it is translatable.
+ *
+ * @param array $taxonomies An array of taxonomies.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
+ */
+function add_coop_type_to_pll( $taxonomies, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $taxonomies['lc_coop_type'] );
+	} else {
+		$taxonomies['lc_coop_type'] = 'lc_coop_type';
+	}
+	return $taxonomies;
+}
+
+/**
+ * Registers the `lc_format` taxonomy,
+ * for use with 'lc_resource'.
+ */
+function format_init() {
+	register_extended_taxonomy(
+		'lc_format',
+		array( 'lc_resource' ),
+		array(
+			'hierarchical'          => true,
+			'show_in_graphql'       => true,
+			'show_in_rest'          => true,
+			'rest_base'             => 'formats',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'graphql_single_name'   => __( 'Format', 'learning-commons-framework' ),
+			'graphql_plural_name'   => __( 'Formats', 'learning-commons-framework' ),
+		),
+		array(
+			'singular' => __( 'Format', 'learning-commons-framework' ),
+			'plural'   => __( 'Formats', 'learning-commons-framework' ),
+			'slug'     => 'formats',
+		)
+	);
+}
+
+/**
+ * Add the `lc_format` taxonomy to Polylang, ensuring it is translatable.
+ *
+ * @param array $taxonomies An array of taxonomies.
+ * @param bool  $is_settings Whether or not we are on the settings page.
+ *
+ * @return array
+ */
+function add_format_to_pll( $taxonomies, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $taxonomies['lc_format'] );
+	} else {
+		$taxonomies['lc_format'] = 'lc_format';
 	}
 	return $taxonomies;
 }
