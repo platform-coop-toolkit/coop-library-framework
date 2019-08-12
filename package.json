@@ -75,7 +75,7 @@
     "webpack-cli": "^3.3.1",
     "webpack-fix-style-only-entries": "^0.3.0",
     "webpack-merge": "^4.2.1",
-    "webpackbar": "^3.2.0"
+    "webpackbar": "^4.0.0"
   },
   "engineStrict": true,
   "engines": {
