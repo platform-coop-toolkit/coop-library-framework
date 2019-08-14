@@ -2,6 +2,20 @@
  * LearningCommonsFramework - Admin Styles
  */
 
+:root {
+	--red: #dc3232;
+}
+
 #dashboard_right_now li a.cpt-lc_resource-count::before {
 	content: "\f480";
+}
+
+#validation-message ul {
+	list-style: disc;
+	padding-left: 14px;
+}
+
+#validation-message a,
+.cmb-td .error {
+	color: var(--red);
 }
