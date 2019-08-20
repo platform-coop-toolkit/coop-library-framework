@@ -70,7 +70,7 @@
     "stylelint-declaration-use-variable": "^1.7.0",
     "stylelint-order": "^2.2.1",
     "stylelint-webpack-plugin": "^0.10.5",
-    "terser": "^4.1.4",
+    "terser": "^4.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-fix-style-only-entries": "^0.3.0",
