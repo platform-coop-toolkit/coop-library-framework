@@ -39,5 +39,4 @@ jobs:
             - node_modules
 
       # run tests with phpcs
-      - run: composer lint
       - run: npm run lint

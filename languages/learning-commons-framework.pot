@@ -1,0 +1,139 @@
+# Copyright (C) 2019 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Learning Commons Framework plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Learning Commons Framework 1.0.0-alpha\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/learning-commons-framework/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-08-08T14:56:16+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: learning-commons-framework\n"
+
+#. Plugin Name of the plugin
+msgid "Learning Commons Framework"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/learning-commons-framework/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Block and Custom Post Type utilities for the Platform Cooperativism Learning Commons."
+msgstr ""
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr ""
+
+#: includes/functions/core.php:66
+msgid "Resource"
+msgstr ""
+
+#: includes/functions/core.php:67
+msgid "Resources"
+msgstr ""
+
+#: includes/functions/core.php:100
+msgid "Resource Data"
+msgstr ""
+
+#: includes/functions/core.php:111
+msgid "Permanent Link"
+msgstr ""
+
+#: includes/functions/core.php:112
+msgid "A permanent link to the resource."
+msgstr ""
+
+#: includes/functions/core.php:128
+msgid "Language"
+msgstr ""
+
+#: includes/functions/core.php:129
+msgid "The language of the resource."
+msgstr ""
+
+#: includes/functions/core.php:141
+msgid "Publication Date"
+msgstr ""
+
+#: includes/functions/core.php:142
+msgid "The publication date of the resource in YYYY-MM-DD format."
+msgstr ""
+
+#: includes/functions/core.php:154
+msgid "Revisions of the resource."
+msgstr ""
+
+#: includes/functions/core.php:156
+msgid "Revision {#}"
+msgstr ""
+
+#: includes/functions/core.php:157
+msgid "Add Another Revision"
+msgstr ""
+
+#: includes/functions/core.php:158
+msgid "Remove Revision"
+msgstr ""
+
+#: includes/functions/core.php:161
+msgid "Are you sure you want to remove this revision?"
+msgstr ""
+
+#: includes/functions/core.php:170
+msgid "Revision Date"
+msgstr ""
+
+#: includes/functions/core.php:171
+msgid "The date of this revision in YYYY-MM-DD format."
+msgstr ""
+
+#: includes/functions/core.php:181
+msgid "Revision Description"
+msgstr ""
+
+#: includes/functions/core.php:182
+msgid "A brief description of this revision."
+msgstr ""
+
+#: includes/functions/core.php:190
+msgid "Publisher Name"
+msgstr ""
+
+#: includes/functions/core.php:191
+msgid "The publisher of the resource."
+msgstr ""
+
+#: includes/functions/core.php:199
+msgid "Publisher City"
+msgstr ""
+
+#: includes/functions/core.php:200
+msgid "The town or city where the publisher of the resource is located."
+msgstr ""
+
+#: includes/functions/core.php:208
+msgid "Publisher Country"
+msgstr ""
+
+#: includes/functions/core.php:209
+msgid "The country where the publisher of the resource is located."
+msgstr ""
+
+#: includes/functions/core.php:217
+msgid "Publisher Link"
+msgstr ""
+
+#: includes/functions/core.php:218
+msgid "A link to the publisher of the resource."
+msgstr ""

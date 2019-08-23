@@ -22,7 +22,8 @@
     "lint-php": "composer run lint",
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
-    "format": "npm run format-js"
+    "format": "npm run format-js",
+    "localize": "wp i18n make-pot . languages/learning-commons-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/learning-commons-framework/issues\"}'"
   },
   "husky": {
     "hooks": {

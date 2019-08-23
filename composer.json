@@ -10,11 +10,13 @@
   ],
   "require": {
     "php": ">=7.0",
+    "afragen/wp-dependency-installer": "^1.4",
+    "cmb2/cmb2": "^2.6",
     "johnbillion/extended-cpts": "^4.2"
   },
   "require-dev": {
     "10up/phpcs-composer": "dev-master",
-    "10up/wp_mock": "^0.4.2",
+    "10up/wp_mock": "^0.4",
     "phpunit/phpunit": "^7.0"
   },
   "autoload": {
