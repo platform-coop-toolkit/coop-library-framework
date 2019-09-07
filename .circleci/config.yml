@@ -38,8 +38,10 @@ jobs:
           paths:
             - node_modules
 
-      # run tests with phpcs
+      # Run tests with PHPCS
       - run: npm run lint
+      # Ensure build succeeds
+      - run: npm run build
   deploy_plugin_staging:
     docker:
       - image: circleci/php:7.3-node-browsers
