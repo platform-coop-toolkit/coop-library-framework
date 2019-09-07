@@ -47,7 +47,7 @@ class Core_Tests extends Base\TestCase {
 			'args' => array(),
 			'return' => 'en_US',
 		) );
-		\WP_Mock::onFilter( 'plugin_locale' )->with( 'en_US', 'learning-commons-framework' )->reply( 'en_US' );
+		\WP_Mock::onFilter( 'plugin_locale' )->with( 'en_US')->reply( 'en_US' );
 		\WP_Mock::userFunction( 'load_textdomain', array(
 			'times' => 1,
 			'args' => array( 'learning-commons-framework', 'lang_dir/learning-commons-framework/learning-commons-framework-en_US.mo' ),

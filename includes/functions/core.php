@@ -58,7 +58,7 @@ function setup() {
  * @return void
  */
 function i18n() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), 'learning-commons-framework' );
+	$locale = apply_filters( 'plugin_locale', get_locale() );
 	load_textdomain( 'learning-commons-framework', WP_LANG_DIR . '/learning-commons-framework/learning-commons-framework-' . $locale . '.mo' );
 	load_plugin_textdomain( 'learning-commons-framework', false, plugin_basename( LEARNING_COMMONS_FRAMEWORK_PATH ) . '/languages/' );
 }
@@ -72,18 +72,41 @@ function resource_init() {
 	register_extended_post_type(
 		'lc_resource',
 		array(
+			'labels'              => [
+				'name'                  => pll__( 'Resources' ),
+				'singular_name'         => pll__( 'Resource' ),
+				'all_items'             => pll__( 'All Resources' ),
+				'archives'              => pll__( 'Resource Archives' ),
+				'attributes'            => pll__( 'Resource Attributes' ),
+				'insert_into_item'      => pll__( 'Insert into resource' ),
+				'uploaded_to_this_item' => pll__( 'Uploaded to this resource' ),
+				'filter_items_list'     => pll__( 'Filter resources list' ),
+				'items_list_navigation' => pll__( 'Resources list navigation' ),
+				'items_list'            => pll__( 'Resources list' ),
+				'new_item'              => pll__( 'New Resource' ),
+				'add_new'               => pll__( 'Add New' ),
+				'add_new_item'          => pll__( 'Add New Resource' ),
+				'edit_item'             => pll__( 'Edit Resource' ),
+				'view_item'             => pll__( 'View Resource' ),
+				'view_items'            => pll__( 'View Resources' ),
+				'search_items'          => pll__( 'Search resources' ),
+				'not_found'             => pll__( 'No resources found' ),
+				'not_found_in_trash'    => pll__( 'No resources found in trash' ),
+				'parent_item_colon'     => pll__( 'Parent Resource:' ),
+				'menu_name'             => pll__( 'Resources' ),
+			],
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-archive',
 			'rest_base'           => 'resources',
 			'show_in_graphql'     => true,
 			'show_in_rest'        => true,
 			'supports'            => [ 'title', 'editor', 'custom-fields' ],
-			'graphql_single_name' => __( 'Resource', 'learning-commons-framework' ),
-			'graphql_plural_name' => __( 'Resources', 'learning-commons-framework' ),
+			'graphql_single_name' => pll__( 'Resource' ),
+			'graphql_plural_name' => pll__( 'Resources' ),
 		),
 		array(
-			'singular' => __( 'Resource', 'learning-commons-framework' ),
-			'plural'   => __( 'Resources', 'learning-commons-framework' ),
+			'singular' => pll__( 'Resource' ),
+			'plural'   => pll__( 'Resources' ),
 			'slug'     => 'resources',
 		)
 	);
@@ -129,16 +152,39 @@ function topic_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => true,
+			'labels'                => array(
+				'name'                       => pll__( 'Topics' ),
+				'singular_name'              => pll__( 'Topic' ),
+				'search_items'               => pll__( 'Search Topics' ),
+				'popular_items'              => pll__( 'Popular Topics' ),
+				'all_items'                  => pll__( 'All Topics' ),
+				'parent_item'                => pll__( 'Parent Topic' ),
+				'parent_item_colon'          => pll__( 'Parent Topic:' ),
+				'edit_item'                  => pll__( 'Edit Topic' ),
+				'update_item'                => pll__( 'Update Topic' ),
+				'view_item'                  => pll__( 'View Topic' ),
+				'add_new_item'               => pll__( 'Add New Topic' ),
+				'new_item_name'              => pll__( 'New Topic' ),
+				'separate_items_with_commas' => pll__( 'Separate topics with commas' ),
+				'add_or_remove_items'        => pll__( 'Add or remove topics' ),
+				'choose_from_most_used'      => pll__( 'Choose from the most used topics' ),
+				'not_found'                  => pll__( 'No topics found.' ),
+				'no_terms'                   => pll__( 'No topics' ),
+				'menu_name'                  => pll__( 'Topics' ),
+				'items_list_navigation'      => pll__( 'Topics list navigation' ),
+				'items_list'                 => pll__( 'Topics list' ),
+				'back_to_items'              => pll__( '&larr; Back to Topics' ),
+			),
 			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'topics',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
-			'graphql_single_name'   => __( 'Topic', 'learning-commons-framework' ),
-			'graphql_plural_name'   => __( 'Topics', 'learning-commons-framework' ),
+			'graphql_single_name'   => pll__( 'Topic' ),
+			'graphql_plural_name'   => pll__( 'Topics' ),
 		),
 		array(
-			'singular' => __( 'Topic', 'learning-commons-framework' ),
-			'plural'   => __( 'Topics', 'learning-commons-framework' ),
+			'singular' => pll__( 'Topic' ),
+			'plural'   => pll__( 'Topics' ),
 			'slug'     => 'topics',
 		)
 	);
@@ -171,16 +217,39 @@ function goal_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => false,
+			'labels'                => array(
+				'name'                       => pll__( 'Goals' ),
+				'singular_name'              => pll__( 'Goal' ),
+				'search_items'               => pll__( 'Search Goals' ),
+				'popular_items'              => pll__( 'Popular Goals' ),
+				'all_items'                  => pll__( 'All Goals' ),
+				'parent_item'                => pll__( 'Parent Goal' ),
+				'parent_item_colon'          => pll__( 'Parent Goal:' ),
+				'edit_item'                  => pll__( 'Edit Goal' ),
+				'update_item'                => pll__( 'Update Goal' ),
+				'view_item'                  => pll__( 'View Goal' ),
+				'add_new_item'               => pll__( 'Add New Goal' ),
+				'new_item_name'              => pll__( 'New Goal' ),
+				'separate_items_with_commas' => pll__( 'Separate goals with commas' ),
+				'add_or_remove_items'        => pll__( 'Add or remove goals' ),
+				'choose_from_most_used'      => pll__( 'Choose from the most used goals' ),
+				'not_found'                  => pll__( 'No goals found.' ),
+				'no_terms'                   => pll__( 'No goals' ),
+				'menu_name'                  => pll__( 'Goals' ),
+				'items_list_navigation'      => pll__( 'Goals list navigation' ),
+				'items_list'                 => pll__( 'Goals list' ),
+				'back_to_items'              => pll__( '&larr; Back to Goals' ),
+			),
 			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'goals',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
-			'graphql_single_name'   => __( 'Goal', 'learning-commons-framework' ),
-			'graphql_plural_name'   => __( 'Goals', 'learning-commons-framework' ),
+			'graphql_single_name'   => pll__( 'Goal' ),
+			'graphql_plural_name'   => pll__( 'Goals' ),
 		),
 		array(
-			'singular' => __( 'Goal', 'learning-commons-framework' ),
-			'plural'   => __( 'Goals', 'learning-commons-framework' ),
+			'singular' => pll__( 'Goal' ),
+			'plural'   => pll__( 'Goals' ),
 			'slug'     => 'goals',
 		)
 	);
@@ -214,16 +283,39 @@ function region_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => true,
+			'labels'                => array(
+				'name'                       => pll__( 'Regions' ),
+				'singular_name'              => pll__( 'Region' ),
+				'search_items'               => pll__( 'Search Regions' ),
+				'popular_items'              => pll__( 'Popular Regions' ),
+				'all_items'                  => pll__( 'All Regions' ),
+				'parent_item'                => pll__( 'Parent Region' ),
+				'parent_item_colon'          => pll__( 'Parent Region:' ),
+				'edit_item'                  => pll__( 'Edit Region' ),
+				'update_item'                => pll__( 'Update Region' ),
+				'view_item'                  => pll__( 'View Region' ),
+				'add_new_item'               => pll__( 'Add New Region' ),
+				'new_item_name'              => pll__( 'New Region' ),
+				'separate_items_with_commas' => pll__( 'Separate regions with commas' ),
+				'add_or_remove_items'        => pll__( 'Add or remove regions' ),
+				'choose_from_most_used'      => pll__( 'Choose from the most used regions' ),
+				'not_found'                  => pll__( 'No regions found.' ),
+				'no_terms'                   => pll__( 'No regions' ),
+				'menu_name'                  => pll__( 'Regions' ),
+				'items_list_navigation'      => pll__( 'Regions list navigation' ),
+				'items_list'                 => pll__( 'Regions list' ),
+				'back_to_items'              => pll__( '&larr; Back to Regions' ),
+			),
 			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'regions',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
-			'graphql_single_name'   => __( 'Region', 'learning-commons-framework' ),
-			'graphql_plural_name'   => __( 'Regions', 'learning-commons-framework' ),
+			'graphql_single_name'   => pll__( 'Region' ),
+			'graphql_plural_name'   => pll__( 'Regions' ),
 		),
 		array(
-			'singular' => __( 'Region', 'learning-commons-framework' ),
-			'plural'   => __( 'Regions', 'learning-commons-framework' ),
+			'singular' => pll__( 'Region' ),
+			'plural'   => pll__( 'Regions' ),
 			'slug'     => 'regions',
 		)
 	);
@@ -257,16 +349,39 @@ function sector_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => true,
+			'labels'                => array(
+				'name'                       => pll__( 'Sectors' ),
+				'singular_name'              => pll__( 'Sector' ),
+				'search_items'               => pll__( 'Search Sectors' ),
+				'popular_items'              => pll__( 'Popular Sectors' ),
+				'all_items'                  => pll__( 'All Sectors' ),
+				'parent_item'                => pll__( 'Parent Sector' ),
+				'parent_item_colon'          => pll__( 'Parent Sector:' ),
+				'edit_item'                  => pll__( 'Edit Sector' ),
+				'update_item'                => pll__( 'Update Sector' ),
+				'view_item'                  => pll__( 'View Sector' ),
+				'add_new_item'               => pll__( 'Add New Sector' ),
+				'new_item_name'              => pll__( 'New Sector' ),
+				'separate_items_with_commas' => pll__( 'Separate sectors with commas' ),
+				'add_or_remove_items'        => pll__( 'Add or remove sectors' ),
+				'choose_from_most_used'      => pll__( 'Choose from the most used sectors' ),
+				'not_found'                  => pll__( 'No sectors found.' ),
+				'no_terms'                   => pll__( 'No sectors' ),
+				'menu_name'                  => pll__( 'Sectors' ),
+				'items_list_navigation'      => pll__( 'Sectors list navigation' ),
+				'items_list'                 => pll__( 'Sectors list' ),
+				'back_to_items'              => pll__( '&larr; Back to Sectors' ),
+			),
 			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'sectors',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
-			'graphql_single_name'   => __( 'Sector', 'learning-commons-framework' ),
-			'graphql_plural_name'   => __( 'Sectors', 'learning-commons-framework' ),
+			'graphql_single_name'   => pll__( 'Sector' ),
+			'graphql_plural_name'   => pll__( 'Sectors' ),
 		),
 		array(
-			'singular' => __( 'Sector', 'learning-commons-framework' ),
-			'plural'   => __( 'Sectors', 'learning-commons-framework' ),
+			'singular' => pll__( 'Sector' ),
+			'plural'   => pll__( 'Sectors' ),
 			'slug'     => 'sectors',
 		)
 	);
@@ -299,16 +414,39 @@ function coop_type_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => true,
+			'labels'                => array(
+				'name'                       => pll__( 'Co-op Types' ),
+				'singular_name'              => pll__( 'Co-op Type' ),
+				'search_items'               => pll__( 'Search Co-op Types' ),
+				'popular_items'              => pll__( 'Popular Co-op Types' ),
+				'all_items'                  => pll__( 'All Co-op Types' ),
+				'parent_item'                => pll__( 'Parent Co-op Type' ),
+				'parent_item_colon'          => pll__( 'Parent Co-op Type:' ),
+				'edit_item'                  => pll__( 'Edit Co-op Type' ),
+				'update_item'                => pll__( 'Update Co-op Type' ),
+				'view_item'                  => pll__( 'View Co-op Type' ),
+				'add_new_item'               => pll__( 'Add New Co-op Type' ),
+				'new_item_name'              => pll__( 'New Co-op Type' ),
+				'separate_items_with_commas' => pll__( 'Separate co-op types with commas' ),
+				'add_or_remove_items'        => pll__( 'Add or remove co-op types' ),
+				'choose_from_most_used'      => pll__( 'Choose from the most used co-op types' ),
+				'not_found'                  => pll__( 'No co-op types found.' ),
+				'no_terms'                   => pll__( 'No co-op types' ),
+				'menu_name'                  => pll__( 'Co-op Types' ),
+				'items_list_navigation'      => pll__( 'Co-op Types list navigation' ),
+				'items_list'                 => pll__( 'Co-op Types list' ),
+				'back_to_items'              => pll__( '&larr; Back to Co-op Types' ),
+			),
 			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'coop-types',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
-			'graphql_single_name'   => __( 'Co-op Type', 'learning-commons-framework' ),
-			'graphql_plural_name'   => __( 'Co-op Types', 'learning-commons-framework' ),
+			'graphql_single_name'   => pll__( 'Co-op Type' ),
+			'graphql_plural_name'   => pll__( 'Co-op Types' ),
 		),
 		array(
-			'singular' => __( 'Co-op Type', 'learning-commons-framework' ),
-			'plural'   => __( 'Co-op Types', 'learning-commons-framework' ),
+			'singular' => pll__( 'Co-op Type' ),
+			'plural'   => pll__( 'Co-op Types' ),
 			'slug'     => 'coop-types',
 		)
 	);
@@ -341,16 +479,39 @@ function format_init() {
 		array( 'lc_resource' ),
 		array(
 			'hierarchical'          => true,
+			'labels'                => array(
+				'name'                       => pll__( 'Formats' ),
+				'singular_name'              => pll__( 'Format' ),
+				'search_items'               => pll__( 'Search Formats' ),
+				'popular_items'              => pll__( 'Popular Formats' ),
+				'all_items'                  => pll__( 'All Formats' ),
+				'parent_item'                => pll__( 'Parent Format' ),
+				'parent_item_colon'          => pll__( 'Parent Format:' ),
+				'edit_item'                  => pll__( 'Edit Format' ),
+				'update_item'                => pll__( 'Update Format' ),
+				'view_item'                  => pll__( 'View Format' ),
+				'add_new_item'               => pll__( 'Add New Format' ),
+				'new_item_name'              => pll__( 'New Format' ),
+				'separate_items_with_commas' => pll__( 'Separate formats with commas' ),
+				'add_or_remove_items'        => pll__( 'Add or remove formats' ),
+				'choose_from_most_used'      => pll__( 'Choose from the most used formats' ),
+				'not_found'                  => pll__( 'No formats found.' ),
+				'no_terms'                   => pll__( 'No formats' ),
+				'menu_name'                  => pll__( 'Formats' ),
+				'items_list_navigation'      => pll__( 'Formats list navigation' ),
+				'items_list'                 => pll__( 'Formats list' ),
+				'back_to_items'              => pll__( '&larr; Back to Formats' ),
+			),
 			'show_in_graphql'       => true,
 			'show_in_rest'          => true,
 			'rest_base'             => 'formats',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
-			'graphql_single_name'   => __( 'Format', 'learning-commons-framework' ),
-			'graphql_plural_name'   => __( 'Formats', 'learning-commons-framework' ),
+			'graphql_single_name'   => pll__( 'Format' ),
+			'graphql_plural_name'   => pll__( 'Formats' ),
 		),
 		array(
-			'singular' => __( 'Format', 'learning-commons-framework' ),
-			'plural'   => __( 'Formats', 'learning-commons-framework' ),
+			'singular' => pll__( 'Format' ),
+			'plural'   => pll__( 'Formats' ),
 			'slug'     => 'formats',
 		)
 	);
@@ -417,7 +578,7 @@ function get_enqueue_contexts() {
  * Generate an URL to a script, taking into account whether SCRIPT_DEBUG is enabled.
  *
  * @param string $script Script file name (no .js extension)
- * @param string $context Context for the script ('admin', 'frontend', or 'shared')
+ * @param string $context Context for the script ('admin', 'frontend', or 'shared' )
  *
  * @return string|WP_Error URL
  */
@@ -434,7 +595,7 @@ function script_url( $script, $context ) {
  * Generate an URL to a stylesheet, taking into account whether SCRIPT_DEBUG is enabled.
  *
  * @param string $stylesheet Stylesheet file name (no .css extension)
- * @param string $context Context for the script ('admin', 'frontend', or 'shared')
+ * @param string $context Context for the script ('admin', 'frontend', or 'shared' )
  *
  * @return string URL
  */
