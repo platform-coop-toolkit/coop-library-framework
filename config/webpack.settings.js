@@ -50,7 +50,7 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'http://learning-commons-framework.test',
+		proxy: 'http://commons.platform.coop.test',
 		open: false,
 		files: [
 			'**/*.php',

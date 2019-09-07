@@ -210,6 +210,9 @@ function resource_data_init() {
 			'id'          => $prefix . 'permanent_link',
 			'type'        => 'text_url',
 			'protocols'   => array( 'http', 'https' ),
+			'attributes'  => [
+				'data-validation' => 'required',
+			],
 		)
 	);
 
@@ -302,9 +305,6 @@ function resource_data_init() {
 			'id'          => $prefix . 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
-			'attributes'  => [
-				'data-validation' => 'required',
-			],
 		)
 	);
 

@@ -647,7 +647,7 @@ function admin_scripts() {
 	wp_enqueue_script(
 		'learning_commons_framework_admin',
 		script_url( 'admin', 'admin' ),
-		[],
+		[ 'wp-i18n' ],
 		LEARNING_COMMONS_FRAMEWORK_VERSION,
 		true
 	);
