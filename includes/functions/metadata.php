@@ -165,6 +165,9 @@ function resource_data_init() {
 			'id'          => $prefix . 'permanent_link',
 			'type'        => 'text_url',
 			'protocols'   => array( 'http', 'https' ),
+			'attributes'  => [
+				'data-validation' => 'required',
+			],
 		)
 	);
 
@@ -179,6 +182,9 @@ function resource_data_init() {
 			'text'        => array(
 				'add_row_text' => __( 'Add Author', 'learning-commons-framework' ),
 			),
+			'attributes'  => [
+				'aria-label' => __( 'Author', 'learning-commons-framework' ),
+			],
 		)
 	);
 
@@ -193,6 +199,9 @@ function resource_data_init() {
 			'text'        => array(
 				'add_row_text' => __( 'Add Editor', 'learning-commons-framework' ),
 			),
+			'attributes'  => [
+				'aria-label' => __( 'Editor', 'learning-commons-framework' ),
+			],
 		)
 	);
 
@@ -207,6 +216,9 @@ function resource_data_init() {
 			'text'        => array(
 				'add_row_text' => __( 'Add Translator', 'learning-commons-framework' ),
 			),
+			'attributes'  => [
+				'aria-label' => __( 'Translator', 'learning-commons-framework' ),
+			],
 		)
 	);
 
@@ -248,9 +260,6 @@ function resource_data_init() {
 			'id'          => $prefix . 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
-			'attributes'  => [
-				'data-validation' => 'required',
-			],
 		)
 	);
 
