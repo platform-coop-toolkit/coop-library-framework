@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "afragen/wp-dependency-installer",
-            "version": "1.4.12",
+            "version": "1.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/afragen/wp-dependency-installer.git",
-                "reference": "1da29161eb4ad9646e011c972361241c4664ceda"
+                "reference": "3eaab246f7f0ed9490294e6cfe9b17b71398d574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/afragen/wp-dependency-installer/zipball/1da29161eb4ad9646e011c972361241c4664ceda",
-                "reference": "1da29161eb4ad9646e011c972361241c4664ceda",
+                "url": "https://api.github.com/repos/afragen/wp-dependency-installer/zipball/3eaab246f7f0ed9490294e6cfe9b17b71398d574",
+                "reference": "3eaab246f7f0ed9490294e6cfe9b17b71398d574",
                 "shasum": ""
             },
             "require": {
@@ -36,18 +36,18 @@
             ],
             "authors": [
                 {
-                    "name": "Matt Gibbs",
+                    "name": "Andy Fragen",
+                    "email": "andy@thefragens.com",
+                    "homepage": "https://thefragens.com",
                     "role": "Developer"
                 },
                 {
-                    "name": "Andy Fragen",
-                    "role": "Developer",
-                    "email": "andy@thefragens.com",
-                    "homepage": "https://thefragens.com"
+                    "name": "Matt Gibbs",
+                    "role": "Developer"
                 }
             ],
             "description": "Library that helps WordPress plugin dependency management.",
-            "time": "2019-06-28T16:21:37+00:00"
+            "time": "2019-09-08T16:08:54+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -82,15 +82,15 @@
             "authors": [
                 {
                     "name": "WebDevStudios",
-                    "role": "Developer",
                     "email": "contact@webdevstudios.com",
-                    "homepage": "https://github.com/WebDevStudios"
+                    "homepage": "https://github.com/WebDevStudios",
+                    "role": "Developer"
                 },
                 {
                     "name": "Justin Sternberg",
-                    "role": "Developer",
                     "email": "justin@dsgnwrks.pro",
-                    "homepage": "https://dsgnwrks.pro"
+                    "homepage": "https://dsgnwrks.pro",
+                    "role": "Developer"
                 }
             ],
             "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
@@ -349,9 +349,9 @@
             "authors": [
                 {
                     "name": "Franck Nijhof",
-                    "role": "Developer / IT Manager",
                     "email": "franck.nijhof@dealerdirect.com",
-                    "homepage": "http://www.frenck.nl"
+                    "homepage": "http://www.frenck.nl",
+                    "role": "Developer / IT Manager"
                 }
             ],
             "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
@@ -677,18 +677,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "role": "Developer",
-                    "email": "sebastian@phpeople.de"
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "Developer",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -734,13 +734,13 @@
                 },
                 {
                     "name": "Wim Godden",
-                    "role": "lead",
-                    "homepage": "https://github.com/wimg"
+                    "homepage": "https://github.com/wimg",
+                    "role": "lead"
                 },
                 {
                     "name": "Juliette Reinders Folmer",
-                    "role": "lead",
-                    "homepage": "https://github.com/jrfnl"
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "lead"
                 }
             ],
             "description": "A set of sniffs for PHP_CodeSniffer that checks for PHP cross-version compatibility.",
@@ -1117,8 +1117,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -1168,8 +1168,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -1210,8 +1210,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Simple template engine.",
@@ -1259,8 +1259,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Utility class for timing",
@@ -1390,8 +1390,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -1961,8 +1961,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
