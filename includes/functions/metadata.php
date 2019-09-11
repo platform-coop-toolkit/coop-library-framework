@@ -241,8 +241,8 @@ function resource_data_init() {
 	// TODO: Validate that the URL starts with https://perma.cc/
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Perma.cc Link', 'learning-commons-framework' ),
-			'description' => __( 'A link to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Perma.cc Link', 'learning-commons-framework' ),
+			'description' => pll__( 'A link to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'perma_cc_link',
 			'type'        => 'text_url',
 			'protocols'   => array( 'http', 'https' ),
@@ -252,8 +252,8 @@ function resource_data_init() {
 	// TODO: Validate that the URL starts with https://web.archive.org/
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework' ),
-			'description' => __( 'A link to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Wayback Machine Link', 'learning-commons-framework' ),
+			'description' => pll__( 'A link to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'wayback_machine_link',
 			'type'        => 'text_url',
 			'protocols'   => array( 'http', 'https' ),
