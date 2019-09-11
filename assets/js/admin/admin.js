@@ -77,6 +77,7 @@ jQuery( document ).ready( function( $ ) {
 				{ id: $label.attr( 'for' ), label: $label.text(), type: 'required' }
 			);
 			$row.addClass( 'form-invalid' );
+			/* translators: %s: The label of the required field. */
 			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), $label.text().toLowerCase() );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$row.children( '.cmb-td' ).append( error );
@@ -97,6 +98,7 @@ jQuery( document ).ready( function( $ ) {
 				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'domain', expected: expectedDomain }
 			);
 			$row.addClass( 'form-invalid' );
+			/* translators: %s: The expected domain name for the URL input. */
 			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), expectedDomain );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
@@ -124,9 +126,11 @@ jQuery( document ).ready( function( $ ) {
 			const errorList = $errorFields.reduce( ( html, field, index ) => {
 				let errorText;
 				if ( 'required' === field.type ) {
+					/* translators: %s: The label of the required field. */
 					errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), field.label.toLowerCase() );
 				}
 				if ( 'domain' == field.type ) {
+					/* translators: %s: The expected domain name for the URL field. */
 					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), field.expected );
 				}
 				if ( 0 < index ) {
