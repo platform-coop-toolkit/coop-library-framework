@@ -9,6 +9,20 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
+	 * Ensure that a user-supplied URL matches an expected domain.
+	 *
+	 * @param {string} expectedDomain The expected domain of the URL.
+	 * @param {string} actualUrl The actual URL that the user has entered.
+	 */
+	function checkUrlDomain( expectedDomain, actualUrl ) {
+		const actualDomain = new URL( actualUrl ).hostname;
+		if ( actualDomain === expectedDomain ) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Validate the form.
 	 *
 	 * @param {Event} event
@@ -27,13 +41,28 @@ jQuery( document ).ready( function( $ ) {
 			const $this = $( element );
 			const val = $this.val();
 			const $row = $this.parents( '.cmb-row' );
+			let valid = false;
 
-			if ( 'required' === $this.data( 'validation' ) ) {
+			if ( 'true' === $this.data( 'required' ) ) {
 				if ( ! val ) {
-					addRequired( $row );
+					addRequiredError( $row );
+					valid = false;
 				} else {
-					removeRequired( $row );
+					valid = true;
 				}
+			}
+
+			if ( $this.data( 'domain' ) && $this.is( ':visible' ) ) {
+				if ( ! checkUrlDomain( $this.data( 'domain' ), val ) ) {
+					addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
+					valid = false;
+				} else {
+					valid = true;
+				}
+			}
+
+			if ( valid ) {
+				removeError( $row );
 			}
 		}
 
@@ -42,25 +71,45 @@ jQuery( document ).ready( function( $ ) {
 		 *
 		 * @param {jQuery} $row
 		 */
-		function addRequired( $row ) {
+		function addRequiredError( $row ) {
 			const $label = $row.find( '.cmb-th label' );
 			$errorFields.push(
-				{ id: $label.attr( 'for' ), label: $label.text() }
+				{ id: $label.attr( 'for' ), label: $label.text(), type: 'required' }
 			);
 			$row.addClass( 'form-invalid' );
 			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), $label.text().toLowerCase() );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$row.children( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
+		}
+
+		/**
+		 * Add domain mismatch flag to a form field.
+		 *
+		 * @param {jQuery} $row
+		 * @param {jQuery} $field
+		 * @param {string} expectedDomain
+		 */
+		function addDomainMismatchError( $row, $field, expectedDomain ) {
+			const $label = $row.find( '.cmb-th label' );
+
+			$errorFields.push(
+				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'domain', expected: expectedDomain }
+			);
+			$row.addClass( 'form-invalid' );
+			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), expectedDomain );
+			const error = $( `<p class="error">${errorText}</p>` );
+			$field.parent( '.cmb-td' ).append( error );
+			$firstError = $firstError ? $firstError : $row;
 
 		}
 
 		/**
-		 * Remove required flag from a form row.
+		 * Remove error class from a form row.
 		 *
 		 * @param {jQuery} $row
 		 */
-		function removeRequired( $row ) {
+		function removeError( $row ) {
 			$row.removeClass( 'form-invalid' );
 		}
 
@@ -73,7 +122,13 @@ jQuery( document ).ready( function( $ ) {
 			$( '#validation-message' ).remove();
 			const errorMessage = __( 'The form contains errors:', 'learning-commons-framework' );
 			const errorList = $errorFields.reduce( ( html, field, index ) => {
-				const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), field.label.toLowerCase() );
+				let errorText;
+				if ( 'required' === field.type ) {
+					errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), field.label.toLowerCase() );
+				}
+				if ( 'domain' == field.type ) {
+					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), field.expected );
+				}
 				if ( 0 < index ) {
 					return `${html}<li><a href="#${field.id}">${errorText}</a></li>`;
 				} else {
