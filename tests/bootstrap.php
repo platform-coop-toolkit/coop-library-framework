@@ -12,7 +12,7 @@ if ( ! defined( 'WP_LANG_DIR' ) ) {
 	define( 'WP_LANG_DIR', 'lang_dir' );
 }
 if ( ! defined( 'LEARNING_COMMONS_FRAMEWORK_PATH' ) ) {
-	define( 'LEARNING_COMMONS_FRAMEWORK_PATH', 'path' );
+	define( 'LEARNING_COMMONS_FRAMEWORK_PATH', dirname( __DIR__ ) . '/' );
 }
 
 if ( ! file_exists( __DIR__ . '/../vendor/autoload.php' ) ) {
