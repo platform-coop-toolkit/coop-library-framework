@@ -42,23 +42,27 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_perma_cc_link',
+		'lc_resource_perma_cc_links',
 		[
 			'type'         => 'string',
-			'description'  => 'A link to an archival copy of the resource on Perma.cc.',
+			'description'  => 'A link or links to an archival copy of the resource on Perma.cc.',
 			'single'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => [
+				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_archival_links',
+			],
 		]
 	);
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_wayback_machine_link',
+		'lc_resource_wayback_machine_links',
 		[
 			'type'         => 'string',
-			'description'  => 'A link to an archival copy of the resource on the Wayback Machine.',
+			'description'  => 'A link or links to an archival copy of the resource on the Wayback Machine.',
 			'single'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => [
+				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_archival_links',
+			],
 		]
 	);
 
@@ -190,6 +194,24 @@ function prepare_contributors( $value ) {
 }
 
 /**
+ * Prepare `lc_resource_perma_cc_links` and `lc_resource_wayback_machine_links`
+ * for REST API access.
+ *
+ * @param mixed $value The metadata value.
+ *
+ * @return array
+ */
+function prepare_archival_links( $value ) {
+	$result = [];
+	if ( is_array( $value ) ) {
+		foreach ( $value as $v ) {
+			$result[] = $v;
+		}
+	}
+	return $result;
+}
+
+/**
  * Prepare `lc_resource_revisions` for REST API access.
  *
  * @param mixed $value The metadata value.
@@ -242,10 +264,17 @@ function resource_data_init() {
 	$cmb->add_field(
 		array(
 			'name'        => pll__( 'Perma.cc Link', 'learning-commons-framework' ),
-			'description' => pll__( 'A link to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'perma_cc_link',
+			'description' => pll__( 'A link or links to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>. If the resource spans multiple pages on Perma.cc, you may add multiple links.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'perma_cc_links',
 			'type'        => 'text_url',
-			'protocols'   => array( 'http', 'https' ),
+			'repeatable'  => true,
+			'protocols'   => array( 'https' ),
+			'text'        => array(
+				'add_row_text' => pll__( 'Add Link' ),
+			),
+			'attributes'  => [
+				'aria-label' => pll__( 'Perma.cc Link' ),
+			],
 		)
 	);
 
@@ -253,10 +282,17 @@ function resource_data_init() {
 	$cmb->add_field(
 		array(
 			'name'        => pll__( 'Wayback Machine Link', 'learning-commons-framework' ),
-			'description' => pll__( 'A link to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'wayback_machine_link',
+			'description' => pll__( 'A link or links to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>. If the resource spans multiple pages on the Wayback Machine, you may add multiple links.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'wayback_machine_links',
 			'type'        => 'text_url',
-			'protocols'   => array( 'http', 'https' ),
+			'repeatable'  => true,
+			'protocols'   => array( 'https' ),
+			'text'        => array(
+				'add_row_text' => pll__( 'Add Link' ),
+			),
+			'attributes'  => [
+				'aria-label' => pll__( 'Wayback Machine Link' ),
+			],
 		)
 	);
 
