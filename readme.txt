@@ -1,15 +1,16 @@
-=== 10up Scaffold ===
+=== Learning Commons Framework ===
 Contributors: greatislander
 Tags: custom-post-types, gutenberg-blocks, platform-cooperativism, learning-commons
-Requires at least: 5.2.2
-Tested up to: 5.2.2
+Requires PHP: 7.3
+Requires at least: 5.2.3
+Tested up to: 5.2.3
 Stable tag: 1.0.0-alpha
 
-Block and Custom Post Type utilities for the Platform Cooperativism Learning Commons.
+Custom Post Type utilities for the Platform Cooperativism Learning Commons.
 
 == Description ==
 
-Block and Custom Post Type utilities for the Platform Cooperativism Learning Commons.
+Custom Post Type utilities for the Platform Cooperativism Learning Commons.
 
 == Installation ==
 

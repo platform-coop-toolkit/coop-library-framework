@@ -6,7 +6,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/php:7.1-node-browsers
+      - image: circleci/php:7.3-node-browsers
 
     steps:
       - checkout
@@ -38,8 +38,10 @@ jobs:
           paths:
             - node_modules
 
-      # Run tests with PHPCS
+      # Run lints
       - run: npm run lint
+      # Run tests
+      - run: npm run test
       # Ensure build succeeds
       - run: npm run build
   deploy_plugin_staging:
