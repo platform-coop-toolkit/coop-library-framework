@@ -1,4 +1,5 @@
 const { __, sprintf } = wp.i18n;
+import parseISO from 'date-fns/parseISO';
 
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
@@ -23,6 +24,25 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
+	 * Ensure that a user-supplied datetime string matches the ISO 8601 format for a date or a datetime.
+	 *
+	 * @see https://en.wikipedia.org/wiki/ISO_8601
+	 *
+	 * @param {string} val The value that the user has entered.
+	 * @param {string} type The type of datetime string expected (date or datetime).
+	 */
+	function checkDateTime( val, type ) {
+		if ( 'date' === type || 'datetime' === type ) {
+			const parsed = parseISO( val );
+			if ( typeof( parsed ) === Date ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Validate the form.
 	 *
 	 * @param {Event} event
@@ -43,7 +63,7 @@ jQuery( document ).ready( function( $ ) {
 			const $row = $this.parents( '.cmb-row' );
 			let valid = false;
 
-			if ( 'true' === $this.data( 'required' ) ) {
+			if ( 'true' === $this.data( 'required' ) && $this.is( ':visible' ) ) {
 				if ( ! val ) {
 					addRequiredError( $row );
 					valid = false;
@@ -55,6 +75,15 @@ jQuery( document ).ready( function( $ ) {
 			if ( $this.data( 'domain' ) && $this.is( ':visible' ) ) {
 				if ( ! checkUrlDomain( $this.data( 'domain' ), val ) ) {
 					addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
+					valid = false;
+				} else {
+					valid = true;
+				}
+			}
+
+			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
+				if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
+					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
 					valid = false;
 				} else {
 					valid = true;
@@ -103,7 +132,26 @@ jQuery( document ).ready( function( $ ) {
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
+		}
 
+		/**
+		 * Add datetime error flag to a form field.
+		 *
+		 * @param {jQuery} $row
+		 * @param {string} type
+		 */
+		function addDateTimeError( $row, $field, type ) {
+			const $label = $row.find( '.cmb-th label' );
+
+			$errorFields.push(
+				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'datetime', expected: type }
+			);
+			$row.addClass( 'form-invalid' );
+			/* translators: %s: The type of the datetime input field (date or datetime). */
+			const errorText = sprintf( __( 'The supplied %1$s is not valid.', 'learning-commons-framework' ), type );
+			const error = $( `<p class="error">${errorText}</p>` );
+			$field.parent( '.cmb-td' ).append( error );
+			$firstError = $firstError ? $firstError : $row;
 		}
 
 		/**
@@ -132,6 +180,10 @@ jQuery( document ).ready( function( $ ) {
 				if ( 'domain' == field.type ) {
 					/* translators: %s: The expected domain name for the URL field. */
 					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), field.expected );
+				}
+				if ( 'datetime' === field.type ) {
+					/* translators: %1$s: The type of the datetime input field (date or datetime). */
+					errorText = sprintf( __( 'The supplied %s is not valid.', 'learning-commons-framework' ), field.expected );
 				}
 				if ( 0 < index ) {
 					return `${html}<li><a href="#${field.id}">${errorText}</a></li>`;
