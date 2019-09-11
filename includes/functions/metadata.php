@@ -124,6 +124,51 @@ function register_meta() {
 			],
 		]
 	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publisher_name',
+		[
+			'type'         => 'string',
+			'description'  => '',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publisher_locality',
+		[
+			'type'         => 'string',
+			'description'  => '',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publisher_country',
+		[
+			'type'         => 'string',
+			'description'  => '',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publisher_link',
+		[
+			'type'         => 'string',
+			'description'  => '',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
 }
 
 /**
@@ -172,7 +217,7 @@ function resource_data_init() {
 	$cmb = new_cmb2_box(
 		array(
 			'id'           => 'resource_data',
-			'title'        => __( 'Resource Data', 'learning-commons-framework' ),
+			'title'        => pll__( 'Resource Data' ),
 			'object_types' => array( 'lc_resource' ),
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -182,8 +227,8 @@ function resource_data_init() {
 
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
-			'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Permanent Link' ),
+			'description' => pll__( 'A permanent link to the resource.' ),
 			'id'          => $prefix . 'permanent_link',
 			'type'        => 'text_url',
 			'protocols'   => array( 'http', 'https' ),
@@ -218,16 +263,16 @@ function resource_data_init() {
 	// TODO: Don't save any authors if they are empty.
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Author', 'learning-commons-framework' ),
-			'description' => __( 'The author of the resource.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Author' ),
+			'description' => pll__( 'The author of the resource.' ),
 			'id'          => $prefix . 'author',
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => array(
-				'add_row_text' => __( 'Add Author', 'learning-commons-framework' ),
+				'add_row_text' => pll__( 'Add Author' ),
 			),
 			'attributes'  => [
-				'aria-label' => __( 'Author', 'learning-commons-framework' ),
+				'aria-label' => pll__( 'Author' ),
 			],
 		)
 	);
@@ -235,16 +280,16 @@ function resource_data_init() {
 	// TODO: Don't save any authors if they are empty.
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Editor', 'learning-commons-framework' ),
-			'description' => __( 'The editor of the resource.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Editor' ),
+			'description' => pll__( 'The editor of the resource.' ),
 			'id'          => $prefix . 'editor',
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => array(
-				'add_row_text' => __( 'Add Editor', 'learning-commons-framework' ),
+				'add_row_text' => pll__( 'Add Editor' ),
 			),
 			'attributes'  => [
-				'aria-label' => __( 'Editor', 'learning-commons-framework' ),
+				'aria-label' => pll__( 'Editor' ),
 			],
 		)
 	);
@@ -252,24 +297,24 @@ function resource_data_init() {
 	// TODO: Don't save any translators if they are empty.
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Translator', 'learning-commons-framework' ),
-			'description' => __( 'The translator of the resource.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Translator' ),
+			'description' => pll__( 'The translator of the resource.' ),
 			'id'          => $prefix . 'translator',
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => array(
-				'add_row_text' => __( 'Add Translator', 'learning-commons-framework' ),
+				'add_row_text' => pll__( 'Add Translator' ),
 			),
 			'attributes'  => [
-				'aria-label' => __( 'Translator', 'learning-commons-framework' ),
+				'aria-label' => pll__( 'Translator' ),
 			],
 		)
 	);
 
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Publication Date', 'learning-commons-framework' ),
-			'description' => __( 'The publication date of the resource in YYYY-MM-DD format.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Publication Date' ),
+			'description' => pll__( 'The publication date of the resource in YYYY-MM-DD format.' ),
 			'id'          => $prefix . 'publication_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
@@ -284,14 +329,14 @@ function resource_data_init() {
 		array(
 			'id'          => $prefix . 'revisions',
 			'type'        => 'group',
-			'description' => __( 'Revisions of the resource.', 'learning-commons-framework' ),
+			'description' => pll__( 'Revisions of the resource.' ),
 			'options'     => array(
-				'group_title'    => __( 'Revision {#}', 'learning-commons-framework' ),
-				'add_button'     => __( 'Add Revision', 'learning-commons-framework' ),
-				'remove_button'  => __( 'Remove Revision', 'learning-commons-framework' ),
+				'group_title'    => pll__( 'Revision {#}' ),
+				'add_button'     => pll__( 'Add Revision' ),
+				'remove_button'  => pll__( 'Remove Revision' ),
 				'sortable'       => true,
 				'closed'         => true,
-				'remove_confirm' => esc_html__( 'Are you sure you want to remove this revision?', 'learning-commons-framework' ),
+				'remove_confirm' => pll__( 'Are you sure you want to remove this revision?' ),
 			),
 		)
 	);
@@ -299,8 +344,8 @@ function resource_data_init() {
 	$cmb->add_group_field(
 		$group_field_id,
 		array(
-			'name'        => __( 'Revision Date', 'learning-commons-framework' ),
-			'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Revision Date' ),
+			'description' => pll__( 'The date of this revision in YYYY-MM-DD format.' ),
 			'id'          => $prefix . 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
@@ -310,8 +355,8 @@ function resource_data_init() {
 	$cmb->add_group_field(
 		$group_field_id,
 		array(
-			'name'        => __( 'Revision Description', 'learning-commons-framework' ),
-			'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Revision Description' ),
+			'description' => pll__( 'A brief description of this revision.' ),
 			'id'          => $prefix . 'revision_description',
 			'type'        => 'textarea_small',
 		)
@@ -319,8 +364,8 @@ function resource_data_init() {
 
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Publisher Name', 'learning-commons-framework' ),
-			'description' => __( 'The publisher of the resource.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Publisher Name' ),
+			'description' => pll__( 'The publisher of the resource.' ),
 			'id'          => $prefix . 'publisher_name',
 			'type'        => 'text',
 		)
@@ -328,8 +373,8 @@ function resource_data_init() {
 
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Publisher City', 'learning-commons-framework' ),
-			'description' => __( 'The town or city where the publisher of the resource is located.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Publisher City' ),
+			'description' => pll__( 'The town or city where the publisher of the resource is located.' ),
 			'id'          => $prefix . 'publisher_locality',
 			'type'        => 'text',
 		)
@@ -337,17 +382,20 @@ function resource_data_init() {
 
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Publisher Country', 'learning-commons-framework' ),
-			'description' => __( 'The country where the publisher of the resource is located.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_country',
-			'type'        => 'text',
+			'name'             => pll__( 'Publisher Country' ),
+			'description'      => pll__( 'The country where the publisher of the resource is located.' ),
+			'id'               => $prefix . 'publisher_country',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'default'          => '',
+			'options'          => \LearningCommonsFramework\Internationalization\get_country_list( get_user_locale() ),
 		)
 	);
 
 	$cmb->add_field(
 		array(
-			'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
-			'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
+			'name'        => pll__( 'Publisher Link' ),
+			'description' => pll__( 'A link to the publisher of the resource.' ),
 			'id'          => $prefix . 'publisher_link',
 			'type'        => 'text_url',
 			'protocols'   => array( 'http', 'https' ),
