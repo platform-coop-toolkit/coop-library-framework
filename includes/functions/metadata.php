@@ -42,6 +42,28 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
+		'lc_resource_perma_cc_link',
+		[
+			'type'         => 'string',
+			'description'  => 'A link to an archival copy of the resource on Perma.cc.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_wayback_machine_link',
+		[
+			'type'         => 'string',
+			'description'  => 'A link to an archival copy of the resource on the Wayback Machine.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
 		'lc_resource_author',
 		[
 			'type'         => 'string',
@@ -168,6 +190,28 @@ function resource_data_init() {
 			'attributes'  => [
 				'data-validation' => 'required',
 			],
+		)
+	);
+
+	// TODO: Validate that the URL starts with https://perma.cc/
+	$cmb->add_field(
+		array(
+			'name'        => __( 'Perma.cc Link', 'learning-commons-framework' ),
+			'description' => __( 'A link to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'perma_cc_link',
+			'type'        => 'text_url',
+			'protocols'   => array( 'http', 'https' ),
+		)
+	);
+
+	// TODO: Validate that the URL starts with https://web.archive.org/
+	$cmb->add_field(
+		array(
+			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework' ),
+			'description' => __( 'A link to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'wayback_machine_link',
+			'type'        => 'text_url',
+			'protocols'   => array( 'http', 'https' ),
 		)
 	);
 
