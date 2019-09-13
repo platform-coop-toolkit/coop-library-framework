@@ -2,6 +2,6 @@
 	"extends": "@10up/eslint-config",
 	"globals": {
 		"jQuery": true,
-		"wp": true,
-	  }
+		"wp": true
+	}
 }
