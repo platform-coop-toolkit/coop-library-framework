@@ -118,6 +118,17 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
+		'lc_resource_publication_year',
+		[
+			'type'         => 'integer',
+			'description'  => 'The publication year of the resource.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
 		'lc_resource_revisions',
 		[
 			'type'         => 'string',
@@ -296,8 +307,8 @@ function resource_data_init() {
 	// TODO: Validate that the URL starts with https://perma.cc/
 	$cmb->add_field(
 		[
-			'name'        => __( 'Perma.cc Link', 'learning-commons-framework', 'learning-commons-framework' ),
-			'description' => __( 'A link or links to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>. If the resource spans multiple pages on Perma.cc, you may add multiple links.', 'learning-commons-framework', 'learning-commons-framework' ),
+			'name'        => __( 'Perma.cc Link', 'learning-commons-framework' ),
+			'description' => __( 'A link or links to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>. If the resource spans multiple pages on Perma.cc, you may add multiple links.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'perma_cc_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
@@ -316,8 +327,8 @@ function resource_data_init() {
 	// TODO: Validate that the URL starts with https://web.archive.org/
 	$cmb->add_field(
 		[
-			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework', 'learning-commons-framework' ),
-			'description' => __( 'A link or links to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>. If the resource spans multiple pages on the Wayback Machine, you may add multiple links.', 'learning-commons-framework', 'learning-commons-framework' ),
+			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework' ),
+			'description' => __( 'A link or links to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>. If the resource spans multiple pages on the Wayback Machine, you may add multiple links.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'wayback_machine_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
@@ -395,6 +406,15 @@ function resource_data_init() {
 				'data-validation' => 'true',
 				'data-required'   => 'true',
 			],
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'        => __( 'Publication Year', 'learning-commons-framework' ),
+			'description' => __( 'The publication year of the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'publication_year',
+			'type'        => 'text',
 		]
 	);
 
