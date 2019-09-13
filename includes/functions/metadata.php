@@ -479,7 +479,7 @@ function resource_data_init() {
 	// TODO: Add validation.
 	$cmb->add_field(
 		[
-			'name'        => pll__( 'DOI' ),
+			'name'        => pll__( 'DOI (Digital Object Identifier)' ),
 			'description' => pll__( 'The DOI for this resource.' ),
 			'id'          => $prefix . 'doi',
 			'type'        => 'text',
@@ -489,7 +489,7 @@ function resource_data_init() {
 	// TODO: Add validation.
 	$cmb->add_field(
 		[
-			'name'        => pll__( 'ISBN' ),
+			'name'        => pll__( 'ISBN (International Standard Book Number)' ),
 			'description' => pll__( 'The ISBN for this resource.' ),
 			'id'          => $prefix . 'isbn',
 			'type'        => 'text',
@@ -499,7 +499,7 @@ function resource_data_init() {
 	// TODO: Add validation.
 	$cmb->add_field(
 		[
-			'name'        => pll__( 'ISSN' ),
+			'name'        => pll__( 'ISSN (International Standard Serial Number)' ),
 			'description' => pll__( 'The ISSN for this resource.' ),
 			'id'          => $prefix . 'issn',
 			'type'        => 'text',
