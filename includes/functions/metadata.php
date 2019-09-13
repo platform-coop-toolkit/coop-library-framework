@@ -134,7 +134,7 @@ function register_meta() {
 		'lc_resource_publisher_name',
 		[
 			'type'         => 'string',
-			'description'  => '',
+			'description'  => 'The publisher of the resource.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -145,7 +145,7 @@ function register_meta() {
 		'lc_resource_publisher_locality',
 		[
 			'type'         => 'string',
-			'description'  => '',
+			'description'  => 'The town or city where the publisher of the resource is located.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -156,7 +156,7 @@ function register_meta() {
 		'lc_resource_publisher_country',
 		[
 			'type'         => 'string',
-			'description'  => '',
+			'description'  => 'The country where the publisher of the resource is located.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -167,12 +167,44 @@ function register_meta() {
 		'lc_resource_publisher_link',
 		[
 			'type'         => 'string',
-			'description'  => '',
+			'description'  => 'A link to the publisher of the resource.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
 	);
 
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_doi',
+		[
+			'type'         => 'string',
+			'description'  => 'The DOI for this resource.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_isbn',
+		[
+			'type'         => 'string',
+			'description'  => 'The ISBN for this resource.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_issn',
+		[
+			'type'         => 'string',
+			'description'  => 'The ISSN for this resource.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
 }
 
 /**
@@ -441,6 +473,36 @@ function resource_data_init() {
 			'id'          => $prefix . 'publisher_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
+		]
+	);
+
+	// TODO: Add validation.
+	$cmb->add_field(
+		[
+			'name'        => pll__( 'DOI' ),
+			'description' => pll__( 'The DOI for this resource.' ),
+			'id'          => $prefix . 'doi',
+			'type'        => 'text',
+		]
+	);
+
+	// TODO: Add validation.
+	$cmb->add_field(
+		[
+			'name'        => pll__( 'ISBN' ),
+			'description' => pll__( 'The ISBN for this resource.' ),
+			'id'          => $prefix . 'isbn',
+			'type'        => 'text',
+		]
+	);
+
+	// TODO: Add validation.
+	$cmb->add_field(
+		[
+			'name'        => pll__( 'ISSN' ),
+			'description' => pll__( 'The ISSN for this resource.' ),
+			'id'          => $prefix . 'issn',
+			'type'        => 'text',
 		]
 	);
 }
