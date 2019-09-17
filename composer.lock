@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3a80e36be6e00505e19d347ea857e7c",
+    "content-hash": "c9fdc7304a948770af712d268375ef9c",
     "packages": [
         {
             "name": "afragen/wp-dependency-installer",
-            "version": "1.4.13",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/afragen/wp-dependency-installer.git",
-                "reference": "3eaab246f7f0ed9490294e6cfe9b17b71398d574"
+                "reference": "05ba1f94bf8268d1a66ebe6a3d510a78281d6d5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/afragen/wp-dependency-installer/zipball/3eaab246f7f0ed9490294e6cfe9b17b71398d574",
-                "reference": "3eaab246f7f0ed9490294e6cfe9b17b71398d574",
+                "url": "https://api.github.com/repos/afragen/wp-dependency-installer/zipball/05ba1f94bf8268d1a66ebe6a3d510a78281d6d5d",
+                "reference": "05ba1f94bf8268d1a66ebe6a3d510a78281d6d5d",
                 "shasum": ""
             },
             "require": {
                 "collizo4sky/persist-admin-notices-dismissal": "^1",
-                "php": ">=5.3"
+                "php": ">=5.6"
             },
             "type": "library",
             "autoload": {
@@ -47,7 +47,7 @@
                 }
             ],
             "description": "Library that helps WordPress plugin dependency management.",
-            "time": "2019-09-08T16:08:54+00:00"
+            "time": "2019-09-16T15:45:10+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -275,12 +275,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/10up/wp_mock.git",
-                "reference": "9019226eb50df275aa86bb15bfc98a619601ee49"
+                "reference": "9927f0c2600d2537e53ac7b17856891ab61dfb36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/10up/wp_mock/zipball/9019226eb50df275aa86bb15bfc98a619601ee49",
-                "reference": "9019226eb50df275aa86bb15bfc98a619601ee49",
+                "url": "https://api.github.com/repos/10up/wp_mock/zipball/9927f0c2600d2537e53ac7b17856891ab61dfb36",
+                "reference": "9927f0c2600d2537e53ac7b17856891ab61dfb36",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +308,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "A mocking library to take the pain out of unit testing for WordPress",
-            "time": "2019-03-16T03:44:39+00:00"
+            "time": "2019-09-16T18:03:59+00:00"
         },
         {
             "name": "antecedent/patchwork",
