@@ -9,6 +9,20 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
+	 * Ensure that a user-supplied URL is a valid URL.
+	 *
+	 * @param {string} value The URL that the user has entered.
+	 */
+	function isUrl( value ) {
+		try {
+			new URL( value );
+			return true;
+		} catch ( e ) {
+			return false;
+		}
+	}
+
+	/**
 	 * Ensure that a user-supplied URL matches an expected domain.
 	 *
 	 * @param {string} expectedDomain The expected domain of the URL.
@@ -53,7 +67,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			if ( $this.data( 'domain' ) && $this.is( ':visible' ) ) {
-				if ( ! checkUrlDomain( $this.data( 'domain' ), val ) ) {
+				if ( 0 !== val.length && ( ! isUrl( val ) || ! checkUrlDomain( $this.data( 'domain' ), val ) ) ) {
 					addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
 					valid = false;
 				} else {
