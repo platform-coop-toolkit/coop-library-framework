@@ -53,6 +53,13 @@ jQuery( document ).ready( function( $ ) {
 		let $firstError = null;
 		$( '.error' ).remove();
 
+		$urlFields.each( ( i, e ) => {
+			if ( $( e ).is( ':visible' ) ) {
+				const val = $( e ).val();
+				$( e ).val( schemify( val ) );
+			}
+		} );
+
 		/**
 		 * Validate a form element.
 		 *
@@ -118,7 +125,11 @@ jQuery( document ).ready( function( $ ) {
 			$errorFields.push(
 				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'domain', expected: expectedDomain }
 			);
-			$row.addClass( 'form-invalid' );
+			if ( $row.hasClass( 'cmb-repeat' ) ) {
+				$field.parent( '.cmb-td' ).parent( '.cmb-repeat-row' ).addClass( 'form-invalid' );
+			} else {
+				$row.addClass( 'form-invalid' );
+			}
 			/* translators: %s: The expected domain name for the URL input. */
 			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), expectedDomain );
 			const error = $( `<p class="error">${errorText}</p>` );
