@@ -1,8 +1,15 @@
 const { __, sprintf } = wp.i18n;
+const schemify = require( 'url-schemify' );
 
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
+	const $urlFields = $( '.cmb2-text-url' );
 	const $toValidate = $( '[data-validation]' );
+
+	$urlFields.blur( ( e ) => {
+		const val = $( e.target ).val();
+		$( e.target ).val( schemify( val ) );
+	} );
 
 	if ( !$toValidate.length ) {
 		return;
