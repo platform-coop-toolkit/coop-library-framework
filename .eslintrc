@@ -8,5 +8,5 @@
 	"globals": {
 		"jQuery": true,
 		"wp": true
-	  }
+	}
 }
