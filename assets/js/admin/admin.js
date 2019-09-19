@@ -8,7 +8,9 @@ jQuery( document ).ready( function( $ ) {
 
 	$urlFields.blur( ( e ) => {
 		const val = $( e.target ).val();
-		$( e.target ).val( schemify( val ) );
+		if ( 0 !== val.length ) {
+			$( e.target ).val( schemify( val ) );
+		}
 	} );
 
 	if ( !$toValidate.length ) {
@@ -56,7 +58,9 @@ jQuery( document ).ready( function( $ ) {
 		$urlFields.each( ( i, e ) => {
 			if ( $( e ).is( ':visible' ) ) {
 				const val = $( e ).val();
-				$( e ).val( schemify( val ) );
+				if ( 0 !== val.length ) {
+					$( e ).val( schemify( val ) );
+				}
 			}
 		} );
 
