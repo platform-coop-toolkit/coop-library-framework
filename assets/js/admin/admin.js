@@ -1,12 +1,35 @@
 const { __, sprintf } = wp.i18n;
+const schemify = require( 'url-schemify' );
 import parseISO from 'date-fns/parseISO';
 
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
+	const $urlFields = $( '.cmb2-text-url' );
 	const $toValidate = $( '[data-validation]' );
+
+	$urlFields.blur( ( e ) => {
+		const val = $( e.target ).val();
+		if ( 0 !== val.length ) {
+			$( e.target ).val( schemify( val ) );
+		}
+	} );
 
 	if ( !$toValidate.length ) {
 		return;
+	}
+
+	/**
+	 * Ensure that a user-supplied URL is a valid URL.
+	 *
+	 * @param {string} value The URL that the user has entered.
+	 */
+	function isUrl( value ) {
+		try {
+			new URL( value );
+			return true;
+		} catch ( e ) {
+			return false;
+		}
 	}
 
 	/**
@@ -38,7 +61,6 @@ jQuery( document ).ready( function( $ ) {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -51,6 +73,15 @@ jQuery( document ).ready( function( $ ) {
 		const $errorFields = [];
 		let $firstError = null;
 		$( '.error' ).remove();
+
+		$urlFields.each( ( i, e ) => {
+			if ( $( e ).is( ':visible' ) ) {
+				const val = $( e ).val();
+				if ( 0 !== val.length ) {
+					$( e ).val( schemify( val ) );
+				}
+			}
+		} );
 
 		/**
 		 * Validate a form element.
@@ -73,7 +104,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			if ( $this.data( 'domain' ) && $this.is( ':visible' ) ) {
-				if ( ! checkUrlDomain( $this.data( 'domain' ), val ) ) {
+				if ( 0 !== val.length && ( ! isUrl( val ) || ! checkUrlDomain( $this.data( 'domain' ), val ) ) ) {
 					addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
 					valid = false;
 				} else {
@@ -126,7 +157,11 @@ jQuery( document ).ready( function( $ ) {
 			$errorFields.push(
 				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'domain', expected: expectedDomain }
 			);
-			$row.addClass( 'form-invalid' );
+			if ( $row.hasClass( 'cmb-repeat' ) ) {
+				$field.parent( '.cmb-td' ).parent( '.cmb-repeat-row' ).addClass( 'form-invalid' );
+			} else {
+				$row.addClass( 'form-invalid' );
+			}
 			/* translators: %s: The expected domain name for the URL input. */
 			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), expectedDomain );
 			const error = $( `<p class="error">${errorText}</p>` );

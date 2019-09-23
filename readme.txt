@@ -6,11 +6,11 @@ Requires at least: 5.2.3
 Tested up to: 5.2.3
 Stable tag: 1.0.0-alpha
 
-Custom Post Type utilities for the Platform Cooperativism Learning Commons.
+Custom Post Type utilities for the Platform Co-op Resource Library.
 
 == Description ==
 
-Custom Post Type utilities for the Platform Cooperativism Learning Commons.
+Custom Post Type utilities for the Platform Co-op Resource Library.
 
 == Installation ==
 
