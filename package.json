@@ -23,7 +23,7 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "localize": "wp i18n make-pot . languages/learning-commons-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/learning-commons-framework/issues\"}'"
+    "localize": "wp i18n make-pot assets/js languages/learning-commons-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/learning-commons-framework/issues\"}'"
   },
   "husky": {
     "hooks": {
@@ -72,6 +72,7 @@
     "stylelint-order": "^3.1.1",
     "stylelint-webpack-plugin": "^0.10.5",
     "terser": "^4.3.1",
+    "url-schemify": "^0.1.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-fix-style-only-entries": "^0.4.0",
