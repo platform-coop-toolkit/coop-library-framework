@@ -1,6 +1,5 @@
 const { __, sprintf } = wp.i18n;
 const schemify = require( 'url-schemify' );
-import parseISO from 'date-fns/parseISO';
 
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
@@ -55,12 +54,10 @@ jQuery( document ).ready( function( $ ) {
 	 * @param {string} type The type of datetime string expected (date or datetime).
 	 */
 	function checkDateTime( val, type ) {
-		if ( 'date' === type || 'datetime' === type ) {
-			const parsed = parseISO( val );
-			if ( typeof( parsed ) === Date ) {
-				return true;
-			}
+		if ( 'date' === type  ) {
+			return /^\d{4}[/-](0?[1-9]|1[012])[/-](0?[1-9]|[12][0-9]|3[01])$/.test( val );
 		}
+		// TODO: Add datetime validation.
 		return false;
 	}
 
