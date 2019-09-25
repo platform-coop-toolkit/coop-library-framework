@@ -508,6 +508,10 @@ function resource_data_init() {
 			'description' => __( 'The DOI for this resource.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'doi',
 			'type'        => 'text',
+			'attributes'  => [
+				'data-validation' => 'true',
+				'data-identifier' => 'doi',
+			],
 		]
 	);
 
@@ -518,6 +522,10 @@ function resource_data_init() {
 			'description' => __( 'The ISBN for this resource.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'isbn',
 			'type'        => 'text',
+			'attributes'  => [
+				'data-validation' => 'true',
+				'data-identifier' => 'isbn',
+			],
 		]
 	);
 
@@ -528,6 +536,10 @@ function resource_data_init() {
 			'description' => __( 'The ISSN for this resource.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'issn',
 			'type'        => 'text',
+			'attributes'  => [
+				'data-validation' => 'true',
+				'data-identifier' => 'issn',
+			],
 		]
 	);
 }

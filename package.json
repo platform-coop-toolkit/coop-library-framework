@@ -85,8 +85,8 @@
   },
   "dependencies": {
     "doi-regex": "^0.1.10",
-    "isbn-validate": "^1.0.3",
     "issn": "^1.0.5",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "simple-isbn": "^1.1.5"
   }
 }
