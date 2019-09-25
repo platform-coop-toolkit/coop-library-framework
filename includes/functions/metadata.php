@@ -419,6 +419,7 @@ function resource_data_init() {
 			'attributes'  => [
 				'data-validation' => 'true',
 				'data-required'   => 'true',
+				'data-datetime'   => 'date',
 			],
 		]
 	);

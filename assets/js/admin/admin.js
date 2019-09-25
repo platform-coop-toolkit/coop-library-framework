@@ -150,6 +150,15 @@ jQuery( document ).ready( function( $ ) {
 				}
 			}
 
+			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
+				if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
+					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
+					valid = false;
+				} else {
+					valid = true;
+				}
+			}
+
 			if ( valid ) {
 				removeError( $row );
 			}
