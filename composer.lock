@@ -82,15 +82,15 @@
             "authors": [
                 {
                     "name": "WebDevStudios",
+                    "role": "Developer",
                     "email": "contact@webdevstudios.com",
-                    "homepage": "https://github.com/WebDevStudios",
-                    "role": "Developer"
+                    "homepage": "https://github.com/WebDevStudios"
                 },
                 {
                     "name": "Justin Sternberg",
+                    "role": "Developer",
                     "email": "justin@dsgnwrks.pro",
-                    "homepage": "https://dsgnwrks.pro",
-                    "role": "Developer"
+                    "homepage": "https://dsgnwrks.pro"
                 }
             ],
             "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
@@ -2201,8 +2201,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
