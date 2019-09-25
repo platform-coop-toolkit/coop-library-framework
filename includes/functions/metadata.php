@@ -405,6 +405,7 @@ function resource_data_init() {
 			'attributes'  => [
 				'data-validation' => 'true',
 				'data-required'   => 'true',
+				'data-datetime'   => 'date',
 			],
 		]
 	);
@@ -443,6 +444,10 @@ function resource_data_init() {
 			'id'          => $prefix . 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
+			'attributes'  => [
+				'data-validation' => 'true',
+				'data-datetime'   => 'date',
+			],
 		]
 	);
 
