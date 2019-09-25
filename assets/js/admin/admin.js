@@ -1,4 +1,5 @@
 const { __, sprintf } = wp.i18n;
+const daysInMonth = require( 'days-in-month' );
 const doi = require( 'doi-regex' );
 const ISBN = require( 'simple-isbn' ).isbn;
 const issn = require( 'issn' );
@@ -7,12 +8,65 @@ const schemify = require( 'url-schemify' );
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
+	const $year = $( '#lc_resource_publication_year' );
+	const $month = $( '#lc_resource_publication_month' );
+	const $day = $( '#lc_resource_publication_day' );
 	const $toValidate = $( '[data-validation]' );
 
 	$urlFields.blur( ( e ) => {
 		const val = $( e.target ).val();
 		if ( 0 !== val.length ) {
 			$( e.target ).val( schemify( val ) );
+		}
+	} );
+
+	/**
+	 * Populate and enable the select element for days of the month.
+	 *
+	 * @param {inteter} year
+	 * @param {integer} month
+	 * @param {jQuery} $day
+	 */
+	function loadDays( year, month, $day ) {
+		const dayCount = daysInMonth( year, month );
+		const dayVal = $day.val();
+		$day.removeAttr( 'disabled' );
+		$day.children( 'option' ).remove();
+		const option = document.createElement( 'option' );
+		option.setAttribute( 'value', '' );
+		option.innerText = __( 'None', 'learning-commons-framework' );
+		$day.append( option );
+		for ( let i = 1; i < dayCount + 1; i++ ) {
+			const option = document.createElement( 'option' );
+			const val = 9 > i ? `0${i}` : i;
+			option.setAttribute( 'value', val );
+			option.innerText = i;
+			$day.append( option );
+		}
+		$day.val( dayVal );
+	}
+
+	$year.change( ( e ) => {
+		const yearVal = $( e.target ).val();
+		const monthVal = $month.val();
+		if ( yearVal ) {
+			$month.removeAttr( 'disabled' );
+		}
+		if ( yearVal && monthVal ) {
+			loadDays( yearVal, monthVal, $day );
+		} else {
+			$month.attr( 'disabled', true );
+			$day.attr( 'disabled', true );
+		}
+	} );
+
+	$month.change( ( e ) => {
+		const yearVal = $year.val();
+		const monthVal = $( e.target ).val();
+		if ( yearVal && monthVal ) {
+			loadDays( yearVal, monthVal, $day );
+		} else {
+			$day.attr( 'disabled', true );
 		}
 	} );
 
@@ -49,15 +103,19 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
-	 * Ensure that a user-supplied datetime string matches the ISO 8601 format for a date or a datetime.
+	 * Ensure that a user-supplied datetime string matches the ISO 8601 format for a date or a datetime, or is a valid year.
 	 *
 	 * @see https://en.wikipedia.org/wiki/ISO_8601
 	 *
 	 * @param {string} val The value that the user has entered.
-	 * @param {string} type The type of datetime string expected (date or datetime).
+	 * @param {string} type The type of datetime string expected (date, datetime, or year).
 	 */
 	function checkDateTime( val, type ) {
-		if ( 'date' === type  ) {
+		if ( 'year' === type ) {
+			const year = parseInt( val, 10 );
+			return ( 1498 <= year && ( new Date() ).getFullYear() >= year );
+		}
+		if ( 'date' === type ) {
 			return /^\d{4}[/-](0?[1-9]|1[012])[/-](0?[1-9]|[12][0-9]|3[01])$/.test( val );
 		}
 		// TODO: Add datetime validation.
@@ -119,18 +177,14 @@ jQuery( document ).ready( function( $ ) {
 				} else {
 					valid = true;
 				}
-			}
-
-			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
+			} else if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
 				if ( 0 !== val.length && ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
 					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
 					valid = false;
 				} else {
 					valid = true;
 				}
-			}
-
-			if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
+			} else if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
 				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
 					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
 					valid = false;
@@ -143,16 +197,7 @@ jQuery( document ).ready( function( $ ) {
 				if ( 0 === val.length ) {
 					addRequiredError( $row );
 					valid = false;
-				} else {
-					valid = true;
-				}
-			}
-
-			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
-				if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
-					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
-					valid = false;
-				} else {
+				} else if ( valid ) {
 					valid = true;
 				}
 			}
@@ -191,7 +236,12 @@ jQuery( document ).ready( function( $ ) {
 			const $label = $row.find( '.cmb-th label' );
 
 			$errorFields.push(
-				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'domain', expected: expectedDomain }
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'domain',
+					expected: expectedDomain
+				}
 			);
 			if ( $row.hasClass( 'cmb-repeat' ) ) {
 				$field.parent( '.cmb-td' ).parent( '.cmb-repeat-row' ).addClass( 'form-invalid' );
@@ -209,13 +259,19 @@ jQuery( document ).ready( function( $ ) {
 		 * Add datetime error flag to a form field.
 		 *
 		 * @param {jQuery} $row
+		 * @param {jQuery} field
 		 * @param {string} type
 		 */
 		function addDateTimeError( $row, $field, type ) {
 			const $label = $row.find( '.cmb-th label' );
 
 			$errorFields.push(
-				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'datetime', expected: type }
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'datetime',
+					expected: type
+				}
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The type of the datetime input field (date or datetime). */
@@ -235,7 +291,12 @@ jQuery( document ).ready( function( $ ) {
 			const $label = $row.find( '.cmb-th label' );
 
 			$errorFields.push(
-				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'identifier', expected: type }
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'identifier',
+					expected: type
+				}
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
