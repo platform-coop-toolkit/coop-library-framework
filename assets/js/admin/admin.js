@@ -7,8 +7,6 @@ const schemify = require( 'url-schemify' );
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
-	const $publicationDate = $( '#lc_resource_publication_date' );
-	const $publicationYear = $( '#lc_resource_publication_year' );
 	const $toValidate = $( '[data-validation]' );
 
 	$urlFields.blur( ( e ) => {
@@ -16,11 +14,6 @@ jQuery( document ).ready( function( $ ) {
 		if ( 0 !== val.length ) {
 			$( e.target ).val( schemify( val ) );
 		}
-	} );
-
-	$publicationDate.change( ( e ) => {
-		const val = $( e.target ).val();
-		$publicationYear.val( val.substring( 0, 4 ) );
 	} );
 
 	if ( !$toValidate.length ) {
