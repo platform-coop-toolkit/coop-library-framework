@@ -4,8 +4,8 @@
   "license": "BSD-3-Clause",
   "authors": [
     {
-      "name": "OCAD University",
-      "email": "platform-coop-development-kit@lists.inclusivedesign.ca"
+	    "name": "OCAD University",
+	    "email": "platform-coop-development-kit@lists.inclusivedesign.ca"
     }
   ],
   "require": {
