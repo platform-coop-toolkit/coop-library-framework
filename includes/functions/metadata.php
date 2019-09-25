@@ -304,7 +304,6 @@ function resource_data_init() {
 		]
 	);
 
-	// TODO: Validate that the URL starts with https://perma.cc/
 	$cmb->add_field(
 		[
 			'name'        => __( 'Perma.cc Link', 'learning-commons-framework' ),
@@ -324,7 +323,6 @@ function resource_data_init() {
 		]
 	);
 
-	// TODO: Validate that the URL starts with https://web.archive.org/
 	$cmb->add_field(
 		[
 			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework' ),
@@ -506,7 +504,6 @@ function resource_data_init() {
 		]
 	);
 
-	// TODO: Add validation.
 	$cmb->add_field(
 		[
 			'name'        => __( 'DOI (Digital Object Identifier)', 'learning-commons-framework' ),
@@ -520,7 +517,6 @@ function resource_data_init() {
 		]
 	);
 
-	// TODO: Add validation.
 	$cmb->add_field(
 		[
 			'name'        => __( 'ISBN (International Standard Book Number)', 'learning-commons-framework' ),
@@ -534,7 +530,6 @@ function resource_data_init() {
 		]
 	);
 
-	// TODO: Add validation.
 	$cmb->add_field(
 		[
 			'name'        => __( 'ISSN (International Standard Serial Number)', 'learning-commons-framework' ),

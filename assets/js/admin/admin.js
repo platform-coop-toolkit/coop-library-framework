@@ -67,10 +67,8 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * Ensure that a unique identifier string matches one of DOI, ISBN, ISSN formats.
 	 *
-	 * @see https://en.wikipedia.org/wiki/ISO_8601
-	 *
 	 * @param {string} val The value that the user has entered.
-	 * @param {string} type The type of datetime string expected (date or datetime).
+	 * @param {string} type The type of identifier expected (DOI, ISBN, or ISSN).
 	 */
 	function checkIdentifier( val, type ) {
 		switch( type ) {
