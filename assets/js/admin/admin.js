@@ -7,6 +7,8 @@ const schemify = require( 'url-schemify' );
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
+	const $publicationDate = $( '#lc_resource_publication_date' );
+	const $publicationYear = $( '#lc_resource_publication_year' );
 	const $toValidate = $( '[data-validation]' );
 
 	$urlFields.blur( ( e ) => {
@@ -14,6 +16,11 @@ jQuery( document ).ready( function( $ ) {
 		if ( 0 !== val.length ) {
 			$( e.target ).val( schemify( val ) );
 		}
+	} );
+
+	$publicationDate.change( ( e ) => {
+		const val = $( e.target ).val();
+		$publicationYear.val( val.substring( 0, 4 ) );
 	} );
 
 	if ( !$toValidate.length ) {
@@ -114,15 +121,6 @@ jQuery( document ).ready( function( $ ) {
 			const $row = $this.parents( '.cmb-row' );
 			let valid = false;
 
-			if ( 'true' === $this.data( 'required' ) && $this.is( ':visible' ) ) {
-				if ( ! val ) {
-					addRequiredError( $row );
-					valid = false;
-				} else {
-					valid = true;
-				}
-			}
-
 			if ( $this.data( 'domain' ) && $this.is( ':visible' ) ) {
 				if ( 0 !== val.length && ( ! isUrl( val ) || ! checkUrlDomain( $this.data( 'domain' ), val ) ) ) {
 					addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
@@ -133,7 +131,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
-				if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
+				if ( 0 !== val.length && ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
 					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
 					valid = false;
 				} else {
@@ -144,6 +142,15 @@ jQuery( document ).ready( function( $ ) {
 			if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
 				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
 					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
+					valid = false;
+				} else {
+					valid = true;
+				}
+			}
+
+			if ( $this.data( 'required' ) && $this.is( ':visible' ) ) {
+				if ( 0 === val.length ) {
+					addRequiredError( $row );
 					valid = false;
 				} else {
 					valid = true;
@@ -163,11 +170,11 @@ jQuery( document ).ready( function( $ ) {
 		function addRequiredError( $row ) {
 			const $label = $row.find( '.cmb-th label' );
 			$errorFields.push(
-				{ id: $label.attr( 'for' ), label: $label.text(), type: 'required' }
+				{ id: $label.attr( 'for' ), label: $label.text().replace( ' (Required)', '' ), type: 'required' }
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The label of the required field. */
-			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), $label.text().toLowerCase() );
+			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), $label.text().replace( ' (Required)', '' ).toLowerCase() );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$row.children( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;

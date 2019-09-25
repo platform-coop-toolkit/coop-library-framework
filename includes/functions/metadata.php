@@ -292,7 +292,7 @@ function resource_data_init() {
 
 	$cmb->add_field(
 		[
-			'name'        => __( 'Permanent Link', 'learning-commons-framework' ),
+			'name'        => __( 'Permanent Link (Required)', 'learning-commons-framework' ),
 			'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'permanent_link',
 			'type'        => 'text_url',
@@ -404,18 +404,22 @@ function resource_data_init() {
 			'date_format' => 'Y-m-d',
 			'attributes'  => [
 				'data-validation' => 'true',
-				'data-required'   => 'true',
 				'data-datetime'   => 'date',
 			],
 		]
 	);
 
+	// TODO: Validate year.
 	$cmb->add_field(
 		[
-			'name'        => __( 'Publication Year', 'learning-commons-framework' ),
+			'name'        => __( 'Publication Year (Required)', 'learning-commons-framework' ),
 			'description' => __( 'The publication year of the resource.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publication_year',
 			'type'        => 'text',
+			'attributes'  => [
+				'data-validation' => 'true',
+				'data-required'   => 'true',
+			],
 		]
 	);
 
