@@ -4,13 +4,13 @@
   "license": "BSD-3-Clause",
   "authors": [
     {
-      "name": "Platform Cooperative Development Kit",
-      "email": "info@platform.coop"
+	    "name": "OCAD University",
+	    "email": "platform-coop-development-kit@lists.inclusivedesign.ca"
     }
   ],
   "require": {
     "php": ">=7.3",
-    "afragen/wp-dependency-installer": "^1.4",
+    "afragen/wp-dependency-installer": "^2.0",
     "cmb2/cmb2": "^2.6",
     "johnbillion/extended-cpts": "^4.2",
     "umpirsky/country-list": "^2.0"

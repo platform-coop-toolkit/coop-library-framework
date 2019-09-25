@@ -312,7 +312,7 @@ function resource_data_init() {
 			'id'          => $prefix . 'perma_cc_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
-			'protocols'   => [ 'https' ],
+			'protocols'   => [ 'http', 'https' ],
 			'text'        => [
 				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
 			],
@@ -332,7 +332,7 @@ function resource_data_init() {
 			'id'          => $prefix . 'wayback_machine_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
-			'protocols'   => [ 'https' ],
+			'protocols'   => [ 'http', 'https' ],
 			'text'        => [
 				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
 			],
