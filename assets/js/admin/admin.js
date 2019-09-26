@@ -157,6 +157,15 @@ jQuery( document ).ready( function( $ ) {
 				}
 			}
 
+			if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
+				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
+					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
+					valid = false;
+				} else {
+					valid = true;
+				}
+			}
+
 			if ( valid ) {
 				removeError( $row );
 			}
