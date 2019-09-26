@@ -297,6 +297,7 @@ function resource_data_init() {
 			'id'          => $prefix . 'permanent_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
+			'classes'     => 'cmb-required',
 			'attributes'  => [
 				'data-validation' => 'true',
 				'data-required'   => 'true',
@@ -414,6 +415,7 @@ function resource_data_init() {
 			'description' => __( 'The publication year of the resource.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publication_year',
 			'type'        => 'text',
+			'classes'     => 'cmb-required',
 			'attributes'  => [
 				'data-validation' => 'true',
 				'data-required'   => 'true',
