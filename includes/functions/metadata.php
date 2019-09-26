@@ -425,14 +425,13 @@ function resource_data_init() {
 		]
 	);
 
-	// TODO: Validate year.
 	$cmb->add_field(
 		[
 			'name'        => __( 'Publication Year (Required)', 'learning-commons-framework' ),
 			'description' => __( 'The year in which the resource was published.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publication_year',
 			'type'        => 'text',
-			'class'       => 'cmb-required',
+			'classes'     => 'cmb-required',
 			'attributes'  => [
 				'data-validation' => 'true',
 				'data-datetime'   => 'year',
