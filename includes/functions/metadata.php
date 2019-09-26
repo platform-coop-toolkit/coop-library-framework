@@ -31,6 +31,17 @@ function setup() {
 function register_meta() {
 	register_post_meta(
 		'lc_resource',
+		'lc_resource_short_title',
+		[
+			'type'         => 'string',
+			'description'  => 'A short title for the resource.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
 		'lc_resource_permanent_link',
 		[
 			'type'         => 'string',
@@ -287,6 +298,15 @@ function resource_data_init() {
 			'context'      => 'normal',
 			'priority'     => 'high',
 			'show_names'   => true,
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'        => __( 'Short Title', 'learning-commons-framework' ),
+			'description' => __( 'A short title for the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'short_title',
+			'type'        => 'text',
 		]
 	);
 
