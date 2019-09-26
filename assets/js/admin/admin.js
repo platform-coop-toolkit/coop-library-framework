@@ -43,7 +43,11 @@ jQuery( document ).ready( function( $ ) {
 			option.innerText = i;
 			$day.append( option );
 		}
-		$day.val( dayVal );
+		if ( dayVal < dayCount ) {
+			$day.val( dayVal );
+		} else {
+			$day.val( '' );
+		}
 	}
 
 	$year.change( ( e ) => {
