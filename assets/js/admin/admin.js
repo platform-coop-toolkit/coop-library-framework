@@ -1,4 +1,7 @@
 const { __, sprintf } = wp.i18n;
+const doi = require( 'doi-regex' );
+const ISBN = require( 'simple-isbn' ).isbn;
+const issn = require( 'issn' );
 const schemify = require( 'url-schemify' );
 
 jQuery( document ).ready( function( $ ) {
@@ -62,6 +65,24 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
+	 * Ensure that a unique identifier string matches one of DOI, ISBN, ISSN formats.
+	 *
+	 * @param {string} val The value that the user has entered.
+	 * @param {string} type The type of identifier expected (DOI, ISBN, or ISSN).
+	 */
+	function checkIdentifier( val, type ) {
+		switch( type ) {
+				case 'doi':
+					return doi( { exact: true } ).test( val );
+				case 'isbn':
+					return ISBN.isValidIsbn( val );
+				case 'issn':
+					return issn( val );
+		}
+		return false;
+	}
+
+	/**
 	 * Validate the form.
 	 *
 	 * @param {Event} event
@@ -112,6 +133,15 @@ jQuery( document ).ready( function( $ ) {
 			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
 				if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
 					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
+					valid = false;
+				} else {
+					valid = true;
+				}
+			}
+
+			if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
+				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
+					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
 					valid = false;
 				} else {
 					valid = true;
@@ -187,6 +217,26 @@ jQuery( document ).ready( function( $ ) {
 		}
 
 		/**
+		 * Add unique identifier error flag to a form field.
+		 *
+		 * @param {jQuery} $row
+		 * @param {string} type
+		 */
+		function addIdentifierError( $row, $field, type ) {
+			const $label = $row.find( '.cmb-th label' );
+
+			$errorFields.push(
+				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'identifier', expected: type }
+			);
+			$row.addClass( 'form-invalid' );
+			/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
+			const errorText = sprintf( __( 'The supplied %1$s is not in a valid format.', 'learning-commons-framework' ), type.toUpperCase() );
+			const error = $( `<p class="error">${errorText}</p>` );
+			$field.parent( '.cmb-td' ).append( error );
+			$firstError = $firstError ? $firstError : $row;
+		}
+
+		/**
 		 * Remove error class from a form row.
 		 *
 		 * @param {jQuery} $row
@@ -214,8 +264,12 @@ jQuery( document ).ready( function( $ ) {
 					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), field.expected );
 				}
 				if ( 'datetime' === field.type ) {
-					/* translators: %1$s: The type of the datetime input field (date or datetime). */
+					/* translators: %s: The type of the datetime input field (date or datetime). */
 					errorText = sprintf( __( 'The supplied %s is not valid.', 'learning-commons-framework' ), field.expected );
+				}
+				if ( 'identifier' === field.type ) {
+					/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
+					errorText = sprintf( __( 'The supplied %s is not valid.', 'learning-commons-framework' ), String.prototype.toUpperCase.call( field.expected ) );
 				}
 				if ( 0 < index ) {
 					return `${html}<li><a href="#${field.id}">${errorText}</a></li>`;
