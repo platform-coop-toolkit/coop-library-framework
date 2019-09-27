@@ -72,6 +72,21 @@ function resource_init() {
 	register_extended_post_type(
 		'lc_resource',
 		array(
+			'admin_cols'          => [
+				'title',
+				'language'  => [
+					'title'    => __( 'Language', 'learning-commons-framework' ),
+					'taxonomy' => 'language',
+				],
+				'format'    => [
+					'title'    => __( 'Format', 'learning-commons-framework' ),
+					'taxonomy' => 'lc_format',
+				],
+				'published' => [
+					'title'    => 'Published',
+					'meta_key' => 'lc_resource_publication_year',
+				],
+			],
 			'labels'              => [
 				'name'                  => __( 'Resources', 'learning-commons-framework' ),
 				'singular_name'         => __( 'Resource', 'learning-commons-framework' ),
