@@ -82,6 +82,10 @@ function resource_init() {
 					'title'    => __( 'Format', 'learning-commons-framework' ),
 					'taxonomy' => 'lc_format',
 				],
+				'topic'    => [
+					'title'    => __( 'Topics', 'learning-commons-framework' ),
+					'taxonomy' => 'lc_topic',
+				],
 				'published' => [
 					'title'    => 'Published',
 					'meta_key' => 'lc_resource_publication_year',
