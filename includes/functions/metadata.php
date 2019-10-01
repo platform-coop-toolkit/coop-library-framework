@@ -416,7 +416,7 @@ function resource_data_init() {
 			'id'          => $prefix . 'custom_rights',
 			'type'        => 'text',
 			'attributes'  => [
-				'disabled' => true,
+				'disabled' => ( get_post_meta( $cmb->object_id, 'lc_resource_rights', true ) === 'custom' ) ? false : true,
 			],
 		]
 	);
