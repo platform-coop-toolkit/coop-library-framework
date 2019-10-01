@@ -462,9 +462,6 @@ function resource_data_init() {
 				'11' => __( 'November', 'learning-commons-framework' ),
 				'12' => __( 'December', 'learning-commons-framework' ),
 			],
-			'attributes'       => [
-				'disabled' => enable_month_cb( $cmb ),
-			],
 		]
 	);
 
@@ -482,9 +479,6 @@ function resource_data_init() {
 				get_post_meta( $cmb->object_id(), 'lc_resource_publication_year', true ),
 				get_post_meta( $cmb->object_id(), 'lc_resource_publication_month', true )
 			),
-			'attributes'       => [
-				'disabled' => enable_day_cb( $cmb ),
-			],
 		]
 	);
 
@@ -629,32 +623,5 @@ function preload_day_options( $year, $month ) {
 	}
 
 	return $options;
-}
-
-/**
- * Should the month field be enabled?
- *
- * @param object $cmb CMB2 object.
- *
- * @return bool Whether to show the field.
- */
-function enable_month_cb( $cmb ) {
-	$year = get_post_meta( $cmb->object_id(), 'lc_resource_publication_year', true );
-	$d    = \DateTime::createFromFormat( 'Y', $year );
-	return $d && $d->format( 'Y' ) !== $year;
-}
-
-/**
- * Should the day field be enabled?
- *
- * @param object $cmb CMB2 object.
- *
- * @return bool Whether to show the field.
- */
-function enable_day_cb( $cmb ) {
-	$year  = get_post_meta( $cmb->object_id(), 'lc_resource_publication_year', true );
-	$month = get_post_meta( $cmb->object_id(), 'lc_resource_publication_month', true );
-	$d     = \DateTime::createFromFormat( 'Y-m', "$year-$month" );
-	return $d && $d->format( 'Y-m' ) !== "$year-$month";
 }
 

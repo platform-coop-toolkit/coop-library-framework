@@ -1,4 +1,5 @@
 const { __, sprintf } = wp.i18n;
+const { speak } = wp.a11y;
 const daysInMonth = require( 'days-in-month' );
 const doi = require( 'doi-regex' );
 const ISBN = require( 'simple-isbn' ).isbn;
@@ -30,7 +31,6 @@ jQuery( document ).ready( function( $ ) {
 	function loadDays( year, month, $day ) {
 		const dayCount = daysInMonth( year, month );
 		const dayVal = $day.val();
-		$day.removeAttr( 'disabled' );
 		$day.children( 'option' ).remove();
 		const option = document.createElement( 'option' );
 		option.setAttribute( 'value', '' );
@@ -45,22 +45,23 @@ jQuery( document ).ready( function( $ ) {
 		}
 		if ( dayVal < dayCount ) {
 			$day.val( dayVal );
+			$day.parents( '.cmb-row' ).removeClass( 'form-invalid' );
+			$day.siblings( '.error' ).remove();
 		} else {
 			$day.val( '' );
+			$day.parents( '.cmb-row' ).addClass( 'form-invalid' );
+			const errorText = __( 'The previously selected publication day is not valid in combination with the new year and month.', 'learning-commons-framework' );
+			const error = $( `<p class="error">${errorText}</p>` );
+			$day.siblings( '.cmb2-metabox-description' ).after( error );
+			speak( errorText );
 		}
 	}
 
 	$year.change( ( e ) => {
 		const yearVal = $( e.target ).val();
 		const monthVal = $month.val();
-		if ( yearVal ) {
-			$month.removeAttr( 'disabled' );
-		}
 		if ( yearVal && monthVal ) {
 			loadDays( yearVal, monthVal, $day );
-		} else {
-			$month.attr( 'disabled', true );
-			$day.attr( 'disabled', true );
 		}
 	} );
 
@@ -69,9 +70,12 @@ jQuery( document ).ready( function( $ ) {
 		const monthVal = $( e.target ).val();
 		if ( yearVal && monthVal ) {
 			loadDays( yearVal, monthVal, $day );
-		} else {
-			$day.attr( 'disabled', true );
 		}
+	} );
+
+	$day.change( ( e ) => {
+		$( e.target ).parents( '.cmb-row' ).removeClass( 'form-invalid' );
+		$( e.target ).siblings( '.error' ).remove();
 	} );
 
 	if ( !$toValidate.length ) {
