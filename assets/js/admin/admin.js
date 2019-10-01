@@ -7,7 +7,18 @@ const schemify = require( 'url-schemify' );
 jQuery( document ).ready( function( $ ) {
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
+	const $rights = $( '#lc_resource_rights' );
+	const $customRights = $( '#lc_resource_custom_rights' );
 	const $toValidate = $( '[data-validation]' );
+
+	$rights.on( 'change', ( e ) => {
+		if ( 'custom' === e.target.value ) {
+			$customRights.attr( 'disabled', false ).focus();
+		} else {
+			$customRights.attr( 'disabled', true ).val( '' );
+
+		}
+	} );
 
 	$urlFields.blur( ( e ) => {
 		const val = $( e.target ).val();
