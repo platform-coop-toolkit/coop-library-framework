@@ -24,7 +24,7 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * Populate and enable the select element for days of the month.
 	 *
-	 * @param {inteter} year
+	 * @param {integer} year
 	 * @param {integer} month
 	 * @param {jQuery} $day
 	 */
@@ -58,19 +58,29 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	$year.change( ( e ) => {
-		const yearVal = $( e.target ).val();
-		const monthVal = $month.val();
-		if ( yearVal && monthVal ) {
-			loadDays( yearVal, monthVal, $day );
+		let yearVal = $( e.target ).val();
+		if ( ! yearVal ) {
+			yearVal = new Date().getFullYear();
 		}
+		let monthVal = $month.val();
+		if ( ! monthVal ) {
+			monthVal = new Date().getMonth();
+
+		}
+		loadDays( yearVal, monthVal, $day );
 	} );
 
 	$month.change( ( e ) => {
-		const yearVal = $year.val();
-		const monthVal = $( e.target ).val();
-		if ( yearVal && monthVal ) {
-			loadDays( yearVal, monthVal, $day );
+		let yearVal = $year.val();
+		if ( ! yearVal ) {
+			yearVal = new Date().getFullYear();
 		}
+		let monthVal = $( e.target ).val();
+		if ( ! monthVal ) {
+			monthVal = new Date().getMonth();
+
+		}
+		loadDays( yearVal, monthVal, $day );
 	} );
 
 	$day.change( ( e ) => {
