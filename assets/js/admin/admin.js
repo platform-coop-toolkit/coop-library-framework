@@ -43,31 +43,34 @@ jQuery( document ).ready( function( $ ) {
 			option.innerText = i;
 			$day.append( option );
 		}
-		if ( dayVal < dayCount ) {
+		if ( dayVal <= dayCount ) {
 			$day.val( dayVal );
 			$day.parents( '.cmb-row' ).removeClass( 'form-invalid' );
 			$day.siblings( '.error' ).remove();
 		} else {
 			$day.val( '' );
 			$day.parents( '.cmb-row' ).addClass( 'form-invalid' );
-			const errorText = __( 'The previously selected publication day is not valid in combination with the new year and month.', 'learning-commons-framework' );
+			const errorText = __( 'The previously selected publication day is not valid in combination with the new year and/or month.', 'learning-commons-framework' );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$day.siblings( '.cmb2-metabox-description' ).after( error );
 			speak( errorText );
 		}
 	}
 
-	$year.change( ( e ) => {
+	$year.keyup( ( e ) => {
 		let yearVal = $( e.target ).val();
-		if ( ! yearVal ) {
-			yearVal = new Date().getFullYear();
-		}
-		let monthVal = $month.val();
-		if ( ! monthVal ) {
-			monthVal = new Date().getMonth();
+		// Don't validate until we hit four characters.
+		if ( 4 === yearVal.length ) {
+			if ( ! yearVal ) {
+				yearVal = new Date().getFullYear();
+			}
+			let monthVal = $month.val();
+			if ( ! monthVal ) {
+				monthVal = new Date().getMonth();
 
+			}
+			loadDays( yearVal, monthVal, $day );
 		}
-		loadDays( yearVal, monthVal, $day );
 	} );
 
 	$month.change( ( e ) => {
