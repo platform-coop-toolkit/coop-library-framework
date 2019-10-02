@@ -13,7 +13,7 @@
  */
 
 // Useful global constants.
-define( 'LEARNING_COMMONS_FRAMEWORK_VERSION', '1.0.0-alpha' );
+define( 'LEARNING_COMMONS_FRAMEWORK_VERSION', '1.0.0-alpha.1' );
 define( 'LEARNING_COMMONS_FRAMEWORK_URL', plugin_dir_url( __FILE__ ) );
 define( 'LEARNING_COMMONS_FRAMEWORK_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LEARNING_COMMONS_FRAMEWORK_INC', LEARNING_COMMONS_FRAMEWORK_PATH . 'includes/' );

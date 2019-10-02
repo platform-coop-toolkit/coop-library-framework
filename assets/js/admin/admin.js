@@ -1,4 +1,6 @@
 const { __, sprintf } = wp.i18n;
+const { speak } = wp.a11y;
+const daysInMonth = require( 'days-in-month' );
 const doi = require( 'doi-regex' );
 const ISBN = require( 'simple-isbn' ).isbn;
 const issn = require( 'issn' );
@@ -9,6 +11,9 @@ jQuery( document ).ready( function( $ ) {
 	const $urlFields = $( '.cmb2-text-url' );
 	const $rights = $( '#lc_resource_rights' );
 	const $customRights = $( '#lc_resource_custom_rights' );
+	const $year = $( '#lc_resource_publication_year' );
+	const $month = $( '#lc_resource_publication_month' );
+	const $day = $( '#lc_resource_publication_day' );
 	const $toValidate = $( '[data-validation]' );
 
 	$rights.on( 'change', ( e ) => {
@@ -25,6 +30,76 @@ jQuery( document ).ready( function( $ ) {
 		if ( 0 !== val.length ) {
 			$( e.target ).val( schemify( val ) );
 		}
+	} );
+
+	/**
+	 * Populate and enable the select element for days of the month.
+	 *
+	 * @param {integer} year
+	 * @param {integer} month
+	 * @param {jQuery} $day
+	 */
+	function loadDays( year, month, $day ) {
+		const dayCount = daysInMonth( year, month );
+		const dayVal = $day.val();
+		$day.children( 'option' ).remove();
+		const option = document.createElement( 'option' );
+		option.setAttribute( 'value', '' );
+		option.innerText = __( 'None', 'learning-commons-framework' );
+		$day.append( option );
+		for ( let i = 1; i < dayCount + 1; i++ ) {
+			const option = document.createElement( 'option' );
+			const val = 9 > i ? `0${i}` : i;
+			option.setAttribute( 'value', val );
+			option.innerText = i;
+			$day.append( option );
+		}
+		if ( dayVal <= dayCount ) {
+			$day.val( dayVal );
+			$day.parents( '.cmb-row' ).removeClass( 'form-invalid' );
+			$day.siblings( '.error' ).remove();
+		} else {
+			$day.val( '' );
+			$day.parents( '.cmb-row' ).addClass( 'form-invalid' );
+			const errorText = __( 'The previously selected publication day is not valid in combination with the year and/or month.', 'learning-commons-framework' );
+			const error = $( `<p class="error">${errorText}</p>` );
+			$day.siblings( '.cmb2-metabox-description' ).after( error );
+			speak( errorText );
+		}
+	}
+
+	$year.keyup( ( e ) => {
+		let yearVal = $( e.target ).val();
+		// Don't validate until we hit four characters.
+		if ( 4 === yearVal.length ) {
+			if ( ! yearVal ) {
+				yearVal = new Date().getFullYear();
+			}
+			let monthVal = $month.val();
+			if ( ! monthVal ) {
+				monthVal = new Date().getMonth();
+
+			}
+			loadDays( yearVal, monthVal, $day );
+		}
+	} );
+
+	$month.change( ( e ) => {
+		let yearVal = $year.val();
+		if ( ! yearVal ) {
+			yearVal = new Date().getFullYear();
+		}
+		const monthVal = $( e.target ).val();
+		if ( ! monthVal ) {
+			$day.val( '' );
+		} else {
+			loadDays( yearVal, monthVal, $day );
+		}
+	} );
+
+	$day.change( ( e ) => {
+		$( e.target ).parents( '.cmb-row' ).removeClass( 'form-invalid' );
+		$( e.target ).siblings( '.error' ).remove();
 	} );
 
 	if ( !$toValidate.length ) {
@@ -60,15 +135,19 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
-	 * Ensure that a user-supplied datetime string matches the ISO 8601 format for a date or a datetime.
+	 * Ensure that a user-supplied datetime string matches the ISO 8601 format for a date or a datetime, or is a valid year.
 	 *
 	 * @see https://en.wikipedia.org/wiki/ISO_8601
 	 *
 	 * @param {string} val The value that the user has entered.
-	 * @param {string} type The type of datetime string expected (date or datetime).
+	 * @param {string} type The type of datetime string expected (date, datetime, or year).
 	 */
 	function checkDateTime( val, type ) {
-		if ( 'date' === type  ) {
+		if ( 'year' === type ) {
+			const year = parseInt( val, 10 );
+			return ( 1498 <= year && ( new Date() ).getFullYear() >= year );
+		}
+		if ( 'date' === type ) {
 			return /^\d{4}[/-](0?[1-9]|1[012])[/-](0?[1-9]|[12][0-9]|3[01])$/.test( val );
 		}
 		// TODO: Add datetime validation.
@@ -130,18 +209,14 @@ jQuery( document ).ready( function( $ ) {
 				} else {
 					valid = true;
 				}
-			}
-
-			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
+			} else if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
 				if ( 0 !== val.length && ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
 					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
 					valid = false;
 				} else {
 					valid = true;
 				}
-			}
-
-			if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
+			} else if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
 				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
 					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
 					valid = false;
@@ -154,16 +229,7 @@ jQuery( document ).ready( function( $ ) {
 				if ( 0 === val.length ) {
 					addRequiredError( $row );
 					valid = false;
-				} else {
-					valid = true;
-				}
-			}
-
-			if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
-				if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
-					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
-					valid = false;
-				} else {
+				} else if ( valid ) {
 					valid = true;
 				}
 			}
@@ -211,7 +277,12 @@ jQuery( document ).ready( function( $ ) {
 			const $label = $row.find( '.cmb-th label' );
 
 			$errorFields.push(
-				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'domain', expected: expectedDomain }
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'domain',
+					expected: expectedDomain
+				}
 			);
 			if ( $row.hasClass( 'cmb-repeat' ) ) {
 				$field.parent( '.cmb-td' ).parent( '.cmb-repeat-row' ).addClass( 'form-invalid' );
@@ -229,13 +300,19 @@ jQuery( document ).ready( function( $ ) {
 		 * Add datetime error flag to a form field.
 		 *
 		 * @param {jQuery} $row
+		 * @param {jQuery} field
 		 * @param {string} type
 		 */
 		function addDateTimeError( $row, $field, type ) {
 			const $label = $row.find( '.cmb-th label' );
 
 			$errorFields.push(
-				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'datetime', expected: type }
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'datetime',
+					expected: type
+				}
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The type of the datetime input field (date or datetime). */
@@ -255,7 +332,12 @@ jQuery( document ).ready( function( $ ) {
 			const $label = $row.find( '.cmb-th label' );
 
 			$errorFields.push(
-				{ id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ), label: $label.text(), type: 'identifier', expected: type }
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'identifier',
+					expected: type
+				}
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
