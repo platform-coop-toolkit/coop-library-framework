@@ -118,10 +118,10 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_publication_date',
+		'lc_resource_publication_year',
 		[
-			'type'         => 'string',
-			'description'  => 'The publication date of the resource in YYYY-MM-DD format.',
+			'type'         => 'integer',
+			'description'  => 'The year in which the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -129,10 +129,21 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_publication_year',
+		'lc_resource_publication_month',
 		[
 			'type'         => 'integer',
-			'description'  => 'The publication year of the resource.',
+			'description'  => 'The month in which the resource was published.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publication_day',
+		[
+			'type'         => 'integer',
+			'description'  => 'The day of the month on which the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -416,30 +427,58 @@ function resource_data_init() {
 
 	$cmb->add_field(
 		[
-			'name'        => __( 'Publication Date', 'learning-commons-framework' ),
-			'description' => __( 'The publication date of the resource in YYYY-MM-DD format.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publication_date',
-			'type'        => 'text_date',
-			'date_format' => 'Y-m-d',
-			'attributes'  => [
-				'data-validation' => 'true',
-				'data-datetime'   => 'date',
-			],
-		]
-	);
-
-	// TODO: Validate year.
-	$cmb->add_field(
-		[
 			'name'        => __( 'Publication Year (Required)', 'learning-commons-framework' ),
-			'description' => __( 'The publication year of the resource.', 'learning-commons-framework' ),
+			'description' => __( 'The year in which the resource was published.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publication_year',
 			'type'        => 'text',
 			'classes'     => 'cmb-required',
 			'attributes'  => [
 				'data-validation' => 'true',
+				'data-datetime'   => 'year',
 				'data-required'   => 'true',
 			],
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'             => __( 'Publication Month', 'learning-commons-framework' ),
+			'description'      => __( 'The month in which the resource was published.', 'learning-commons-framework' ),
+			'id'               => $prefix . 'publication_month',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'default'          => '',
+			'options'          => [
+				'01' => __( 'January', 'learning-commons-framework' ),
+				'02' => __( 'February', 'learning-commons-framework' ),
+				'03' => __( 'March', 'learning-commons-framework' ),
+				'04' => __( 'April', 'learning-commons-framework' ),
+				'05' => __( 'May', 'learning-commons-framework' ),
+				'06' => __( 'June', 'learning-commons-framework' ),
+				'07' => __( 'July', 'learning-commons-framework' ),
+				'08' => __( 'August', 'learning-commons-framework' ),
+				'09' => __( 'September', 'learning-commons-framework' ),
+				'10' => __( 'October', 'learning-commons-framework' ),
+				'11' => __( 'November', 'learning-commons-framework' ),
+				'12' => __( 'December', 'learning-commons-framework' ),
+			],
+		]
+	);
+
+	global $post;
+
+	$cmb->add_field(
+		[
+			'name'             => __( 'Publication Day', 'learning-commons-framework' ),
+			'description'      => __( 'The day of the month on which the resource was published.', 'learning-commons-framework' ),
+			'id'               => $prefix . 'publication_day',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'default'          => '',
+			'options'          => preload_day_options(
+				get_post_meta( $cmb->object_id(), 'lc_resource_publication_year', true ),
+				get_post_meta( $cmb->object_id(), 'lc_resource_publication_month', true )
+			),
 		]
 	);
 
@@ -564,3 +603,25 @@ function resource_data_init() {
 		]
 	);
 }
+
+/**
+ * Generate a key/value pair of days for a given month in a given year.
+ *
+ * @param int $year  The year in question.
+ * @param int $month The month in question
+ *
+ * @return array
+ */
+function preload_day_options( $year, $month ) {
+	$options = [ '' => __( 'None', 'learning-commons-framework' ) ];
+	if ( $year && $month ) {
+		$days_in_month = cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
+		for ( $i = 1; $i < $days_in_month + 1; $i++ ) {
+			$val             = ( $i > 9 ) ? $i : "0${i}";
+			$options[ $val ] = $i;
+		}
+	}
+
+	return $options;
+}
+

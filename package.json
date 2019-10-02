@@ -87,6 +87,7 @@
     "node": ">=8.11"
   },
   "dependencies": {
+    "days-in-month": "^0.1.0",
     "doi-regex": "^0.1.10",
     "issn": "^1.0.5",
     "normalize.css": "^8.0.0",
