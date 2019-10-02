@@ -164,6 +164,28 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
+		'lc_resource_publication_name',
+		[
+			'type'         => 'string',
+			'description'  => 'The publication in which the resource appears.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publication_link',
+		[
+			'type'         => 'string',
+			'description'  => 'A link to the publication in which the resource appears.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
 		'lc_resource_publisher_name',
 		[
 			'type'         => 'string',
@@ -521,6 +543,25 @@ function resource_data_init() {
 			'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'revision_description',
 			'type'        => 'textarea_small',
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'        => __( 'Publication Name', 'learning-commons-framework' ),
+			'description' => __( 'The publication in which the resource appears.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'publication_name',
+			'type'        => 'text',
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'        => __( 'Publication Link', 'learning-commons-framework' ),
+			'description' => __( 'A link to the publication in which the resource appears.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'publication_link',
+			'type'        => 'text_url',
+			'protocols'   => [ 'http', 'https' ],
 		]
 	);
 
