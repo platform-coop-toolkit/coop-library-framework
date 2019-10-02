@@ -79,6 +79,28 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
+		'lc_resource_rights',
+		[
+			'type'         => 'string',
+			'description'  => 'The rights under which the resource is distributed.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_custom_rights',
+		[
+			'type'         => 'string',
+			'description'  => 'The custom rights statement under which the resource is distributed.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
 		'lc_resource_author',
 		[
 			'type'         => 'string',
@@ -392,6 +414,42 @@ function resource_data_init() {
 				'aria-label'      => __( 'Wayback Machine Link', 'learning-commons-framework' ),
 				'data-validation' => 'true',
 				'data-domain'     => 'web.archive.org',
+			],
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'             => __( 'Rights', 'learning-commons-framework' ),
+			'description'      => __( 'The rights under which the resource is distributed.', 'learning-commons-framework' ),
+			'id'               => $prefix . 'rights',
+			'type'             => 'select',
+			'show_option_none' => false,
+			'default'          => 'all-rights-reserved',
+			'options'          => [
+				'all-rights-reserved' => __( 'All Rights Reserved', 'learning-commons-framework' ),
+				'cc-by'               => __( 'Creative Commons Attribution', 'learning-commons-framework' ),
+				'cc-by-nc'            => __( 'Creative Commons Attribution-NonCommercial', 'learning-commons-framework' ),
+				'cc-by-nd'            => __( 'Creative Commons Attribution-NoDerivatives', 'learning-commons-framework' ),
+				'cc-by-sa'            => __( 'Creative Commons Attribution-ShareAlike', 'learning-commons-framework' ),
+				'cc-by-nc-nd'         => __( 'Creative Commons Attribution-NonCommercial-NoDerivatives', 'learning-commons-framework' ),
+				'cc-by-nc-sa'         => __( 'Creative Commons Attribution-NonCommercial-ShareAlike', 'learning-commons-framework' ),
+				'ecl'                 => __( 'Educational Community License', 'learning-commons-framework' ),
+				'cc0'                 => __( 'No Rights Reserved', 'learning-commons-framework' ),
+				'public-domain'       => __( 'No Known Copyright', 'learning-commons-framework' ),
+				'custom'              => __( 'Custom…', 'learning-commons-framework' ),
+			],
+		]
+	);
+
+	$cmb->add_field(
+		[
+			'name'        => __( 'Custom Rights', 'learning-commons-framework' ),
+			'description' => __( 'A custom rights statement under which the resource is distributed.<br />Select &lsquo;Custom…&rsquo; above to enter a custom rights statement.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'custom_rights',
+			'type'        => 'text',
+			'attributes'  => [
+				'disabled' => ( get_post_meta( $cmb->object_id, 'lc_resource_rights', true ) === 'custom' ) ? false : true,
 			],
 		]
 	);
