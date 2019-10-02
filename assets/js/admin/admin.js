@@ -50,7 +50,7 @@ jQuery( document ).ready( function( $ ) {
 		} else {
 			$day.val( '' );
 			$day.parents( '.cmb-row' ).addClass( 'form-invalid' );
-			const errorText = __( 'The previously selected publication day is not valid in combination with the new year and/or month.', 'learning-commons-framework' );
+			const errorText = __( 'The previously selected publication day is not valid in combination with the year and/or month.', 'learning-commons-framework' );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$day.siblings( '.cmb2-metabox-description' ).after( error );
 			speak( errorText );
