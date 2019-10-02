@@ -75,12 +75,12 @@ jQuery( document ).ready( function( $ ) {
 		if ( ! yearVal ) {
 			yearVal = new Date().getFullYear();
 		}
-		let monthVal = $( e.target ).val();
+		const monthVal = $( e.target ).val();
 		if ( ! monthVal ) {
-			monthVal = new Date().getMonth();
-
+			$day.val( '' );
+		} else {
+			loadDays( yearVal, monthVal, $day );
 		}
-		loadDays( yearVal, monthVal, $day );
 	} );
 
 	$day.change( ( e ) => {
