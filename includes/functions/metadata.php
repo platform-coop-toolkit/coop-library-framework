@@ -707,7 +707,7 @@ function resource_data_init() {
 function preload_day_options( $year, $month ) {
 	$options = [ '' => __( 'None', 'learning-commons-framework' ) ];
 	if ( $year && $month ) {
-		$days_in_month = cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
+		$days_in_month = \cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
 		for ( $i = 1; $i < $days_in_month + 1; $i++ ) {
 			$val             = ( $i > 9 ) ? $i : "0${i}";
 			$options[ $val ] = $i;
