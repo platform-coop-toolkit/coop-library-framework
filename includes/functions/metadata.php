@@ -47,7 +47,12 @@ function register_meta() {
 			'type'         => 'string',
 			'description'  => 'A permanent link to the resource.',
 			'single'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => [
+				'schema' => [
+					'type'   => 'string',
+					'format' => 'uri',
+				],
+			],
 		]
 	);
 
@@ -55,11 +60,17 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_perma_cc_links',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'A link or links to an archival copy of the resource on Perma.cc.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_archival_links',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type'   => 'string',
+						'format' => 'uri',
+					],
+				],
 			],
 		]
 	);
@@ -68,11 +79,17 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_wayback_machine_links',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'A link or links to an archival copy of the resource on the Wayback Machine.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_archival_links',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type'   => 'string',
+						'format' => 'uri',
+					],
+				],
 			],
 		]
 	);
@@ -103,11 +120,16 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_author',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'The author of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type' => 'string',
+					],
+				],
 			],
 		]
 	);
@@ -116,11 +138,16 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_editor',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'The editor of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type' => 'string',
+					],
+				],
 			],
 		]
 	);
@@ -129,11 +156,16 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_translator',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'The translator of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type' => 'string',
+					],
+				],
 			],
 		]
 	);
@@ -175,11 +207,25 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_revisions',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'Revisions of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_revisions',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type'       => 'object',
+						'properties' => [
+							'revision_date'        => [
+								'type'   => 'string',
+								'format' => 'datetime',
+							],
+							'revision_description' => [
+								'type' => 'string',
+							],
+						],
+					],
+				],
 			],
 		]
 	);
@@ -331,7 +377,10 @@ function prepare_revisions( $value ) {
 	$result = [];
 	if ( is_array( $value ) ) {
 		foreach ( $value as $v ) {
-			$result[] = $v['lc_resource_revision_date'] . ': ' . $v['lc_resource_revision_description'];
+			$result[] = [
+				'date'        => $v['lc_resource_revision_date'],
+				'description' => $v['lc_resource_revision_description'],
+			];
 		}
 	}
 	return $result;
@@ -584,7 +633,7 @@ function resource_data_init() {
 		[
 			'name'        => __( 'Revision Date', 'learning-commons-framework' ),
 			'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'revision_date',
+			'id'          => 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
 			'attributes'  => [
@@ -599,7 +648,7 @@ function resource_data_init() {
 		[
 			'name'        => __( 'Revision Description', 'learning-commons-framework' ),
 			'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'revision_description',
+			'id'          => 'revision_description',
 			'type'        => 'textarea_small',
 		]
 	);
