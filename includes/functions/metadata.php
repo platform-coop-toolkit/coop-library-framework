@@ -331,62 +331,6 @@ function register_meta() {
 }
 
 /**
- * Prepare `lc_resource_authors`, `lc_resource_editors`, and `lc_resource_translators`
- * for REST API access.
- *
- * @param mixed $value The metadata value.
- *
- * @return array
- */
-function prepare_contributors( $value ) {
-	$result = [];
-	if ( is_array( $value ) ) {
-		foreach ( $value as $v ) {
-			$result[] = $v;
-		}
-	}
-	return $result;
-}
-
-/**
- * Prepare `lc_resource_perma_cc_links` and `lc_resource_wayback_machine_links`
- * for REST API access.
- *
- * @param mixed $value The metadata value.
- *
- * @return array
- */
-function prepare_archival_links( $value ) {
-	$result = [];
-	if ( is_array( $value ) ) {
-		foreach ( $value as $v ) {
-			$result[] = $v;
-		}
-	}
-	return $result;
-}
-
-/**
- * Prepare `lc_resource_revisions` for REST API access.
- *
- * @param mixed $value The metadata value.
- *
- * @return array
- */
-function prepare_revisions( $value ) {
-	$result = [];
-	if ( is_array( $value ) ) {
-		foreach ( $value as $v ) {
-			$result[] = [
-				'date'        => $v['lc_resource_revision_date'],
-				'description' => $v['lc_resource_revision_description'],
-			];
-		}
-	}
-	return $result;
-}
-
-/**
  * Register the Resource Data metabox.
  *
  * @return void
