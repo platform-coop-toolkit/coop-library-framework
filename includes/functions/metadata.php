@@ -621,6 +621,16 @@ function resource_data_init() {
 
 	$about_the_publisher->add_field(
 		[
+			'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
+			'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'publisher_link',
+			'type'        => 'text_url',
+			'protocols'   => [ 'http', 'https' ],
+		]
+	);
+
+	$about_the_publisher->add_field(
+		[
 			'name'        => __( 'Publisher City', 'learning-commons-framework' ),
 			'description' => __( 'The town or city where the publisher of the resource is located.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publisher_locality',
@@ -637,16 +647,6 @@ function resource_data_init() {
 			'show_option_none' => true,
 			'default'          => '',
 			'options'          => \LearningCommonsFramework\Internationalization\get_country_list( get_user_locale() ),
-		]
-	);
-
-	$about_the_publisher->add_field(
-		[
-			'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
-			'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_link',
-			'type'        => 'text_url',
-			'protocols'   => [ 'http', 'https' ],
 		]
 	);
 
