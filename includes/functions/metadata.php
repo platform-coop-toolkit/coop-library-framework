@@ -488,6 +488,14 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
+			'name' => 'Publication Date',
+			'type' => 'title',
+			'id'   => $prefix . 'publication_date',
+		]
+	);
+
+	$general_info->add_field(
+		[
 			'name'        => __( 'Publication Year (Required)', 'learning-commons-framework' ),
 			'description' => __( 'The year in which the resource was published.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publication_year',
