@@ -20,6 +20,7 @@
 }
 
 #validation-message a,
-.cmb-td .error {
+.cmb-td .error,
+#titlewrap .error {
 	color: var(--red);
 }

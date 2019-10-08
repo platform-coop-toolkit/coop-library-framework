@@ -14,6 +14,7 @@ jQuery( document ).ready( function( $ ) {
 	const $year = $( '#lc_resource_publication_year' );
 	const $month = $( '#lc_resource_publication_month' );
 	const $day = $( '#lc_resource_publication_day' );
+	const $titleRow = $( '#titlewrap' );
 	const $toValidate = $( '[data-validation]' );
 
 	$rights.on( 'change', ( e ) => {
@@ -254,15 +255,20 @@ jQuery( document ).ready( function( $ ) {
 		 * @param {jQuery} $row
 		 */
 		function addRequiredError( $row ) {
-			const $label = $row.find( '.cmb-th label' );
+			const $label = $row.find( 'label' );
+			const labelText = $label.text().replace( ' (Required)', '' ).replace( 'Add title', 'Title' );
 			$errorFields.push(
-				{ id: $label.attr( 'for' ), label: $label.text().replace( ' (Required)', '' ), type: 'required' }
+				{ id: $label.attr( 'for' ), label: labelText, type: 'required' }
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The label of the required field. */
-			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), $label.text().replace( ' (Required)', '' ).toLowerCase() );
+			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), labelText.toLowerCase() );
 			const error = $( `<p class="error">${errorText}</p>` );
-			$row.children( '.cmb-td' ).append( error );
+			if ( $row.children( '.cmb-td' ).length ) {
+				$row.children( '.cmb-td' ).append( error );
+			} else {
+				$row.append( error );
+			}
 			$firstError = $firstError ? $firstError : $row;
 		}
 
@@ -354,6 +360,10 @@ jQuery( document ).ready( function( $ ) {
 		 */
 		function removeError( $row ) {
 			$row.removeClass( 'form-invalid' );
+		}
+
+		if ( 0 === $titleRow.children( 'input' ).val().length ) {
+			addRequiredError( $titleRow );
 		}
 
 		$toValidate.each( function() {
