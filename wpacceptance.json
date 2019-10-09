@@ -1,0 +1,14 @@
+{
+  "name": "learning-commons-framework",
+  "project_path": "%WP_ROOT%/wp-content/plugins/learning-commons-framework",
+  "tests": ["./tests/acceptance/*.php"],
+  "exclude": ["node_modules"],
+  "environment_instructions": [
+    [
+      "install wordpress where version is 5.3-beta3 and site url is http://learningcommons.test and home url is http://learningcommons.test",
+      "activate plugin where name is learning-commons-framework"
+    ]
+  ],
+  "enforce_clean_db": false,
+  "snapshot_id": false
+}

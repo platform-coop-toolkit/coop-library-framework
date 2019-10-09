@@ -20,7 +20,8 @@
   "require-dev": {
     "10up/phpcs-composer": "dev-master",
     "10up/wp_mock": "dev-master",
-    "phpunit/phpunit": "^8.2"
+    "10up/wpacceptance": "dev-master",
+    "phpunit/phpunit": "^7.5"
   },
   "config": {
     "optimize-autoloader": true,
@@ -39,9 +40,15 @@
       "LearningCommonsFramework\\": "includes/classes/"
     }
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "scripts": {
+    "acceptance": "wpacceptance run",
     "lint": "phpcs .",
     "lint-fix": "phpcbf .",
-    "test": "phpunit"
+    "test": [
+      "@acceptance",
+      "phpunit"
+    ]
   }
 }
