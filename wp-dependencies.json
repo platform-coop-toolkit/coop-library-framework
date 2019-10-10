@@ -7,13 +7,6 @@
     "optional": false
   },
   {
-    "name": "Classic Editor Addon",
-    "host": "wordpress",
-    "slug": "classic-editor-addon/classic-editor-addon.php",
-    "uri": "https://wordpress.org/plugins/classic-editor-addon/",
-    "optional": false
-  },
-  {
     "name": "Disable Blog",
     "host": "wordpress",
     "slug": "disable-blog/disable-blog.php",
