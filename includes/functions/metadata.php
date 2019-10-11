@@ -21,6 +21,8 @@ function setup() {
 
 	add_action( 'init', $n( 'register_meta' ) );
 	add_action( 'cmb2_admin_init', $n( 'resource_data_init' ) );
+	add_action( 'save_post_lc_resource', $n( 'update_publication_date' ), 10, 2 );
+	add_action( 'edit_post_lc_resource', $n( 'update_publication_date' ), 10, 2 );
 }
 
 /**
@@ -166,6 +168,17 @@ function register_meta() {
 		[
 			'type'         => 'integer',
 			'description'  => 'The day of the month on which the resource was published.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_publication_date',
+		[
+			'type'         => 'string',
+			'description'  => 'The date on which the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -722,5 +735,36 @@ function preload_day_options( $year, $month ) {
 	}
 
 	return $options;
+}
+
+/**
+ * Update the publication date when year, month, or day are modified.
+ *
+ * @param int      $post_id The post ID.
+ * @param \WP_Post $post The post object.
+ */
+function update_publication_date( $post_id, $post ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	$cmb = cmb2_get_metabox( 'resource_data', $post_id );
+
+	if ( ! isset( $_POST[ $cmb->nonce() ] ) || ! wp_verify_nonce( $_POST[ $cmb->nonce() ], $cmb->nonce() ) ) {
+		return;
+	}
+
+	$y      = $_REQUEST['lc_resource_publication_year'];
+	$m      = $_REQUEST['lc_resource_publication_month'];
+	$d      = $_REQUEST['lc_resource_publication_day'];
+	$pieces = [];
+	foreach ( [ $y, $m, $d ] as $piece ) {
+		if ( $piece ) {
+			$pieces[] = $piece;
+		}
+	}
+	$date = implode( '-', $pieces );
+
+	update_post_meta( $post_id, 'lc_resource_publication_date', $date );
 }
 
