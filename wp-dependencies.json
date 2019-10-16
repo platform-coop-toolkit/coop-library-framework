@@ -1,12 +1,5 @@
 [
   {
-    "name": "Classic Editor",
-    "host": "wordpress",
-    "slug": "classic-editor/classic-editor.php",
-    "uri": "https://wordpress.org/plugins/classic-editor/",
-    "optional": false
-  },
-  {
     "name": "Disable Blog",
     "host": "wordpress",
     "slug": "disable-blog/disable-blog.php",
