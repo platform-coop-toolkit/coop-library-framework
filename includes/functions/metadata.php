@@ -613,6 +613,9 @@ function resource_data_init() {
 			'id'          => $prefix . 'publication_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
+			'attributes'  => [
+				'data-validation' => 'true',
+			],
 		]
 	);
 
@@ -653,6 +656,9 @@ function resource_data_init() {
 			'id'          => $prefix . 'publisher_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
+			'attributes'  => [
+				'data-validation' => 'true',
+			],
 		]
 	);
 
