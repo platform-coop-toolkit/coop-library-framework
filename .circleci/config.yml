@@ -85,7 +85,7 @@ jobs:
                 --admin_email=admin@example.com
       - run:
           name: Copy Learning Commons Framework plugin
-          command: docker cp -r . wp-container:/var/www/html
+          command: docker cp . wp-container:/var/www/html/wp-content/plugins/learning-commons-framework
       - run:
           name: Activate Learning Commons Framework plugin
           command: |
