@@ -42,11 +42,9 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
-    "acceptance": "wpacceptance run",
     "lint": "phpcs .",
     "lint-fix": "phpcbf .",
     "test": [
-      "@acceptance",
       "phpunit"
     ]
   }
