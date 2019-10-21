@@ -7,29 +7,36 @@ jobs:
   test:
     docker:
       - image: circleci/php:7.3-node-browsers
-      - image: circleci/mariadb:10.4.6
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: test_db
-          MYSQL_USER: user
-          MYSQL_PASSWORD: passw0rd
 
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Waiting for MariaDB to be ready
+          name: Set up network
           command: |
-            for i in `seq 1 10`;
-            do
-              nc -z 127.0.0.1 3306 && echo Success && exit 0
-              echo -n .
-              sleep 1
-            done
-            echo Failed waiting for MySQL && exit 1
+            docker network create wp-network
+      - run:
+          name: Set up database
+          command: |
+            docker run -d \
+              -e MYSQL_ROOT_PASSWORD=pw \
+              -e MYSQL_DATABASE=wordpress \
+              --name db \
+              --network wp-network \
+              mysql:5.7
+      - run:
+          name: Setup WordPress
+          command: |
+            docker run -d \
+              -e WORDPRESS_DB_HOST=db:3306 \
+              -e WORDPRESS_DB_USER=root \
+              -e WORDPRESS_DB_PASSWORD=pw \
+              -e WORDPRESS_DB_NAME=wordpress \
+              -e WORDPRESS_CONFIG_EXTRA="define('WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST']); define('WP_HOME', 'http://' . \$_SERVER['HTTP_HOST']);" \
+              --name wp-container \
+              --network wp-network \
+              wordpress
       - run: sudo apt update
-      - run: sudo docker-php-ext-install mysqli
-      - run: sudo docker-php-ext-install sockets
       - run: sudo docker-php-ext-install zip
 
       # Download and cache dependencies
