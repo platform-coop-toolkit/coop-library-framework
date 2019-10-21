@@ -1,12 +1,5 @@
 [
   {
-    "name": "Classic Editor",
-    "host": "wordpress",
-    "slug": "classic-editor/classic-editor.php",
-    "uri": "https://wordpress.org/plugins/classic-editor/",
-    "optional": false
-  },
-  {
     "name": "Disable Blog",
     "host": "wordpress",
     "slug": "disable-blog/disable-blog.php",
@@ -33,23 +26,5 @@
     "slug": "theme-translation-for-polylang/polylang-theme-translation.php",
     "uri": "https://wordpress.org/plugins/theme-translation-for-polylang/",
     "optional": false
-  },
-  {
-    "name": "WP GraphQL",
-    "host": "github",
-    "slug": "wp-graphql/wp-graphql.php",
-    "uri": "wp-graphql/qp-graphql",
-    "branch": "master",
-    "optional": false,
-    "token": null
-  },
-  {
-    "name": "WP GraphQL Polylang",
-    "host": "github",
-    "slug": "wp-graphql-polylang/wp-graphql-polylang.php",
-    "uri": "valu-digital/qp-graphql-polylang",
-    "branch": "master",
-    "optional": false,
-    "token": null
   }
 ]

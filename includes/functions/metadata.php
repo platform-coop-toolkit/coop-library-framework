@@ -21,6 +21,8 @@ function setup() {
 
 	add_action( 'init', $n( 'register_meta' ) );
 	add_action( 'cmb2_admin_init', $n( 'resource_data_init' ) );
+	add_action( 'save_post_lc_resource', $n( 'update_publication_date' ), 10, 2 );
+	add_action( 'edit_post_lc_resource', $n( 'update_publication_date' ), 10, 2 );
 }
 
 /**
@@ -47,7 +49,12 @@ function register_meta() {
 			'type'         => 'string',
 			'description'  => 'A permanent link to the resource.',
 			'single'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => [
+				'schema' => [
+					'type'   => 'string',
+					'format' => 'uri',
+				],
+			],
 		]
 	);
 
@@ -55,11 +62,17 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_perma_cc_links',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'A link or links to an archival copy of the resource on Perma.cc.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_archival_links',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type'   => 'string',
+						'format' => 'uri',
+					],
+				],
 			],
 		]
 	);
@@ -68,11 +81,17 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_wayback_machine_links',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'A link or links to an archival copy of the resource on the Wayback Machine.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_archival_links',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type'   => 'string',
+						'format' => 'uri',
+					],
+				],
 			],
 		]
 	);
@@ -103,11 +122,16 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_author',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'The author of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type' => 'string',
+					],
+				],
 			],
 		]
 	);
@@ -116,11 +140,16 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_editor',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'The editor of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type' => 'string',
+					],
+				],
 			],
 		]
 	);
@@ -129,11 +158,16 @@ function register_meta() {
 		'lc_resource',
 		'lc_resource_translator',
 		[
-			'type'         => 'string',
+			'type'         => 'array',
 			'description'  => 'The translator of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_contributors',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type' => 'string',
+					],
+				],
 			],
 		]
 	);
@@ -173,13 +207,38 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_revisions',
+		'lc_resource_publication_date',
 		[
 			'type'         => 'string',
+			'description'  => 'The date on which the resource was published.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_revisions',
+		[
+			'type'         => 'array',
 			'description'  => 'Revisions of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
-				'prepare_callback' => 'LearningCommonsFramework\Metadata\prepare_revisions',
+				'schema' => [
+					'type'  => 'array',
+					'items' => [
+						'type'       => 'object',
+						'properties' => [
+							'revision_date'        => [
+								'type'   => 'string',
+								'format' => 'datetime',
+							],
+							'revision_description' => [
+								'type' => 'string',
+							],
+						],
+					],
+				],
 			],
 		]
 	);
@@ -285,59 +344,6 @@ function register_meta() {
 }
 
 /**
- * Prepare `lc_resource_authors`, `lc_resource_editors`, and `lc_resource_translators`
- * for REST API access.
- *
- * @param mixed $value The metadata value.
- *
- * @return array
- */
-function prepare_contributors( $value ) {
-	$result = [];
-	if ( is_array( $value ) ) {
-		foreach ( $value as $v ) {
-			$result[] = $v;
-		}
-	}
-	return $result;
-}
-
-/**
- * Prepare `lc_resource_perma_cc_links` and `lc_resource_wayback_machine_links`
- * for REST API access.
- *
- * @param mixed $value The metadata value.
- *
- * @return array
- */
-function prepare_archival_links( $value ) {
-	$result = [];
-	if ( is_array( $value ) ) {
-		foreach ( $value as $v ) {
-			$result[] = $v;
-		}
-	}
-	return $result;
-}
-
-/**
- * Prepare `lc_resource_revisions` for REST API access.
- *
- * @param mixed $value The metadata value.
- *
- * @return array
- */
-function prepare_revisions( $value ) {
-	$result = [];
-	if ( is_array( $value ) ) {
-		foreach ( $value as $v ) {
-			$result[] = $v['lc_resource_revision_date'] . ': ' . $v['lc_resource_revision_description'];
-		}
-	}
-	return $result;
-}
-
-/**
  * Register the Resource Data metabox.
  *
  * @return void
@@ -345,10 +351,10 @@ function prepare_revisions( $value ) {
 function resource_data_init() {
 	$prefix = 'lc_resource_';
 
-	$cmb = new_cmb2_box(
+	$general_info = new_cmb2_box(
 		[
-			'id'           => 'resource_data',
-			'title'        => __( 'Resource Data', 'learning-commons-framework' ),
+			'id'           => '01_resource_data',
+			'title'        => __( 'General Info', 'learning-commons-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -356,16 +362,62 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publication = new_cmb2_box(
 		[
-			'name'        => __( 'Short Title', 'learning-commons-framework' ),
-			'description' => __( 'A short title for the resource.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'short_title',
-			'type'        => 'text',
+			'id'           => '02_about_the_publication',
+			'title'        => __( 'About the Publication', 'learning-commons-framework' ),
+			'object_types' => [ 'lc_resource' ],
+			'context'      => 'normal',
+			'priority'     => 'high',
+			'show_names'   => true,
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publisher = new_cmb2_box(
+		[
+			'id'           => '03_about_the_publisher',
+			'title'        => __( 'About the Publisher', 'learning-commons-framework' ),
+			'object_types' => [ 'lc_resource' ],
+			'context'      => 'normal',
+			'priority'     => 'high',
+			'show_names'   => true,
+		]
+	);
+
+	$rights = new_cmb2_box(
+		[
+			'id'           => '04_rights',
+			'title'        => __( 'Rights', 'learning-commons-framework' ),
+			'object_types' => [ 'lc_resource' ],
+			'context'      => 'normal',
+			'priority'     => 'high',
+			'show_names'   => true,
+		]
+	);
+
+	$archival_links = new_cmb2_box(
+		[
+			'id'           => '05_archival_links',
+			'title'        => __( 'Archival Links', 'learning-commons-framework' ),
+			'object_types' => [ 'lc_resource' ],
+			'context'      => 'normal',
+			'priority'     => 'high',
+			'show_names'   => true,
+		]
+	);
+
+	$catalog_codes = new_cmb2_box(
+		[
+			'id'           => '06_catalog_codes',
+			'title'        => __( 'Catalog Codes', 'learning-commons-framework' ),
+			'object_types' => [ 'lc_resource' ],
+			'context'      => 'normal',
+			'priority'     => 'high',
+			'show_names'   => true,
+		]
+	);
+
+	$general_info->add_field(
 		[
 			'name'        => __( 'Permanent Link (Required)', 'learning-commons-framework' ),
 			'description' => __( 'A permanent link to the resource.', 'learning-commons-framework' ),
@@ -380,82 +432,17 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$general_info->add_field(
 		[
-			'name'        => __( 'Perma.cc Link', 'learning-commons-framework' ),
-			'description' => __( 'A link or links to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>. If the resource spans multiple pages on Perma.cc, you may add multiple links.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'perma_cc_links',
-			'type'        => 'text_url',
-			'repeatable'  => true,
-			'protocols'   => [ 'http', 'https' ],
-			'text'        => [
-				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
-			],
-			'attributes'  => [
-				'aria-label'      => __( 'Perma.cc Link', 'learning-commons-framework' ),
-				'data-validation' => 'true',
-				'data-domain'     => 'perma.cc',
-			],
-		]
-	);
-
-	$cmb->add_field(
-		[
-			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework' ),
-			'description' => __( 'A link or links to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>. If the resource spans multiple pages on the Wayback Machine, you may add multiple links.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'wayback_machine_links',
-			'type'        => 'text_url',
-			'repeatable'  => true,
-			'protocols'   => [ 'http', 'https' ],
-			'text'        => [
-				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
-			],
-			'attributes'  => [
-				'aria-label'      => __( 'Wayback Machine Link', 'learning-commons-framework' ),
-				'data-validation' => 'true',
-				'data-domain'     => 'web.archive.org',
-			],
-		]
-	);
-
-	$cmb->add_field(
-		[
-			'name'             => __( 'Rights', 'learning-commons-framework' ),
-			'description'      => __( 'The rights under which the resource is distributed.', 'learning-commons-framework' ),
-			'id'               => $prefix . 'rights',
-			'type'             => 'select',
-			'show_option_none' => false,
-			'default'          => 'all-rights-reserved',
-			'options'          => [
-				'all-rights-reserved' => __( 'All Rights Reserved', 'learning-commons-framework' ),
-				'cc-by'               => __( 'Creative Commons Attribution', 'learning-commons-framework' ),
-				'cc-by-nc'            => __( 'Creative Commons Attribution-NonCommercial', 'learning-commons-framework' ),
-				'cc-by-nd'            => __( 'Creative Commons Attribution-NoDerivatives', 'learning-commons-framework' ),
-				'cc-by-sa'            => __( 'Creative Commons Attribution-ShareAlike', 'learning-commons-framework' ),
-				'cc-by-nc-nd'         => __( 'Creative Commons Attribution-NonCommercial-NoDerivatives', 'learning-commons-framework' ),
-				'cc-by-nc-sa'         => __( 'Creative Commons Attribution-NonCommercial-ShareAlike', 'learning-commons-framework' ),
-				'ecl'                 => __( 'Educational Community License', 'learning-commons-framework' ),
-				'cc0'                 => __( 'No Rights Reserved', 'learning-commons-framework' ),
-				'public-domain'       => __( 'No Known Copyright', 'learning-commons-framework' ),
-				'custom'              => __( 'Custom…', 'learning-commons-framework' ),
-			],
-		]
-	);
-
-	$cmb->add_field(
-		[
-			'name'        => __( 'Custom Rights', 'learning-commons-framework' ),
-			'description' => __( 'A custom rights statement under which the resource is distributed.<br />Select &lsquo;Custom…&rsquo; above to enter a custom rights statement.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'custom_rights',
+			'name'        => __( 'Short Title', 'learning-commons-framework' ),
+			'description' => __( 'A short title for the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'short_title',
 			'type'        => 'text',
-			'attributes'  => [
-				'disabled' => ( get_post_meta( $cmb->object_id, 'lc_resource_rights', true ) === 'custom' ) ? false : true,
-			],
 		]
 	);
 
 	// TODO: Don't save any authors if they are empty.
-	$cmb->add_field(
+	$general_info->add_field(
 		[
 			'name'        => __( 'Author', 'learning-commons-framework' ),
 			'description' => __( 'The author of the resource.', 'learning-commons-framework' ),
@@ -472,7 +459,7 @@ function resource_data_init() {
 	);
 
 	// TODO: Don't save any authors if they are empty.
-	$cmb->add_field(
+	$general_info->add_field(
 		[
 			'name'        => __( 'Editor', 'learning-commons-framework' ),
 			'description' => __( 'The editor of the resource.', 'learning-commons-framework' ),
@@ -489,7 +476,7 @@ function resource_data_init() {
 	);
 
 	// TODO: Don't save any translators if they are empty.
-	$cmb->add_field(
+	$general_info->add_field(
 		[
 			'name'        => __( 'Translator', 'learning-commons-framework' ),
 			'description' => __( 'The translator of the resource.', 'learning-commons-framework' ),
@@ -505,7 +492,15 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$general_info->add_field(
+		[
+			'name' => 'Publication Date',
+			'type' => 'title',
+			'id'   => $prefix . 'publication_date',
+		]
+	);
+
+	$general_info->add_field(
 		[
 			'name'        => __( 'Publication Year (Required)', 'learning-commons-framework' ),
 			'description' => __( 'The year in which the resource was published.', 'learning-commons-framework' ),
@@ -520,7 +515,7 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$general_info->add_field(
 		[
 			'name'             => __( 'Publication Month', 'learning-commons-framework' ),
 			'description'      => __( 'The month in which the resource was published.', 'learning-commons-framework' ),
@@ -545,9 +540,7 @@ function resource_data_init() {
 		]
 	);
 
-	global $post;
-
-	$cmb->add_field(
+	$general_info->add_field(
 		[
 			'name'             => __( 'Publication Day', 'learning-commons-framework' ),
 			'description'      => __( 'The day of the month on which the resource was published.', 'learning-commons-framework' ),
@@ -556,14 +549,14 @@ function resource_data_init() {
 			'show_option_none' => true,
 			'default'          => '',
 			'options'          => preload_day_options(
-				get_post_meta( $cmb->object_id(), 'lc_resource_publication_year', true ),
-				get_post_meta( $cmb->object_id(), 'lc_resource_publication_month', true )
+				get_post_meta( $general_info->object_id(), 'lc_resource_publication_year', true ),
+				get_post_meta( $general_info->object_id(), 'lc_resource_publication_month', true )
 			),
 		]
 	);
 
 	// TODO: Don't save any revisions if they are empty.
-	$group_field_id = $cmb->add_field(
+	$group_field_id = $general_info->add_field(
 		[
 			'id'          => $prefix . 'revisions',
 			'type'        => 'group',
@@ -579,12 +572,12 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_group_field(
+	$general_info->add_group_field(
 		$group_field_id,
 		[
 			'name'        => __( 'Revision Date', 'learning-commons-framework' ),
 			'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'revision_date',
+			'id'          => 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
 			'attributes'  => [
@@ -594,17 +587,17 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_group_field(
+	$general_info->add_group_field(
 		$group_field_id,
 		[
 			'name'        => __( 'Revision Description', 'learning-commons-framework' ),
 			'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'revision_description',
+			'id'          => 'revision_description',
 			'type'        => 'textarea_small',
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publication->add_field(
 		[
 			'name'        => __( 'Publication Name', 'learning-commons-framework' ),
 			'description' => __( 'The publication in which the resource appears.', 'learning-commons-framework' ),
@@ -613,17 +606,20 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publication->add_field(
 		[
 			'name'        => __( 'Publication Link', 'learning-commons-framework' ),
 			'description' => __( 'A link to the publication in which the resource appears.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'publication_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
+			'attributes'  => [
+				'data-validation' => 'true',
+			],
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publisher->add_field(
 		[
 			'name'        => __( 'Publisher Name', 'learning-commons-framework' ),
 			'description' => __( 'The publisher of the resource.', 'learning-commons-framework' ),
@@ -632,7 +628,17 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publisher->add_field(
+		[
+			'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
+			'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'publisher_link',
+			'type'        => 'text_url',
+			'protocols'   => [ 'http', 'https' ],
+		]
+	);
+
+	$about_the_publisher->add_field(
 		[
 			'name'        => __( 'Publisher City', 'learning-commons-framework' ),
 			'description' => __( 'The town or city where the publisher of the resource is located.', 'learning-commons-framework' ),
@@ -641,7 +647,7 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$about_the_publisher->add_field(
 		[
 			'name'             => __( 'Publisher Country', 'learning-commons-framework' ),
 			'description'      => __( 'The country where the publisher of the resource is located.', 'learning-commons-framework' ),
@@ -653,17 +659,81 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$rights->add_field(
 		[
-			'name'        => __( 'Publisher Link', 'learning-commons-framework' ),
-			'description' => __( 'A link to the publisher of the resource.', 'learning-commons-framework' ),
-			'id'          => $prefix . 'publisher_link',
-			'type'        => 'text_url',
-			'protocols'   => [ 'http', 'https' ],
+			'name'             => __( 'Rights', 'learning-commons-framework' ),
+			'description'      => __( 'The rights under which the resource is distributed.', 'learning-commons-framework' ),
+			'id'               => $prefix . 'rights',
+			'type'             => 'select',
+			'show_option_none' => __( 'Not specified', 'learning-commons-framework' ),
+			'default'          => '',
+			'options'          => [
+				'all-rights-reserved' => __( 'All Rights Reserved', 'learning-commons-framework' ),
+				'cc-by'               => __( 'Creative Commons Attribution', 'learning-commons-framework' ),
+				'cc-by-nc'            => __( 'Creative Commons Attribution-NonCommercial', 'learning-commons-framework' ),
+				'cc-by-nd'            => __( 'Creative Commons Attribution-NoDerivatives', 'learning-commons-framework' ),
+				'cc-by-sa'            => __( 'Creative Commons Attribution-ShareAlike', 'learning-commons-framework' ),
+				'cc-by-nc-nd'         => __( 'Creative Commons Attribution-NonCommercial-NoDerivatives', 'learning-commons-framework' ),
+				'cc-by-nc-sa'         => __( 'Creative Commons Attribution-NonCommercial-ShareAlike', 'learning-commons-framework' ),
+				'ecl'                 => __( 'Educational Community License', 'learning-commons-framework' ),
+				'cc0'                 => __( 'No Rights Reserved', 'learning-commons-framework' ),
+				'public-domain'       => __( 'No Known Copyright', 'learning-commons-framework' ),
+				'custom'              => __( 'Custom…', 'learning-commons-framework' ),
+			],
 		]
 	);
 
-	$cmb->add_field(
+	$rights->add_field(
+		[
+			'name'        => __( 'Custom Rights', 'learning-commons-framework' ),
+			'description' => __( 'A custom rights statement under which the resource is distributed.<br />Select &lsquo;Custom…&rsquo; above to enter a custom rights statement.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'custom_rights',
+			'type'        => 'text',
+			'attributes'  => [
+				'disabled' => ( get_post_meta( $rights->object_id, 'lc_resource_rights', true ) === 'custom' ) ? false : true,
+			],
+		]
+	);
+
+	$archival_links->add_field(
+		[
+			'name'        => __( 'Perma.cc Link', 'learning-commons-framework' ),
+			'description' => __( 'A link or links to an archival copy of the resource on <a href="https://perma.cc">Perma.cc</a>. If the resource spans multiple pages on Perma.cc, you may add multiple links.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'perma_cc_links',
+			'type'        => 'text_url',
+			'repeatable'  => true,
+			'protocols'   => [ 'http', 'https' ],
+			'text'        => [
+				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
+			],
+			'attributes'  => [
+				'aria-label'      => __( 'Perma.cc Link', 'learning-commons-framework' ),
+				'data-validation' => 'true',
+				'data-domain'     => 'perma.cc',
+			],
+		]
+	);
+
+	$archival_links->add_field(
+		[
+			'name'        => __( 'Wayback Machine Link', 'learning-commons-framework' ),
+			'description' => __( 'A link or links to an archival copy of the resource on the <a href="https://web.archive.org">Wayback Machine</a>. If the resource spans multiple pages on the Wayback Machine, you may add multiple links.', 'learning-commons-framework' ),
+			'id'          => $prefix . 'wayback_machine_links',
+			'type'        => 'text_url',
+			'repeatable'  => true,
+			'protocols'   => [ 'http', 'https' ],
+			'text'        => [
+				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
+			],
+			'attributes'  => [
+				'aria-label'      => __( 'Wayback Machine Link', 'learning-commons-framework' ),
+				'data-validation' => 'true',
+				'data-domain'     => 'web.archive.org',
+			],
+		]
+	);
+
+	$catalog_codes->add_field(
 		[
 			'name'        => __( 'DOI (Digital Object Identifier)', 'learning-commons-framework' ),
 			'description' => __( 'The DOI for this resource.', 'learning-commons-framework' ),
@@ -676,7 +746,7 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$catalog_codes->add_field(
 		[
 			'name'        => __( 'ISBN (International Standard Book Number)', 'learning-commons-framework' ),
 			'description' => __( 'The ISBN for this resource.', 'learning-commons-framework' ),
@@ -689,7 +759,7 @@ function resource_data_init() {
 		]
 	);
 
-	$cmb->add_field(
+	$catalog_codes->add_field(
 		[
 			'name'        => __( 'ISSN (International Standard Serial Number)', 'learning-commons-framework' ),
 			'description' => __( 'The ISSN for this resource.', 'learning-commons-framework' ),
@@ -714,7 +784,7 @@ function resource_data_init() {
 function preload_day_options( $year, $month ) {
 	$options = [ '' => __( 'None', 'learning-commons-framework' ) ];
 	if ( $year && $month ) {
-		$days_in_month = cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
+		$days_in_month = \cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
 		for ( $i = 1; $i < $days_in_month + 1; $i++ ) {
 			$val             = ( $i > 9 ) ? $i : "0${i}";
 			$options[ $val ] = $i;
@@ -722,5 +792,36 @@ function preload_day_options( $year, $month ) {
 	}
 
 	return $options;
+}
+
+/**
+ * Update the publication date when year, month, or day are modified.
+ *
+ * @param int      $post_id The post ID.
+ * @param \WP_Post $post The post object.
+ */
+function update_publication_date( $post_id, $post ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	$cmb = cmb2_get_metabox( 'resource_data', $post_id );
+
+	if ( ! isset( $_POST[ $cmb->nonce() ] ) || ! wp_verify_nonce( $_POST[ $cmb->nonce() ], $cmb->nonce() ) ) {
+		return;
+	}
+
+	$y      = $_REQUEST['lc_resource_publication_year'];
+	$m      = $_REQUEST['lc_resource_publication_month'];
+	$d      = $_REQUEST['lc_resource_publication_day'];
+	$pieces = [];
+	foreach ( [ $y, $m, $d ] as $piece ) {
+		if ( $piece ) {
+			$pieces[] = $piece;
+		}
+	}
+	$date = implode( '-', $pieces );
+
+	update_post_meta( $post_id, 'lc_resource_publication_date', $date );
 }
 
