@@ -1,5 +1,6 @@
 {
   "name": "platform-coop-toolkit/learning-commons-framework",
+  "type": "wordpress-plugin",
   "description": "Framework for the Platform Cooperativism Learning Commons.",
   "license": "BSD-3-Clause",
   "authors": [
@@ -12,6 +13,7 @@
     "php": ">=7.3",
     "afragen/wp-dependency-installer": "^2.0",
     "cmb2/cmb2": "^2.6",
+    "composer/installers": "^1.7",
     "johnbillion/extended-cpts": "^4.2",
     "umpirsky/country-list": "^2.0"
   },
@@ -19,6 +21,18 @@
     "10up/phpcs-composer": "dev-master",
     "10up/wp_mock": "dev-master",
     "phpunit/phpunit": "^8.2"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/cmb2/cmb2/": [
+        "cmb2/cmb2"
+      ]
+    }
   },
   "autoload": {
     "psr-4": {

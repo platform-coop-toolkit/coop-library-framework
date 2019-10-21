@@ -113,12 +113,8 @@ jQuery( document ).ready( function( $ ) {
 	 * @param {string} value The URL that the user has entered.
 	 */
 	function isUrl( value ) {
-		try {
-			new URL( value );
-			return true;
-		} catch ( e ) {
-			return false;
-		}
+		// @see https://gist.github.com/dperini/729294
+		return /^(?:(?:(?:https?):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test( value );
 	}
 
 	/**
@@ -128,9 +124,11 @@ jQuery( document ).ready( function( $ ) {
 	 * @param {string} actualUrl The actual URL that the user has entered.
 	 */
 	function checkUrlDomain( expectedDomain, actualUrl ) {
-		const actualDomain = new URL( actualUrl ).hostname;
-		if ( actualDomain === expectedDomain ) {
-			return true;
+		if ( isUrl( actualUrl ) ) {
+			const actualDomain = new URL( actualUrl ).hostname;
+			if ( actualDomain === expectedDomain ) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -201,46 +199,48 @@ jQuery( document ).ready( function( $ ) {
 			const $this = $( element );
 			const val = $this.val();
 			const $row = $this.parents( '.cmb-row' );
-			let valid = false;
 
-			if ( $this.data( 'domain' ) && $this.is( ':visible' ) ) {
-				if ( 0 !== val.length && ( ! isUrl( val ) || ! checkUrlDomain( $this.data( 'domain' ), val ) ) ) {
-					addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
-					valid = false;
-				} else {
-					valid = true;
-				}
-			} else if ( $this.data( 'datetime' ) && $this.is( ':visible' ) ) {
-				if ( 0 !== val.length && ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
-					addDateTimeError( $row, $this, $this.data( 'datetime' ) );
-					valid = false;
-				} else {
-					valid = true;
-				}
-			} else if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
-				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
-					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
-					valid = false;
-				} else {
-					valid = true;
-				}
-			}
+			let valid;
 
-			if ( $this.data( 'required' ) && $this.is( ':visible' ) ) {
-				if ( 0 === val.length ) {
-					addRequiredError( $row );
-					valid = false;
-				} else if ( valid ) {
-					valid = true;
-				}
-			}
-
-			if ( $this.data( 'identifier' ) && $this.is( ':visible' ) ) {
-				if ( 0 !== val.length && ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
-					addIdentifierError( $row, $this, $this.data( 'identifier' ) );
-					valid = false;
-				} else {
-					valid = true;
+			if ( $this.is( ':visible' ) ) {
+				if ( 0 !== val.length ) {
+					if ( $this.data( 'domain' ) ) {
+						if ( ! checkUrlDomain( $this.data( 'domain' ), val ) ) {
+							addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
+							valid = false;
+						} else {
+							valid = true;
+						}
+					} else if ( $this.data( 'datetime' ) ) {
+						if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
+							addDateTimeError( $row, $this, $this.data( 'datetime' ) );
+							valid = false;
+						} else {
+							valid = true;
+						}
+					} else if ( $this.data( 'identifier' ) ) {
+						if ( ! checkIdentifier( val, $this.data( 'identifier' ) ) ) {
+							addIdentifierError( $row, $this, $this.data( 'identifier' ) );
+							valid = false;
+						} else {
+							valid = true;
+						}
+					}
+					if ( ! $this.data( 'domain' ) && $this.hasClass( 'cmb2-text-url' ) ) {
+						if ( ! isUrl( val ) ) {
+							addUrlError( $row, $this );
+							valid = false;
+						} else if ( valid ) {
+							valid = true;
+						}
+					}
+				} else if ( 0 === val.length ) {
+					if ( $this.data( 'required' ) ) {
+						addRequiredError( $row );
+						valid = false;
+					} else if ( valid ) {
+						valid = true;
+					}
 				}
 			}
 
@@ -297,6 +297,33 @@ jQuery( document ).ready( function( $ ) {
 			}
 			/* translators: %s: The expected domain name for the URL input. */
 			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), expectedDomain );
+			const error = $( `<p class="error">${errorText}</p>` );
+			$field.parent( '.cmb-td' ).append( error );
+			$firstError = $firstError ? $firstError : $row;
+		}
+
+		/**
+		 * Add invalid URL flag to a form field.
+		 *
+		 * @param {jQuery} $row
+		 * @param {jQuery} $field
+		 */
+		function addUrlError( $row, $field ) {
+			const $label = $row.find( '.cmb-th label' );
+
+			$errorFields.push(
+				{
+					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
+					label: $label.text(),
+					type: 'url'
+				}
+			);
+			if ( $row.hasClass( 'cmb-repeat' ) ) {
+				$field.parent( '.cmb-td' ).parent( '.cmb-repeat-row' ).addClass( 'form-invalid' );
+			} else {
+				$row.addClass( 'form-invalid' );
+			}
+			const errorText = __( 'The supplied URL is not valid.', 'learning-commons-framework' );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
@@ -379,6 +406,9 @@ jQuery( document ).ready( function( $ ) {
 				if ( 'required' === field.type ) {
 					/* translators: %s: The label of the required field. */
 					errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), field.label.toLowerCase() );
+				}
+				if ( 'url' === field.type ) {
+					errorText = __( 'The supplied url is not valid.', 'learning-commons-framework' );
 				}
 				if ( 'domain' == field.type ) {
 					/* translators: %s: The expected domain name for the URL field. */
