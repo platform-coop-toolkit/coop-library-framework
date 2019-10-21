@@ -652,8 +652,8 @@ function resource_data_init() {
 			'description'      => __( 'The rights under which the resource is distributed.', 'learning-commons-framework' ),
 			'id'               => $prefix . 'rights',
 			'type'             => 'select',
-			'show_option_none' => false,
-			'default'          => 'all-rights-reserved',
+			'show_option_none' => __( 'Not specified', 'learning-commons-framework' ),
+			'default'          => '',
 			'options'          => [
 				'all-rights-reserved' => __( 'All Rights Reserved', 'learning-commons-framework' ),
 				'cc-by'               => __( 'Creative Commons Attribution', 'learning-commons-framework' ),
