@@ -10,35 +10,7 @@ jobs:
 
     steps:
       - checkout
-      - setup_remote_docker
-      - run:
-          name: Set up network
-          command: |
-            docker network create wp-network
-      - run:
-          name: Set up database
-          command: |
-            docker run -d \
-              -e MYSQL_ROOT_PASSWORD=pw \
-              -e MYSQL_DATABASE=wordpress \
-              --name db \
-              --network wp-network \
-              mysql:5.7
-      - run:
-          name: Setup WordPress
-          command: |
-            docker run -d \
-              -e WORDPRESS_DB_HOST=db:3306 \
-              -e WORDPRESS_DB_USER=root \
-              -e WORDPRESS_DB_PASSWORD=pw \
-              -e WORDPRESS_DB_NAME=wordpress \
-              -e WORDPRESS_CONFIG_EXTRA="define('WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST']); define('WP_HOME', 'http://' . \$_SERVER['HTTP_HOST']);" \
-              --name wp-container \
-              --network wp-network \
-              wordpress
       - run: sudo apt update
-      - run: sudo docker-php-ext-install sockets
-      - run: sudo docker-php-ext-install mysqli
       - run: sudo docker-php-ext-install zip
 
       # Download and cache dependencies
@@ -71,6 +43,57 @@ jobs:
       - run: npm run test
       # Ensure build succeeds
       - run: npm run build
+
+      # Prepare for acceptance testing
+      - setup_remote_docker
+      - run:
+          name: Set up network
+          command: |
+            docker network create wp-network
+      - run:
+          name: Set up database
+          command: |
+            docker run -d \
+              -e MYSQL_ROOT_PASSWORD=pw \
+              -e MYSQL_DATABASE=wordpress \
+              --name db \
+              --network wp-network \
+              mysql:5.7
+      - run:
+          name: Setup WordPress
+          command: |
+            docker run -d \
+              -e WORDPRESS_DB_HOST=db:3306 \
+              -e WORDPRESS_DB_USER=root \
+              -e WORDPRESS_DB_PASSWORD=pw \
+              -e WORDPRESS_DB_NAME=wordpress \
+              -e WORDPRESS_CONFIG_EXTRA="define('WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST']); define('WP_HOME', 'http://' . \$_SERVER['HTTP_HOST']);" \
+              --name wp-container \
+              --network wp-network \
+              wordpress
+      - run:
+          name: Install WordPress
+          command: |
+            docker run -it --rm \
+              --volumes-from wp-container \
+              --network wp-network \
+              wordpress:cli core install \
+                --url=localhost \
+                --title=test \
+                --admin_user=admin \
+                --admin_password=admin \
+                --admin_email=admin@example.com
+      - run:
+          name: Copy Learning Commons Framework plugin
+          command: docker cp -r . wp-container:/var/www/html
+      - run:
+          name: Activate Learning Commons Framework plugin
+          command: |
+            docker run -it --rm \
+              --volumes-from wp-container \
+              --user xfs \
+              --network wp-network \
+              wordpress:cli plugin activate learning-commons-framework
   deploy_plugin_staging:
     docker:
       - image: circleci/php:7.3-node-browsers
