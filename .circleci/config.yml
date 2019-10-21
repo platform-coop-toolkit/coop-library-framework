@@ -38,6 +38,7 @@ jobs:
               wordpress
       - run: sudo apt update
       - run: sudo docker-php-ext-install sockets
+      - run: sudo docker-php-ext-install mysqli
       - run: sudo docker-php-ext-install zip
 
       # Download and cache dependencies
