@@ -807,7 +807,7 @@ function update_publication_date( $post_id, $post ) {
 
 	$cmb = cmb2_get_metabox( 'resource_data', $post_id );
 
-	if ( ! isset( $_POST[ $cmb->nonce() ] ) || ! wp_verify_nonce( $_POST[ $cmb->nonce() ], $cmb->nonce() ) ) {
+	if ( ! $cmb || ! isset( $_POST[ $cmb->nonce() ] ) || ! wp_verify_nonce( $_POST[ $cmb->nonce() ], $cmb->nonce() ) ) {
 		return;
 	}
 
