@@ -54,7 +54,7 @@
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
     "browserslist": "^4.7.2",
-    "caniuse-db": "^1.0.30001009",
+    "caniuse-db": "^1.0.30001010",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^5.0.5",
     "css-loader": "^3.2.0",
