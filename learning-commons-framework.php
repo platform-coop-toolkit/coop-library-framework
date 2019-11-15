@@ -3,7 +3,7 @@
  * Plugin Name: Learning Commons Framework
  * Plugin URI: https://github.com/platform-coop-toolkit/learning-commons-framework/
  * Description: Block and Custom Post Type utilities for the Platform Cooperativism Learning Commons.
- * Version: 1.0.0-alpha
+ * Version: 1.0.0-alpha.1
  * Author: Platform Cooperative Development Kit
  * Author URI:  https://github.com/platform-coop-toolkit/
  * Text Domain: learning-commons-framework
