@@ -697,8 +697,8 @@ function resource_data_init() {
 
 	$archival_links->add_field(
 		[
-			'name'        => __( 'Perma.cc link', 'learning-commons-framework' ),
-			'description' => __( 'Link(s) to archive copy on perma.cc. Specify multiple links if the resource spans multiple pages.<br /><a href="https://perma.cc">Perma.cc</a> provides web archiving for scholars, journals, courts, and others.', 'learning-commons-framework' ),
+			'name'        => __( 'Perma.cc', 'learning-commons-framework' ),
+			'description' => __( 'Links to archive copy on perma.cc. Specify multiple links if the resource spans multiple pages.<br /><a href="https://perma.cc">Perma.cc</a> provides web archiving for scholars, journals, courts, and others.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'perma_cc_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
@@ -716,8 +716,8 @@ function resource_data_init() {
 
 	$archival_links->add_field(
 		[
-			'name'        => __( 'Internet Archive (archive.org)', 'learning-commons-framework' ),
-			'description' => __( 'Link(s) to archive copy on Internet Archive. Specify multiple links if the resource spans multiple pages.<br /><a href="https://web.archive.org">Internet Archive</a> provides free and open web archiving.', 'learning-commons-framework' ),
+			'name'        => __( 'Internet Archive', 'learning-commons-framework' ),
+			'description' => __( 'Links to archive copy on Internet Archive. Specify multiple links if the resource spans multiple pages.<br /><a href="https://web.archive.org">Internet Archive</a> provides free and open web archiving.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'wayback_machine_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
