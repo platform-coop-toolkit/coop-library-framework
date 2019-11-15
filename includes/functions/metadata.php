@@ -63,7 +63,7 @@ function register_meta() {
 		'lc_resource_perma_cc_links',
 		[
 			'type'         => 'array',
-			'description'  => 'Link(s) to archive copy on perma.cc.',
+			'description'  => 'Links to archive copy on perma.cc.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -82,7 +82,7 @@ function register_meta() {
 		'lc_resource_wayback_machine_links',
 		[
 			'type'         => 'array',
-			'description'  => 'Link(s) to archive copy on Internet Archive.',
+			'description'  => 'Links to archive copy on Internet Archive.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
