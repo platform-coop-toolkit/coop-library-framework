@@ -22,4 +22,4 @@ TK.
 ## Upgrade Notice ##
 
 ### 1.0.0-alpha.1 ###
-Nothing of note.
+Learning Commons Framework 1.0.0-alpha.1 requires WordPress 5.3.
