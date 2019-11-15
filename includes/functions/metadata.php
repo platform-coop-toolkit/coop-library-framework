@@ -36,7 +36,7 @@ function register_meta() {
 		'lc_resource_short_title',
 		[
 			'type'         => 'string',
-			'description'  => 'A short title for the resource.',
+			'description'  => 'Shorter title used in resource listings.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -47,7 +47,7 @@ function register_meta() {
 		'lc_resource_permanent_link',
 		[
 			'type'         => 'string',
-			'description'  => 'A permanent link to the resource.',
+			'description'  => 'Web address to access the resource.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -63,7 +63,7 @@ function register_meta() {
 		'lc_resource_perma_cc_links',
 		[
 			'type'         => 'array',
-			'description'  => 'A link or links to an archival copy of the resource on Perma.cc.',
+			'description'  => 'Link(s) to archive copy on perma.cc.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -82,7 +82,7 @@ function register_meta() {
 		'lc_resource_wayback_machine_links',
 		[
 			'type'         => 'array',
-			'description'  => 'A link or links to an archival copy of the resource on the Wayback Machine.',
+			'description'  => 'Link(s) to archive copy on Internet Archive.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -101,7 +101,7 @@ function register_meta() {
 		'lc_resource_rights',
 		[
 			'type'         => 'string',
-			'description'  => 'The rights under which the resource is distributed.',
+			'description'  => 'License or rights under which the resource is distributed.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -112,7 +112,7 @@ function register_meta() {
 		'lc_resource_custom_rights',
 		[
 			'type'         => 'string',
-			'description'  => 'The custom rights statement under which the resource is distributed.',
+			'description'  => 'Custom license or rights statement.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -123,7 +123,7 @@ function register_meta() {
 		'lc_resource_author',
 		[
 			'type'         => 'array',
-			'description'  => 'The author of the resource.',
+			'description'  => 'Authors of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -141,7 +141,7 @@ function register_meta() {
 		'lc_resource_editor',
 		[
 			'type'         => 'array',
-			'description'  => 'The editor of the resource.',
+			'description'  => 'Editors of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -159,7 +159,7 @@ function register_meta() {
 		'lc_resource_translator',
 		[
 			'type'         => 'array',
-			'description'  => 'The translator of the resource.',
+			'description'  => 'Translators of the resource.',
 			'single'       => true,
 			'show_in_rest' => [
 				'schema' => [
@@ -177,7 +177,7 @@ function register_meta() {
 		'lc_resource_publication_year',
 		[
 			'type'         => 'integer',
-			'description'  => 'The year in which the resource was published.',
+			'description'  => 'The year the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -188,7 +188,7 @@ function register_meta() {
 		'lc_resource_publication_month',
 		[
 			'type'         => 'integer',
-			'description'  => 'The month in which the resource was published.',
+			'description'  => 'The month the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -199,7 +199,7 @@ function register_meta() {
 		'lc_resource_publication_day',
 		[
 			'type'         => 'integer',
-			'description'  => 'The day of the month on which the resource was published.',
+			'description'  => 'The numeric day the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -210,7 +210,7 @@ function register_meta() {
 		'lc_resource_publication_date',
 		[
 			'type'         => 'string',
-			'description'  => 'The date on which the resource was published.',
+			'description'  => 'The date the resource was published.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -248,7 +248,7 @@ function register_meta() {
 		'lc_resource_publication_name',
 		[
 			'type'         => 'string',
-			'description'  => 'The publication in which the resource appears.',
+			'description'  => 'Name of the publication in which the resource appears.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -259,7 +259,7 @@ function register_meta() {
 		'lc_resource_publication_link',
 		[
 			'type'         => 'string',
-			'description'  => 'A link to the publication in which the resource appears.',
+			'description'  => 'Web address for the publication.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -270,7 +270,7 @@ function register_meta() {
 		'lc_resource_publisher_name',
 		[
 			'type'         => 'string',
-			'description'  => 'The publisher of the resource.',
+			'description'  => 'Name of the resource publisher.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -281,7 +281,7 @@ function register_meta() {
 		'lc_resource_publisher_locality',
 		[
 			'type'         => 'string',
-			'description'  => 'The town or city where the publisher of the resource is located.',
+			'description'  => 'Town or city where the publisher is located.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -292,7 +292,7 @@ function register_meta() {
 		'lc_resource_publisher_country',
 		[
 			'type'         => 'string',
-			'description'  => 'The country where the publisher of the resource is located.',
+			'description'  => 'Country where the publisher is located.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -303,7 +303,7 @@ function register_meta() {
 		'lc_resource_publisher_link',
 		[
 			'type'         => 'string',
-			'description'  => 'A link to the publisher of the resource.',
+			'description'  => 'Web address for the publisher.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -314,7 +314,7 @@ function register_meta() {
 		'lc_resource_doi',
 		[
 			'type'         => 'string',
-			'description'  => 'The DOI for this resource.',
+			'description'  => 'Digital Object Identifier (or DOI) for this resource.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -325,7 +325,7 @@ function register_meta() {
 		'lc_resource_isbn',
 		[
 			'type'         => 'string',
-			'description'  => 'The ISBN for this resource.',
+			'description'  => 'International Standard Book Number (or ISBN) for this resource.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -336,7 +336,7 @@ function register_meta() {
 		'lc_resource_issn',
 		[
 			'type'         => 'string',
-			'description'  => 'The ISSN for this resource.',
+			'description'  => 'International Standard Serial Number (or ISSN) for this resource.',
 			'single'       => true,
 			'show_in_rest' => true,
 		]
@@ -450,7 +450,7 @@ function resource_data_init() {
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => [
-				'add_row_text' => __( 'Add Author', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Author', 'learning-commons-framework' ),
 			],
 			'attributes'  => [
 				'aria-label' => __( 'Author', 'learning-commons-framework' ),
@@ -467,7 +467,7 @@ function resource_data_init() {
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => [
-				'add_row_text' => __( 'Add Editor', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Editor', 'learning-commons-framework' ),
 			],
 			'attributes'  => [
 				'aria-label' => __( 'Editor', 'learning-commons-framework' ),
@@ -484,7 +484,7 @@ function resource_data_init() {
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => [
-				'add_row_text' => __( 'Add Translator', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Translator', 'learning-commons-framework' ),
 			],
 			'attributes'  => [
 				'aria-label' => __( 'Translator', 'learning-commons-framework' ),
@@ -563,7 +563,7 @@ function resource_data_init() {
 			'description' => __( 'Revisions of the resource', 'learning-commons-framework' ),
 			'options'     => [
 				'group_title'    => __( 'Revision {#}', 'learning-commons-framework' ),
-				'add_button'     => __( 'Add Revision', 'learning-commons-framework' ),
+				'add_button'     => __( 'Add Another Revision', 'learning-commons-framework' ),
 				'remove_button'  => __( 'Remove Revision', 'learning-commons-framework' ),
 				'sortable'       => true,
 				'closed'         => true,
@@ -704,7 +704,7 @@ function resource_data_init() {
 			'repeatable'  => true,
 			'protocols'   => [ 'http', 'https' ],
 			'text'        => [
-				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Perma.cc Link', 'learning-commons-framework' ),
 			],
 			'attributes'  => [
 				'aria-label'      => __( 'Perma.cc Link', 'learning-commons-framework' ),
@@ -716,17 +716,17 @@ function resource_data_init() {
 
 	$archival_links->add_field(
 		[
-			'name'        => __( 'The Internet Archive (archive.org)', 'learning-commons-framework' ),
-			'description' => __( 'Link(s) to archive copy on the Internet Archive. Specify multiple links if the resource spans multiple pages.<br /><a href="https://web.archive.org">The Internet Archive</a> provides free and open web archiving.', 'learning-commons-framework' ),
+			'name'        => __( 'Internet Archive (archive.org)', 'learning-commons-framework' ),
+			'description' => __( 'Link(s) to archive copy on Internet Archive. Specify multiple links if the resource spans multiple pages.<br /><a href="https://web.archive.org">Internet Archive</a> provides free and open web archiving.', 'learning-commons-framework' ),
 			'id'          => $prefix . 'wayback_machine_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
 			'protocols'   => [ 'http', 'https' ],
 			'text'        => [
-				'add_row_text' => __( 'Add Link', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Internet Archive Link', 'learning-commons-framework' ),
 			],
 			'attributes'  => [
-				'aria-label'      => __( 'Wayback Machine Link', 'learning-commons-framework' ),
+				'aria-label'      => __( 'Internet Archive Link', 'learning-commons-framework' ),
 				'data-validation' => 'true',
 				'data-domain'     => 'web.archive.org',
 			],
