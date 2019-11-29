@@ -45,9 +45,21 @@ function copy_post_metas( $metas ) {
  *
  * @param string $locale The current locale, for example en_US.
  *
- * @return array $countries An associative array of country codes.
+ * @return array $countries An associative array of countries.
  */
 function get_country_list( $locale = 'en_US' ) {
 	$countries = include_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/umpirsky/country-list/data/' . $locale . '/country.php';
 	return $countries;
+}
+
+/**
+ * Load a list of languages in the current locale.
+ *
+ * @param string $locale The current locale, for example en_US.
+ *
+ * @return array $languages An associative array of languages.
+ */
+function get_language_list( $locale = 'en_US' ) {
+	$languages = include_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/umpirsky/language-list/data/' . $locale . '/language.php';
+	return $languages;
 }
