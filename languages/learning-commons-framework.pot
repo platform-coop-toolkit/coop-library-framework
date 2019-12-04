@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/learning-commons-framework/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"

@@ -2,10 +2,10 @@
 /**
  * Metadata functionality.
  *
- * @package LearningCommonsFramework
+ * @package CoopLibraryFramework
  */
 
-namespace LearningCommonsFramework\Metadata;
+namespace CoopLibraryFramework\Metadata;
 
 use \WP_Error as WP_Error;
 
@@ -354,7 +354,7 @@ function resource_data_init() {
 	$general_info = new_cmb2_box(
 		[
 			'id'           => '01_resource_data',
-			'title'        => __( 'General Information', 'learning-commons-framework' ),
+			'title'        => __( 'General Information', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -365,7 +365,7 @@ function resource_data_init() {
 	$about_the_publication = new_cmb2_box(
 		[
 			'id'           => '02_about_the_publication',
-			'title'        => __( 'About the Publication', 'learning-commons-framework' ),
+			'title'        => __( 'About the Publication', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -376,7 +376,7 @@ function resource_data_init() {
 	$about_the_publisher = new_cmb2_box(
 		[
 			'id'           => '03_about_the_publisher',
-			'title'        => __( 'About the Publisher', 'learning-commons-framework' ),
+			'title'        => __( 'About the Publisher', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -387,7 +387,7 @@ function resource_data_init() {
 	$rights = new_cmb2_box(
 		[
 			'id'           => '04_rights',
-			'title'        => __( 'Distribution License or Rights', 'learning-commons-framework' ),
+			'title'        => __( 'Distribution License or Rights', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -398,7 +398,7 @@ function resource_data_init() {
 	$archival_links = new_cmb2_box(
 		[
 			'id'           => '05_archival_links',
-			'title'        => __( 'Archival Links', 'learning-commons-framework' ),
+			'title'        => __( 'Archival Links', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -409,7 +409,7 @@ function resource_data_init() {
 	$catalog_codes = new_cmb2_box(
 		[
 			'id'           => '06_catalog_codes',
-			'title'        => __( 'Catalog Codes', 'learning-commons-framework' ),
+			'title'        => __( 'Catalog Codes', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
 			'priority'     => 'high',
@@ -419,8 +419,8 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
-			'name'        => __( 'Link to resource (Required)', 'learning-commons-framework' ),
-			'description' => __( 'Web address to access the resource. This information is required.', 'learning-commons-framework' ),
+			'name'        => __( 'Link to resource (Required)', 'coop-library-framework' ),
+			'description' => __( 'Web address to access the resource. This information is required.', 'coop-library-framework' ),
 			'id'          => $prefix . 'permanent_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
@@ -434,8 +434,8 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
-			'name'        => __( 'Short title', 'learning-commons-framework' ),
-			'description' => __( 'Shorter title used in resource listings.', 'learning-commons-framework' ),
+			'name'        => __( 'Short title', 'coop-library-framework' ),
+			'description' => __( 'Shorter title used in resource listings.', 'coop-library-framework' ),
 			'id'          => $prefix . 'short_title',
 			'type'        => 'text',
 		]
@@ -444,16 +444,16 @@ function resource_data_init() {
 	// TODO: Don't save any authors if they are empty.
 	$general_info->add_field(
 		[
-			'name'        => __( 'Author', 'learning-commons-framework' ),
-			'description' => __( 'Authors of the resource.', 'learning-commons-framework' ),
+			'name'        => __( 'Author', 'coop-library-framework' ),
+			'description' => __( 'Authors of the resource.', 'coop-library-framework' ),
 			'id'          => $prefix . 'author',
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => [
-				'add_row_text' => __( 'Add Another Author', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Author', 'coop-library-framework' ),
 			],
 			'attributes'  => [
-				'aria-label' => __( 'Author', 'learning-commons-framework' ),
+				'aria-label' => __( 'Author', 'coop-library-framework' ),
 			],
 		]
 	);
@@ -461,16 +461,16 @@ function resource_data_init() {
 	// TODO: Don't save any authors if they are empty.
 	$general_info->add_field(
 		[
-			'name'        => __( 'Editor', 'learning-commons-framework' ),
-			'description' => __( 'Editors of the resource.', 'learning-commons-framework' ),
+			'name'        => __( 'Editor', 'coop-library-framework' ),
+			'description' => __( 'Editors of the resource.', 'coop-library-framework' ),
 			'id'          => $prefix . 'editor',
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => [
-				'add_row_text' => __( 'Add Another Editor', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Editor', 'coop-library-framework' ),
 			],
 			'attributes'  => [
-				'aria-label' => __( 'Editor', 'learning-commons-framework' ),
+				'aria-label' => __( 'Editor', 'coop-library-framework' ),
 			],
 		]
 	);
@@ -478,16 +478,16 @@ function resource_data_init() {
 	// TODO: Don't save any translators if they are empty.
 	$general_info->add_field(
 		[
-			'name'        => __( 'Translator', 'learning-commons-framework' ),
-			'description' => __( 'Translators of the resource.', 'learning-commons-framework' ),
+			'name'        => __( 'Translator', 'coop-library-framework' ),
+			'description' => __( 'Translators of the resource.', 'coop-library-framework' ),
 			'id'          => $prefix . 'translator',
 			'type'        => 'text',
 			'repeatable'  => true,
 			'text'        => [
-				'add_row_text' => __( 'Add Another Translator', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Translator', 'coop-library-framework' ),
 			],
 			'attributes'  => [
-				'aria-label' => __( 'Translator', 'learning-commons-framework' ),
+				'aria-label' => __( 'Translator', 'coop-library-framework' ),
 			],
 		]
 	);
@@ -502,8 +502,8 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
-			'name'        => __( 'Publication year (Required)', 'learning-commons-framework' ),
-			'description' => __( 'The year the resource was published. This information is required.', 'learning-commons-framework' ),
+			'name'        => __( 'Publication year (Required)', 'coop-library-framework' ),
+			'description' => __( 'The year the resource was published. This information is required.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publication_year',
 			'type'        => 'text',
 			'classes'     => 'cmb-required',
@@ -517,33 +517,33 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
-			'name'             => __( 'Publication month', 'learning-commons-framework' ),
-			'description'      => __( 'The month the resource was published.', 'learning-commons-framework' ),
+			'name'             => __( 'Publication month', 'coop-library-framework' ),
+			'description'      => __( 'The month the resource was published.', 'coop-library-framework' ),
 			'id'               => $prefix . 'publication_month',
 			'type'             => 'select',
 			'show_option_none' => true,
 			'default'          => '',
 			'options'          => [
-				'01' => __( 'January', 'learning-commons-framework' ),
-				'02' => __( 'February', 'learning-commons-framework' ),
-				'03' => __( 'March', 'learning-commons-framework' ),
-				'04' => __( 'April', 'learning-commons-framework' ),
-				'05' => __( 'May', 'learning-commons-framework' ),
-				'06' => __( 'June', 'learning-commons-framework' ),
-				'07' => __( 'July', 'learning-commons-framework' ),
-				'08' => __( 'August', 'learning-commons-framework' ),
-				'09' => __( 'September', 'learning-commons-framework' ),
-				'10' => __( 'October', 'learning-commons-framework' ),
-				'11' => __( 'November', 'learning-commons-framework' ),
-				'12' => __( 'December', 'learning-commons-framework' ),
+				'01' => __( 'January', 'coop-library-framework' ),
+				'02' => __( 'February', 'coop-library-framework' ),
+				'03' => __( 'March', 'coop-library-framework' ),
+				'04' => __( 'April', 'coop-library-framework' ),
+				'05' => __( 'May', 'coop-library-framework' ),
+				'06' => __( 'June', 'coop-library-framework' ),
+				'07' => __( 'July', 'coop-library-framework' ),
+				'08' => __( 'August', 'coop-library-framework' ),
+				'09' => __( 'September', 'coop-library-framework' ),
+				'10' => __( 'October', 'coop-library-framework' ),
+				'11' => __( 'November', 'coop-library-framework' ),
+				'12' => __( 'December', 'coop-library-framework' ),
 			],
 		]
 	);
 
 	$general_info->add_field(
 		[
-			'name'             => __( 'Publication day', 'learning-commons-framework' ),
-			'description'      => __( 'The numeric day the resource was published.', 'learning-commons-framework' ),
+			'name'             => __( 'Publication day', 'coop-library-framework' ),
+			'description'      => __( 'The numeric day the resource was published.', 'coop-library-framework' ),
 			'id'               => $prefix . 'publication_day',
 			'type'             => 'select',
 			'show_option_none' => true,
@@ -560,14 +560,14 @@ function resource_data_init() {
 		[
 			'id'          => $prefix . 'revisions',
 			'type'        => 'group',
-			'description' => __( 'Revisions of the resource', 'learning-commons-framework' ),
+			'description' => __( 'Revisions of the resource', 'coop-library-framework' ),
 			'options'     => [
-				'group_title'    => __( 'Revision {#}', 'learning-commons-framework' ),
-				'add_button'     => __( 'Add Another Revision', 'learning-commons-framework' ),
-				'remove_button'  => __( 'Remove Revision', 'learning-commons-framework' ),
+				'group_title'    => __( 'Revision {#}', 'coop-library-framework' ),
+				'add_button'     => __( 'Add Another Revision', 'coop-library-framework' ),
+				'remove_button'  => __( 'Remove Revision', 'coop-library-framework' ),
 				'sortable'       => true,
 				'closed'         => true,
-				'remove_confirm' => __( 'Remove this revision?', 'learning-commons-framework' ),
+				'remove_confirm' => __( 'Remove this revision?', 'coop-library-framework' ),
 			],
 		]
 	);
@@ -575,8 +575,8 @@ function resource_data_init() {
 	$general_info->add_group_field(
 		$group_field_id,
 		[
-			'name'        => __( 'Revision date', 'learning-commons-framework' ),
-			'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'learning-commons-framework' ),
+			'name'        => __( 'Revision date', 'coop-library-framework' ),
+			'description' => __( 'The date of this revision in YYYY-MM-DD format.', 'coop-library-framework' ),
 			'id'          => 'revision_date',
 			'type'        => 'text_date',
 			'date_format' => 'Y-m-d',
@@ -590,8 +590,8 @@ function resource_data_init() {
 	$general_info->add_group_field(
 		$group_field_id,
 		[
-			'name'        => __( 'Revision description', 'learning-commons-framework' ),
-			'description' => __( 'A brief description of this revision.', 'learning-commons-framework' ),
+			'name'        => __( 'Revision description', 'coop-library-framework' ),
+			'description' => __( 'A brief description of this revision.', 'coop-library-framework' ),
 			'id'          => 'revision_description',
 			'type'        => 'textarea_small',
 		]
@@ -599,8 +599,8 @@ function resource_data_init() {
 
 	$about_the_publication->add_field(
 		[
-			'name'        => __( 'Publication name', 'learning-commons-framework' ),
-			'description' => __( 'Name of the publication in which the resource appears.', 'learning-commons-framework' ),
+			'name'        => __( 'Publication name', 'coop-library-framework' ),
+			'description' => __( 'Name of the publication in which the resource appears.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publication_name',
 			'type'        => 'text',
 		]
@@ -608,8 +608,8 @@ function resource_data_init() {
 
 	$about_the_publication->add_field(
 		[
-			'name'        => __( 'Publication link', 'learning-commons-framework' ),
-			'description' => __( 'Web address for the publication.', 'learning-commons-framework' ),
+			'name'        => __( 'Publication link', 'coop-library-framework' ),
+			'description' => __( 'Web address for the publication.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publication_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
@@ -621,8 +621,8 @@ function resource_data_init() {
 
 	$about_the_publisher->add_field(
 		[
-			'name'        => __( 'Publisher name', 'learning-commons-framework' ),
-			'description' => __( 'Name of the resource publisher.', 'learning-commons-framework' ),
+			'name'        => __( 'Publisher name', 'coop-library-framework' ),
+			'description' => __( 'Name of the resource publisher.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publisher_name',
 			'type'        => 'text',
 		]
@@ -630,8 +630,8 @@ function resource_data_init() {
 
 	$about_the_publisher->add_field(
 		[
-			'name'        => __( 'Publisher link', 'learning-commons-framework' ),
-			'description' => __( 'Web address for the publisher.', 'learning-commons-framework' ),
+			'name'        => __( 'Publisher link', 'coop-library-framework' ),
+			'description' => __( 'Web address for the publisher.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publisher_link',
 			'type'        => 'text_url',
 			'protocols'   => [ 'http', 'https' ],
@@ -640,8 +640,8 @@ function resource_data_init() {
 
 	$about_the_publisher->add_field(
 		[
-			'name'        => __( 'Publisher city', 'learning-commons-framework' ),
-			'description' => __( 'Town or city where the publisher is located.', 'learning-commons-framework' ),
+			'name'        => __( 'Publisher city', 'coop-library-framework' ),
+			'description' => __( 'Town or city where the publisher is located.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publisher_locality',
 			'type'        => 'text',
 		]
@@ -649,44 +649,44 @@ function resource_data_init() {
 
 	$about_the_publisher->add_field(
 		[
-			'name'             => __( 'Publisher country', 'learning-commons-framework' ),
-			'description'      => __( 'Country where the publisher is located.', 'learning-commons-framework' ),
+			'name'             => __( 'Publisher country', 'coop-library-framework' ),
+			'description'      => __( 'Country where the publisher is located.', 'coop-library-framework' ),
 			'id'               => $prefix . 'publisher_country',
 			'type'             => 'select',
 			'show_option_none' => true,
 			'default'          => '',
-			'options'          => \LearningCommonsFramework\Internationalization\get_country_list( get_user_locale() ),
+			'options'          => \CoopLibraryFramework\Internationalization\get_country_list( get_user_locale() ),
 		]
 	);
 
 	$rights->add_field(
 		[
-			'name'             => __( 'License or rights', 'learning-commons-framework' ),
-			'description'      => __( 'License or rights under which the resource is distributed.', 'learning-commons-framework' ),
+			'name'             => __( 'License or rights', 'coop-library-framework' ),
+			'description'      => __( 'License or rights under which the resource is distributed.', 'coop-library-framework' ),
 			'id'               => $prefix . 'rights',
 			'type'             => 'select',
-			'show_option_none' => __( 'Not specified', 'learning-commons-framework' ),
+			'show_option_none' => __( 'Not specified', 'coop-library-framework' ),
 			'default'          => '',
 			'options'          => [
-				'all-rights-reserved' => __( 'All Rights Reserved', 'learning-commons-framework' ),
-				'cc-by'               => __( 'Creative Commons Attribution', 'learning-commons-framework' ),
-				'cc-by-nc'            => __( 'Creative Commons Attribution-NonCommercial', 'learning-commons-framework' ),
-				'cc-by-nd'            => __( 'Creative Commons Attribution-NoDerivatives', 'learning-commons-framework' ),
-				'cc-by-sa'            => __( 'Creative Commons Attribution-ShareAlike', 'learning-commons-framework' ),
-				'cc-by-nc-nd'         => __( 'Creative Commons Attribution-NonCommercial-NoDerivatives', 'learning-commons-framework' ),
-				'cc-by-nc-sa'         => __( 'Creative Commons Attribution-NonCommercial-ShareAlike', 'learning-commons-framework' ),
-				'ecl'                 => __( 'Educational Community License', 'learning-commons-framework' ),
-				'cc0'                 => __( 'No Rights Reserved', 'learning-commons-framework' ),
-				'public-domain'       => __( 'No Known Copyright', 'learning-commons-framework' ),
-				'custom'              => __( 'Custom…', 'learning-commons-framework' ),
+				'all-rights-reserved' => __( 'All Rights Reserved', 'coop-library-framework' ),
+				'cc-by'               => __( 'Creative Commons Attribution', 'coop-library-framework' ),
+				'cc-by-nc'            => __( 'Creative Commons Attribution-NonCommercial', 'coop-library-framework' ),
+				'cc-by-nd'            => __( 'Creative Commons Attribution-NoDerivatives', 'coop-library-framework' ),
+				'cc-by-sa'            => __( 'Creative Commons Attribution-ShareAlike', 'coop-library-framework' ),
+				'cc-by-nc-nd'         => __( 'Creative Commons Attribution-NonCommercial-NoDerivatives', 'coop-library-framework' ),
+				'cc-by-nc-sa'         => __( 'Creative Commons Attribution-NonCommercial-ShareAlike', 'coop-library-framework' ),
+				'ecl'                 => __( 'Educational Community License', 'coop-library-framework' ),
+				'cc0'                 => __( 'No Rights Reserved', 'coop-library-framework' ),
+				'public-domain'       => __( 'No Known Copyright', 'coop-library-framework' ),
+				'custom'              => __( 'Custom…', 'coop-library-framework' ),
 			],
 		]
 	);
 
 	$rights->add_field(
 		[
-			'name'        => __( 'Custom license or rights', 'learning-commons-framework' ),
-			'description' => __( 'Custom license or rights statement.<br />This is enabled when &lsquo;Custom…&rsquo; is selected under &lsquo;License or rights&rsquo;.', 'learning-commons-framework' ),
+			'name'        => __( 'Custom license or rights', 'coop-library-framework' ),
+			'description' => __( 'Custom license or rights statement.<br />This is enabled when &lsquo;Custom…&rsquo; is selected under &lsquo;License or rights&rsquo;.', 'coop-library-framework' ),
 			'id'          => $prefix . 'custom_rights',
 			'type'        => 'text',
 			'attributes'  => [
@@ -697,17 +697,17 @@ function resource_data_init() {
 
 	$archival_links->add_field(
 		[
-			'name'        => __( 'Perma.cc', 'learning-commons-framework' ),
-			'description' => __( 'Links to archive copy on perma.cc. Specify multiple links if the resource spans multiple pages.<br /><a href="https://perma.cc">Perma.cc</a> provides web archiving for scholars, journals, courts, and others.', 'learning-commons-framework' ),
+			'name'        => __( 'Perma.cc', 'coop-library-framework' ),
+			'description' => __( 'Links to archive copy on perma.cc. Specify multiple links if the resource spans multiple pages.<br /><a href="https://perma.cc">Perma.cc</a> provides web archiving for scholars, journals, courts, and others.', 'coop-library-framework' ),
 			'id'          => $prefix . 'perma_cc_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
 			'protocols'   => [ 'http', 'https' ],
 			'text'        => [
-				'add_row_text' => __( 'Add Another Perma.cc Link', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Perma.cc Link', 'coop-library-framework' ),
 			],
 			'attributes'  => [
-				'aria-label'      => __( 'Perma.cc Link', 'learning-commons-framework' ),
+				'aria-label'      => __( 'Perma.cc Link', 'coop-library-framework' ),
 				'data-validation' => 'true',
 				'data-domain'     => 'perma.cc',
 			],
@@ -716,17 +716,17 @@ function resource_data_init() {
 
 	$archival_links->add_field(
 		[
-			'name'        => __( 'Internet Archive', 'learning-commons-framework' ),
-			'description' => __( 'Links to archive copy on Internet Archive. Specify multiple links if the resource spans multiple pages.<br /><a href="https://web.archive.org">Internet Archive</a> provides free and open web archiving.', 'learning-commons-framework' ),
+			'name'        => __( 'Internet Archive', 'coop-library-framework' ),
+			'description' => __( 'Links to archive copy on Internet Archive. Specify multiple links if the resource spans multiple pages.<br /><a href="https://web.archive.org">Internet Archive</a> provides free and open web archiving.', 'coop-library-framework' ),
 			'id'          => $prefix . 'wayback_machine_links',
 			'type'        => 'text_url',
 			'repeatable'  => true,
 			'protocols'   => [ 'http', 'https' ],
 			'text'        => [
-				'add_row_text' => __( 'Add Another Internet Archive Link', 'learning-commons-framework' ),
+				'add_row_text' => __( 'Add Another Internet Archive Link', 'coop-library-framework' ),
 			],
 			'attributes'  => [
-				'aria-label'      => __( 'Internet Archive Link', 'learning-commons-framework' ),
+				'aria-label'      => __( 'Internet Archive Link', 'coop-library-framework' ),
 				'data-validation' => 'true',
 				'data-domain'     => 'web.archive.org',
 			],
@@ -735,8 +735,8 @@ function resource_data_init() {
 
 	$catalog_codes->add_field(
 		[
-			'name'        => __( 'DOI', 'learning-commons-framework' ),
-			'description' => __( 'Digital Object Identifier (or DOI) for this resource.', 'learning-commons-framework' ),
+			'name'        => __( 'DOI', 'coop-library-framework' ),
+			'description' => __( 'Digital Object Identifier (or DOI) for this resource.', 'coop-library-framework' ),
 			'id'          => $prefix . 'doi',
 			'type'        => 'text',
 			'attributes'  => [
@@ -748,8 +748,8 @@ function resource_data_init() {
 
 	$catalog_codes->add_field(
 		[
-			'name'        => __( 'ISBN', 'learning-commons-framework' ),
-			'description' => __( 'International Standard Book Number (or ISBN) for this resource.', 'learning-commons-framework' ),
+			'name'        => __( 'ISBN', 'coop-library-framework' ),
+			'description' => __( 'International Standard Book Number (or ISBN) for this resource.', 'coop-library-framework' ),
 			'id'          => $prefix . 'isbn',
 			'type'        => 'text',
 			'attributes'  => [
@@ -761,8 +761,8 @@ function resource_data_init() {
 
 	$catalog_codes->add_field(
 		[
-			'name'        => __( 'ISSN', 'learning-commons-framework' ),
-			'description' => __( 'International Standard Serial Number (or ISSN) for this resource.', 'learning-commons-framework' ),
+			'name'        => __( 'ISSN', 'coop-library-framework' ),
+			'description' => __( 'International Standard Serial Number (or ISSN) for this resource.', 'coop-library-framework' ),
 			'id'          => $prefix . 'issn',
 			'type'        => 'text',
 			'attributes'  => [
@@ -782,7 +782,7 @@ function resource_data_init() {
  * @return array
  */
 function preload_day_options( $year, $month ) {
-	$options = [ '' => __( 'None', 'learning-commons-framework' ) ];
+	$options = [ '' => __( 'None', 'coop-library-framework' ) ];
 	if ( $year && $month ) {
 		$days_in_month = \cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
 		for ( $i = 1; $i < $days_in_month + 1; $i++ ) {

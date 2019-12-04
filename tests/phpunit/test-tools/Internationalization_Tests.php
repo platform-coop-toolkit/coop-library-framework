@@ -1,7 +1,7 @@
 <?php
-namespace LearningCommonsFramework\Internationalization;
+namespace CoopLibraryFramework\Internationalization;
 
-use LearningCommonsFramework as Base;
+use CoopLibraryFramework as Base;
 
 class Internationalization_Tests extends Base\TestCase {
 

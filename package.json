@@ -1,7 +1,7 @@
 {
-  "name": "@platform-coop-toolkit/learning-commons-framework",
+  "name": "@platform-coop-toolkit/coop-library-framework",
   "version": "1.0.0-alpha.1",
-  "description": "Framework for the Platform Cooperativism Learning Commons.",
+  "description": "Custom post type and metadata utilities for the Platform Co-op Resource Library.",
   "author": {
     "name": "OCAD University",
     "email": "platform-coop-development-kit@lists.inclusivedesign.ca",
@@ -23,7 +23,7 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "localize": "wp i18n make-pot assets/js languages/learning-commons-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/learning-commons-framework/issues\"}'",
+    "localize": "wp i18n make-pot assets/js languages/coop-library-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/coop-library-framework/issues\"}'",
     "readme": "gulp readme"
   },
   "husky": {
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/platform-coop-toolkit/learning-commons-framework"
+    "url": "https://github.com/platform-coop-toolkit/coop-library-framework"
   },
   "devDependencies": {
     "@10up/eslint-config": "^1.0.9",
