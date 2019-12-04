@@ -3,16 +3,16 @@ if ( ! defined( 'PROJECT' ) ) {
 	define( 'PROJECT', __DIR__ . '/../includes/' );
 }
 
-if ( ! defined( 'LEARNING_COMMONS_FRAMEWORK_DIR' ) ) {
-	define( 'LEARNING_COMMONS_FRAMEWORK_DIR', __DIR__ . '/' );
+if ( ! defined( 'COOP_LIBRARY_FRAMEWORK_DIR' ) ) {
+	define( 'COOP_LIBRARY_FRAMEWORK_DIR', __DIR__ . '/' );
 }
 
 // Place any additional bootstrapping requirements here for PHP Unit.
 if ( ! defined( 'WP_LANG_DIR' ) ) {
 	define( 'WP_LANG_DIR', 'lang_dir' );
 }
-if ( ! defined( 'LEARNING_COMMONS_FRAMEWORK_PATH' ) ) {
-	define( 'LEARNING_COMMONS_FRAMEWORK_PATH', dirname( __DIR__ ) . '/' );
+if ( ! defined( 'COOP_LIBRARY_FRAMEWORK_PATH' ) ) {
+	define( 'COOP_LIBRARY_FRAMEWORK_PATH', dirname( __DIR__ ) . '/' );
 }
 
 if ( ! file_exists( __DIR__ . '/../vendor/autoload.php' ) ) {

@@ -1,4 +1,4 @@
-# Learning Commons Framework #
+# Co-op Library Framework #
 
 Custom post type and metadata utilities for the Platform Co-op Resource Library.
 
@@ -10,8 +10,8 @@ Custom post type and metadata utilities for the Platform Co-op Resource Library.
 
 ### Manual Installation ###
 
-1. Upload the [latest release](https://github.com/platform-coop-toolkit/learning-commons-framework/) from the 'Add Plugins' page.
-2. Activate Learning Commons Framework from the 'Plugins' page.
+1. Upload the [latest release](https://github.com/platform-coop-toolkit/coop-library-framework/) from the 'Add Plugins' page.
+2. Activate Co-op Library Framework from the 'Plugins' page.
 
 
 ## Screenshots ##
@@ -22,4 +22,4 @@ TK.
 ## Upgrade Notice ##
 
 ### 1.0.0-alpha.1 ###
-Learning Commons Framework 1.0.0-alpha.1 requires WordPress 5.3.
+Coop Library Framework 1.0.0-alpha.1 requires WordPress 5.3.

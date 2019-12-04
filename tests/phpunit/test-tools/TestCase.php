@@ -1,6 +1,6 @@
 <?php
 
-namespace LearningCommonsFramework;
+namespace CoopLibraryFramework;
 
 use PHPUnit\Framework\TestResult;
 use Text_Template;

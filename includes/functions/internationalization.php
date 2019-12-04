@@ -2,10 +2,10 @@
 /**
  * Internationalization functionality.
  *
- * @package LearningCommonsFramework
+ * @package CoopLibraryFramework
  */
 
-namespace LearningCommonsFramework\Internationalization;
+namespace CoopLibraryFramework\Internationalization;
 
 /**
  * Default setup routine
@@ -48,7 +48,7 @@ function copy_post_metas( $metas ) {
  * @return array $countries An associative array of countries.
  */
 function get_country_list( $locale = 'en_US' ) {
-	$countries = include_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/umpirsky/country-list/data/' . $locale . '/country.php';
+	$countries = include_once COOP_LIBRARY_FRAMEWORK_PATH . 'vendor/umpirsky/country-list/data/' . $locale . '/country.php';
 	return $countries;
 }
 
@@ -60,6 +60,6 @@ function get_country_list( $locale = 'en_US' ) {
  * @return array $languages An associative array of languages.
  */
 function get_language_list( $locale = 'en_US' ) {
-	$languages = include_once LEARNING_COMMONS_FRAMEWORK_PATH . 'vendor/umpirsky/language-list/data/' . $locale . '/language.php';
+	$languages = include_once COOP_LIBRARY_FRAMEWORK_PATH . 'vendor/umpirsky/language-list/data/' . $locale . '/language.php';
 	return $languages;
 }

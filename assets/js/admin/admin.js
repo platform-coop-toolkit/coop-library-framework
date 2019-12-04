@@ -46,7 +46,7 @@ jQuery( document ).ready( function( $ ) {
 		$day.children( 'option' ).remove();
 		const option = document.createElement( 'option' );
 		option.setAttribute( 'value', '' );
-		option.innerText = __( 'None', 'learning-commons-framework' );
+		option.innerText = __( 'None', 'coop-library-framework' );
 		$day.append( option );
 		for ( let i = 1; i < dayCount + 1; i++ ) {
 			const option = document.createElement( 'option' );
@@ -62,7 +62,7 @@ jQuery( document ).ready( function( $ ) {
 		} else {
 			$day.val( '' );
 			$day.parents( '.cmb-row' ).addClass( 'form-invalid' );
-			const errorText = __( 'The previously selected publication day is not valid in combination with the year and/or month.', 'learning-commons-framework' );
+			const errorText = __( 'The previously selected publication day is not valid in combination with the year and/or month.', 'coop-library-framework' );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$day.siblings( '.cmb2-metabox-description' ).after( error );
 			speak( errorText );
@@ -262,7 +262,7 @@ jQuery( document ).ready( function( $ ) {
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The label of the required field. */
-			const errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), labelText.toLowerCase() );
+			const errorText = sprintf( __( 'A %s is required.', 'coop-library-framework' ), labelText.toLowerCase() );
 			const error = $( `<p class="error">${errorText}</p>` );
 			if ( $row.children( '.cmb-td' ).length ) {
 				$row.children( '.cmb-td' ).append( error );
@@ -296,7 +296,7 @@ jQuery( document ).ready( function( $ ) {
 				$row.addClass( 'form-invalid' );
 			}
 			/* translators: %s: The expected domain name for the URL input. */
-			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), expectedDomain );
+			const errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'coop-library-framework' ), expectedDomain );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
@@ -323,7 +323,7 @@ jQuery( document ).ready( function( $ ) {
 			} else {
 				$row.addClass( 'form-invalid' );
 			}
-			const errorText = __( 'The supplied URL is not valid.', 'learning-commons-framework' );
+			const errorText = __( 'The supplied URL is not valid.', 'coop-library-framework' );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
@@ -349,7 +349,7 @@ jQuery( document ).ready( function( $ ) {
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The type of the datetime input field (date or datetime). */
-			const errorText = sprintf( __( 'The supplied %1$s is not valid.', 'learning-commons-framework' ), type );
+			const errorText = sprintf( __( 'The supplied %1$s is not valid.', 'coop-library-framework' ), type );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
@@ -374,7 +374,7 @@ jQuery( document ).ready( function( $ ) {
 			);
 			$row.addClass( 'form-invalid' );
 			/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
-			const errorText = sprintf( __( 'The supplied %1$s is not in a valid format.', 'learning-commons-framework' ), type.toUpperCase() );
+			const errorText = sprintf( __( 'The supplied %1$s is not in a valid format.', 'coop-library-framework' ), type.toUpperCase() );
 			const error = $( `<p class="error">${errorText}</p>` );
 			$field.parent( '.cmb-td' ).append( error );
 			$firstError = $firstError ? $firstError : $row;
@@ -400,27 +400,27 @@ jQuery( document ).ready( function( $ ) {
 		if ( $firstError ) {
 			event.preventDefault();
 			$( '#validation-message' ).remove();
-			const errorMessage = __( 'The form contains errors:', 'learning-commons-framework' );
+			const errorMessage = __( 'The form contains errors:', 'coop-library-framework' );
 			const errorList = $errorFields.reduce( ( html, field, index ) => {
 				let errorText;
 				if ( 'required' === field.type ) {
 					/* translators: %s: The label of the required field. */
-					errorText = sprintf( __( 'A %s is required.', 'learning-commons-framework' ), field.label.toLowerCase() );
+					errorText = sprintf( __( 'A %s is required.', 'coop-library-framework' ), field.label.toLowerCase() );
 				}
 				if ( 'url' === field.type ) {
-					errorText = __( 'The supplied url is not valid.', 'learning-commons-framework' );
+					errorText = __( 'The supplied url is not valid.', 'coop-library-framework' );
 				}
 				if ( 'domain' == field.type ) {
 					/* translators: %s: The expected domain name for the URL field. */
-					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'learning-commons-framework' ), field.expected );
+					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'coop-library-framework' ), field.expected );
 				}
 				if ( 'datetime' === field.type ) {
 					/* translators: %s: The type of the datetime input field (date or datetime). */
-					errorText = sprintf( __( 'The supplied %s is not valid.', 'learning-commons-framework' ), field.expected );
+					errorText = sprintf( __( 'The supplied %s is not valid.', 'coop-library-framework' ), field.expected );
 				}
 				if ( 'identifier' === field.type ) {
 					/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
-					errorText = sprintf( __( 'The supplied %s is not valid.', 'learning-commons-framework' ), String.prototype.toUpperCase.call( field.expected ) );
+					errorText = sprintf( __( 'The supplied %s is not valid.', 'coop-library-framework' ), String.prototype.toUpperCase.call( field.expected ) );
 				}
 				if ( 0 < index ) {
 					return `${html}<li><a href="#${field.id}">${errorText}</a></li>`;
