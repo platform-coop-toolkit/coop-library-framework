@@ -56,7 +56,7 @@
     "browserslist": "^4.8.2",
     "caniuse-db": "^1.0.30001015",
     "clean-webpack-plugin": "^1.0.0",
-    "copy-webpack-plugin": "^5.0.5",
+    "copy-webpack-plugin": "^5.1.0",
     "css-loader": "^3.2.1",
     "cssnano": "^4.1.10",
     "eslint": "^6.7.2",
