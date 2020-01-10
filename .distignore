@@ -11,6 +11,7 @@
 .stylelintrc
 .vscode
 assets
+commitlint.config.js
 config
 gulpfile.js
 node_modules
