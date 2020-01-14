@@ -341,6 +341,28 @@ function register_meta() {
 			'show_in_rest' => true,
 		]
 	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_views',
+		[
+			'type'         => 'integer',
+			'description'  => 'The number of times this resource has been viewed.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
+		'lc_resource_favorites',
+		[
+			'type'         => 'integer',
+			'description'  => 'The number of times this resource has been favorited.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
 }
 
 /**
