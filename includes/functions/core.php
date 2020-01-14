@@ -39,8 +39,6 @@ function setup() {
 	add_filter( 'mce_css', $n( 'mce_css' ) );
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
-	// Show all languages by default
-	add_filter( 'pre_get_posts', $n( 'show_all_langs' ) );
 	// Ensure resources and topics are translatable.
 	add_filter( 'pll_get_post_types', $n( 'add_resource_to_pll' ), 10, 2 );
 	add_filter( 'pll_get_taxonomies', $n( 'add_coop_type_to_pll' ), 10, 2 );
@@ -147,19 +145,6 @@ function add_resource_to_pll( $post_types, $is_settings ) {
 		$post_types['lc_resource'] = 'lc_resource';
 	}
 	return $post_types;
-}
-
-/**
- * Show resources in all languages by default.
- *
- * @param \WP_Query $query The current query.
- *
- * @return void
- */
-function show_all_langs( $query ) {
-	if ( is_post_type_archive( 'lc_resource' ) ) {
-		$query->set( 'lang', '' );
-	}
 }
 
 /**
