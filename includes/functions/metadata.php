@@ -441,6 +441,28 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
+			'name'        => __( 'Favorites', 'coop-library-framework' ),
+			'description' => __( 'The number of times this resource has been favorited.', 'coop-library-framework' ),
+			'id'          => $prefix . 'favorites',
+			'type'        => 'hidden',
+			'default'     => 0,
+			'sanitize_cb' => 'intval',
+		]
+	);
+
+	$general_info->add_field(
+		[
+			'name'        => __( 'Views', 'coop-library-framework' ),
+			'description' => __( 'The number of times this resource has been viewed.', 'coop-library-framework' ),
+			'id'          => $prefix . 'views',
+			'type'        => 'hidden',
+			'default'     => 0,
+			'sanitize_cb' => 'intval',
+		]
+	);
+
+	$general_info->add_field(
+		[
 			'name'        => __( 'Link to resource (Required)', 'coop-library-framework' ),
 			'description' => __( 'Web address to access the resource. This information is required.', 'coop-library-framework' ),
 			'id'          => $prefix . 'permanent_link',
