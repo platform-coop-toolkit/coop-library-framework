@@ -14,6 +14,13 @@
     "optional": false
   },
   {
+    "name": "Koko Analytics",
+    "host": "wordpress",
+    "slug": "koko-analytics/koko-analytics.php",
+    "uri": "https://wordpress.org/plugins/koko-analytics/",
+    "optional": false
+  },
+  {
     "name": "Polylang",
     "host": "wordpress",
     "slug": "polylang/polylang.php",
