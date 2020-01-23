@@ -3,7 +3,7 @@
  * Plugin Name: Co-op Library Framework
  * Plugin URI: https://github.com/platform-coop-toolkit/coop-library-framework/
  * Description: Custom post type and metadata utilities for the Platform Co-op Resource Library.
- * Version: 1.0.0-alpha.1
+ * Version: 1.0.0-alpha.2
  * Author: Platform Cooperative Development Kit
  * Author URI:  https://github.com/platform-coop-toolkit/
  * Text Domain: coop-library-framework

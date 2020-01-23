@@ -4,7 +4,7 @@ Tags: custom-post-types, platform-cooperativism, resource-library
 Requires PHP: 7.3
 Requires at least: 5.3
 Tested up to: 5.3
-Stable tag: 1.0.0-alpha.1
+Stable tag: 1.0.0-alpha.2
 
 Custom post type and metadata utilities for the Platform Co-op Resource Library.
 
@@ -28,6 +28,17 @@ TK.
 TK.
 
 == Changelog ==
+
+= 1.0.0-alpha.2 =
+**Major Changes**
+
+- Rename to Co-op Library Framework: #200
+
+**Minor Changes**
+
+- Add favorites to metadata: #258
+- Add commitlint configuration: #243
+- Add GitHub Actions: #186
 
 = 1.0.0-alpha.1 =
 * Initial release.
