@@ -344,17 +344,6 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
-		'lc_resource_views',
-		[
-			'type'         => 'integer',
-			'description'  => 'The number of times this resource has been viewed.',
-			'single'       => true,
-			'show_in_rest' => true,
-		]
-	);
-
-	register_post_meta(
-		'lc_resource',
 		'lc_resource_favorites',
 		[
 			'type'         => 'integer',
@@ -444,17 +433,6 @@ function resource_data_init() {
 			'name'        => __( 'Favorites', 'coop-library-framework' ),
 			'description' => __( 'The number of times this resource has been favorited.', 'coop-library-framework' ),
 			'id'          => $prefix . 'favorites',
-			'type'        => 'hidden',
-			'default'     => 0,
-			'sanitize_cb' => 'intval',
-		]
-	);
-
-	$general_info->add_field(
-		[
-			'name'        => __( 'Views', 'coop-library-framework' ),
-			'description' => __( 'The number of times this resource has been viewed.', 'coop-library-framework' ),
-			'id'          => $prefix . 'views',
 			'type'        => 'hidden',
 			'default'     => 0,
 			'sanitize_cb' => 'intval',
