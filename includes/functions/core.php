@@ -221,7 +221,7 @@ function goal_init() {
 		'lc_goal',
 		array( 'lc_resource' ),
 		array(
-			'hierarchical'          => false,
+			'hierarchical'          => true,
 			'labels'                => array(
 				'name'                       => __( 'Goals', 'coop-library-framework' ),
 				'singular_name'              => __( 'Goal', 'coop-library-framework' ),
