@@ -22,11 +22,11 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'init', $n( 'resource_init' ) );
+	add_action( 'init', $n( 'goal_init' ) );
+	add_action( 'init', $n( 'topic_init' ) );
 	add_action( 'init', $n( 'coop_type_init' ) );
 	add_action( 'init', $n( 'sector_init' ) );
 	add_action( 'init', $n( 'region_init' ) );
-	add_action( 'init', $n( 'topic_init' ) );
-	add_action( 'init', $n( 'goal_init' ) );
 	add_action( 'init', $n( 'format_init' ) );
 	add_filter( 'use_block_editor_for_post_type', $n( 'supports_block_editor' ), 10, 2 );
 
