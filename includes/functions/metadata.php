@@ -456,10 +456,13 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
-			'name'        => __( 'Short title', 'coop-library-framework' ),
-			'description' => __( 'Shorter title used in resource listings.', 'coop-library-framework' ),
-			'id'          => $prefix . 'short_title',
-			'type'        => 'text',
+			'name'             => __( 'Short title', 'coop-library-framework' ),
+			'description'      => __( 'Shorter title used in resource listings.', 'coop-library-framework' ),
+			'id'               => $prefix . 'short_title',
+			'type'             => 'text',
+			'char_counter'     => true,
+			'char_max'         => 72,
+			'char_max_enforce' => true,
 		]
 	);
 
