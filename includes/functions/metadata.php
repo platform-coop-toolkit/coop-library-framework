@@ -362,18 +362,6 @@ function register_meta() {
 function resource_data_init() {
 	$prefix = 'lc_resource_';
 
-	$term_info = new_cmb2_box(
-		[
-			'id'           => 'term_info',
-			'title'        => __( 'Tag Information', 'coop-library-framework' ),
-			'object_types' => [ 'term' ],
-			'taxonomies'   => [ 'lc_goal', 'lc_topic' ],
-			'context'      => 'normal',
-			'priority'     => 'high',
-			'show_names'   => true,
-		]
-	);
-
 	$general_info = new_cmb2_box(
 		[
 			'id'           => '01_general_info',
@@ -437,17 +425,6 @@ function resource_data_init() {
 			'context'      => 'normal',
 			'priority'     => 'high',
 			'show_names'   => true,
-		]
-	);
-
-	$term_info->add_field(
-		[
-			'name'        => __( 'Order', 'coop-library-framework' ),
-			'description' => __( 'The numeric order of this tag.', 'coop-library-framework' ),
-			'id'          => 'lc_term_order',
-			'type'        => 'text',
-			'default'     => 0,
-			'sanitize_cb' => 'intval',
 		]
 	);
 

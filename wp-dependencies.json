@@ -33,5 +33,12 @@
     "slug": "theme-translation-for-polylang/polylang-theme-translation.php",
     "uri": "https://wordpress.org/plugins/theme-translation-for-polylang/",
     "optional": false
+  },
+  {
+    "name": "WP Term Order",
+    "host": "wordpress",
+    "slug": "wp-term-order/wp-term-order.php",
+    "uri": "https://wordpress.org/plugins/wp-term-order/",
+    "optional": false
   }
 ]
