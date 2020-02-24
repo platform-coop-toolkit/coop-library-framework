@@ -114,6 +114,7 @@ jQuery( document ).ready( function( $ ) {
 		let yearVal = $year.val();
 		if ( ! yearVal ) {
 			yearVal = new Date().getFullYear();
+			$year.val( yearVal );
 		}
 		const monthVal = $( e.target ).val();
 		if ( ! monthVal ) {
