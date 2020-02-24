@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "afragen/wp-dependency-installer",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/afragen/wp-dependency-installer.git",
-                "reference": "5aa77e50c0fffc45245ca33c1cdd3f681c17fb84"
+                "reference": "14a5a20a8046030e43a2203f8dce55f63aa11786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/afragen/wp-dependency-installer/zipball/5aa77e50c0fffc45245ca33c1cdd3f681c17fb84",
-                "reference": "5aa77e50c0fffc45245ca33c1cdd3f681c17fb84",
+                "url": "https://api.github.com/repos/afragen/wp-dependency-installer/zipball/14a5a20a8046030e43a2203f8dce55f63aa11786",
+                "reference": "14a5a20a8046030e43a2203f8dce55f63aa11786",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 }
             ],
             "description": "Library that helps WordPress plugin dependency management.",
-            "time": "2020-01-23T22:53:01+00:00"
+            "time": "2020-02-22T23:25:44+00:00"
         },
         {
             "name": "cmb2/cmb2",
