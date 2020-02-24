@@ -794,9 +794,7 @@ function get_terms_orderby( $orderby = 'name', $args = array() ) {
 		return $orderby;
 	}
 
-	if ( empty( $args['orderby'] ) || empty( $orderby ) || in_array( $orderby, array( 'name', 't.name' ), true ) ) {
-		$orderby = 'tt.name, tt.order';
-	} elseif ( 'order' === $args['orderby'] ) {
+	if ( empty( $args['orderby'] ) || empty( $orderby ) || 'order' === $args['orderby'] ) {
 		$orderby = 'tt.order, t.name';
 	}
 
