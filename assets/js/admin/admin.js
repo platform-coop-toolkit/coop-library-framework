@@ -14,6 +14,7 @@ jQuery( document ).ready( function( $ ) {
 	const $year = $( '#lc_resource_publication_year' );
 	const $month = $( '#lc_resource_publication_month' );
 	const $day = $( '#lc_resource_publication_day' );
+	const $date = $( '#lc_resource_publication_date' );
 	const $titleRow = $( '#titlewrap' );
 	const $toValidate = $( '[data-validation]' );
 
@@ -69,20 +70,44 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
+	/**
+	 * Update the hidden publicationDate field.
+	 *
+	 * @param {Integer|Boolean} year
+	 * @param {Integer|Boolean} month
+	 * @param {Integer|Boolean} day
+	 */
+	function updatePublicationDate( year, month, day ) {
+		const pieces = [];
+		if ( year ) {
+			pieces.push( year );
+		}
+		if ( month && 2 == month.length  ) {
+			pieces.push( month );
+		}
+		if ( day ) {
+			pieces.push( day );
+		}
+		const publicationDate = 0 < pieces.length ? pieces.join( '-' ) : 'ongoing';
+		$date.val( publicationDate );
+	}
+
 	$year.keyup( ( e ) => {
 		let yearVal = $( e.target ).val();
+		let monthVal = $month.val();
+
 		// Don't validate until we hit four characters.
 		if ( 4 === yearVal.length ) {
 			if ( ! yearVal ) {
 				yearVal = new Date().getFullYear();
 			}
-			let monthVal = $month.val();
 			if ( ! monthVal ) {
 				monthVal = new Date().getMonth();
 
 			}
 			loadDays( yearVal, monthVal, $day );
 		}
+		updatePublicationDate( yearVal, monthVal, false );
 	} );
 
 	$month.change( ( e ) => {
@@ -96,11 +121,19 @@ jQuery( document ).ready( function( $ ) {
 		} else {
 			loadDays( yearVal, monthVal, $day );
 		}
+
+		updatePublicationDate( yearVal, monthVal, false );
 	} );
 
 	$day.change( ( e ) => {
+		const yearVal = $year.val();
+		const monthVal = $month.val();
+		const dayVal = $( e.target ).val();
+
 		$( e.target ).parents( '.cmb-row' ).removeClass( 'form-invalid' );
 		$( e.target ).siblings( '.error' ).remove();
+
+		updatePublicationDate( yearVal, monthVal, dayVal );
 	} );
 
 	if ( !$toValidate.length ) {
@@ -177,9 +210,14 @@ jQuery( document ).ready( function( $ ) {
 	 * @param {Event} event
 	 */
 	function validateForm( event ) {
+		const yearVal = $year.val();
+		const monthVal = $month.val();
+		const dayVal = $day.val();
 		const $errorFields = [];
 		let $firstError = null;
 		$( '.error' ).remove();
+
+		updatePublicationDate( yearVal, monthVal, dayVal );
 
 		$urlFields.each( ( i, e ) => {
 			if ( $( e ).is( ':visible' ) ) {
