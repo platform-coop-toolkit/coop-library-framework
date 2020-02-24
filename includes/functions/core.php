@@ -52,7 +52,7 @@ function setup() {
 	add_filter( 'wp_fancy_term_order', '__return_false' );
 
 	// Fix for https://github.com/stuttter/wp-term-order/issues/11.
-	add_filter( 'get_terms_orderby', $n( 'get_terms_orderby' ), 9, 2 );
+	add_filter( 'get_terms_orderby', $n( 'get_terms_orderby' ), 11, 2 );
 
 	do_action( 'coop_library_framework_loaded' );
 }
@@ -790,15 +790,13 @@ function supports_block_editor( $use_block_editor, $post_type ) {
  * @return string $orderby The (possible modified) `orderby` value.
  */
 function get_terms_orderby( $orderby = 'name', $args = array() ) {
-
-	// Do not override if being manually controlled
 	if ( ! empty( $_GET['orderby'] ) && ! empty( $_GET['taxonomy'] ) ) { // @codingStandardsIgnoreLine
 		return $orderby;
 	}
 
-	if ( empty( $args['orderby'] ) || empty( $orderby ) || ( 'order' === $args['orderby'] ) ) {
-		$orderby = 'tt.order';
-	} elseif ( 't.name' === $orderby ) {
+	if ( empty( $args['orderby'] ) || empty( $orderby ) || in_array( $orderby, array( 'name', 't.name' ), true ) ) {
+		$orderby = 'tt.name, tt.order';
+	} elseif ( 'order' === $args['orderby'] ) {
 		$orderby = 'tt.order, t.name';
 	}
 
