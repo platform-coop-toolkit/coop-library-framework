@@ -60,6 +60,17 @@ function register_meta() {
 
 	register_post_meta(
 		'lc_resource',
+		'lc_resource_has_paywall',
+		[
+			'type'         => 'string',
+			'description'  => 'Indicates whether or not the resource is behind a paywall.',
+			'single'       => true,
+			'show_in_rest' => true,
+		]
+	);
+
+	register_post_meta(
+		'lc_resource',
 		'lc_resource_perma_cc_links',
 		[
 			'type'         => 'array',
@@ -456,10 +467,22 @@ function resource_data_init() {
 
 	$general_info->add_field(
 		[
-			'name'        => __( 'Short title', 'coop-library-framework' ),
-			'description' => __( 'Shorter title used in resource listings.', 'coop-library-framework' ),
-			'id'          => $prefix . 'short_title',
-			'type'        => 'text',
+			'name'             => __( 'Short title', 'coop-library-framework' ),
+			'description'      => __( 'Shorter title used in resource listings.', 'coop-library-framework' ),
+			'id'               => $prefix . 'short_title',
+			'type'             => 'text',
+			'char_counter'     => true,
+			'char_max'         => 72,
+			'char_max_enforce' => true,
+		]
+	);
+
+	$general_info->add_field(
+		[
+			'name'        => __( 'Paywall', 'coop-library-framework' ),
+			'description' => __( 'Is this resource behind a paywall?', 'coop-library-framework' ),
+			'id'          => $prefix . 'has_paywall',
+			'type'        => 'checkbox',
 		]
 	);
 
