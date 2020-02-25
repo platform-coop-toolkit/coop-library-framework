@@ -51,9 +51,6 @@ function setup() {
 	// Disable inaccessible sortable JavaScript for term order.
 	add_filter( 'wp_fancy_term_order', '__return_false' );
 
-	// Fix for https://github.com/stuttter/wp-term-order/issues/11.
-	add_filter( 'get_terms_orderby', $n( 'get_terms_orderby' ), 11, 2 );
-
 	do_action( 'coop_library_framework_loaded' );
 }
 
@@ -780,23 +777,4 @@ function supports_block_editor( $use_block_editor, $post_type ) {
 	}
 
 	return $use_block_editor;
-}
-
-/**
- * Force `orderby` to `tt.order` if not explicitly set to something else.
- *
- * @param  string $orderby The `orderby` value.
- * @param  array  $args Arguments.
- * @return string $orderby The (possible modified) `orderby` value.
- */
-function get_terms_orderby( $orderby = 'name', $args = array() ) {
-	if ( ! empty( $_GET['orderby'] ) && ! empty( $_GET['taxonomy'] ) ) { // @codingStandardsIgnoreLine
-		return $orderby;
-	}
-
-	if ( empty( $args['orderby'] ) || empty( $orderby ) || 'order' === $args['orderby'] ) {
-		$orderby = 'tt.order, t.name';
-	}
-
-	return $orderby;
 }

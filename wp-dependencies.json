@@ -36,9 +36,9 @@
   },
   {
     "name": "WP Term Order",
-    "host": "wordpress",
+    "host": "github",
     "slug": "wp-term-order/wp-term-order.php",
-    "uri": "https://wordpress.org/plugins/wp-term-order/",
+    "uri": "platform-coop-toolkit/wp-term-order",
     "optional": false
   }
 ]
