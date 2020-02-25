@@ -373,7 +373,7 @@ function resource_data_init() {
 
 	$general_info = new_cmb2_box(
 		[
-			'id'           => '01_resource_data',
+			'id'           => '01_general_info',
 			'title'        => __( 'General Information', 'coop-library-framework' ),
 			'object_types' => [ 'lc_resource' ],
 			'context'      => 'normal',
