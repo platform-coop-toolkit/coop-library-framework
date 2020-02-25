@@ -21,8 +21,6 @@ function setup() {
 
 	add_action( 'init', $n( 'register_meta' ) );
 	add_action( 'cmb2_admin_init', $n( 'resource_data_init' ) );
-	add_action( 'save_post_lc_resource', $n( 'update_publication_date' ), 10, 2 );
-	add_action( 'edit_post_lc_resource', $n( 'update_publication_date' ), 10, 2 );
 }
 
 /**
@@ -541,21 +539,28 @@ function resource_data_init() {
 		[
 			'name' => 'Publication date',
 			'type' => 'title',
-			'id'   => $prefix . 'publication_date',
+			'id'   => $prefix . 'publication_date_title',
 		]
 	);
 
 	$general_info->add_field(
 		[
-			'name'        => __( 'Publication year (Required)', 'coop-library-framework' ),
-			'description' => __( 'The year the resource was published. This information is required.', 'coop-library-framework' ),
+			'name'    => 'Publication date',
+			'type'    => 'hidden',
+			'id'      => $prefix . 'publication_date',
+			'default' => 'ongoing',
+		]
+	);
+
+	$general_info->add_field(
+		[
+			'name'        => __( 'Publication year', 'coop-library-framework' ),
+			'description' => __( 'The year the resource was published.', 'coop-library-framework' ),
 			'id'          => $prefix . 'publication_year',
 			'type'        => 'text',
-			'classes'     => 'cmb-required',
 			'attributes'  => [
 				'data-validation' => 'true',
 				'data-datetime'   => 'year',
-				'data-required'   => 'true',
 			],
 		]
 	);
@@ -837,35 +842,4 @@ function preload_day_options( $year, $month ) {
 	}
 
 	return $options;
-}
-
-/**
- * Update the publication date when year, month, or day are modified.
- *
- * @param int      $post_id The post ID.
- * @param \WP_Post $post The post object.
- */
-function update_publication_date( $post_id, $post ) {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-
-	$cmb = cmb2_get_metabox( 'resource_data', $post_id );
-
-	if ( ! $cmb || ! isset( $_POST[ $cmb->nonce() ] ) || ! wp_verify_nonce( $_POST[ $cmb->nonce() ], $cmb->nonce() ) ) {
-		return;
-	}
-
-	$y      = $_REQUEST['lc_resource_publication_year'];
-	$m      = $_REQUEST['lc_resource_publication_month'];
-	$d      = $_REQUEST['lc_resource_publication_day'];
-	$pieces = [];
-	foreach ( [ $y, $m, $d ] as $piece ) {
-		if ( $piece ) {
-			$pieces[] = $piece;
-		}
-	}
-	$date = implode( '-', $pieces );
-
-	update_post_meta( $post_id, 'lc_resource_publication_date', $date );
 }
