@@ -35,10 +35,11 @@
     "optional": false
   },
   {
-    "name": "Theme and plugin translation for Polylang (TTfP)",
-    "host": "wordpress",
-    "slug": "theme-translation-for-polylang/polylang-theme-translation.php",
-    "uri": "https://wordpress.org/plugins/theme-translation-for-polylang/",
+    "name": "WP Term Order",
+    "host": "github",
+    "slug": "wp-term-order/wp-term-order.php",
+    "uri": "platform-coop-toolkit/wp-term-order",
+    "branch": "master",
     "optional": false
   }
 ]
