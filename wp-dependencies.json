@@ -32,6 +32,7 @@
     "host": "github",
     "slug": "wp-term-order/wp-term-order.php",
     "uri": "platform-coop-toolkit/wp-term-order",
+    "branch": "master",
     "optional": false
   }
 ]

@@ -92,6 +92,10 @@ function resource_init() {
 					'title'    => 'Published',
 					'meta_key' => 'lc_resource_publication_year',
 				],
+				'published' => [
+					'title'      => 'Date Added',
+					'post_field' => 'post_date',
+				],
 			],
 			'labels'              => [
 				'name'                  => __( 'Resources', 'coop-library-framework' ),
