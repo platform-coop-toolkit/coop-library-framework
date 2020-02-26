@@ -24,3 +24,7 @@
 #titlewrap .error {
 	color: var(--red);
 }
+
+.cmb2-char-counter-wrap input[type="text"] {
+	width: 2.5rem !important;
+}

@@ -48,6 +48,9 @@ function setup() {
 	add_filter( 'pll_get_taxonomies', $n( 'add_goal_to_pll' ), 10, 2 );
 	add_filter( 'pll_get_taxonomies', $n( 'add_format_to_pll' ), 10, 2 );
 
+	// Disable inaccessible sortable JavaScript for term order.
+	add_filter( 'wp_fancy_term_order', '__return_false' );
+
 	do_action( 'coop_library_framework_loaded' );
 }
 
@@ -88,6 +91,10 @@ function resource_init() {
 				'published' => [
 					'title'    => 'Published',
 					'meta_key' => 'lc_resource_publication_year',
+				],
+				'published' => [
+					'title'      => 'Date Added',
+					'post_field' => 'post_date',
 				],
 			],
 			'labels'              => [
