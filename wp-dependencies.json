@@ -28,6 +28,13 @@
     "optional": false
   },
   {
+    "name": "Relevanssi",
+    "host": "wordpress",
+    "slug": "relevanssi/relevanssi.php",
+    "uri": "https://wordpress.org/plugins/relevanssi/",
+    "optional": false
+  },
+  {
     "name": "WP Term Order",
     "host": "github",
     "slug": "wp-term-order/wp-term-order.php",
