@@ -28,7 +28,6 @@ function setup() {
 	add_action( 'init', $n( 'topic_init' ) );
 	add_action( 'init', $n( 'goal_init' ) );
 	add_action( 'init', $n( 'format_init' ) );
-	add_filter( 'use_block_editor_for_post_type', $n( 'supports_block_editor' ), 10, 2 );
 
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
@@ -765,20 +764,4 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
-}
-
-/**
- * Determine which post types support the Block Editor.
- *
- * @param bool   $use_block_editor Whether or not hte block editor should be used.
- * @param string $post_type The current post type.
- *
- * @return bool
- */
-function supports_block_editor( $use_block_editor, $post_type ) {
-	if ( 'lc_resource' === $post_type ) {
-		return false;
-	}
-
-	return $use_block_editor;
 }
