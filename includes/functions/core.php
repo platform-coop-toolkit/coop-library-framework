@@ -81,11 +81,11 @@ function resource_init() {
 					'taxonomy' => 'lc_topic',
 				],
 				'published' => [
-					'title'    => 'Published',
-					'meta_key' => 'lc_resource_publication_year',
+					'title'    => __( 'Date Published', 'coop-library-framework' ),
+					'meta_key' => 'lc_resource_publication_date',
 				],
-				'published' => [
-					'title'      => 'Date Added',
+				'added' => [
+					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
 				],
 			],
