@@ -22,11 +22,11 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'init', $n( 'resource_init' ) );
+	add_action( 'init', $n( 'goal_init' ) );
+	add_action( 'init', $n( 'topic_init' ) );
 	add_action( 'init', $n( 'coop_type_init' ) );
 	add_action( 'init', $n( 'sector_init' ) );
 	add_action( 'init', $n( 'region_init' ) );
-	add_action( 'init', $n( 'topic_init' ) );
-	add_action( 'init', $n( 'goal_init' ) );
 	add_action( 'init', $n( 'format_init' ) );
 
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
@@ -80,11 +80,11 @@ function resource_init() {
 					'taxonomy' => 'lc_topic',
 				],
 				'published' => [
-					'title'    => 'Published',
-					'meta_key' => 'lc_resource_publication_year',
+					'title'    => __( 'Date Published', 'coop-library-framework' ),
+					'meta_key' => 'lc_resource_publication_date',
 				],
-				'published' => [
-					'title'      => 'Date Added',
+				'added' => [
+					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
 				],
 			],
