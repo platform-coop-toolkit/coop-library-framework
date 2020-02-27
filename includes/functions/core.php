@@ -22,11 +22,11 @@ function setup() {
 	add_action( 'init', $n( 'i18n' ) );
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'init', $n( 'resource_init' ) );
+	add_action( 'init', $n( 'goal_init' ) );
+	add_action( 'init', $n( 'topic_init' ) );
 	add_action( 'init', $n( 'coop_type_init' ) );
 	add_action( 'init', $n( 'sector_init' ) );
 	add_action( 'init', $n( 'region_init' ) );
-	add_action( 'init', $n( 'topic_init' ) );
-	add_action( 'init', $n( 'goal_init' ) );
 	add_action( 'init', $n( 'format_init' ) );
 	add_filter( 'use_block_editor_for_post_type', $n( 'supports_block_editor' ), 10, 2 );
 
@@ -39,14 +39,6 @@ function setup() {
 	add_filter( 'mce_css', $n( 'mce_css' ) );
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
-	// Ensure resources and topics are translatable.
-	add_filter( 'pll_get_post_types', $n( 'add_resource_to_pll' ), 10, 2 );
-	add_filter( 'pll_get_taxonomies', $n( 'add_coop_type_to_pll' ), 10, 2 );
-	add_filter( 'pll_get_taxonomies', $n( 'add_sector_to_pll' ), 10, 2 );
-	add_filter( 'pll_get_taxonomies', $n( 'add_region_to_pll' ), 10, 2 );
-	add_filter( 'pll_get_taxonomies', $n( 'add_topic_to_pll' ), 10, 2 );
-	add_filter( 'pll_get_taxonomies', $n( 'add_goal_to_pll' ), 10, 2 );
-	add_filter( 'pll_get_taxonomies', $n( 'add_format_to_pll' ), 10, 2 );
 
 	// Disable inaccessible sortable JavaScript for term order.
 	add_filter( 'wp_fancy_term_order', '__return_false' );
@@ -89,11 +81,11 @@ function resource_init() {
 					'taxonomy' => 'lc_topic',
 				],
 				'published' => [
-					'title'    => 'Published',
-					'meta_key' => 'lc_resource_publication_year',
+					'title'    => __( 'Date Published', 'coop-library-framework' ),
+					'meta_key' => 'lc_resource_publication_date',
 				],
-				'published' => [
-					'title'      => 'Date Added',
+				'added' => [
+					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
 				],
 			],
@@ -135,23 +127,6 @@ function resource_init() {
 			'slug'     => 'resources',
 		)
 	);
-}
-
-/**
- * Add the `lc_resource` post type to Polylang, ensuring it is translatable.
- *
- * @param array $post_types An array of post types.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_resource_to_pll( $post_types, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $post_types['lc_resource'] );
-	} else {
-		$post_types['lc_resource'] = 'lc_resource';
-	}
-	return $post_types;
 }
 
 /**
@@ -203,23 +178,6 @@ function topic_init() {
 }
 
 /**
- * Add the `lc_topic` taxonomy to Polylang, ensuring it is translatable.
- *
- * @param array $taxonomies An array of taxonomies.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_topic_to_pll( $taxonomies, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $taxonomies['lc_topic'] );
-	} else {
-		$taxonomies['lc_topic'] = 'lc_topic';
-	}
-	return $taxonomies;
-}
-
-/**
  * Registers the `lc_goal` taxonomy,
  * for use with 'lc_resource'.
  */
@@ -266,24 +224,6 @@ function goal_init() {
 		)
 	);
 }
-
-/**
- * Add the `lc_goal` taxonomy to Polylang, ensuring it is translatable.
- *
- * @param array $taxonomies An array of taxonomies.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_goal_to_pll( $taxonomies, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $taxonomies['lc_goal'] );
-	} else {
-		$taxonomies['lc_goal'] = 'lc_goal';
-	}
-	return $taxonomies;
-}
-
 
 /**
  * Registers the `lc_region` taxonomy,
@@ -334,24 +274,6 @@ function region_init() {
 }
 
 /**
- * Add the `lc_region` taxonomy to Polylang, ensuring it is translatable.
- *
- * @param array $taxonomies An array of taxonomies.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_region_to_pll( $taxonomies, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $taxonomies['lc_region'] );
-	} else {
-		$taxonomies['lc_region'] = 'lc_region';
-	}
-	return $taxonomies;
-}
-
-
-/**
  * Registers the `lc_sector` taxonomy,
  * for use with 'lc_resource'.
  */
@@ -397,23 +319,6 @@ function sector_init() {
 			'slug'     => 'sectors',
 		)
 	);
-}
-
-/**
- * Add the `lc_sector` taxonomy to Polylang, ensuring it is translatable.
- *
- * @param array $taxonomies An array of taxonomies.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_sector_to_pll( $taxonomies, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $taxonomies['lc_sector'] );
-	} else {
-		$taxonomies['lc_sector'] = 'lc_sector';
-	}
-	return $taxonomies;
 }
 
 /**
@@ -465,23 +370,6 @@ function coop_type_init() {
 }
 
 /**
- * Add the `lc_coop_type` taxonomy to Polylang, ensuring it is translatable.
- *
- * @param array $taxonomies An array of taxonomies.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_coop_type_to_pll( $taxonomies, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $taxonomies['lc_coop_type'] );
-	} else {
-		$taxonomies['lc_coop_type'] = 'lc_coop_type';
-	}
-	return $taxonomies;
-}
-
-/**
  * Registers the `lc_format` taxonomy,
  * for use with 'lc_resource'.
  */
@@ -527,23 +415,6 @@ function format_init() {
 			'slug'     => 'formats',
 		)
 	);
-}
-
-/**
- * Add the `lc_format` taxonomy to Polylang, ensuring it is translatable.
- *
- * @param array $taxonomies An array of taxonomies.
- * @param bool  $is_settings Whether or not we are on the settings page.
- *
- * @return array
- */
-function add_format_to_pll( $taxonomies, $is_settings ) {
-	if ( $is_settings ) {
-		unset( $taxonomies['lc_format'] );
-	} else {
-		$taxonomies['lc_format'] = 'lc_format';
-	}
-	return $taxonomies;
 }
 
 /**
@@ -659,7 +530,7 @@ function admin_scripts() {
 	wp_enqueue_script(
 		'coop_library_framework_admin',
 		script_url( 'admin', 'admin' ),
-		[ 'wp-i18n' ],
+		[ 'wp-a11y', 'wp-i18n' ],
 		COOP_LIBRARY_FRAMEWORK_VERSION,
 		true
 	);
