@@ -21,10 +21,10 @@
     "optional": false
   },
   {
-    "name": "Polylang",
+    "name": "Relevanssi",
     "host": "wordpress",
-    "slug": "polylang/polylang.php",
-    "uri": "https://wordpress.org/plugins/polylang/",
+    "slug": "relevanssi/relevanssi.php",
+    "uri": "https://wordpress.org/plugins/relevanssi/",
     "optional": false
   },
   {
