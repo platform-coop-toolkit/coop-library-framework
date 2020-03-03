@@ -9,6 +9,7 @@ const issn = require( 'issn' );
 const schemify = require( 'url-schemify' );
 
 jQuery( document ).ready( function( $ ) {
+	const dateField = acf.getField( 'field_5e5ead4ac768d' );
 	const yearField = acf.getField( 'field_5e56ee8953584' );
 	const monthField = acf.getField( 'field_5e56eef559a76' );
 	const dayField = acf.getField( 'field_5e56f04ee5a20' );
@@ -47,8 +48,36 @@ jQuery( document ).ready( function( $ ) {
 		}
 	};
 
+	/**
+	 * Construct a publication date from input values, and update
+	 * the publication date field to match.
+	 */
+	const setPublicationDate = () => {
+		let publicationDate = 'ongoing';
+		const year = yearField.val();
+		const month = monthField.val();
+		const day = dayField.val();
+
+		if ( year ) {
+			publicationDate = year;
+		}
+
+		if ( month ) {
+			publicationDate += `-${month}`;
+		}
+
+		if ( day ) {
+			publicationDate += `-${day}`;
+		}
+
+		dateField.val( publicationDate );
+	};
+
 	yearField.on( 'change', setupDays );
+	yearField.on( 'change', setPublicationDate );
 	monthField.on( 'change', setupDays );
+	monthField.on( 'change', setPublicationDate );
+	dayField.on( 'change', setPublicationDate );
 
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
