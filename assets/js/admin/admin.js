@@ -13,22 +13,47 @@ jQuery( document ).ready( function( $ ) {
 	const monthField = acf.getField( 'field_5e56eef559a76' );
 	const dayField = acf.getField( 'field_5e56f04ee5a20' );
 
-	dayField.on( 'showField', function() {
+	/**
+	 * Populate options for the publication day field that are appropriate
+	 * to the selected year and month.
+	 */
+	const setupDays = () => {
 		const year = yearField.val();
 		const month = monthField.val();
-		// TODO: Update choices based on yearField and monthField settings.
-		console.log( `${year}-${month}` ); // eslint-disable-line
-	} );
+		if ( year && month ) {
+			const day = dayField.val();
+			const daySelect = $( `#acf-${dayField.data.key}` );
+			const dayCount = daysInMonth( year, month );
+			if ( day > dayCount ) {
+				const errorText = sprintf( __( 'The publication day has been reset as there are only %1$d days in the selected month, and your choice of %2$d is no longer valid.', 'coop-library-framework' ), dayCount, day );
+				dayField.showNotice( {
+					text: errorText,
+					type: 'warning',
+					dismiss: true,
+				} );
+				speak( errorText );
+			}
+			daySelect.children().not( '[value=""]' ).remove();
+			for ( let i = 1; i < dayCount + 1; i++ ) {
+				const option = document.createElement( 'option' );
+				const val = 9 > i ? `0${i}` : i;
+				option.setAttribute( 'value', val );
+				option.innerText = i;
+				daySelect.append( option );
+			}
+			if ( day ) {
+				dayField.val( day );
+			}
+		}
+	};
 
+	yearField.on( 'change', setupDays );
+	monthField.on( 'change', setupDays );
 
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
 	const $rights = $( '#lc_resource_rights' );
 	const $customRights = $( '#lc_resource_custom_rights' );
-	const $year = $( '#lc_resource_publication_year' );
-	const $month = $( '#lc_resource_publication_month' );
-	const $day = $( '#lc_resource_publication_day' );
-	const $date = $( '#lc_resource_publication_date' );
 	const $titleRow = $( '#titlewrap' );
 	const $toValidate = $( '[data-validation]' );
 
@@ -46,109 +71,6 @@ jQuery( document ).ready( function( $ ) {
 		if ( 0 !== val.length ) {
 			$( e.target ).val( schemify( val ) );
 		}
-	} );
-
-	/**
-	 * Populate and enable the select element for days of the month.
-	 *
-	 * @param {integer} year
-	 * @param {integer} month
-	 * @param {jQuery} $day
-	 */
-	function loadDays( year, month, $day ) {
-		const dayCount = daysInMonth( year, month );
-		const dayVal = $day.val();
-		$day.children( 'option' ).remove();
-		const option = document.createElement( 'option' );
-		option.setAttribute( 'value', '' );
-		option.innerText = __( 'None', 'coop-library-framework' );
-		$day.append( option );
-		for ( let i = 1; i < dayCount + 1; i++ ) {
-			const option = document.createElement( 'option' );
-			const val = 9 > i ? `0${i}` : i;
-			option.setAttribute( 'value', val );
-			option.innerText = i;
-			$day.append( option );
-		}
-		if ( dayVal <= dayCount ) {
-			$day.val( dayVal );
-			$day.parents( '.cmb-row' ).removeClass( 'form-invalid' );
-			$day.siblings( '.error' ).remove();
-		} else {
-			$day.val( '' );
-			$day.parents( '.cmb-row' ).addClass( 'form-invalid' );
-			const errorText = __( 'The previously selected publication day is not valid in combination with the year and/or month.', 'coop-library-framework' );
-			const error = $( `<p class="error">${errorText}</p>` );
-			$day.siblings( '.cmb2-metabox-description' ).after( error );
-			speak( errorText );
-		}
-	}
-
-	/**
-	 * Update the hidden publicationDate field.
-	 *
-	 * @param {Integer|Boolean} year
-	 * @param {Integer|Boolean} month
-	 * @param {Integer|Boolean} day
-	 */
-	function updatePublicationDate( year, month, day ) {
-		const pieces = [];
-		if ( year ) {
-			pieces.push( year );
-		}
-		if ( month && 2 == month.length  ) {
-			pieces.push( month );
-		}
-		if ( day ) {
-			pieces.push( day );
-		}
-		const publicationDate = 0 < pieces.length ? pieces.join( '-' ) : 'ongoing';
-		$date.val( publicationDate );
-	}
-
-	$year.keyup( ( e ) => {
-		let yearVal = $( e.target ).val();
-		let monthVal = $month.val();
-
-		// Don't validate until we hit four characters.
-		if ( 4 === yearVal.length ) {
-			if ( ! yearVal ) {
-				yearVal = new Date().getFullYear();
-			}
-			if ( ! monthVal ) {
-				monthVal = new Date().getMonth();
-
-			}
-			loadDays( yearVal, monthVal, $day );
-		}
-		updatePublicationDate( yearVal, monthVal, false );
-	} );
-
-	$month.change( ( e ) => {
-		let yearVal = $year.val();
-		if ( ! yearVal ) {
-			yearVal = new Date().getFullYear();
-			$year.val( yearVal );
-		}
-		const monthVal = $( e.target ).val();
-		if ( ! monthVal ) {
-			$day.val( '' );
-		} else {
-			loadDays( yearVal, monthVal, $day );
-		}
-
-		updatePublicationDate( yearVal, monthVal, false );
-	} );
-
-	$day.change( ( e ) => {
-		const yearVal = $year.val();
-		const monthVal = $month.val();
-		const dayVal = $( e.target ).val();
-
-		$( e.target ).parents( '.cmb-row' ).removeClass( 'form-invalid' );
-		$( e.target ).siblings( '.error' ).remove();
-
-		updatePublicationDate( yearVal, monthVal, dayVal );
 	} );
 
 	if ( !$toValidate.length ) {
@@ -182,26 +104,6 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/**
-	 * Ensure that a user-supplied datetime string matches the ISO 8601 format for a date or a datetime, or is a valid year.
-	 *
-	 * @see https://en.wikipedia.org/wiki/ISO_8601
-	 *
-	 * @param {string} val The value that the user has entered.
-	 * @param {string} type The type of datetime string expected (date, datetime, or year).
-	 */
-	function checkDateTime( val, type ) {
-		if ( 'year' === type ) {
-			const year = parseInt( val, 10 );
-			return ( 1498 <= year && ( new Date() ).getFullYear() >= year );
-		}
-		if ( 'date' === type ) {
-			return /^\d{4}[/-](0?[1-9]|1[012])[/-](0?[1-9]|[12][0-9]|3[01])$/.test( val );
-		}
-		// TODO: Add datetime validation.
-		return false;
-	}
-
-	/**
 	 * Ensure that a unique identifier string matches one of DOI, ISBN, ISSN formats.
 	 *
 	 * @param {string} val The value that the user has entered.
@@ -225,14 +127,9 @@ jQuery( document ).ready( function( $ ) {
 	 * @param {Event} event
 	 */
 	function validateForm( event ) {
-		const yearVal = $year.val();
-		const monthVal = $month.val();
-		const dayVal = $day.val();
 		const $errorFields = [];
 		let $firstError = null;
 		$( '.error' ).remove();
-
-		updatePublicationDate( yearVal, monthVal, dayVal );
 
 		$urlFields.each( ( i, e ) => {
 			if ( $( e ).is( ':visible' ) ) {
@@ -260,13 +157,6 @@ jQuery( document ).ready( function( $ ) {
 					if ( $this.data( 'domain' ) ) {
 						if ( ! checkUrlDomain( $this.data( 'domain' ), val ) ) {
 							addDomainMismatchError( $row, $this, $this.data( 'domain' ) );
-							valid = false;
-						} else {
-							valid = true;
-						}
-					} else if ( $this.data( 'datetime' ) ) {
-						if ( ! checkDateTime( val, $this.data( 'datetime' ) ) ) {
-							addDateTimeError( $row, $this, $this.data( 'datetime' ) );
 							valid = false;
 						} else {
 							valid = true;
@@ -383,32 +273,6 @@ jQuery( document ).ready( function( $ ) {
 		}
 
 		/**
-		 * Add datetime error flag to a form field.
-		 *
-		 * @param {jQuery} $row
-		 * @param {jQuery} field
-		 * @param {string} type
-		 */
-		function addDateTimeError( $row, $field, type ) {
-			const $label = $row.find( '.cmb-th label' );
-
-			$errorFields.push(
-				{
-					id: $row.hasClass( 'cmb-repeat' ) ? `${$label.attr( 'for' )}_repeat` : $label.attr( 'for' ),
-					label: $label.text(),
-					type: 'datetime',
-					expected: type
-				}
-			);
-			$row.addClass( 'form-invalid' );
-			/* translators: %s: The type of the datetime input field (date or datetime). */
-			const errorText = sprintf( __( 'The supplied %1$s is not valid.', 'coop-library-framework' ), type );
-			const error = $( `<p class="error">${errorText}</p>` );
-			$field.parent( '.cmb-td' ).append( error );
-			$firstError = $firstError ? $firstError : $row;
-		}
-
-		/**
 		 * Add unique identifier error flag to a form field.
 		 *
 		 * @param {jQuery} $row
@@ -466,10 +330,6 @@ jQuery( document ).ready( function( $ ) {
 				if ( 'domain' == field.type ) {
 					/* translators: %s: The expected domain name for the URL field. */
 					errorText = sprintf( __( 'The URL must be an address at the domain <em>%s</em>.', 'coop-library-framework' ), field.expected );
-				}
-				if ( 'datetime' === field.type ) {
-					/* translators: %s: The type of the datetime input field (date or datetime). */
-					errorText = sprintf( __( 'The supplied %s is not valid.', 'coop-library-framework' ), field.expected );
 				}
 				if ( 'identifier' === field.type ) {
 					/* translators: %s: The type of the identifier input field (DOI, ISBN, or ISSN). */
