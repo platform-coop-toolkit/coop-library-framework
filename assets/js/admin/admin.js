@@ -1,3 +1,5 @@
+/* global acf */
+
 const { __, sprintf } = wp.i18n;
 const { speak } = wp.a11y;
 const daysInMonth = require( 'days-in-month' );
@@ -7,6 +9,18 @@ const issn = require( 'issn' );
 const schemify = require( 'url-schemify' );
 
 jQuery( document ).ready( function( $ ) {
+	const yearField = acf.getField( 'field_5e56ee8953584' );
+	const monthField = acf.getField( 'field_5e56eef559a76' );
+	const dayField = acf.getField( 'field_5e56f04ee5a20' );
+
+	dayField.on( 'showField', function() {
+		const year = yearField.val();
+		const month = monthField.val();
+		// TODO: Update choices based on yearField and monthField settings.
+		console.log( `${year}-${month}` ); // eslint-disable-line
+	} );
+
+
 	const $form = $( '#post' );
 	const $urlFields = $( '.cmb2-text-url' );
 	const $rights = $( '#lc_resource_rights' );
