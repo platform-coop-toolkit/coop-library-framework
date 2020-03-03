@@ -34,13 +34,5 @@
     "uri": "platform-coop-toolkit/wp-term-order",
     "branch": "master",
     "optional": false
-  },
-  {
-    "name": "ACF Hidden Field",
-    "host": "github",
-    "slug": "acf-hidden/acf-hidden.php",
-    "uri": "folbert/acf-hidden",
-    "branch": "master",
-    "optional": false
   }
 ]

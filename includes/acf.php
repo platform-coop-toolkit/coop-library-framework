@@ -289,8 +289,8 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 					'key'               => 'field_5e5ead4ac768d',
 					'label'             => __( 'Publication Date', 'coop-library-framework' ),
 					'name'              => 'lc_resource_publication_date',
-					'type'              => 'hidden',
-					'instructions'      => '',
+					'type'              => 'text',
+					'instructions'      => __( 'You can set the publication date for this resource using the year, month and day fields above.', 'coop-library-framework' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => array(

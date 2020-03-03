@@ -22,7 +22,6 @@ function setup() {
 	add_action( 'init', $n( 'register_meta' ) );
 	add_action( 'init', $n( 'resource_data_init' ) );
 	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'acf_load_publication_day' ) );
-
 }
 
 /**
@@ -438,4 +437,3 @@ function acf_load_publication_day( $field ) {
 
 	return $field;
 }
-
