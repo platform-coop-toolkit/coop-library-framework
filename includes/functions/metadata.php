@@ -20,7 +20,9 @@ function setup() {
 	};
 
 	add_action( 'init', $n( 'register_meta' ) );
-	add_action( 'cmb2_admin_init', $n( 'resource_data_init' ) );
+	add_action( 'init', $n( 'resource_data_init' ) );
+	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'acf_load_publication_day' ) );
+
 }
 
 /**
@@ -382,10 +384,58 @@ function resource_data_init() {
  *
  * @return int
  */
-function preload_day_options( $year = false, $month = false ) {
+function preload_days_in_month( $year = false, $month = false ) {
 	if ( $year && $month ) {
 		return \cal_days_in_month( CAL_GREGORIAN, (int) $month, (int) $year );
 	}
 
 	return 31;
 }
+
+/**
+ * Build options for years select element.
+ *
+ * @return array
+ */
+function enumerate_years() {
+	$years = [];
+	$y     = gmdate( 'Y' );
+	for ( $i = $y; $i >= ( $y - 100 ); $i-- ) {
+		$years[ $i ] = $i;
+	}
+	return $years;
+}
+
+/**
+ * Build options for days select element.
+ *
+ * @param int $year  The year in question.
+ * @param int $month The month in question
+ *
+ * @return array
+ */
+function enumerate_days( $year = false, $month = false ) {
+	$days     = [];
+	$max_days = preload_days_in_month( $year, $month );
+	for ( $i = 1; $i <= $max_days; $i++ ) {
+		$days[ str_pad( $i, 2, '0', STR_PAD_LEFT ) ] = $i;
+	}
+	return $days;
+}
+
+/**
+ * Modify the day field for an ACF instance on load.
+ *
+ * @param array $field The array of field options to be modified.
+ *
+ * @return array
+ */
+function acf_load_publication_day( $field ) {
+	$year  = get_field( 'lc_resource_publication_year', get_the_ID() );
+	$month = get_field( 'lc_resource_publication_month', get_the_ID() );
+
+	$field['choices'] = enumerate_days( $year, $month );
+
+	return $field;
+}
+
