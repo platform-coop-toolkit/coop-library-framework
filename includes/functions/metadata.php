@@ -7,7 +7,11 @@
 
 namespace CoopLibraryFramework\Metadata;
 
+use Altmetric\Identifiers\Doi;
+use Altmetric\Identifiers\Isbn;
 use CoopLibraryFramework\HiddenField;
+use Symfony\Component\Validator\Constraints\Issn;
+use Symfony\Component\Validator\Validation;
 use \WP_Error as WP_Error;
 
 /**
@@ -23,7 +27,12 @@ function setup() {
 	add_action( 'init', $n( 'register_meta' ) );
 	add_action( 'init', $n( 'register_hidden_field_type' ) );
 	add_action( 'acf/init', $n( 'register_fields' ) );
-	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'acf_load_publication_day' ) );
+	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'load_publication_day' ) );
+	add_filter( 'acf/validate_value/key=field_5e5706d2de4dc', $n( 'validate_doi' ), 10, 4 );
+	add_filter( 'acf/validate_value/key=field_5e5706ebde4dd', $n( 'validate_isbn' ), 10, 4 );
+	add_filter( 'acf/validate_value/key=field_5e57070ade4de', $n( 'validate_issn' ), 10, 4 );
+	add_filter( 'acf/validate_value/key=field_5e57062fee32a', $n( 'validate_perma_cc' ), 10, 4 );
+	add_filter( 'acf/validate_value/key=field_5e57065fee32c', $n( 'validate_wayback_machine' ), 10, 4 );
 }
 
 /**
@@ -378,7 +387,7 @@ function register_hidden_field_type() {
  *
  * @return void
  */
-function resource_data_init() {
+function register_fields() {
 	if ( function_exists( 'acf_add_local_field_group' ) ) {
 		acf_add_local_field_group(
 			array(
@@ -575,7 +584,7 @@ function resource_data_init() {
 							'class' => '',
 							'id'    => '',
 						),
-						'choices'           => CoopLibraryFramework\Metadata\enumerate_years(),
+						'choices'           => enumerate_years(),
 						'default_value'     => array(),
 						'allow_null'        => 1,
 						'multiple'          => 0,
@@ -650,7 +659,7 @@ function resource_data_init() {
 							'class' => '',
 							'id'    => '',
 						),
-						'choices'           => CoopLibraryFramework\Metadata\enumerate_days(),
+						'choices'           => enumerate_days(),
 						'default_value'     => array(),
 						'allow_null'        => 1,
 						'multiple'          => 0,
@@ -1284,11 +1293,117 @@ function enumerate_days( $year = false, $month = false ) {
  *
  * @return array
  */
-function acf_load_publication_day( $field ) {
+function load_publication_day( $field ) {
 	$year  = get_field( 'lc_resource_publication_year', get_the_ID() );
 	$month = get_field( 'lc_resource_publication_month', get_the_ID() );
 
 	$field['choices'] = enumerate_days( $year, $month );
 
 	return $field;
+}
+
+/**
+ * Validate DOI input.
+ *
+ * @param mixed  $valid Whether or not the value is valid (true / false). Can also be returned as a custom error message (string).
+ * @param mixed  $value The value to be saved.
+ * @param array  $field An array containing all the field settings.
+ * @param string $input The DOM element’s name attribute.
+ */
+function validate_doi( $valid, $value, $field, $input ) {
+	if ( ! $valid ) {
+		return $valid;
+	}
+
+	if ( ! array_filter( Doi::extract( $value ) ) ) {
+		$valid = __( 'This is not a valid DOI.', 'coop-library-framework' );
+	}
+
+	return $valid;
+}
+
+/**
+ * Validate ISBN input.
+ *
+ * @param mixed  $valid Whether or not the value is valid (true / false). Can also be returned as a custom error message (string).
+ * @param mixed  $value The value to be saved.
+ * @param array  $field An array containing all the field settings.
+ * @param string $input The DOM element’s name attribute.
+ */
+function validate_isbn( $valid, $value, $field, $input ) {
+	if ( ! $valid ) {
+		return $valid;
+	}
+
+	if ( ! array_filter( Isbn::extract( $value ) ) ) {
+		$valid = __( 'This is not a valid ISBN.', 'coop-library-framework' );
+	}
+
+	return $valid;
+}
+
+/**
+ * Validate ISSN input.
+ *
+ * @param mixed  $valid Whether or not the value is valid (true / false). Can also be returned as a custom error message (string).
+ * @param mixed  $value The value to be saved.
+ * @param array  $field An array containing all the field settings.
+ * @param string $input The DOM element’s name attribute.
+ */
+function validate_issn( $valid, $value, $field, $input ) {
+	if ( ! $valid ) {
+		return $valid;
+	}
+
+	$validator  = Validation::createValidator();
+	$violations = $validator->validate( $value, [ new Issn() ] );
+	if ( 0 !== count( $violations ) ) {
+		$valid = __( 'This is not a valid ISSN.', 'coop-library-framework' );
+	}
+
+	return $valid;
+}
+
+/**
+ * Validate Perma.cc input.
+ *
+ * @param mixed  $valid Whether or not the value is valid (true / false). Can also be returned as a custom error message (string).
+ * @param mixed  $value The value to be saved.
+ * @param array  $field An array containing all the field settings.
+ * @param string $input The DOM element’s name attribute.
+ */
+function validate_perma_cc( $valid, $value, $field, $input ) {
+	if ( ! $valid ) {
+		return $valid;
+	}
+
+	$host = wp_parse_url( $value, PHP_URL_HOST );
+
+	if ( 'perma.cc' !== $host ) {
+		$valid = __( 'This is not a valid Perma.cc link.', 'coop-library-framework' );
+	}
+
+	return $valid;
+}
+
+/**
+ * Validate Internet Archive link input.
+ *
+ * @param mixed  $valid Whether or not the value is valid (true / false). Can also be returned as a custom error message (string).
+ * @param mixed  $value The value to be saved.
+ * @param array  $field An array containing all the field settings.
+ * @param string $input The DOM element’s name attribute.
+ */
+function validate_wayback_machine( $valid, $value, $field, $input ) {
+	if ( ! $valid ) {
+		return $valid;
+	}
+
+	$host = wp_parse_url( $value, PHP_URL_HOST );
+
+	if ( 'web.archive.org' !== $host ) {
+		$valid = __( 'This is not a valid Internet Archive link.', 'coop-library-framework' );
+	}
+
+	return $valid;
 }
