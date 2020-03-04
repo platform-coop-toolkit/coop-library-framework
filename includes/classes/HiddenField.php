@@ -13,8 +13,10 @@ namespace CoopLibraryFramework;
 class HiddenField extends \acf_field {
 	/**
 	 * Constructor.
+	 *
+	 * @param array $settings The settings for this field.
 	 */
-	public function __construct() {
+	public function __construct( $settings = [] ) {
 		$this->name     = 'hidden';
 		$this->label    = __( 'Hidden', 'coop-library-framework' );
 		$this->category = 'layout';
