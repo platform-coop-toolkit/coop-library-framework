@@ -289,7 +289,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 					'key'               => 'field_5e5ead4ac768d',
 					'label'             => __( 'Publication Date', 'coop-library-framework' ),
 					'name'              => 'lc_resource_publication_date',
-					'type'              => 'text',
+					'type'              => 'hidden',
 					'instructions'      => __( 'You can set the publication date for this resource using the year, month and day fields above.', 'coop-library-framework' ),
 					'required'          => 0,
 					'conditional_logic' => 0,
@@ -570,7 +570,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 					'name'              => 'lc_resource_rights',
 					'type'              => 'select',
 					'instructions'      => __( 'License or rights under which the resource is distributed.', 'coop-library-framework' ),
-					'required'          => 1,
+					'required'          => 0,
 					'conditional_logic' => 0,
 					'wrapper'           => array(
 						'width' => '',
@@ -578,7 +578,6 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 						'id'    => '',
 					),
 					'choices'           => array(
-						''                    => __( 'Not specified', 'coop-library-framework' ),
 						'all-rights-reserved' => __( 'All Rights Reserved', 'coop-library-framework' ),
 						'cc-by'               => __( 'Creative Commons Attribution', 'coop-library-framework' ),
 						'cc-by-nc'            => __( 'Creative Commons Attribution-NonCommercial', 'coop-library-framework' ),
@@ -591,10 +590,8 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 						'public-domain'       => __( 'No Known Copyright', 'coop-library-framework' ),
 						'custom'              => __( 'Custom…', 'coop-library-framework' ),
 					),
-					'default_value'     => array(
-						0 => '',
-					),
-					'allow_null'        => 0,
+					'default_value'     => array(),
+					'allow_null'        => 1,
 					'multiple'          => 0,
 					'ui'                => 0,
 					'return_format'     => 'value',

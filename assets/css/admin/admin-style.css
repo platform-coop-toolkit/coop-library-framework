@@ -10,9 +10,6 @@
 	content: "\f480";
 }
 
-.cmb-required .cmb-th label::after {
-	content: "*";
-}
 
 #validation-message ul {
 	list-style: disc;
@@ -20,11 +17,16 @@
 }
 
 #validation-message a,
-.cmb-td .error,
 #titlewrap .error {
 	color: var(--red);
 }
 
-.cmb2-char-counter-wrap input[type="text"] {
-	width: 2.5rem !important;
+.acf-fields > .acf-field-hidden {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.acf-field-hidden .acf-label {
+	display: none;
 }

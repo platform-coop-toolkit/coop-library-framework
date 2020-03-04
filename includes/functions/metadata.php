@@ -7,6 +7,7 @@
 
 namespace CoopLibraryFramework\Metadata;
 
+use CoopLibraryFramework\HiddenField;
 use \WP_Error as WP_Error;
 
 /**
@@ -20,6 +21,7 @@ function setup() {
 	};
 
 	add_action( 'init', $n( 'register_meta' ) );
+	add_action( 'init', $n( 'register_hidden_field_type' ) );
 	add_action( 'init', $n( 'resource_data_init' ) );
 	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'acf_load_publication_day' ) );
 }
@@ -362,6 +364,13 @@ function register_meta() {
 			'show_in_rest' => true,
 		]
 	);
+}
+
+/**
+ * Register ACF Hidden Field type.
+ */
+function register_hidden_field_type() {
+	new \CoopLibraryFramework\HiddenField();
 }
 
 /**
