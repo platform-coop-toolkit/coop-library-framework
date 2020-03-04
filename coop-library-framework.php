@@ -37,8 +37,5 @@ if ( file_exists( COOP_LIBRARY_FRAMEWORK_PATH . '/vendor/autoload.php' ) ) {
 	require_once COOP_LIBRARY_FRAMEWORK_PATH . 'vendor/autoload.php';
 }
 
-// Load CMB2.
-require_once COOP_LIBRARY_FRAMEWORK_PATH . 'vendor/cmb2/cmb2/init.php';
-
 // Run dependency installer.
 WP_Dependency_Installer::instance()->run( __DIR__ );
