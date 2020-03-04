@@ -1315,6 +1315,10 @@ function validate_doi( $valid, $value, $field, $input ) {
 		return $valid;
 	}
 
+	if ( '' === $value ) {
+		return $valid;
+	}
+
 	if ( ! array_filter( Doi::extract( $value ) ) ) {
 		$valid = __( 'This is not a valid DOI.', 'coop-library-framework' );
 	}
@@ -1335,6 +1339,10 @@ function validate_isbn( $valid, $value, $field, $input ) {
 		return $valid;
 	}
 
+	if ( '' === $value ) {
+		return $valid;
+	}
+
 	if ( ! array_filter( Isbn::extract( $value ) ) ) {
 		$valid = __( 'This is not a valid ISBN.', 'coop-library-framework' );
 	}
@@ -1352,6 +1360,10 @@ function validate_isbn( $valid, $value, $field, $input ) {
  */
 function validate_issn( $valid, $value, $field, $input ) {
 	if ( ! $valid ) {
+		return $valid;
+	}
+
+	if ( '' === $value ) {
 		return $valid;
 	}
 
@@ -1377,6 +1389,10 @@ function validate_perma_cc( $valid, $value, $field, $input ) {
 		return $valid;
 	}
 
+	if ( '' === $value ) {
+		return $valid;
+	}
+
 	$host = wp_parse_url( $value, PHP_URL_HOST );
 
 	if ( 'perma.cc' !== $host ) {
@@ -1396,6 +1412,10 @@ function validate_perma_cc( $valid, $value, $field, $input ) {
  */
 function validate_wayback_machine( $valid, $value, $field, $input ) {
 	if ( ! $valid ) {
+		return $valid;
+	}
+
+	if ( '' === $value ) {
 		return $valid;
 	}
 
