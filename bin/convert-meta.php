@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function convert_repeater( $post_id, $meta_key, $meta_value, $sub_key, $meta_key_id, $sub_key_id ) {
 	if ( is_array( $meta_value ) ) {
 		foreach ( $meta_value as $index => $value ) {
-			update_post_meta( $post_id, "{$meta_key}_{$index}_{$subkey}", $value );
+			update_post_meta( $post_id, "{$meta_key}_{$index}_{$sub_key}", $value );
 			update_post_meta( $post_id, "_{$meta_key}_{$index}_{$sub_key}", $sub_key_id );
 		}
 
