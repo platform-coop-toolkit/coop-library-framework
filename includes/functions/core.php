@@ -84,7 +84,7 @@ function resource_init() {
 					'title'    => __( 'Date Published', 'coop-library-framework' ),
 					'meta_key' => 'lc_resource_publication_date',
 				],
-				'added' => [
+				'added'     => [
 					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
 				],
