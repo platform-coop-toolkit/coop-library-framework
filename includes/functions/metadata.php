@@ -14,6 +14,8 @@ use Symfony\Component\Validator\Constraints\Issn;
 use Symfony\Component\Validator\Validation;
 use \WP_Error as WP_Error;
 
+use function CoopLibraryFramework\Internationalization\get_language_choices;
+
 /**
  * Default setup routine
  *
@@ -409,6 +411,28 @@ function register_fields() {
 						),
 						'default_value'     => '',
 						'placeholder'       => '',
+					),
+					array(
+						'key'               => 'field_5e62c939ddcb6',
+						'label'             => __( 'Resource language', 'coop-library-framework' ),
+						'name'              => 'language',
+						'type'              => 'select',
+						'instructions'      => __( 'The language of the resource.', 'coop-library-framework' ),
+						'required'          => 1,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'choices'           => get_language_choices(),
+						'default_value'     => array( 'en' ),
+						'allow_null'        => 0,
+						'multiple'          => 0,
+						'ui'                => 0,
+						'return_format'     => 'value',
+						'ajax'              => 0,
+						'placeholder'       => __( 'Choose a language', 'coop-library-framework' ),
 					),
 					array(
 						'key'               => 'field_5e56ed1ee2c88',

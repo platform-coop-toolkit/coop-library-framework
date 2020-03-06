@@ -63,3 +63,19 @@ function get_language_list( $locale = 'en_US' ) {
 	$languages = include_once COOP_LIBRARY_FRAMEWORK_PATH . 'vendor/umpirsky/language-list/data/' . $locale . '/language.php';
 	return $languages;
 }
+
+/**
+ * Get language choices for ACF based on what languages are set in Polylang.
+ *
+ * @return array $choices
+ */
+function get_language_choices() {
+	$locales   = ( function_exists( 'pll_languages_list' ) ) ? pll_languages_list( [ 'fields' => 'slug' ] ) : [ 'en' ];
+	$languages = get_language_list( get_locale() );
+	$choices   = [];
+	foreach ( $locales as $key ) {
+		$choices[ $key ] = $languages[ $key ];
+	}
+	asort( $choices );
+	return $choices;
+}
