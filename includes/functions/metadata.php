@@ -1421,7 +1421,7 @@ function validate_wayback_machine( $valid, $value, $field, $input ) {
 
 	$host = wp_parse_url( $value, PHP_URL_HOST );
 
-	if ( 'web.archive.org' !== $host ) {
+	if ( ! strpos( $host, 'archive.org' ) ) {
 		$valid = __( 'This is not a valid Internet Archive link.', 'coop-library-framework' );
 	}
 
