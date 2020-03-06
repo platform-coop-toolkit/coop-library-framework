@@ -9,6 +9,8 @@ namespace CoopLibraryFramework\Core;
 
 use \WP_Error as WP_Error;
 
+use function CoopLibraryFramework\Internationalization\get_localized_language;
+
 /**
  * Default setup routine
  *
@@ -70,7 +72,10 @@ function resource_init() {
 				'title',
 				'language'  => [
 					'title'    => __( 'Language', 'coop-library-framework' ),
-					'taxonomy' => 'language',
+					'meta_key' => 'language',
+					'function' => function() {
+						echo get_localized_language( get_post_meta( get_the_ID(), 'language', true ) );
+					},
 				],
 				'format'    => [
 					'title'    => __( 'Format', 'coop-library-framework' ),
@@ -87,6 +92,7 @@ function resource_init() {
 				'added'     => [
 					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
+					'default'    => 'DESC',
 				],
 			],
 			'labels'              => [
