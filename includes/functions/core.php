@@ -665,7 +665,7 @@ function admin_scripts() {
 	wp_enqueue_script(
 		'coop_library_framework_admin',
 		script_url( 'admin', 'admin' ),
-		[ 'wp-i18n' ],
+		[ 'wp-a11y', 'wp-i18n' ],
 		COOP_LIBRARY_FRAMEWORK_VERSION,
 		true
 	);
