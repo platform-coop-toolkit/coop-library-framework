@@ -14,6 +14,8 @@ use Symfony\Component\Validator\Constraints\Issn;
 use Symfony\Component\Validator\Validation;
 use \WP_Error as WP_Error;
 
+use function CoopLibraryFramework\Internationalization\get_language_choices;
+
 /**
  * Default setup routine
  *
@@ -411,6 +413,28 @@ function register_fields() {
 						'placeholder'       => '',
 					),
 					array(
+						'key'               => 'field_5e62c939ddcb6',
+						'label'             => __( 'Resource language', 'coop-library-framework' ),
+						'name'              => 'language',
+						'type'              => 'select',
+						'instructions'      => __( 'The language of the resource.', 'coop-library-framework' ),
+						'required'          => 1,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'choices'           => get_language_choices(),
+						'default_value'     => array( 'en' ),
+						'allow_null'        => 0,
+						'multiple'          => 0,
+						'ui'                => 0,
+						'return_format'     => 'value',
+						'ajax'              => 0,
+						'placeholder'       => __( 'Choose a language', 'coop-library-framework' ),
+					),
+					array(
 						'key'               => 'field_5e56ed1ee2c88',
 						'label'             => __( 'Short title', 'coop-library-framework' ),
 						'name'              => 'lc_resource_short_title',
@@ -448,7 +472,6 @@ function register_fields() {
 						'ui_on_text'        => '',
 						'ui_off_text'       => '',
 					),
-					// TODO: Convert existing authors.
 					array(
 						'key'               => 'field_5e56ed9c93657',
 						'label'             => __( 'Authors', 'coop-library-framework' ),
@@ -489,7 +512,6 @@ function register_fields() {
 							),
 						),
 					),
-					// TODO: Convert existing editors.
 					array(
 						'key'               => 'field_5e56ee4309400',
 						'label'             => __( 'Editors', 'coop-library-framework' ),
@@ -530,7 +552,6 @@ function register_fields() {
 							),
 						),
 					),
-					// TODO: Convert existing translators.
 					array(
 						'key'               => 'field_5e56ee6209402',
 						'label'             => __( 'Translators', 'coop-library-framework' ),
@@ -1066,7 +1087,6 @@ function register_fields() {
 						'layout'            => 'row',
 						'button_label'      => __( 'Add perma.cc link', 'coop-library-framework' ),
 						'sub_fields'        => array(
-							// TODO: Add validation and convert existing.
 							array(
 								'key'               => 'field_5e57062fee32a',
 								'label'             => __( 'Perma.cc link', 'coop-library-framework' ),
@@ -1111,7 +1131,6 @@ function register_fields() {
 						'layout'            => 'row',
 						'button_label'      => __( 'Add Internet Archive link', 'coop-library-framework' ),
 						'sub_fields'        => array(
-							// TODO: Add validation and convert existing.
 							array(
 								'key'               => 'field_5e57065fee32c',
 								'label'             => __( 'Internet Archive link', 'coop-library-framework' ),
@@ -1156,7 +1175,6 @@ function register_fields() {
 				'key'                   => 'group_5e570377058dd',
 				'title'                 => __( 'Catalog Codes', 'coop-library-framework' ),
 				'fields'                => array(
-					// TODO: Add validation.
 					array(
 						'key'               => 'field_5e5706d2de4dc',
 						'label'             => 'DOI',
@@ -1176,7 +1194,6 @@ function register_fields() {
 						'append'            => '',
 						'maxlength'         => '',
 					),
-					// TODO: Add validation.
 					array(
 						'key'               => 'field_5e5706ebde4dd',
 						'label'             => 'ISBN',
@@ -1196,7 +1213,6 @@ function register_fields() {
 						'append'            => '',
 						'maxlength'         => '',
 					),
-					// TODO: Add validation.
 					array(
 						'key'               => 'field_5e57070ade4de',
 						'label'             => 'ISSN',
