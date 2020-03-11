@@ -1,6 +1,6 @@
 {
   "name": "@platform-coop-toolkit/coop-library-framework",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Custom post type and metadata utilities for the Platform Co-op Resource Library.",
   "author": {
     "name": "OCAD University",
@@ -23,7 +23,7 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "localize": "wp i18n make-pot assets/js languages/coop-library-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/coop-library-framework/issues\"}'",
+    "localize": "wp i18n make-pot . languages/coop-library-framework.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/coop-library-framework/issues\"}'",
     "readme": "gulp readme"
   },
   "husky": {
