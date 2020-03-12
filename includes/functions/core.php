@@ -41,8 +41,8 @@ function setup() {
 	add_filter( 'mce_css', $n( 'mce_css' ) );
 	// Hook to allow async or defer on asset loading.
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
-	// Ensure taxonomies are translatable.
-	add_filter( 'pll_get_post_types', $n( 'remove_resource_from_pll' ), 10, 2 );
+	// Ensure resources and topics are translatable.
+	add_filter( 'pll_get_post_types', $n( 'add_resource_to_pll' ), 10, 2 ); // TODO: Remove this.
 	add_filter( 'pll_get_taxonomies', $n( 'add_coop_type_to_pll' ), 10, 2 );
 	add_filter( 'pll_get_taxonomies', $n( 'add_sector_to_pll' ), 10, 2 );
 	add_filter( 'pll_get_taxonomies', $n( 'add_region_to_pll' ), 10, 2 );
@@ -144,15 +144,19 @@ function resource_init() {
 }
 
 /**
- * Remove the `lc_resource` post type from Polylang.
+ * Add the `lc_resource` post type to Polylang, ensuring it is translatable.
  *
  * @param array $post_types An array of post types.
  * @param bool  $is_settings Whether or not we are on the settings page.
  *
  * @return array
  */
-function remove_resource_from_pll( $post_types, $is_settings ) {
-	unset( $post_types['lc_resource'] );
+function add_resource_to_pll( $post_types, $is_settings ) {
+	if ( $is_settings ) {
+		unset( $post_types['lc_resource'] );
+	} else {
+		$post_types['lc_resource'] = 'lc_resource';
+	}
 	return $post_types;
 }
 
