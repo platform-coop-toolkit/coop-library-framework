@@ -517,7 +517,7 @@ function register_fields() {
 								'name'              => 'author',
 								'type'              => 'text',
 								'instructions'      => '',
-								'required'          => 0,
+								'required'          => 1,
 								'conditional_logic' => 0,
 								'wrapper'           => array(
 									'width' => '',
@@ -557,7 +557,7 @@ function register_fields() {
 								'name'              => 'editor',
 								'type'              => 'text',
 								'instructions'      => '',
-								'required'          => 0,
+								'required'          => 1,
 								'conditional_logic' => 0,
 								'wrapper'           => array(
 									'width' => '',
@@ -597,7 +597,7 @@ function register_fields() {
 								'name'              => 'translator',
 								'type'              => 'text',
 								'instructions'      => '',
-								'required'          => 0,
+								'required'          => 1,
 								'conditional_logic' => 0,
 								'wrapper'           => array(
 									'width' => '',
