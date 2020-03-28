@@ -78,12 +78,16 @@ function resource_init() {
 		array(
 			'admin_cols'          => [
 				'title',
-				'language'  => [
-					'title'    => __( 'Language', 'coop-library-framework' ),
+				'resource-language'  => [
+					'title'    => __( 'Resource Language', 'coop-library-framework' ),
 					'meta_key' => 'language',
 					'function' => function() {
 						echo esc_attr( get_localized_language( get_post_meta( get_the_ID(), 'language', true ) ) );
 					},
+				],
+				'display-language'  => [
+					'title'    => __( 'Display Language', 'coop-library-framework' ),
+					'taxonomy' => 'language',
 				],
 				'format'    => [
 					'title'    => __( 'Format', 'coop-library-framework' ),
