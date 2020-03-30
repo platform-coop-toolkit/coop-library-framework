@@ -401,7 +401,7 @@ function register_fields() {
 						'label'             => __( 'Link to resource', 'coop-library-framework' ),
 						'name'              => 'lc_resource_permanent_link',
 						'type'              => 'url',
-						'instructions'      => __( 'Web address to access the resource. This information is required.', 'coop-library-framework' ),
+						'instructions'      => __( 'Web address to access the resource (must begin with http:// or https://). This information is required.', 'coop-library-framework' ),
 						'required'          => 1,
 						'conditional_logic' => 0,
 						'wrapper'           => array(
@@ -846,7 +846,7 @@ function register_fields() {
 						'label'             => __( 'Publication link', 'coop-library-framework' ),
 						'name'              => 'lc_resource_publication_link',
 						'type'              => 'url',
-						'instructions'      => __( 'Web address for the publication.', 'coop-library-framework' ),
+						'instructions'      => __( 'Web address for the publication (must begin with http:// or https://).', 'coop-library-framework' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
 						'wrapper'           => array(
@@ -907,7 +907,7 @@ function register_fields() {
 						'label'             => __( 'Publisher link', 'coop-library-framework' ),
 						'name'              => 'lc_resource_publisher_link',
 						'type'              => 'url',
-						'instructions'      => __( 'Web address for the publisher.', 'coop-library-framework' ),
+						'instructions'      => __( 'Web address for the publisher (must begin with http:// or https://).', 'coop-library-framework' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
 						'wrapper'           => array(
@@ -1112,7 +1112,7 @@ function register_fields() {
 								'label'             => __( 'Perma.cc link', 'coop-library-framework' ),
 								'name'              => 'perma_cc_link',
 								'type'              => 'url',
-								'instructions'      => '',
+								'instructions'      => 'Must begin with http:// or https://',
 								'required'          => 1,
 								'conditional_logic' => 0,
 								'wrapper'           => array(
@@ -1156,7 +1156,7 @@ function register_fields() {
 								'label'             => __( 'Internet Archive link', 'coop-library-framework' ),
 								'name'              => 'wayback_machine_link',
 								'type'              => 'url',
-								'instructions'      => '',
+								'instructions'      => __( 'Must begin with http:// or https://', 'coop-library' ),
 								'required'          => 1,
 								'conditional_logic' => 0,
 								'wrapper'           => array(
