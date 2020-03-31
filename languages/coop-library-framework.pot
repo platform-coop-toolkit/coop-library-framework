@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-03-30T17:15:07+00:00\n"
+"POT-Creation-Date: 2020-03-31T21:44:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: coop-library-framework\n"
@@ -651,442 +651,442 @@ msgstr ""
 msgid "&larr; Back to Formats"
 msgstr ""
 
-#: includes/functions/metadata.php:397
+#: includes/functions/metadata.php:398
 msgid "General Information"
 msgstr ""
 
-#: includes/functions/metadata.php:401
+#: includes/functions/metadata.php:402
 msgid "Link to resource"
 msgstr ""
 
-#: includes/functions/metadata.php:404
-msgid "Web address to access the resource. This information is required."
+#: includes/functions/metadata.php:405
+msgid "Web address to access the resource (must begin with http:// or https://). This information is required."
 msgstr ""
 
-#: includes/functions/metadata.php:417
+#: includes/functions/metadata.php:418
 msgid "Favorites"
 msgstr ""
 
-#: includes/functions/metadata.php:420
+#: includes/functions/metadata.php:421
 msgid "The number of times this resource has been favorited."
 msgstr ""
 
-#: includes/functions/metadata.php:437
+#: includes/functions/metadata.php:438
 msgid "Resource language"
 msgstr ""
 
-#: includes/functions/metadata.php:440
+#: includes/functions/metadata.php:441
 msgid "The language of the resource."
 msgstr ""
 
-#: includes/functions/metadata.php:455
+#: includes/functions/metadata.php:456
 msgid "Choose a language"
 msgstr ""
 
-#: includes/functions/metadata.php:459
+#: includes/functions/metadata.php:460
 msgid "Short title"
 msgstr ""
 
-#: includes/functions/metadata.php:462
+#: includes/functions/metadata.php:463
 msgid "Shorter title used in resource listings. Maximum 72 characters."
 msgstr ""
 
-#: includes/functions/metadata.php:478
+#: includes/functions/metadata.php:479
 msgid "Paywall"
 msgstr ""
 
-#: includes/functions/metadata.php:489
+#: includes/functions/metadata.php:490
 msgid "Is this resource behind a paywall?"
 msgstr ""
 
-#: includes/functions/metadata.php:497
+#: includes/functions/metadata.php:498
 msgid "Authors"
 msgstr ""
 
-#: includes/functions/metadata.php:500
+#: includes/functions/metadata.php:501
 msgid "Authors of the resource."
 msgstr ""
 
-#: includes/functions/metadata.php:512
+#: includes/functions/metadata.php:513
 msgid "Add author"
 msgstr ""
 
-#: includes/functions/metadata.php:516
+#: includes/functions/metadata.php:517
 msgid "Author"
 msgstr ""
 
-#: includes/functions/metadata.php:537
+#: includes/functions/metadata.php:538
 msgid "Editors"
 msgstr ""
 
-#: includes/functions/metadata.php:540
+#: includes/functions/metadata.php:541
 msgid "Editors of the resource."
 msgstr ""
 
-#: includes/functions/metadata.php:552
+#: includes/functions/metadata.php:553
 msgid "Add editor"
 msgstr ""
 
-#: includes/functions/metadata.php:556
+#: includes/functions/metadata.php:557
 msgid "Editor"
 msgstr ""
 
-#: includes/functions/metadata.php:577
+#: includes/functions/metadata.php:578
 msgid "Translators"
 msgstr ""
 
-#: includes/functions/metadata.php:580
+#: includes/functions/metadata.php:581
 msgid "Translators of the resource."
 msgstr ""
 
-#: includes/functions/metadata.php:592
+#: includes/functions/metadata.php:593
 msgid "Add translator"
 msgstr ""
 
-#: includes/functions/metadata.php:596
+#: includes/functions/metadata.php:597
 msgid "Translator"
 msgstr ""
 
-#: includes/functions/metadata.php:617
+#: includes/functions/metadata.php:618
 msgid "Publication year"
 msgstr ""
 
-#: includes/functions/metadata.php:620
+#: includes/functions/metadata.php:621
 msgid "The year the resource was published."
 msgstr ""
 
-#: includes/functions/metadata.php:635
+#: includes/functions/metadata.php:636
 msgid "Choose a year"
 msgstr ""
 
-#: includes/functions/metadata.php:639
+#: includes/functions/metadata.php:640
 msgid "Publication month"
 msgstr ""
 
-#: includes/functions/metadata.php:642
+#: includes/functions/metadata.php:643
 msgid "The month the resource was published."
 msgstr ""
 
-#: includes/functions/metadata.php:658
+#: includes/functions/metadata.php:659
 msgid "January"
 msgstr ""
 
-#: includes/functions/metadata.php:659
+#: includes/functions/metadata.php:660
 msgid "February"
 msgstr ""
 
-#: includes/functions/metadata.php:660
+#: includes/functions/metadata.php:661
 msgid "March"
 msgstr ""
 
-#: includes/functions/metadata.php:661
+#: includes/functions/metadata.php:662
 msgid "April"
 msgstr ""
 
-#: includes/functions/metadata.php:662
+#: includes/functions/metadata.php:663
 msgid "May"
 msgstr ""
 
-#: includes/functions/metadata.php:663
+#: includes/functions/metadata.php:664
 msgid "June"
 msgstr ""
 
-#: includes/functions/metadata.php:664
+#: includes/functions/metadata.php:665
 msgid "July"
 msgstr ""
 
-#: includes/functions/metadata.php:665
+#: includes/functions/metadata.php:666
 msgid "August"
 msgstr ""
 
-#: includes/functions/metadata.php:666
+#: includes/functions/metadata.php:667
 msgid "September"
 msgstr ""
 
-#: includes/functions/metadata.php:667
+#: includes/functions/metadata.php:668
 msgid "October"
 msgstr ""
 
-#: includes/functions/metadata.php:668
+#: includes/functions/metadata.php:669
 msgid "November"
 msgstr ""
 
-#: includes/functions/metadata.php:669
+#: includes/functions/metadata.php:670
 msgid "December"
 msgstr ""
 
-#: includes/functions/metadata.php:677
+#: includes/functions/metadata.php:678
 msgid "Choose a month"
 msgstr ""
 
-#: includes/functions/metadata.php:681
+#: includes/functions/metadata.php:682
 msgid "Publication day"
 msgstr ""
 
-#: includes/functions/metadata.php:684
+#: includes/functions/metadata.php:685
 msgid "The numeric day the resource was published."
 msgstr ""
 
-#: includes/functions/metadata.php:710
+#: includes/functions/metadata.php:711
 msgid "Choose a day"
 msgstr ""
 
-#: includes/functions/metadata.php:714
+#: includes/functions/metadata.php:715
 msgid "Publication Date"
 msgstr ""
 
-#: includes/functions/metadata.php:717
+#: includes/functions/metadata.php:718
 msgid "You can set the publication date for this resource using the year, month and day fields above."
 msgstr ""
 
-#: includes/functions/metadata.php:734
+#: includes/functions/metadata.php:735
 msgid "Revisions"
 msgstr ""
 
-#: includes/functions/metadata.php:737
+#: includes/functions/metadata.php:738
 msgid "Revisions of the resource."
 msgstr ""
 
-#: includes/functions/metadata.php:749
+#: includes/functions/metadata.php:750
 msgid "Add revision"
 msgstr ""
 
-#: includes/functions/metadata.php:753
+#: includes/functions/metadata.php:754
 msgid "Revision date"
 msgstr ""
 
-#: includes/functions/metadata.php:756
+#: includes/functions/metadata.php:757
 msgid "The date of this revision."
 msgstr ""
 
-#: includes/functions/metadata.php:770
+#: includes/functions/metadata.php:771
 msgid "Revision description"
 msgstr ""
 
-#: includes/functions/metadata.php:773
+#: includes/functions/metadata.php:774
 msgid "A brief description of this revision."
 msgstr ""
 
-#: includes/functions/metadata.php:823
+#: includes/functions/metadata.php:824
 msgid "About the Publication"
 msgstr ""
 
-#: includes/functions/metadata.php:827
+#: includes/functions/metadata.php:828
 msgid "Publication name"
 msgstr ""
 
-#: includes/functions/metadata.php:830
+#: includes/functions/metadata.php:831
 msgid "Name of the publication in which the resource appears."
 msgstr ""
 
-#: includes/functions/metadata.php:846
+#: includes/functions/metadata.php:847
 msgid "Publication link"
 msgstr ""
 
-#: includes/functions/metadata.php:849
-msgid "Web address for the publication."
+#: includes/functions/metadata.php:850
+msgid "Web address for the publication (must begin with http:// or https://)."
 msgstr ""
 
-#: includes/functions/metadata.php:884
+#: includes/functions/metadata.php:885
 msgid "About the Publisher"
 msgstr ""
 
-#: includes/functions/metadata.php:888
+#: includes/functions/metadata.php:889
 msgid "Publisher name"
 msgstr ""
 
-#: includes/functions/metadata.php:891
+#: includes/functions/metadata.php:892
 msgid "Name of the resource publisher."
 msgstr ""
 
-#: includes/functions/metadata.php:907
+#: includes/functions/metadata.php:908
 msgid "Publisher link"
 msgstr ""
 
-#: includes/functions/metadata.php:910
-msgid "Web address for the publisher."
+#: includes/functions/metadata.php:911
+msgid "Web address for the publisher (must begin with http:// or https://)."
 msgstr ""
 
-#: includes/functions/metadata.php:923
+#: includes/functions/metadata.php:924
 msgid "Publisher city"
 msgstr ""
 
-#: includes/functions/metadata.php:926
+#: includes/functions/metadata.php:927
 msgid "Town or city where the publisher is located."
 msgstr ""
 
-#: includes/functions/metadata.php:942
+#: includes/functions/metadata.php:943
 msgid "Publisher country"
 msgstr ""
 
-#: includes/functions/metadata.php:945
+#: includes/functions/metadata.php:946
 msgid "Country where the publisher is located."
 msgstr ""
 
-#: includes/functions/metadata.php:960
+#: includes/functions/metadata.php:961
 msgid "Select a country"
 msgstr ""
 
-#: includes/functions/metadata.php:989
+#: includes/functions/metadata.php:990
 msgid "Distribution License or Rights"
 msgstr ""
 
-#: includes/functions/metadata.php:993
+#: includes/functions/metadata.php:994
 msgid "License or rights"
 msgstr ""
 
-#: includes/functions/metadata.php:996
+#: includes/functions/metadata.php:997
 msgid "License or rights under which the resource is distributed."
 msgstr ""
 
-#: includes/functions/metadata.php:1005
+#: includes/functions/metadata.php:1006
 msgid "All Rights Reserved"
 msgstr ""
 
-#: includes/functions/metadata.php:1006
+#: includes/functions/metadata.php:1007
 msgid "Creative Commons Attribution"
 msgstr ""
 
-#: includes/functions/metadata.php:1007
+#: includes/functions/metadata.php:1008
 msgid "Creative Commons Attribution-NonCommercial"
 msgstr ""
 
-#: includes/functions/metadata.php:1008
+#: includes/functions/metadata.php:1009
 msgid "Creative Commons Attribution-NoDerivatives"
 msgstr ""
 
-#: includes/functions/metadata.php:1009
+#: includes/functions/metadata.php:1010
 msgid "Creative Commons Attribution-ShareAlike"
 msgstr ""
 
-#: includes/functions/metadata.php:1010
+#: includes/functions/metadata.php:1011
 msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
 msgstr ""
 
-#: includes/functions/metadata.php:1011
+#: includes/functions/metadata.php:1012
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
 msgstr ""
 
-#: includes/functions/metadata.php:1012
+#: includes/functions/metadata.php:1013
 msgid "Educational Community License"
 msgstr ""
 
-#: includes/functions/metadata.php:1013
+#: includes/functions/metadata.php:1014
 msgid "No Rights Reserved"
 msgstr ""
 
-#: includes/functions/metadata.php:1014
+#: includes/functions/metadata.php:1015
 msgid "No Known Copyright"
 msgstr ""
 
-#: includes/functions/metadata.php:1015
+#: includes/functions/metadata.php:1016
 msgid "Custom…"
 msgstr ""
 
-#: includes/functions/metadata.php:1023
+#: includes/functions/metadata.php:1024
 msgid "Choose a license or rights"
 msgstr ""
 
-#: includes/functions/metadata.php:1027
+#: includes/functions/metadata.php:1028
 msgid "Custom license or rights"
 msgstr ""
 
-#: includes/functions/metadata.php:1033
+#: includes/functions/metadata.php:1034
 msgid "Custom license or rights statement."
 msgstr ""
 
-#: includes/functions/metadata.php:1034
+#: includes/functions/metadata.php:1035
 msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
 msgstr ""
 
-#: includes/functions/metadata.php:1082
+#: includes/functions/metadata.php:1083
 msgid "Archival Links"
 msgstr ""
 
-#: includes/functions/metadata.php:1092
+#: includes/functions/metadata.php:1093
 msgid "Links to archive copy on perma.cc. Specify multiple links if the resource spans multiple pages."
 msgstr ""
 
 #. translators: link to https://perma.cc
-#: includes/functions/metadata.php:1094
+#: includes/functions/metadata.php:1095
 msgid "%s provides web archiving for scholars, journals, courts, and others."
 msgstr ""
 
-#: includes/functions/metadata.php:1108
+#: includes/functions/metadata.php:1109
 msgid "Add perma.cc link"
 msgstr ""
 
-#: includes/functions/metadata.php:1112
+#: includes/functions/metadata.php:1113
 msgid "Perma.cc link"
 msgstr ""
 
-#: includes/functions/metadata.php:1130
+#: includes/functions/metadata.php:1131
 msgid "Internet Archive"
 msgstr ""
 
-#: includes/functions/metadata.php:1136
+#: includes/functions/metadata.php:1137
 msgid "Links to archive copy on the Internet Archive. Specify multiple links if the resource spans multiple pages."
 msgstr ""
 
 #. translators: link to https://web.archive.org
-#: includes/functions/metadata.php:1138
+#: includes/functions/metadata.php:1139
 msgid "%s provides free and open web archiving."
 msgstr ""
 
-#: includes/functions/metadata.php:1152
+#: includes/functions/metadata.php:1153
 msgid "Add Internet Archive link"
 msgstr ""
 
-#: includes/functions/metadata.php:1156
+#: includes/functions/metadata.php:1157
 msgid "Internet Archive link"
 msgstr ""
 
-#: includes/functions/metadata.php:1196
+#: includes/functions/metadata.php:1197
 msgid "Catalog Codes"
 msgstr ""
 
-#: includes/functions/metadata.php:1203
+#: includes/functions/metadata.php:1204
 msgid "Digital Object Identifier (or DOI) for this resource."
 msgstr ""
 
-#: includes/functions/metadata.php:1222
+#: includes/functions/metadata.php:1223
 msgid "International Standard Book Number (or ISBN) for this resource."
 msgstr ""
 
-#: includes/functions/metadata.php:1241
+#: includes/functions/metadata.php:1242
 msgid "International Standard Serial Number (or ISSN) for this resource."
 msgstr ""
 
-#: includes/functions/metadata.php:1359
+#: includes/functions/metadata.php:1360
 msgid "This is not a valid DOI."
 msgstr ""
 
-#: includes/functions/metadata.php:1383
+#: includes/functions/metadata.php:1384
 msgid "This is not a valid ISBN."
 msgstr ""
 
-#: includes/functions/metadata.php:1409
+#: includes/functions/metadata.php:1410
 msgid "This is not a valid ISSN."
 msgstr ""
 
-#: includes/functions/metadata.php:1435
+#: includes/functions/metadata.php:1436
 msgid "This is not a valid Perma.cc link."
 msgstr ""
 
-#: includes/functions/metadata.php:1461
+#: includes/functions/metadata.php:1464
 msgid "This is not a valid Internet Archive link."
 msgstr ""
 
-#: assets/js/admin/admin.js:25
+#: assets/js/admin/admin.js:24
 msgid "The publication day has been reset as there are only %1$d days in the selected month, and your choice of %2$d is no longer valid."
 msgstr ""
 
 #. translators: %s: The label of the required field.
-#: assets/js/admin/admin.js:104
-#: assets/js/admin/admin.js:122
+#: assets/js/admin/admin.js:75
+#: assets/js/admin/admin.js:93
 msgid "A %s is required."
 msgstr ""
 
-#: assets/js/admin/admin.js:117
+#: assets/js/admin/admin.js:88
 msgid "The form contains errors:"
 msgstr ""
