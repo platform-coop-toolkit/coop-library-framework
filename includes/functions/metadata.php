@@ -30,6 +30,7 @@ function setup() {
 	add_action( 'init', $n( 'register_hidden_field_type' ) );
 	add_action( 'acf/init', $n( 'register_fields' ) );
 	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'load_publication_day' ) );
+	add_filter( 'acf/save_post', $n( 'save_publication_date' ), 5 );
 	add_filter( 'acf/validate_value/key=field_5e5706d2de4dc', $n( 'validate_doi' ), 10, 4 );
 	add_filter( 'acf/validate_value/key=field_5e5706ebde4dd', $n( 'validate_isbn' ), 10, 4 );
 	add_filter( 'acf/validate_value/key=field_5e57070ade4de', $n( 'validate_issn' ), 10, 4 );
@@ -722,7 +723,7 @@ function register_fields() {
 							'class' => '',
 							'id'    => '',
 						),
-						'default_value'     => 'ongoing',
+						'default_value'     => '–',
 						'placeholder'       => '',
 						'prepend'           => '',
 						'append'            => '',
@@ -1445,6 +1446,8 @@ function validate_perma_cc( $valid, $value, $field, $input ) {
  * @param mixed  $value The value to be saved.
  * @param array  $field An array containing all the field settings.
  * @param string $input The DOM element’s name attribute.
+ *
+ * @return bool|string
  */
 function validate_wayback_machine( $valid, $value, $field, $input ) {
 	if ( ! $valid ) {
@@ -1462,4 +1465,34 @@ function validate_wayback_machine( $valid, $value, $field, $input ) {
 	}
 
 	return $valid;
+}
+
+/**
+ * Add/update publication date field when post is saved.
+ *
+ * @param int $post_id The post id.
+ *
+ * @return void
+ */
+function save_publication_date( $post_id ) {
+	$values = $_POST['acf']; // @codingStandardsIgnoreLine
+	$year   = ( isset( $values['field_5e56ee8953584'] ) ) ? $values['field_5e56ee8953584'] : false;
+	$month  = ( isset( $values['field_5e56eef559a76'] ) ) ? $values['field_5e56eef559a76'] : false;
+	$day    = ( isset( $values['field_5e56f04ee5a20'] ) ) ? $values['field_5e56f04ee5a20'] : false;
+
+	$publication_date = '–';
+
+	if ( $year ) {
+		$publication_date = $year;
+	}
+
+	if ( $month ) {
+		$publication_date .= "-$month";
+	}
+
+	if ( $day ) {
+		$publication_date .= "-$day";
+	}
+
+	$_POST['acf']['field_5e5ead4ac768d'] = $publication_date;
 }
