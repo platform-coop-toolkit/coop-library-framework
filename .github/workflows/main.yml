@@ -41,6 +41,7 @@ jobs:
         item_slug: 'coop-library-framework'
         domain: 'coop-library-framework'
         package_name: 'Co-op Library Framework'
+        headers: '{\"Report-Msgid-Bugs-To\":\"https://github.com/platform-coop-toolkit/coop-library-framework/issues\"}'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Commit update POT
