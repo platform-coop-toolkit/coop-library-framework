@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Update POT file
-      uses: platform-coop-toolkit/action-wp-pot-generator@b2e86c2
+      uses: platform-coop-toolkit/action-wp-pot-generator@master
       with:
         save_path: './languages'
         item_slug: 'coop-library-framework'
