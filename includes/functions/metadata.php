@@ -29,6 +29,9 @@ function setup() {
 	add_action( 'init', $n( 'register_meta' ) );
 	add_action( 'init', $n( 'register_hidden_field_type' ) );
 	add_action( 'acf/init', $n( 'register_fields' ) );
+	if ( defined( 'WP_ENV' ) && WP_ENV === 'production' ) {
+		add_filter( 'acf/settings/show_admin', '__return_false' );
+	}
 	add_filter( 'acf/load_field/key=field_5e56f04ee5a20', $n( 'load_publication_day' ) );
 	add_filter( 'acf/save_post', $n( 'save_publication_date' ), 5 );
 	add_filter( 'acf/validate_value/key=field_5e5706d2de4dc', $n( 'validate_doi' ), 10, 4 );

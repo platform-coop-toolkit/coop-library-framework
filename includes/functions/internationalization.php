@@ -16,6 +16,77 @@ function setup() {
 	$n = function( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
+
+	add_action( 'init', $n( 'add_localization_options_page' ) );
+
+}
+
+/**
+ * Add localization options page.
+ *
+ * @return void
+ */
+function add_localization_options_page() {
+	if ( function_exists( 'acf_add_options_page' ) ) {
+		acf_add_options_page(
+			[
+				'page_title' => __( 'Localization Settings', 'coop-library-framework' ),
+				'menu_title' => __( 'Localization', 'coop-library-framework' ),
+				'menu_slug'  => 'localization-settings',
+				'capability' => 'manage_options',
+				'icon_url'   => 'dashicons-admin-site-alt3',
+			]
+		);
+	}
+
+	if ( function_exists( 'acf_add_local_field_group' ) ) {
+		acf_add_local_field_group(
+			[
+				'key'                   => 'group_5e84bc76ae537',
+				'title'                 => __( 'Localization Settings', 'coop-library-framework' ),
+				'fields'                => [
+					[
+						'key'               => 'field_5e84bc8dd03ab',
+						'label'             => __( 'Enabled Languages', 'coop-library-framework' ),
+						'name'              => 'enabled_languages',
+						'type'              => 'checkbox',
+						'instructions'      => __( 'Select the languages you\'d like to be displayed to site visitors.', 'coop-library-framework' ),
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => [
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						],
+						'choices'           => get_language_choices(),
+						'allow_custom'      => 0,
+						'default_value'     => [ 'en' ],
+						'layout'            => 'vertical',
+						'toggle'            => 0,
+						'return_format'     => 'value',
+						'save_custom'       => 0,
+					],
+				],
+				'location'              => [
+					[
+						[
+							'param'    => 'options_page',
+							'operator' => '==',
+							'value'    => 'localization-settings',
+						],
+					],
+				],
+				'menu_order'            => 0,
+				'position'              => 'normal',
+				'style'                 => 'seamless',
+				'label_placement'       => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen'        => '',
+				'active'                => true,
+				'description'           => '',
+			]
+		);
+	}
 }
 
 /**
