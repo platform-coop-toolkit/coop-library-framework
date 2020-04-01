@@ -441,7 +441,7 @@ function register_fields() {
 						'label'             => __( 'Resource language', 'coop-library-framework' ),
 						'name'              => 'language',
 						'type'              => 'select',
-						'instructions'      => __( 'The language of the resource.', 'coop-library-framework' ),
+						'instructions'      => __( 'The language of the resource. This information is required.', 'coop-library-framework' ),
 						'required'          => 1,
 						'conditional_logic' => 0,
 						'wrapper'           => array(
