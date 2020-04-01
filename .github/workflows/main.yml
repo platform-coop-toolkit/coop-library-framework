@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Cache Composer packages
       uses: actions/cache@v1
       with:
@@ -27,29 +27,35 @@ jobs:
         npm run build
       env:
         CI: true
-  
+
   update-pot:
     needs: test
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: WordPress POT Generator
+    - uses: actions/checkout@v2
+    - name: Update POT
       uses: platform-coop-toolkit/action-wp-pot-generator@master
       with:
         save_path: './languages'
         item_slug: 'coop-library-framework'
         domain: 'coop-library-framework'
         package_name: 'Co-op Library Framework'
-      env: 
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+    - name: Commit update POT
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: 'chore(localization): update languages/coop-library-framework.pot'
+        title: 'chore(localization): update languages/coop-library-framework.pot'
+
   deploy-staging:
     needs: test
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Cache node modules
       uses: actions/cache@v1
       with:
