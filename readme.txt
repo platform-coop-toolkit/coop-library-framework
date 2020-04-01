@@ -2,15 +2,15 @@
 Contributors: greatislander, jhung
 Tags: custom-post-types, platform-cooperativism, resource-library
 Requires PHP: 7.3
-Requires at least: 5.3
-Tested up to: 5.3
-Stable tag: 1.0.0-rc.1
+Requires at least: 5.4
+Tested up to: 5.4
+Stable tag: 1.0.0-rc.2
 
-Custom post type and metadata utilities for the Platform Co-op Resource Library.
+Custom post type, metadata, and localization utilities for the Platform Co-op Resource Library.
 
 == Description ==
 
-Custom post type and metadata utilities for the Platform Co-op Resource Library.
+Custom post type, metadata, and localization utilities for the Platform Co-op Resource Library.
 
 == Installation ==
 
@@ -18,22 +18,31 @@ Custom post type and metadata utilities for the Platform Co-op Resource Library.
 
 1. Upload the [latest release](https://github.com/platform-coop-toolkit/coop-library-framework/) from the 'Add Plugins' page.
 2. Activate Co-op Library Framework from the 'Plugins' page.
+3. Install [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) and [Polylang Pro](https://polylang.pro/downloads/polylang-pro/).
 
 == Frequently Asked Questions ==
 
-TK.
+Platform Co-op Resource Library uses [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) for metadata and [Polylang Pro](https://polylang.pro/downloads/polylang-pro/) for localization. This plugin and the accompanying theme cannot be used without these plugins installed and licensed.
 
 == Screenshots ==
 
 TK.
 
 == Changelog ==
+= 1.0.0-rc.2 =
+**Bug Fixes**
+
+* only enqueue editor scripts on editor screen ([#337](https://github.com/platform-coop-toolkit/coop-library-framework/issues/337)) ([dbd3b6f](https://github.com/platform-coop-toolkit/coop-library-framework/commit/dbd3b6f5211c664ffef44a0fdb6510606b2f6575))
+
+**Features**
+
+* add localization settings page ([41749de](https://github.com/platform-coop-toolkit/coop-library-framework/commit/41749de171ede6326fe944f9c2512765e95878c9))
+
 = 1.0.0-rc.1 =
 **Bug Fixes**
 
 * make sub fields required to prevent empty input (resolves [#310](https://github.com/platform-coop-toolkit/coop-library-framework/issues/310)) ([bb14052](https://github.com/platform-coop-toolkit/coop-library-framework/commit/bb14052d4157fd20474f1a88853eeeb7a0eabc3c))
 * set null publication date to em dash ([#334](https://github.com/platform-coop-toolkit/coop-library-framework/issues/334)) ([fb856db](https://github.com/platform-coop-toolkit/coop-library-framework/commit/fb856dba75ea0448498b1c311947f0b54b3ccda2)), closes [platform-coop-toolkit/coop-library#245](https://github.com/platform-coop-toolkit/coop-library/issues/245)
-
 
 **Features**
 
@@ -80,5 +89,5 @@ TK.
 
 == Upgrade Notice ==
 
-= 1.0.0-alpha.1 =
-Coop Library Framework 1.0.0-alpha.1 requires WordPress 5.3.
+= 1.0.0-rc.2 =
+Coop Library Framework 1.0.0-rc.2 requires WordPress 5.4.

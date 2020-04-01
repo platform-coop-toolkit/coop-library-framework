@@ -1,7 +1,7 @@
 {
   "name": "@platform-coop-toolkit/coop-library-framework",
-  "version": "1.0.0-rc.1",
-  "description": "Custom post type and metadata utilities for the Platform Co-op Resource Library.",
+  "version": "1.0.0-rc.2",
+  "description": "Custom post type, metadata, and localization utilities for the Platform Co-op Resource Library.",
   "author": {
     "name": "OCAD University",
     "email": "platform-coop-development-kit@lists.inclusivedesign.ca",
