@@ -78,7 +78,7 @@ function resource_init() {
 		array(
 			'admin_cols'          => [
 				'title',
-				'resource-language'  => [
+				'resource-language' => [
 					'title'    => __( 'Resource Language', 'coop-library-framework' ),
 					'meta_key' => 'language',
 					'function' => function() {
@@ -89,19 +89,19 @@ function resource_init() {
 					'title'    => __( 'Display Language', 'coop-library-framework' ),
 					'taxonomy' => 'language',
 				],
-				'format'    => [
+				'format'            => [
 					'title'    => __( 'Format', 'coop-library-framework' ),
 					'taxonomy' => 'lc_format',
 				],
-				'topic'     => [
+				'topic'             => [
 					'title'    => __( 'Topics', 'coop-library-framework' ),
 					'taxonomy' => 'lc_topic',
 				],
-				'published' => [
+				'published'         => [
 					'title'    => __( 'Date Published', 'coop-library-framework' ),
 					'meta_key' => 'lc_resource_publication_date',
 				],
-				'added'     => [
+				'added'             => [
 					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
 					'default'    => 'DESC',
@@ -593,7 +593,7 @@ function deactivate() {
  * @return array
  */
 function get_enqueue_contexts() {
-	return [ 'admin', 'frontend', 'shared' ];
+	return [ 'admin', 'editor', 'frontend', 'shared' ];
 }
 
 /**
@@ -655,9 +655,11 @@ function scripts() {
 /**
  * Enqueue scripts for admin.
  *
+ * @param string $hook_suffix The suffix for the current page.
+ *
  * @return void
  */
-function admin_scripts() {
+function admin_scripts( $hook_suffix ) {
 	wp_enqueue_script(
 		'coop_library_framework_shared',
 		script_url( 'shared', 'shared' ),
@@ -669,10 +671,26 @@ function admin_scripts() {
 	wp_enqueue_script(
 		'coop_library_framework_admin',
 		script_url( 'admin', 'admin' ),
-		[ 'wp-a11y', 'wp-i18n' ],
+		[],
 		COOP_LIBRARY_FRAMEWORK_VERSION,
 		true
 	);
+
+	$cpt = 'lc_resource';
+
+	if ( in_array( $hook_suffix, array( 'post.php', 'post-new.php' ), true ) ) {
+		$screen = get_current_screen();
+
+		if ( is_object( $screen ) && $cpt === $screen->post_type ) {
+			wp_enqueue_script(
+				'coop_library_framework_editor',
+				script_url( 'editor', 'editor' ),
+				[ 'wp-a11y', 'wp-i18n' ],
+				COOP_LIBRARY_FRAMEWORK_VERSION,
+				true
+			);
+		}
+	}
 }
 
 /**

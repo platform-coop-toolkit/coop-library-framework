@@ -1,10 +1,9 @@
-/* global module */
-
 // Webpack settings exports.
 module.exports = {
 	entries: {
 		// JS files.
 		'admin': './assets/js/admin/admin.js',
+		'editor': './assets/js/editor/editor.js',
 		'frontend': './assets/js/frontend/frontend.js',
 		'shared': './assets/js/shared/shared.js',
 
