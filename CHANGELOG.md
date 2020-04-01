@@ -1,15 +1,20 @@
 # Changelog #
+## 1.0.0-rc.2 ##
+**Bug Fixes**
 
-## [1.0.0-RC.1](https://github.com/platform-coop-toolkit/coop-library-framework/compare/1.0.0-alpha.3...1.0.0-rc.1) (2020-03-31)
+* only enqueue editor scripts on editor screen ([#337](https://github.com/platform-coop-toolkit/coop-library-framework/issues/337)) ([dbd3b6f](https://github.com/platform-coop-toolkit/coop-library-framework/commit/dbd3b6f5211c664ffef44a0fdb6510606b2f6575))
 
+**Features**
 
-### Bug Fixes
+* add localization settings page ([41749de](https://github.com/platform-coop-toolkit/coop-library-framework/commit/41749de171ede6326fe944f9c2512765e95878c9))
+
+## 1.0.0-rc.1 ##
+**Bug Fixes**
 
 * make sub fields required to prevent empty input (resolves [#310](https://github.com/platform-coop-toolkit/coop-library-framework/issues/310)) ([bb14052](https://github.com/platform-coop-toolkit/coop-library-framework/commit/bb14052d4157fd20474f1a88853eeeb7a0eabc3c))
 * set null publication date to em dash ([#334](https://github.com/platform-coop-toolkit/coop-library-framework/issues/334)) ([fb856db](https://github.com/platform-coop-toolkit/coop-library-framework/commit/fb856dba75ea0448498b1c311947f0b54b3ccda2)), closes [platform-coop-toolkit/coop-library#245](https://github.com/platform-coop-toolkit/coop-library/issues/245)
 
-
-### Features
+**Features**
 
 * add hidden favorites field ([80e7f4d](https://github.com/platform-coop-toolkit/coop-library-framework/commit/80e7f4d33eaa51667a685e2325b5aaf94ff9da13))
 * add URL helper text (resolves [#311](https://github.com/platform-coop-toolkit/coop-library-framework/issues/311)) ([#333](https://github.com/platform-coop-toolkit/coop-library-framework/issues/333)) ([0b18052](https://github.com/platform-coop-toolkit/coop-library-framework/commit/0b1805217638a351c4856424024b0e3998d309ce))
