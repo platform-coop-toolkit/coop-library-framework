@@ -40,6 +40,8 @@ function add_localization_options_page() {
 	}
 
 	if ( function_exists( 'acf_add_local_field_group' ) ) {
+		$languages = get_language_choices();
+		unset( $languages['en'] );
 		acf_add_local_field_group(
 			[
 				'key'                   => 'group_5e84bc76ae537',
@@ -50,7 +52,7 @@ function add_localization_options_page() {
 						'label'             => __( 'Enabled Languages', 'coop-library-framework' ),
 						'name'              => 'enabled_languages',
 						'type'              => 'checkbox',
-						'instructions'      => __( 'Select the languages you\'d like to be displayed to site visitors.', 'coop-library-framework' ),
+						'instructions'      => __( 'Select the languages you\'d like to be displayed to site visitors. English content will always be displayed.', 'coop-library-framework' ),
 						'required'          => 0,
 						'conditional_logic' => 0,
 						'wrapper'           => [
@@ -58,7 +60,7 @@ function add_localization_options_page() {
 							'class' => '',
 							'id'    => '',
 						],
-						'choices'           => get_language_choices(),
+						'choices'           => $languages,
 						'allow_custom'      => 0,
 						'default_value'     => [ 'en' ],
 						'layout'            => 'vertical',
