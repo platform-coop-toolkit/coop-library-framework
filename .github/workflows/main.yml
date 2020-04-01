@@ -27,7 +27,23 @@ jobs:
         npm run build
       env:
         CI: true
-
+  
+  update-pot:
+    needs: test
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: WordPress POT Generator
+      uses: platform-coop-toolkit/action-wp-pot-generator@master
+      with:
+        save_path: './languages'
+        item_slug: 'coop-library-framework'
+        domain: 'coop-library-framework'
+        package_name: 'Co-op Library Framework'
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
   deploy-staging:
     needs: test
     if: github.ref == 'refs/heads/dev'
