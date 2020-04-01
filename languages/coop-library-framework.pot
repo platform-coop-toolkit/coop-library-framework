@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-04-01T16:38:22+00:00\n"
+"POT-Creation-Date: 2020-04-01T16:56:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: coop-library-framework\n"
@@ -652,7 +652,7 @@ msgid "&larr; Back to Formats"
 msgstr ""
 
 #: includes/functions/internationalization.php:33
-#: includes/functions/internationalization.php:46
+#: includes/functions/internationalization.php:48
 msgid "Localization Settings"
 msgstr ""
 
@@ -660,12 +660,12 @@ msgstr ""
 msgid "Localization"
 msgstr ""
 
-#: includes/functions/internationalization.php:50
+#: includes/functions/internationalization.php:52
 msgid "Enabled Languages"
 msgstr ""
 
-#: includes/functions/internationalization.php:53
-msgid "Select the languages you'd like to be displayed to site visitors."
+#: includes/functions/internationalization.php:55
+msgid "Select the languages you'd like to be displayed to site visitors. English content will always be displayed."
 msgstr ""
 
 #: includes/functions/metadata.php:401
