@@ -48,7 +48,7 @@
     "@10up/eslint-config": "^1.0.9",
     "@10up/stylelint-config": "^1.0.9",
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@babel/register": "^7.9.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
