@@ -21,10 +21,10 @@
     "optional": false
   },
   {
-    "name": "Relevanssi",
+    "name": "WP Extended Search",
     "host": "wordpress",
-    "slug": "relevanssi/relevanssi.php",
-    "uri": "https://wordpress.org/plugins/relevanssi/",
+    "slug": "wp-extended-search/wp-es.php",
+    "uri": "https://wordpress.org/plugins/wp-extended-search/",
     "optional": false
   },
   {
