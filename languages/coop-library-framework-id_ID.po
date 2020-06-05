@@ -1,0 +1,1125 @@
+# Copyright (C) 2020 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Co-op Library Framework plugin.
+# Translators:
+# Trias Noverdi <triasnoverdi@beyondbahasa.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-op Library Framework 1.0.0-rc.1\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
+"POT-Creation-Date: 2020-05-19T14:53:02+00:00\n"
+"PO-Revision-Date: 2020-04-01 17:03+0000\n"
+"Last-Translator: Trias Noverdi <triasnoverdi@beyondbahasa.com>, 2020\n"
+"Language-Team: Indonesian (Indonesia) (https://www.transifex.com/platform-cooperative-development-kit/teams/107673/id_ID/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id_ID\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: coop-library-framework\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Co-op Library Framework"
+msgstr "Kerangka Perpustakaan Koperasi"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/coop-library-framework/"
+msgstr "https://github.com/platform-coop-toolkit/coop-library-framework/"
+
+#. Description of the plugin
+msgid ""
+"Custom post type and metadata utilities for the Platform Co-op Resource "
+"Library."
+msgstr ""
+"Utilitas metadata dan jenis postingan kustom untuk Perpustakaan Sumber Daya "
+"Koperasi Platform."
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr "Perangkat Pengembangan Koperasi Platform"
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr "https://github.com/platform-coop-toolkit/"
+
+#: includes/classes/HiddenField.php:21
+msgid "Hidden"
+msgstr "Tersembunyi"
+
+#: includes/functions/core.php:82
+msgid "Resource Language"
+msgstr "Bahasa Sumber Daya"
+
+#: includes/functions/core.php:89
+msgid "Display Language"
+msgstr "Bahasa Tampilan"
+
+#: includes/functions/core.php:93 includes/functions/core.php:506
+#: includes/functions/core.php:531 includes/functions/core.php:535
+msgid "Format"
+msgstr "Format"
+
+#: includes/functions/core.php:97 includes/functions/core.php:178
+#: includes/functions/core.php:195 includes/functions/core.php:205
+#: includes/functions/core.php:209
+msgid "Topics"
+msgstr "Topik"
+
+#: includes/functions/core.php:101
+msgid "Date Published"
+msgstr "Tanggal Diterbitkan"
+
+#: includes/functions/core.php:105
+msgid "Date Added"
+msgstr "Tanggal Ditambahkan"
+
+#: includes/functions/core.php:111 includes/functions/core.php:131
+#: includes/functions/core.php:140 includes/functions/core.php:144
+msgid "Resources"
+msgstr "Sumber Daya"
+
+#: includes/functions/core.php:112 includes/functions/core.php:139
+#: includes/functions/core.php:143
+msgid "Resource"
+msgstr "Sumber Daya"
+
+#: includes/functions/core.php:113
+msgid "All Resources"
+msgstr "Semua Sumber Daya"
+
+#: includes/functions/core.php:114
+msgid "Resource Archives"
+msgstr "Arsip Sumber Daya"
+
+#: includes/functions/core.php:115
+msgid "Resource Attributes"
+msgstr "Atribut Sumber Daya"
+
+#: includes/functions/core.php:116
+msgid "Insert into resource"
+msgstr "Sisipkan ke sumber daya"
+
+#: includes/functions/core.php:117
+msgid "Uploaded to this resource"
+msgstr "Diunggah ke sumber daya ini"
+
+#: includes/functions/core.php:118
+msgid "Filter resources list"
+msgstr "Filter daftar sumber daya"
+
+#: includes/functions/core.php:119
+msgid "Resources list navigation"
+msgstr "Navigasi daftar sumber daya"
+
+#: includes/functions/core.php:120
+msgid "Resources list"
+msgstr "Daftar sumber daya"
+
+#: includes/functions/core.php:121
+msgid "New Resource"
+msgstr "Sumber Daya Baru"
+
+#: includes/functions/core.php:122
+msgid "Add New"
+msgstr "Tambah Baru"
+
+#: includes/functions/core.php:123
+msgid "Add New Resource"
+msgstr "Tambah Sumber Daya Baru"
+
+#: includes/functions/core.php:124
+msgid "Edit Resource"
+msgstr "Edit Sumber Daya"
+
+#: includes/functions/core.php:125
+msgid "View Resource"
+msgstr "Lihat Sumber Daya"
+
+#: includes/functions/core.php:126
+msgid "View Resources"
+msgstr "Lihat Sumber Daya"
+
+#: includes/functions/core.php:127
+msgid "Search resources"
+msgstr "Cari sumber daya"
+
+#: includes/functions/core.php:128
+msgid "No resources found"
+msgstr "Sumber daya tidak ditemukan"
+
+#: includes/functions/core.php:129
+msgid "No resources found in trash"
+msgstr "Sumber daya tidak ditemukan di sampah"
+
+#: includes/functions/core.php:130
+msgid "Parent Resource:"
+msgstr "Sumber Daya Induk:"
+
+#: includes/functions/core.php:179 includes/functions/core.php:204
+#: includes/functions/core.php:208
+msgid "Topic"
+msgstr "Topik"
+
+#: includes/functions/core.php:180
+msgid "Search Topics"
+msgstr "Cari Topik"
+
+#: includes/functions/core.php:181
+msgid "Popular Topics"
+msgstr "Topik Populer"
+
+#: includes/functions/core.php:182
+msgid "All Topics"
+msgstr "Semua Topik"
+
+#: includes/functions/core.php:183
+msgid "Parent Topic"
+msgstr "Topik Induk"
+
+#: includes/functions/core.php:184
+msgid "Parent Topic:"
+msgstr "Topik Induk:"
+
+#: includes/functions/core.php:185
+msgid "Edit Topic"
+msgstr "Edit Topik"
+
+#: includes/functions/core.php:186
+msgid "Update Topic"
+msgstr "Perbarui Topik"
+
+#: includes/functions/core.php:187
+msgid "View Topic"
+msgstr "Lihat Topik"
+
+#: includes/functions/core.php:188
+msgid "Add New Topic"
+msgstr "Tambah Topik Baru"
+
+#: includes/functions/core.php:189
+msgid "New Topic"
+msgstr "Topik Baru"
+
+#: includes/functions/core.php:190
+msgid "Separate topics with commas"
+msgstr "Pisahkan topik dengan koma"
+
+#: includes/functions/core.php:191
+msgid "Add or remove topics"
+msgstr "Tambah atau hapus topik"
+
+#: includes/functions/core.php:192
+msgid "Choose from the most used topics"
+msgstr "Pilih dari topik yang paling sering digunakan"
+
+#: includes/functions/core.php:193
+msgid "No topics found."
+msgstr "Topik tidak ditemukan."
+
+#: includes/functions/core.php:194
+msgid "No topics"
+msgstr "Tidak ada topik"
+
+#: includes/functions/core.php:196
+msgid "Topics list navigation"
+msgstr "Navigasi daftar topik"
+
+#: includes/functions/core.php:197
+msgid "Topics list"
+msgstr "Daftar topik"
+
+#: includes/functions/core.php:198
+msgid "&larr; Back to Topics"
+msgstr "&larr; Kembali ke Topik"
+
+#: includes/functions/core.php:243 includes/functions/core.php:260
+#: includes/functions/core.php:270 includes/functions/core.php:274
+msgid "Goals"
+msgstr "Tujuan"
+
+#: includes/functions/core.php:244 includes/functions/core.php:269
+#: includes/functions/core.php:273
+msgid "Goal"
+msgstr "Tujuan"
+
+#: includes/functions/core.php:245
+msgid "Search Goals"
+msgstr "Cari Tujuan"
+
+#: includes/functions/core.php:246
+msgid "Popular Goals"
+msgstr "Tujuan Populer"
+
+#: includes/functions/core.php:247
+msgid "All Goals"
+msgstr "Semua Tujuan"
+
+#: includes/functions/core.php:248
+msgid "Parent Goal"
+msgstr "Tujuan Induk"
+
+#: includes/functions/core.php:249
+msgid "Parent Goal:"
+msgstr "Tujuan Induk:"
+
+#: includes/functions/core.php:250
+msgid "Edit Goal"
+msgstr "Edit Tujuan"
+
+#: includes/functions/core.php:251
+msgid "Update Goal"
+msgstr "Perbarui Tujuan"
+
+#: includes/functions/core.php:252
+msgid "View Goal"
+msgstr "Lihat Tujuan"
+
+#: includes/functions/core.php:253
+msgid "Add New Goal"
+msgstr "Tambah Tujuan Baru"
+
+#: includes/functions/core.php:254
+msgid "New Goal"
+msgstr "Tujuan Baru"
+
+#: includes/functions/core.php:255
+msgid "Separate goals with commas"
+msgstr "Pisahkan tujuan dengan koma"
+
+#: includes/functions/core.php:256
+msgid "Add or remove goals"
+msgstr "Tambah atau hapus tujuan"
+
+#: includes/functions/core.php:257
+msgid "Choose from the most used goals"
+msgstr "Pilih dari tujuan yang paling sering digunakan"
+
+#: includes/functions/core.php:258
+msgid "No goals found."
+msgstr "Tujuan tidak ditemukan."
+
+#: includes/functions/core.php:259
+msgid "No goals"
+msgstr "Tidak ada tujuan"
+
+#: includes/functions/core.php:261
+msgid "Goals list navigation"
+msgstr "Navigasi daftar tujuan"
+
+#: includes/functions/core.php:262
+msgid "Goals list"
+msgstr "Daftar tujuan"
+
+#: includes/functions/core.php:263
+msgid "&larr; Back to Goals"
+msgstr "&larr; Kembali ke Tujuan"
+
+#: includes/functions/core.php:309 includes/functions/core.php:326
+#: includes/functions/core.php:336 includes/functions/core.php:340
+msgid "Regions"
+msgstr "Wilayah"
+
+#: includes/functions/core.php:310 includes/functions/core.php:335
+#: includes/functions/core.php:339
+msgid "Region"
+msgstr "Wilayah"
+
+#: includes/functions/core.php:311
+msgid "Search Regions"
+msgstr "Cari Wilayah"
+
+#: includes/functions/core.php:312
+msgid "Popular Regions"
+msgstr "Wilayah Populer"
+
+#: includes/functions/core.php:313
+msgid "All Regions"
+msgstr "Semua Wilayah"
+
+#: includes/functions/core.php:314
+msgid "Parent Region"
+msgstr "Wilayah Induk"
+
+#: includes/functions/core.php:315
+msgid "Parent Region:"
+msgstr "Wilayah Induk:"
+
+#: includes/functions/core.php:316
+msgid "Edit Region"
+msgstr "Edit Wilayah"
+
+#: includes/functions/core.php:317
+msgid "Update Region"
+msgstr "Perbarui Wilayah"
+
+#: includes/functions/core.php:318
+msgid "View Region"
+msgstr "Lihat Wilayah"
+
+#: includes/functions/core.php:319
+msgid "Add New Region"
+msgstr "Tambah Wilayah Baru"
+
+#: includes/functions/core.php:320
+msgid "New Region"
+msgstr "Wilayah Baru"
+
+#: includes/functions/core.php:321
+msgid "Separate regions with commas"
+msgstr "Pisahkan wilayah dengan koma"
+
+#: includes/functions/core.php:322
+msgid "Add or remove regions"
+msgstr "Tambah atau hapus wilayah"
+
+#: includes/functions/core.php:323
+msgid "Choose from the most used regions"
+msgstr "Pilih dari wilayah yang paling sering digunakan"
+
+#: includes/functions/core.php:324
+msgid "No regions found."
+msgstr "Wilayah tidak ditemukan."
+
+#: includes/functions/core.php:325
+msgid "No regions"
+msgstr "Tidak ada wilayah"
+
+#: includes/functions/core.php:327
+msgid "Regions list navigation"
+msgstr "Navigasi daftar wilayah"
+
+#: includes/functions/core.php:328
+msgid "Regions list"
+msgstr "Daftar wilayah"
+
+#: includes/functions/core.php:329
+msgid "&larr; Back to Regions"
+msgstr "&larr; Kembali ke Wilayah"
+
+#: includes/functions/core.php:375 includes/functions/core.php:392
+#: includes/functions/core.php:402 includes/functions/core.php:406
+msgid "Sectors"
+msgstr "Sektor"
+
+#: includes/functions/core.php:376 includes/functions/core.php:401
+#: includes/functions/core.php:405
+msgid "Sector"
+msgstr "Sektor"
+
+#: includes/functions/core.php:377
+msgid "Search Sectors"
+msgstr "Cari Sektor"
+
+#: includes/functions/core.php:378
+msgid "Popular Sectors"
+msgstr "Sektor Populer"
+
+#: includes/functions/core.php:379
+msgid "All Sectors"
+msgstr "Semua Sektor"
+
+#: includes/functions/core.php:380
+msgid "Parent Sector"
+msgstr "Sektor Induk"
+
+#: includes/functions/core.php:381
+msgid "Parent Sector:"
+msgstr "Sektor Induk:"
+
+#: includes/functions/core.php:382
+msgid "Edit Sector"
+msgstr "Edit Sektor"
+
+#: includes/functions/core.php:383
+msgid "Update Sector"
+msgstr "Perbarui Sektor"
+
+#: includes/functions/core.php:384
+msgid "View Sector"
+msgstr "Lihat Sektor"
+
+#: includes/functions/core.php:385
+msgid "Add New Sector"
+msgstr "Tambah Sektor Baru"
+
+#: includes/functions/core.php:386
+msgid "New Sector"
+msgstr "Sektor Baru"
+
+#: includes/functions/core.php:387
+msgid "Separate sectors with commas"
+msgstr "Pisahkan sektor dengan koma"
+
+#: includes/functions/core.php:388
+msgid "Add or remove sectors"
+msgstr "Tambah atau hapus sektor"
+
+#: includes/functions/core.php:389
+msgid "Choose from the most used sectors"
+msgstr "Pilih dari sektor yang paling sering digunakan"
+
+#: includes/functions/core.php:390
+msgid "No sectors found."
+msgstr "Sektor tidak ditemukan."
+
+#: includes/functions/core.php:391
+msgid "No sectors"
+msgstr "Tidak ada sektor"
+
+#: includes/functions/core.php:393
+msgid "Sectors list navigation"
+msgstr "Navigasi daftar sektor"
+
+#: includes/functions/core.php:394
+msgid "Sectors list"
+msgstr "Daftar sektor"
+
+#: includes/functions/core.php:395
+msgid "&larr; Back to Sectors"
+msgstr "&larr; Kembali ke Sektor"
+
+#: includes/functions/core.php:440 includes/functions/core.php:457
+#: includes/functions/core.php:467 includes/functions/core.php:471
+msgid "Co-op Types"
+msgstr "Jenis Koperasi"
+
+#: includes/functions/core.php:441 includes/functions/core.php:466
+#: includes/functions/core.php:470
+msgid "Co-op Type"
+msgstr "Jenis Koperasi"
+
+#: includes/functions/core.php:442
+msgid "Search Co-op Types"
+msgstr "Cari Jenis Koperasi"
+
+#: includes/functions/core.php:443
+msgid "Popular Co-op Types"
+msgstr "Jenis Koperasi Populer"
+
+#: includes/functions/core.php:444
+msgid "All Co-op Types"
+msgstr "Semua Jenis Koperasi"
+
+#: includes/functions/core.php:445
+msgid "Parent Co-op Type"
+msgstr "Jenis Koperasi Induk"
+
+#: includes/functions/core.php:446
+msgid "Parent Co-op Type:"
+msgstr "Jenis Koperasi Induk:"
+
+#: includes/functions/core.php:447
+msgid "Edit Co-op Type"
+msgstr "Edit Jenis Koperasi"
+
+#: includes/functions/core.php:448
+msgid "Update Co-op Type"
+msgstr "Perbarui Jenis Koperasi"
+
+#: includes/functions/core.php:449
+msgid "View Co-op Type"
+msgstr "Lihat Jenis Koperasi"
+
+#: includes/functions/core.php:450
+msgid "Add New Co-op Type"
+msgstr "Tambah Jenis Koperasi Baru"
+
+#: includes/functions/core.php:451
+msgid "New Co-op Type"
+msgstr "Jenis Koperasi Baru"
+
+#: includes/functions/core.php:452
+msgid "Separate co-op types with commas"
+msgstr "Pisahkan jenis koperasi dengan koma"
+
+#: includes/functions/core.php:453
+msgid "Add or remove co-op types"
+msgstr "Tambah atau hapus jenis koperasi"
+
+#: includes/functions/core.php:454
+msgid "Choose from the most used co-op types"
+msgstr "Pilih dari jenis koperasi yang paling sering digunakan"
+
+#: includes/functions/core.php:455
+msgid "No co-op types found."
+msgstr "Jenis koperasi tidak ditemukan."
+
+#: includes/functions/core.php:456
+msgid "No co-op types"
+msgstr "Tidak ada jenis koperasi"
+
+#: includes/functions/core.php:458
+msgid "Co-op Types list navigation"
+msgstr "Navigasi daftar jenis koperasi"
+
+#: includes/functions/core.php:459
+msgid "Co-op Types list"
+msgstr "Daftar Jenis Koperasi"
+
+#: includes/functions/core.php:460
+msgid "&larr; Back to Co-op Types"
+msgstr "&larr; Kembali ke Jenis Koperasi"
+
+#: includes/functions/core.php:505 includes/functions/core.php:522
+#: includes/functions/core.php:532 includes/functions/core.php:536
+msgid "Formats"
+msgstr "Format"
+
+#: includes/functions/core.php:507
+msgid "Search Formats"
+msgstr "Cari Format"
+
+#: includes/functions/core.php:508
+msgid "Popular Formats"
+msgstr "Format Populer"
+
+#: includes/functions/core.php:509
+msgid "All Formats"
+msgstr "Semua Format"
+
+#: includes/functions/core.php:510
+msgid "Parent Format"
+msgstr "Format Induk"
+
+#: includes/functions/core.php:511
+msgid "Parent Format:"
+msgstr "Format Induk:"
+
+#: includes/functions/core.php:512
+msgid "Edit Format"
+msgstr "Edit Format"
+
+#: includes/functions/core.php:513
+msgid "Update Format"
+msgstr "Perbarui Format"
+
+#: includes/functions/core.php:514
+msgid "View Format"
+msgstr "Lihat Format"
+
+#: includes/functions/core.php:515
+msgid "Add New Format"
+msgstr "Tambah Format Baru"
+
+#: includes/functions/core.php:516
+msgid "New Format"
+msgstr "Format Baru"
+
+#: includes/functions/core.php:517
+msgid "Separate formats with commas"
+msgstr "Pisahkan format dengan koma"
+
+#: includes/functions/core.php:518
+msgid "Add or remove formats"
+msgstr "Tambah atau hapus format"
+
+#: includes/functions/core.php:519
+msgid "Choose from the most used formats"
+msgstr "Pilih dari format yang paling sering digunakan"
+
+#: includes/functions/core.php:520
+msgid "No formats found."
+msgstr "Format tidak ditemukan."
+
+#: includes/functions/core.php:521
+msgid "No formats"
+msgstr "Tidak ada format"
+
+#: includes/functions/core.php:523
+msgid "Formats list navigation"
+msgstr "Navigasi daftar format"
+
+#: includes/functions/core.php:524
+msgid "Formats list"
+msgstr "Daftar format"
+
+#: includes/functions/core.php:525
+msgid "&larr; Back to Formats"
+msgstr "&larr; Kembali ke Format"
+
+#: includes/functions/internationalization.php:33
+#: includes/functions/internationalization.php:48
+msgid "Localization Settings"
+msgstr "Pengaturan Pelokalan"
+
+#: includes/functions/internationalization.php:34
+msgid "Localization"
+msgstr "Pelokalan"
+
+#: includes/functions/internationalization.php:52
+msgid "Enabled Languages"
+msgstr "Bahasa Diaktifkan"
+
+#: includes/functions/internationalization.php:55
+msgid ""
+"Select the languages you'd like to be displayed to site visitors. English "
+"content will always be displayed."
+msgstr ""
+"Pilih bahasa yang ingin Anda tampilkan ke pengunjung situs. Konten berbahasa"
+" Inggris akan selalu ditampilkan."
+
+#: includes/functions/metadata.php:401
+msgid "General Information"
+msgstr "Informasi Umum"
+
+#: includes/functions/metadata.php:405
+msgid "Link to resource"
+msgstr "Tautan ke sumber daya"
+
+#: includes/functions/metadata.php:408
+msgid ""
+"Web address to access the resource (must begin with http:// or https://). "
+"This information is required."
+msgstr ""
+"Alamat web untuk mengakses sumber daya (harus dimulai dengan http:// atau "
+"https://). Informasi ini diperlukan."
+
+#: includes/functions/metadata.php:421
+msgid "Favorites"
+msgstr "Favorit"
+
+#: includes/functions/metadata.php:424
+msgid "The number of times this resource has been favorited."
+msgstr "Jumlah berapa kali sumber daya ini telah difavoritkan."
+
+#: includes/functions/metadata.php:441
+msgid "Resource language"
+msgstr "Bahasa sumber daya"
+
+#: includes/functions/metadata.php:444
+msgid "The language of the resource. This information is required."
+msgstr "Bahasa sumber daya. Informasi ini diperlukan."
+
+#: includes/functions/metadata.php:459
+msgid "Choose a language"
+msgstr "Pilih bahasa"
+
+#: includes/functions/metadata.php:463
+msgid "Short title"
+msgstr "Judul singkat"
+
+#: includes/functions/metadata.php:466
+msgid "Shorter title used in resource listings. Maximum 72 characters."
+msgstr ""
+"Judul singkat yang digunakan dalam daftar sumber daya. Maksimum 72 karakter."
+
+#: includes/functions/metadata.php:482
+msgid "Paywall"
+msgstr "Paywall"
+
+#: includes/functions/metadata.php:493
+msgid "Is this resource behind a paywall?"
+msgstr "Apakah sumber daya ini  berada di balik paywall?"
+
+#: includes/functions/metadata.php:501
+msgid "Authors"
+msgstr "Penulis"
+
+#: includes/functions/metadata.php:504
+msgid "Authors of the resource."
+msgstr "Penulis sumber daya."
+
+#: includes/functions/metadata.php:516
+msgid "Add author"
+msgstr "Tambah penulis"
+
+#: includes/functions/metadata.php:520
+msgid "Author"
+msgstr "Penulis"
+
+#: includes/functions/metadata.php:541
+msgid "Editors"
+msgstr "Editor"
+
+#: includes/functions/metadata.php:544
+msgid "Editors of the resource."
+msgstr "Editor sumber daya."
+
+#: includes/functions/metadata.php:556
+msgid "Add editor"
+msgstr "Tambah editor"
+
+#: includes/functions/metadata.php:560
+msgid "Editor"
+msgstr "Editor"
+
+#: includes/functions/metadata.php:581
+msgid "Translators"
+msgstr "Penerjemah"
+
+#: includes/functions/metadata.php:584
+msgid "Translators of the resource."
+msgstr "Penerjemah sumber daya."
+
+#: includes/functions/metadata.php:596
+msgid "Add translator"
+msgstr "Tambah penerjemah"
+
+#: includes/functions/metadata.php:600
+msgid "Translator"
+msgstr "Penerjemah"
+
+#: includes/functions/metadata.php:621
+msgid "Publication year"
+msgstr "Tahun publikasi"
+
+#: includes/functions/metadata.php:624
+msgid "The year the resource was published."
+msgstr "Tahun penerbitan sumber daya."
+
+#: includes/functions/metadata.php:639
+msgid "Choose a year"
+msgstr "Pilih tahun"
+
+#: includes/functions/metadata.php:643
+msgid "Publication month"
+msgstr "Bulan publikasi"
+
+#: includes/functions/metadata.php:646
+msgid "The month the resource was published."
+msgstr "Bulan penerbitan publikasi."
+
+#: includes/functions/metadata.php:662
+msgid "January"
+msgstr "Januari"
+
+#: includes/functions/metadata.php:663
+msgid "February"
+msgstr "Februari"
+
+#: includes/functions/metadata.php:664
+msgid "March"
+msgstr "Maret"
+
+#: includes/functions/metadata.php:665
+msgid "April"
+msgstr "April"
+
+#: includes/functions/metadata.php:666
+msgid "May"
+msgstr "Mei"
+
+#: includes/functions/metadata.php:667
+msgid "June"
+msgstr "Juni"
+
+#: includes/functions/metadata.php:668
+msgid "July"
+msgstr "Juli"
+
+#: includes/functions/metadata.php:669
+msgid "August"
+msgstr "Agustus"
+
+#: includes/functions/metadata.php:670
+msgid "September"
+msgstr "September"
+
+#: includes/functions/metadata.php:671
+msgid "October"
+msgstr "Oktober"
+
+#: includes/functions/metadata.php:672
+msgid "November"
+msgstr "November"
+
+#: includes/functions/metadata.php:673
+msgid "December"
+msgstr "Desember"
+
+#: includes/functions/metadata.php:681
+msgid "Choose a month"
+msgstr "Pilih bulan"
+
+#: includes/functions/metadata.php:685
+msgid "Publication day"
+msgstr "Hari publikasi"
+
+#: includes/functions/metadata.php:688
+msgid "The numeric day the resource was published."
+msgstr "Hari numerik penerbitan sumber daya."
+
+#: includes/functions/metadata.php:714
+msgid "Choose a day"
+msgstr "Pilih hari"
+
+#: includes/functions/metadata.php:718
+msgid "Publication Date"
+msgstr "Tanggal Publikasi"
+
+#: includes/functions/metadata.php:721
+msgid ""
+"You can set the publication date for this resource using the year, month and"
+" day fields above."
+msgstr ""
+"Anda dapat menetapkan tanggal publikasi untuk sumber daya ini menggunakan "
+"bidang tahun, bulan dan hari di atas."
+
+#: includes/functions/metadata.php:738
+msgid "Revisions"
+msgstr "Revisi"
+
+#: includes/functions/metadata.php:741
+msgid "Revisions of the resource."
+msgstr "Revisi sumber daya."
+
+#: includes/functions/metadata.php:753
+msgid "Add revision"
+msgstr "Tambah revisi"
+
+#: includes/functions/metadata.php:757
+msgid "Revision date"
+msgstr "Tanggal revisi"
+
+#: includes/functions/metadata.php:760
+msgid "The date of this revision."
+msgstr "Tanggal revisi ini."
+
+#: includes/functions/metadata.php:774
+msgid "Revision description"
+msgstr "Deskripsi revisi"
+
+#: includes/functions/metadata.php:777
+msgid "A brief description of this revision."
+msgstr "Deskripsi singkat revisi ini."
+
+#: includes/functions/metadata.php:827
+msgid "About the Publication"
+msgstr "Tentang Publikasi"
+
+#: includes/functions/metadata.php:831
+msgid "Publication name"
+msgstr "Nama publikasi"
+
+#: includes/functions/metadata.php:834
+msgid "Name of the publication in which the resource appears."
+msgstr "Nama publikasi tempat kemunculan sumber daya."
+
+#: includes/functions/metadata.php:850
+msgid "Publication link"
+msgstr "Tautan publikasi"
+
+#: includes/functions/metadata.php:853
+msgid "Web address for the publication (must begin with http:// or https://)."
+msgstr ""
+"Alamat web untuk publikasi (harus dimulai dengan http:// atau https://)."
+
+#: includes/functions/metadata.php:888
+msgid "About the Publisher"
+msgstr "Tentang Penerbit"
+
+#: includes/functions/metadata.php:892
+msgid "Publisher name"
+msgstr "Nama penerbit"
+
+#: includes/functions/metadata.php:895
+msgid "Name of the resource publisher."
+msgstr "Nama penerbit sumber daya."
+
+#: includes/functions/metadata.php:911
+msgid "Publisher link"
+msgstr "Tautan penerbit"
+
+#: includes/functions/metadata.php:914
+msgid "Web address for the publisher (must begin with http:// or https://)."
+msgstr ""
+"Alamat web untuk penerbit (harus dimulai dengan http:// atau https://)."
+
+#: includes/functions/metadata.php:927
+msgid "Publisher city"
+msgstr "Kota penerbit"
+
+#: includes/functions/metadata.php:930
+msgid "Town or city where the publisher is located."
+msgstr "Kota yang merupakan lokasi penerbit."
+
+#: includes/functions/metadata.php:946
+msgid "Publisher country"
+msgstr "Negara penerbit"
+
+#: includes/functions/metadata.php:949
+msgid "Country where the publisher is located."
+msgstr "Negara yang merupakan lokasi penerbit."
+
+#: includes/functions/metadata.php:964
+msgid "Select a country"
+msgstr "Pilih negara"
+
+#: includes/functions/metadata.php:993
+msgid "Distribution License or Rights"
+msgstr "Hak atau Lisensi Distribusi"
+
+#: includes/functions/metadata.php:997
+msgid "License or rights"
+msgstr "Lisensi atau hak"
+
+#: includes/functions/metadata.php:1000
+msgid "License or rights under which the resource is distributed."
+msgstr "Lisensi atau hak yang menjadi dasar pendistribusian sumber daya."
+
+#: includes/functions/metadata.php:1009
+msgid "All Rights Reserved"
+msgstr "Hak Cipta Dilindungi Undang-Undang"
+
+#: includes/functions/metadata.php:1010
+msgid "Creative Commons Attribution"
+msgstr "Atribusi Creative Commons"
+
+#: includes/functions/metadata.php:1011
+msgid "Creative Commons Attribution-NonCommercial"
+msgstr "Atribusi Creative Commons-NonKomersial"
+
+#: includes/functions/metadata.php:1012
+msgid "Creative Commons Attribution-NoDerivatives"
+msgstr "Atribusi Creative Commons-TanpaTurunan"
+
+#: includes/functions/metadata.php:1013
+msgid "Creative Commons Attribution-ShareAlike"
+msgstr "Atribusi Creative Commons-BerbagiSerupa"
+
+#: includes/functions/metadata.php:1014
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
+msgstr "Atribusi Creative Commons-NonKomersial-TanpaTurunan"
+
+#: includes/functions/metadata.php:1015
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
+msgstr "Atribusi Creative Commons-NonKomersial-BerbagiSerupa"
+
+#: includes/functions/metadata.php:1016
+msgid "Educational Community License"
+msgstr "Lisensi Komunitas Pendidikan"
+
+#: includes/functions/metadata.php:1017
+msgid "No Rights Reserved"
+msgstr "Tidak Ada Hak Cipta yang Dilindungi Undang-Undang"
+
+#: includes/functions/metadata.php:1018
+msgid "No Known Copyright"
+msgstr "Tidak Ada Hak Cipta yang Diketahui"
+
+#: includes/functions/metadata.php:1019
+msgid "Custom…"
+msgstr "Kustom…"
+
+#: includes/functions/metadata.php:1027
+msgid "Choose a license or rights"
+msgstr "Pilih lisensi atau hak"
+
+#: includes/functions/metadata.php:1031
+msgid "Custom license or rights"
+msgstr "Lisensi atau hak kustom"
+
+#: includes/functions/metadata.php:1037
+msgid "Custom license or rights statement."
+msgstr "Pernyataan lisensi atau hak kustom."
+
+#: includes/functions/metadata.php:1038
+msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
+msgstr "Ini diaktifkan ketika ‘Kustom…’ di bawah ‘Lisensi atau hak’ dipilih ."
+
+#: includes/functions/metadata.php:1086
+msgid "Archival Links"
+msgstr "Tautan Arsip"
+
+#: includes/functions/metadata.php:1096
+msgid ""
+"Links to archive copy on perma.cc. Specify multiple links if the resource "
+"spans multiple pages."
+msgstr ""
+"Tautan untuk mengarsipkan salinan di perma.cc. Tetapkan multi tautan jika "
+"sumber daya memiliki banyak halaman."
+
+#. translators: link to https://perma.cc
+#: includes/functions/metadata.php:1098
+msgid "%s provides web archiving for scholars, journals, courts, and others."
+msgstr ""
+"%s menyediakan arsip web untuk cendekiawan, jurnal, pengadilan dan lain-"
+"lain."
+
+#: includes/functions/metadata.php:1112
+msgid "Add perma.cc link"
+msgstr "Tambah tautan perma.cc"
+
+#: includes/functions/metadata.php:1116
+msgid "Perma.cc link"
+msgstr "Tautan Perma.cc"
+
+#: includes/functions/metadata.php:1134
+msgid "Internet Archive"
+msgstr "Internet Archive"
+
+#: includes/functions/metadata.php:1140
+msgid ""
+"Links to archive copy on the Internet Archive. Specify multiple links if the"
+" resource spans multiple pages."
+msgstr ""
+"Tautan untuk mengarsipkan salinan di Internet Archive. Tetapkan multi tautan"
+" jika sumber daya memiliki banyak halaman."
+
+#. translators: link to https://web.archive.org
+#: includes/functions/metadata.php:1142
+msgid "%s provides free and open web archiving."
+msgstr "%s menyediakan pengarsipan web yang gratis dan terbuka."
+
+#: includes/functions/metadata.php:1156
+msgid "Add Internet Archive link"
+msgstr "Tambah tautan Internet Archive"
+
+#: includes/functions/metadata.php:1160
+msgid "Internet Archive link"
+msgstr "Tautan Internet Archive"
+
+#: includes/functions/metadata.php:1200
+msgid "Catalog Codes"
+msgstr "Kode Katalog"
+
+#: includes/functions/metadata.php:1207
+msgid "Digital Object Identifier (or DOI) for this resource."
+msgstr "Digital Object Identifier (atau DOI) untuk sumber daya ini."
+
+#: includes/functions/metadata.php:1226
+msgid "International Standard Book Number (or ISBN) for this resource."
+msgstr "International Standard Book Number (atau ISBN) untuk sumber daya ini."
+
+#: includes/functions/metadata.php:1245
+msgid "International Standard Serial Number (or ISSN) for this resource."
+msgstr ""
+"International Standard Serial Number (atau ISSN) untuk sumber daya ini."
+
+#: includes/functions/metadata.php:1363
+msgid "This is not a valid DOI."
+msgstr "Ini bukan DOI yang valid."
+
+#: includes/functions/metadata.php:1387
+msgid "This is not a valid ISBN."
+msgstr "Ini bukan ISBN yang valid."
+
+#: includes/functions/metadata.php:1413
+msgid "This is not a valid ISSN."
+msgstr "Ini bukan ISSN yang valid."
+
+#: includes/functions/metadata.php:1439
+msgid "This is not a valid Perma.cc link."
+msgstr "ini bukan tautan Perma.cc yang valid."
+
+#: includes/functions/metadata.php:1467
+msgid "This is not a valid Internet Archive link."
+msgstr "Ini bukan tautan Internet Archive yang valid."
+
+#: assets/js/editor/editor.js:24
+msgid ""
+"The publication day has been reset as there are only %1$d days in the "
+"selected month, and your choice of %2$d is no longer valid."
+msgstr ""
+"Hari publikasi telah diatur ulang karena hanya ada %1$d hari pada bulan yang"
+" dipilih, dan pilihan %2$d Anda tidak lagi valid."
+
+#. translators: %s: The label of the required field.
+#: assets/js/editor/editor.js:75 assets/js/editor/editor.js:93
+msgid "A %s is required."
+msgstr "%s diperlukan."
+
+#: assets/js/editor/editor.js:88
+msgid "The form contains errors:"
+msgstr "Formulir mengandung kesalahan:"
