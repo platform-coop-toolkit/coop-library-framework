@@ -1,0 +1,1126 @@
+# Copyright (C) 2020 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Co-op Library Framework plugin.
+# Translators:
+# Miren Soraluze <mirsorr@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-op Library Framework 1.0.0-rc.1\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
+"POT-Creation-Date: 2020-05-19T14:53:02+00:00\n"
+"PO-Revision-Date: 2020-04-01 17:03+0000\n"
+"Last-Translator: Miren Soraluze <mirsorr@gmail.com>, 2020\n"
+"Language-Team: Basque (https://www.transifex.com/platform-cooperative-development-kit/teams/107673/eu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: coop-library-framework\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Co-op Library Framework"
+msgstr "Liburutegi kooperatiboaren esparrua"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/coop-library-framework/"
+msgstr "https://github.com/platform-coop-toolkit/coop-library-framework/"
+
+#. Description of the plugin
+msgid ""
+"Custom post type and metadata utilities for the Platform Co-op Resource "
+"Library."
+msgstr ""
+"Kooperatiba Plataformako Baliabideen Liburutegirako lanpostu motako "
+"erabilera pertsonalizatuak eta metadatuak."
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr "Plataformaren garapen kooperatiboko kit-a"
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr "https://github.com/platform-coop-toolkit/"
+
+#: includes/classes/HiddenField.php:21
+msgid "Hidden"
+msgstr "Ezkutukoa"
+
+#: includes/functions/core.php:82
+msgid "Resource Language"
+msgstr "Baliabideen hizkuntza"
+
+#: includes/functions/core.php:89
+msgid "Display Language"
+msgstr "Erakutsitako hizkuntza"
+
+#: includes/functions/core.php:93 includes/functions/core.php:506
+#: includes/functions/core.php:531 includes/functions/core.php:535
+msgid "Format"
+msgstr "Formatua"
+
+#: includes/functions/core.php:97 includes/functions/core.php:178
+#: includes/functions/core.php:195 includes/functions/core.php:205
+#: includes/functions/core.php:209
+msgid "Topics"
+msgstr "Gaiak"
+
+#: includes/functions/core.php:101
+msgid "Date Published"
+msgstr "Argitalpen-data"
+
+#: includes/functions/core.php:105
+msgid "Date Added"
+msgstr "Gehitze-data"
+
+#: includes/functions/core.php:111 includes/functions/core.php:131
+#: includes/functions/core.php:140 includes/functions/core.php:144
+msgid "Resources"
+msgstr "Baliabideak"
+
+#: includes/functions/core.php:112 includes/functions/core.php:139
+#: includes/functions/core.php:143
+msgid "Resource"
+msgstr "Baliabidea"
+
+#: includes/functions/core.php:113
+msgid "All Resources"
+msgstr "Baliabide guztiak"
+
+#: includes/functions/core.php:114
+msgid "Resource Archives"
+msgstr "Baliabideen artxiboak"
+
+#: includes/functions/core.php:115
+msgid "Resource Attributes"
+msgstr "Baliabideen ezaugarriak"
+
+#: includes/functions/core.php:116
+msgid "Insert into resource"
+msgstr "Sartu baliabidean"
+
+#: includes/functions/core.php:117
+msgid "Uploaded to this resource"
+msgstr "Baliabide honetara igota"
+
+#: includes/functions/core.php:118
+msgid "Filter resources list"
+msgstr "Baliabideen zerrenda iragaztea"
+
+#: includes/functions/core.php:119
+msgid "Resources list navigation"
+msgstr "Baliabideen zerrendaren nabigazioa"
+
+#: includes/functions/core.php:120
+msgid "Resources list"
+msgstr "Baliabideen zerrenda"
+
+#: includes/functions/core.php:121
+msgid "New Resource"
+msgstr "Baliabide berria"
+
+#: includes/functions/core.php:122
+msgid "Add New"
+msgstr "Gehitu berria"
+
+#: includes/functions/core.php:123
+msgid "Add New Resource"
+msgstr "Gehitu baliabide berria"
+
+#: includes/functions/core.php:124
+msgid "Edit Resource"
+msgstr "Baliabidea editatu"
+
+#: includes/functions/core.php:125
+msgid "View Resource"
+msgstr "Ikusi baliabidea"
+
+#: includes/functions/core.php:126
+msgid "View Resources"
+msgstr "Ikusi baliabideak"
+
+#: includes/functions/core.php:127
+msgid "Search resources"
+msgstr "Bilatu baliabideak"
+
+#: includes/functions/core.php:128
+msgid "No resources found"
+msgstr "Ez da baliabiderik aurkitu"
+
+#: includes/functions/core.php:129
+msgid "No resources found in trash"
+msgstr "Ez da baliabiderik aurkitu zaborretan"
+
+#: includes/functions/core.php:130
+msgid "Parent Resource:"
+msgstr "Baliabide nagusia"
+
+#: includes/functions/core.php:179 includes/functions/core.php:204
+#: includes/functions/core.php:208
+msgid "Topic"
+msgstr "Gaia"
+
+#: includes/functions/core.php:180
+msgid "Search Topics"
+msgstr "Bilatu gaiak"
+
+#: includes/functions/core.php:181
+msgid "Popular Topics"
+msgstr "Gai ezagunak"
+
+#: includes/functions/core.php:182
+msgid "All Topics"
+msgstr "Gai guztiak"
+
+#: includes/functions/core.php:183
+msgid "Parent Topic"
+msgstr "Gai nagusia"
+
+#: includes/functions/core.php:184
+msgid "Parent Topic:"
+msgstr "Gai nagusia:"
+
+#: includes/functions/core.php:185
+msgid "Edit Topic"
+msgstr "Gaia editatu"
+
+#: includes/functions/core.php:186
+msgid "Update Topic"
+msgstr "Gai eguneratua"
+
+#: includes/functions/core.php:187
+msgid "View Topic"
+msgstr "Gaia ikusi"
+
+#: includes/functions/core.php:188
+msgid "Add New Topic"
+msgstr "Gai berri bat gehitu"
+
+#: includes/functions/core.php:189
+msgid "New Topic"
+msgstr "Gai berria"
+
+#: includes/functions/core.php:190
+msgid "Separate topics with commas"
+msgstr "Gaiak komekin banatu"
+
+#: includes/functions/core.php:191
+msgid "Add or remove topics"
+msgstr "Gaiak gehitu edo kendu"
+
+#: includes/functions/core.php:192
+msgid "Choose from the most used topics"
+msgstr "Aukeratu gehien erabiltzen diren gaien artean"
+
+#: includes/functions/core.php:193
+msgid "No topics found."
+msgstr "Ez da gairik aurkitu"
+
+#: includes/functions/core.php:194
+msgid "No topics"
+msgstr "Ez dago gairik"
+
+#: includes/functions/core.php:196
+msgid "Topics list navigation"
+msgstr "Gai-zerrendaren nabigazioa"
+
+#: includes/functions/core.php:197
+msgid "Topics list"
+msgstr "Gaien zerrenda"
+
+#: includes/functions/core.php:198
+msgid "&larr; Back to Topics"
+msgstr "&larr; Gaietara itzuli"
+
+#: includes/functions/core.php:243 includes/functions/core.php:260
+#: includes/functions/core.php:270 includes/functions/core.php:274
+msgid "Goals"
+msgstr "Helburuak"
+
+#: includes/functions/core.php:244 includes/functions/core.php:269
+#: includes/functions/core.php:273
+msgid "Goal"
+msgstr "Helburua"
+
+#: includes/functions/core.php:245
+msgid "Search Goals"
+msgstr "Bilaketaren helburuak"
+
+#: includes/functions/core.php:246
+msgid "Popular Goals"
+msgstr "Helburu ezagunak"
+
+#: includes/functions/core.php:247
+msgid "All Goals"
+msgstr "Helburu guztiak"
+
+#: includes/functions/core.php:248
+msgid "Parent Goal"
+msgstr "Matrizearen helburua"
+
+#: includes/functions/core.php:249
+msgid "Parent Goal:"
+msgstr "Matrizearen helburua"
+
+#: includes/functions/core.php:250
+msgid "Edit Goal"
+msgstr "Helburua editatu"
+
+#: includes/functions/core.php:251
+msgid "Update Goal"
+msgstr "Helburu eguneratu"
+
+#: includes/functions/core.php:252
+msgid "View Goal"
+msgstr "Ikusi helburua"
+
+#: includes/functions/core.php:253
+msgid "Add New Goal"
+msgstr "Helburu berria gehitu"
+
+#: includes/functions/core.php:254
+msgid "New Goal"
+msgstr "Helburu berria"
+
+#: includes/functions/core.php:255
+msgid "Separate goals with commas"
+msgstr "Helburuak komekin bereiztu"
+
+#: includes/functions/core.php:256
+msgid "Add or remove goals"
+msgstr "Helburuak gehitu edo kendu"
+
+#: includes/functions/core.php:257
+msgid "Choose from the most used goals"
+msgstr "Gehien erabiltzen diren helburuen artean aukeratu"
+
+#: includes/functions/core.php:258
+msgid "No goals found."
+msgstr "Ez da helbururik aurkitu"
+
+#: includes/functions/core.php:259
+msgid "No goals"
+msgstr "Ez dago helbururi"
+
+#: includes/functions/core.php:261
+msgid "Goals list navigation"
+msgstr "Helburuen zerrendaren nabigazioa"
+
+#: includes/functions/core.php:262
+msgid "Goals list"
+msgstr "Helburuen zerrenda"
+
+#: includes/functions/core.php:263
+msgid "&larr; Back to Goals"
+msgstr "&larr; Helburuetara itzuli"
+
+#: includes/functions/core.php:309 includes/functions/core.php:326
+#: includes/functions/core.php:336 includes/functions/core.php:340
+msgid "Regions"
+msgstr "Eskualdeak"
+
+#: includes/functions/core.php:310 includes/functions/core.php:335
+#: includes/functions/core.php:339
+msgid "Region"
+msgstr "Eskualdea"
+
+#: includes/functions/core.php:311
+msgid "Search Regions"
+msgstr "Eskualdeak bilatu"
+
+#: includes/functions/core.php:312
+msgid "Popular Regions"
+msgstr "Eskualde ezagunak"
+
+#: includes/functions/core.php:313
+msgid "All Regions"
+msgstr "Eskualde guztiak"
+
+#: includes/functions/core.php:314
+msgid "Parent Region"
+msgstr "Jatorrizko eskualdea"
+
+#: includes/functions/core.php:315
+msgid "Parent Region:"
+msgstr "Jatorrizko eskualdea"
+
+#: includes/functions/core.php:316
+msgid "Edit Region"
+msgstr "Editatu eskualdea"
+
+#: includes/functions/core.php:317
+msgid "Update Region"
+msgstr "Eskualdea eguneratu"
+
+#: includes/functions/core.php:318
+msgid "View Region"
+msgstr "Eskualdea ikusi"
+
+#: includes/functions/core.php:319
+msgid "Add New Region"
+msgstr "Eskualde berria gehitu"
+
+#: includes/functions/core.php:320
+msgid "New Region"
+msgstr "Eskualde berria"
+
+#: includes/functions/core.php:321
+msgid "Separate regions with commas"
+msgstr "Eskualdeak komekin bereiztu"
+
+#: includes/functions/core.php:322
+msgid "Add or remove regions"
+msgstr "Eskualdeak gehitu edo kendu"
+
+#: includes/functions/core.php:323
+msgid "Choose from the most used regions"
+msgstr "Aukeratu gehien erabiltzen diren eskualdeen artean"
+
+#: includes/functions/core.php:324
+msgid "No regions found."
+msgstr "Ez da eskualderik aurkitu."
+
+#: includes/functions/core.php:325
+msgid "No regions"
+msgstr "Ez dago eskualderik"
+
+#: includes/functions/core.php:327
+msgid "Regions list navigation"
+msgstr "Eskualdeen zerrendako nabigazioa"
+
+#: includes/functions/core.php:328
+msgid "Regions list"
+msgstr "Eskualdeen zerrenda"
+
+#: includes/functions/core.php:329
+msgid "&larr; Back to Regions"
+msgstr "&larr; Itzuli eskualdeetara"
+
+#: includes/functions/core.php:375 includes/functions/core.php:392
+#: includes/functions/core.php:402 includes/functions/core.php:406
+msgid "Sectors"
+msgstr "Sektoreak"
+
+#: includes/functions/core.php:376 includes/functions/core.php:401
+#: includes/functions/core.php:405
+msgid "Sector"
+msgstr "Sektorea"
+
+#: includes/functions/core.php:377
+msgid "Search Sectors"
+msgstr "Bilatu sektoreak"
+
+#: includes/functions/core.php:378
+msgid "Popular Sectors"
+msgstr "Sektore ezaguna"
+
+#: includes/functions/core.php:379
+msgid "All Sectors"
+msgstr "Sektore guztiak"
+
+#: includes/functions/core.php:380
+msgid "Parent Sector"
+msgstr "Jatorrizko sektorea"
+
+#: includes/functions/core.php:381
+msgid "Parent Sector:"
+msgstr "Jatorrizko sektorea"
+
+#: includes/functions/core.php:382
+msgid "Edit Sector"
+msgstr "Sektorea editatu"
+
+#: includes/functions/core.php:383
+msgid "Update Sector"
+msgstr "Sektorea eguneratu"
+
+#: includes/functions/core.php:384
+msgid "View Sector"
+msgstr "Ikusi sektorea"
+
+#: includes/functions/core.php:385
+msgid "Add New Sector"
+msgstr "Sektore berria gehitu"
+
+#: includes/functions/core.php:386
+msgid "New Sector"
+msgstr "Sektore berria"
+
+#: includes/functions/core.php:387
+msgid "Separate sectors with commas"
+msgstr "Sektoreak komekin banatu"
+
+#: includes/functions/core.php:388
+msgid "Add or remove sectors"
+msgstr "Sektoreak gehitu edo kendu"
+
+#: includes/functions/core.php:389
+msgid "Choose from the most used sectors"
+msgstr "Gehien erabiltzen diren sektoreen artean aukeratu"
+
+#: includes/functions/core.php:390
+msgid "No sectors found."
+msgstr "Ez da sektorerik aurkitu."
+
+#: includes/functions/core.php:391
+msgid "No sectors"
+msgstr "Ez dago sektorerik"
+
+#: includes/functions/core.php:393
+msgid "Sectors list navigation"
+msgstr "Sektoreen zerrendako nabigazioa"
+
+#: includes/functions/core.php:394
+msgid "Sectors list"
+msgstr "Sektoreen zerrenda"
+
+#: includes/functions/core.php:395
+msgid "&larr; Back to Sectors"
+msgstr "&larr; Itzuli sektoreetara"
+
+#: includes/functions/core.php:440 includes/functions/core.php:457
+#: includes/functions/core.php:467 includes/functions/core.php:471
+msgid "Co-op Types"
+msgstr "Kooperatiba motak"
+
+#: includes/functions/core.php:441 includes/functions/core.php:466
+#: includes/functions/core.php:470
+msgid "Co-op Type"
+msgstr "Kooperatiba mota"
+
+#: includes/functions/core.php:442
+msgid "Search Co-op Types"
+msgstr "Bilatu kooperatiba motak"
+
+#: includes/functions/core.php:443
+msgid "Popular Co-op Types"
+msgstr "Kooperatiba mota ezagunak"
+
+#: includes/functions/core.php:444
+msgid "All Co-op Types"
+msgstr "Kooperatiba mota guztiak"
+
+#: includes/functions/core.php:445
+msgid "Parent Co-op Type"
+msgstr "Jatorrizko kooperatiba mota"
+
+#: includes/functions/core.php:446
+msgid "Parent Co-op Type:"
+msgstr "Jatorrizko kooperatiba mota"
+
+#: includes/functions/core.php:447
+msgid "Edit Co-op Type"
+msgstr "Editatu kooperatiba mota"
+
+#: includes/functions/core.php:448
+msgid "Update Co-op Type"
+msgstr "Eguneratu kooperatiba motak"
+
+#: includes/functions/core.php:449
+msgid "View Co-op Type"
+msgstr "Ikusi kooperatiba motak"
+
+#: includes/functions/core.php:450
+msgid "Add New Co-op Type"
+msgstr "Kooperatiba mota berria gehitu"
+
+#: includes/functions/core.php:451
+msgid "New Co-op Type"
+msgstr "Kooperatiba mota berria"
+
+#: includes/functions/core.php:452
+msgid "Separate co-op types with commas"
+msgstr "Kooperatiba-motak komekin bereiztu"
+
+#: includes/functions/core.php:453
+msgid "Add or remove co-op types"
+msgstr "Kooperatiba-motak gehitu edo kendu"
+
+#: includes/functions/core.php:454
+msgid "Choose from the most used co-op types"
+msgstr "Aukeratu gehien erabiltzen diren lankidetza-moten artean"
+
+#: includes/functions/core.php:455
+msgid "No co-op types found."
+msgstr "Ez da inolako kooperatibarik aurkitu"
+
+#: includes/functions/core.php:456
+msgid "No co-op types"
+msgstr "Ez dago lankidetza-motarik"
+
+#: includes/functions/core.php:458
+msgid "Co-op Types list navigation"
+msgstr "Kooperatiba-moten zerrendako nabigazioa"
+
+#: includes/functions/core.php:459
+msgid "Co-op Types list"
+msgstr "Kooperatiba-moten zerrenda"
+
+#: includes/functions/core.php:460
+msgid "&larr; Back to Co-op Types"
+msgstr "&larr; Itzuli kooperatiba motetara"
+
+#: includes/functions/core.php:505 includes/functions/core.php:522
+#: includes/functions/core.php:532 includes/functions/core.php:536
+msgid "Formats"
+msgstr "Formatuak"
+
+#: includes/functions/core.php:507
+msgid "Search Formats"
+msgstr "Formatu bilaketa"
+
+#: includes/functions/core.php:508
+msgid "Popular Formats"
+msgstr "Formatu ezagunak"
+
+#: includes/functions/core.php:509
+msgid "All Formats"
+msgstr "Formatu guztiak"
+
+#: includes/functions/core.php:510
+msgid "Parent Format"
+msgstr "Jatorrizko formatua"
+
+#: includes/functions/core.php:511
+msgid "Parent Format:"
+msgstr "Jatorrizko formatua"
+
+#: includes/functions/core.php:512
+msgid "Edit Format"
+msgstr "Formatua editatu"
+
+#: includes/functions/core.php:513
+msgid "Update Format"
+msgstr "Formatua eguneratu"
+
+#: includes/functions/core.php:514
+msgid "View Format"
+msgstr "Formatua ikusi"
+
+#: includes/functions/core.php:515
+msgid "Add New Format"
+msgstr "Formatu berria gehitu"
+
+#: includes/functions/core.php:516
+msgid "New Format"
+msgstr "Formatu berria "
+
+#: includes/functions/core.php:517
+msgid "Separate formats with commas"
+msgstr "Formatuak komekin banatu"
+
+#: includes/functions/core.php:518
+msgid "Add or remove formats"
+msgstr "Formatuak gehitu edo kendu"
+
+#: includes/functions/core.php:519
+msgid "Choose from the most used formats"
+msgstr "Aukeratu gehien erabiltzen diren formatuen artean"
+
+#: includes/functions/core.php:520
+msgid "No formats found."
+msgstr "Ez da formaturik aurkitu."
+
+#: includes/functions/core.php:521
+msgid "No formats"
+msgstr "Ez dago formaturik"
+
+#: includes/functions/core.php:523
+msgid "Formats list navigation"
+msgstr "Formatuen zerrendako nabigazioa"
+
+#: includes/functions/core.php:524
+msgid "Formats list"
+msgstr "Formatuen zerrenda"
+
+#: includes/functions/core.php:525
+msgid "&larr; Back to Formats"
+msgstr "&larr; Itzuli formatuetara"
+
+#: includes/functions/internationalization.php:33
+#: includes/functions/internationalization.php:48
+msgid "Localization Settings"
+msgstr "Kokapenaren ezarpenak"
+
+#: includes/functions/internationalization.php:34
+msgid "Localization"
+msgstr "Kokapena"
+
+#: includes/functions/internationalization.php:52
+msgid "Enabled Languages"
+msgstr "Gaitutako hizkuntzak"
+
+#: includes/functions/internationalization.php:55
+msgid ""
+"Select the languages you'd like to be displayed to site visitors. English "
+"content will always be displayed."
+msgstr ""
+"Aukeratu webguneko bisitariei erakustea gustatuko litzaizukeen hizkuntzak. "
+"Ingelesezko edukia beti erakutsiko da."
+
+#: includes/functions/metadata.php:401
+msgid "General Information"
+msgstr "Informazio orokorra"
+
+#: includes/functions/metadata.php:405
+msgid "Link to resource"
+msgstr "Baliabidearen esteka"
+
+#: includes/functions/metadata.php:408
+msgid ""
+"Web address to access the resource (must begin with http:// or https://). "
+"This information is required."
+msgstr ""
+"Baliabidea eskuratzeko web-helbidea (http://edo https://-kin hasi behar du)."
+" Informazio hori beharrezkoa da."
+
+#: includes/functions/metadata.php:421
+msgid "Favorites"
+msgstr "Gogokoenak"
+
+#: includes/functions/metadata.php:424
+msgid "The number of times this resource has been favorited."
+msgstr "Baliabide hau aldekoa izan den kopurua"
+
+#: includes/functions/metadata.php:441
+msgid "Resource language"
+msgstr "Baliabideen hizkuntza"
+
+#: includes/functions/metadata.php:444
+msgid "The language of the resource. This information is required."
+msgstr "Baliabidearen hizkuntza. Informazio hori beharrezkoa da."
+
+#: includes/functions/metadata.php:459
+msgid "Choose a language"
+msgstr "Aukeratu hizkuntza"
+
+#: includes/functions/metadata.php:463
+msgid "Short title"
+msgstr "Izenburu laburra"
+
+#: includes/functions/metadata.php:466
+msgid "Shorter title used in resource listings. Maximum 72 characters."
+msgstr ""
+"Errekurtsoen zerrendetan erabilitako izenbururik laburrena. Gehienez 72 "
+"karaktere."
+
+#: includes/functions/metadata.php:482
+msgid "Paywall"
+msgstr "Ordainketa muga"
+
+#: includes/functions/metadata.php:493
+msgid "Is this resource behind a paywall?"
+msgstr "Baliabide hau ordainketa muga baten atzean dago?"
+
+#: includes/functions/metadata.php:501
+msgid "Authors"
+msgstr "Egileak"
+
+#: includes/functions/metadata.php:504
+msgid "Authors of the resource."
+msgstr "Baliabidearen egileak"
+
+#: includes/functions/metadata.php:516
+msgid "Add author"
+msgstr "Egilea gehitu"
+
+#: includes/functions/metadata.php:520
+msgid "Author"
+msgstr "Egilea"
+
+#: includes/functions/metadata.php:541
+msgid "Editors"
+msgstr "Egileak"
+
+#: includes/functions/metadata.php:544
+msgid "Editors of the resource."
+msgstr "Baliabidearen egileak"
+
+#: includes/functions/metadata.php:556
+msgid "Add editor"
+msgstr "Egilea gehitu"
+
+#: includes/functions/metadata.php:560
+msgid "Editor"
+msgstr "Egilea"
+
+#: includes/functions/metadata.php:581
+msgid "Translators"
+msgstr "Itzultzaileak"
+
+#: includes/functions/metadata.php:584
+msgid "Translators of the resource."
+msgstr "Baliabidearen itzultzaileak"
+
+#: includes/functions/metadata.php:596
+msgid "Add translator"
+msgstr "Itzultzailea gehitu"
+
+#: includes/functions/metadata.php:600
+msgid "Translator"
+msgstr "Itzultzailea"
+
+#: includes/functions/metadata.php:621
+msgid "Publication year"
+msgstr "Argitalpen urtea"
+
+#: includes/functions/metadata.php:624
+msgid "The year the resource was published."
+msgstr "Baliabidea argitaratu zen urtea"
+
+#: includes/functions/metadata.php:639
+msgid "Choose a year"
+msgstr "Aukeratu urte bat "
+
+#: includes/functions/metadata.php:643
+msgid "Publication month"
+msgstr "Argitalpen-hilabetea"
+
+#: includes/functions/metadata.php:646
+msgid "The month the resource was published."
+msgstr "Baliabidea argitaratu zen hilabetea."
+
+#: includes/functions/metadata.php:662
+msgid "January"
+msgstr "Urtarrila"
+
+#: includes/functions/metadata.php:663
+msgid "February"
+msgstr "Otsaila"
+
+#: includes/functions/metadata.php:664
+msgid "March"
+msgstr "Martxoa"
+
+#: includes/functions/metadata.php:665
+msgid "April"
+msgstr "Apirila"
+
+#: includes/functions/metadata.php:666
+msgid "May"
+msgstr "Maiatza"
+
+#: includes/functions/metadata.php:667
+msgid "June"
+msgstr "Ekaina"
+
+#: includes/functions/metadata.php:668
+msgid "July"
+msgstr "Uztaila "
+
+#: includes/functions/metadata.php:669
+msgid "August"
+msgstr "Abuztua"
+
+#: includes/functions/metadata.php:670
+msgid "September"
+msgstr "Iraila"
+
+#: includes/functions/metadata.php:671
+msgid "October"
+msgstr "Urria"
+
+#: includes/functions/metadata.php:672
+msgid "November"
+msgstr "Azaroa "
+
+#: includes/functions/metadata.php:673
+msgid "December"
+msgstr "Abendua"
+
+#: includes/functions/metadata.php:681
+msgid "Choose a month"
+msgstr "Aukeratu hilabete bat"
+
+#: includes/functions/metadata.php:685
+msgid "Publication day"
+msgstr "Argitalpen-eguna"
+
+#: includes/functions/metadata.php:688
+msgid "The numeric day the resource was published."
+msgstr "Baliabidea argitaratu zen zenbakizko eguna."
+
+#: includes/functions/metadata.php:714
+msgid "Choose a day"
+msgstr "Aukeratu egun bat"
+
+#: includes/functions/metadata.php:718
+msgid "Publication Date"
+msgstr "Argitalpen-data"
+
+#: includes/functions/metadata.php:721
+msgid ""
+"You can set the publication date for this resource using the year, month and"
+" day fields above."
+msgstr ""
+"Baliabide honen argitalpen-data ezar dezakezu goian agertzen diren urtea, "
+"hilabetea eta eguna eremuak erabiliz."
+
+#: includes/functions/metadata.php:738
+msgid "Revisions"
+msgstr "Berrikuspenak"
+
+#: includes/functions/metadata.php:741
+msgid "Revisions of the resource."
+msgstr "Baliabidearen berrikuspenak."
+
+#: includes/functions/metadata.php:753
+msgid "Add revision"
+msgstr "Berrikuspena gehitu"
+
+#: includes/functions/metadata.php:757
+msgid "Revision date"
+msgstr "Berrikuspen data"
+
+#: includes/functions/metadata.php:760
+msgid "The date of this revision."
+msgstr "Berrikuspen honen data."
+
+#: includes/functions/metadata.php:774
+msgid "Revision description"
+msgstr "Berrikuspenaren deskribapena"
+
+#: includes/functions/metadata.php:777
+msgid "A brief description of this revision."
+msgstr "Berrikuspen honen deskribapen laburra."
+
+#: includes/functions/metadata.php:827
+msgid "About the Publication"
+msgstr "Argitalpenari buruz"
+
+#: includes/functions/metadata.php:831
+msgid "Publication name"
+msgstr "Argitalpenaren izena"
+
+#: includes/functions/metadata.php:834
+msgid "Name of the publication in which the resource appears."
+msgstr "Errekurtsoa agertzen den argitalpenaren izena."
+
+#: includes/functions/metadata.php:850
+msgid "Publication link"
+msgstr "Argitalpenaren esteka"
+
+#: includes/functions/metadata.php:853
+msgid "Web address for the publication (must begin with http:// or https://)."
+msgstr "Argitalpenerako web helbidea (http://edo https://-kin hasi behar du)."
+
+#: includes/functions/metadata.php:888
+msgid "About the Publisher"
+msgstr "Argitaratzaileari buruz"
+
+#: includes/functions/metadata.php:892
+msgid "Publisher name"
+msgstr "Argitaratzailearen izena"
+
+#: includes/functions/metadata.php:895
+msgid "Name of the resource publisher."
+msgstr "Baliabide-argitaratzailearen izena."
+
+#: includes/functions/metadata.php:911
+msgid "Publisher link"
+msgstr "Argitaratzailearen esteka"
+
+#: includes/functions/metadata.php:914
+msgid "Web address for the publisher (must begin with http:// or https://)."
+msgstr "Argitaratzailearen webgunea (http://edo https://-kin hasi behar du)."
+
+#: includes/functions/metadata.php:927
+msgid "Publisher city"
+msgstr "Argitaletxearen hiria"
+
+#: includes/functions/metadata.php:930
+msgid "Town or city where the publisher is located."
+msgstr "Argitaratzailea dagoen herria edo hiria."
+
+#: includes/functions/metadata.php:946
+msgid "Publisher country"
+msgstr "Argitaletxearen herrialdea"
+
+#: includes/functions/metadata.php:949
+msgid "Country where the publisher is located."
+msgstr "Argitaratzailea dagoen herrialdea."
+
+#: includes/functions/metadata.php:964
+msgid "Select a country"
+msgstr "Aukeratu herrialde bat"
+
+#: includes/functions/metadata.php:993
+msgid "Distribution License or Rights"
+msgstr "Lizentzia edo banaketa-eskubideak"
+
+#: includes/functions/metadata.php:997
+msgid "License or rights"
+msgstr "Lizentzia edo eskubideak"
+
+#: includes/functions/metadata.php:1000
+msgid "License or rights under which the resource is distributed."
+msgstr "Baliabidea banatzeko lizentzia edo eskubideak."
+
+#: includes/functions/metadata.php:1009
+msgid "All Rights Reserved"
+msgstr "Eskubide guztiak erreserbatuta"
+
+#: includes/functions/metadata.php:1010
+msgid "Creative Commons Attribution"
+msgstr "Creative Commonsen esleipena"
+
+#: includes/functions/metadata.php:1011
+msgid "Creative Commons Attribution-NonCommercial"
+msgstr "Creative Commons esleipena - Ez komertziala"
+
+#: includes/functions/metadata.php:1012
+msgid "Creative Commons Attribution-NoDerivatives"
+msgstr "Creative Commonsen esleipena - Deribaturik gabe"
+
+#: includes/functions/metadata.php:1013
+msgid "Creative Commons Attribution-ShareAlike"
+msgstr "Creative Commons esleipena- Honela partekatu"
+
+#: includes/functions/metadata.php:1014
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
+msgstr "Creative Commons Attribution- Ez komertziala-deribaturik gabe"
+
+#: includes/functions/metadata.php:1015
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
+msgstr "Ez komertziala - Honela partekatu"
+
+#: includes/functions/metadata.php:1016
+msgid "Educational Community License"
+msgstr "Hezkuntza-komunitatearen lizentzia"
+
+#: includes/functions/metadata.php:1017
+msgid "No Rights Reserved"
+msgstr "Erreserbatutako eskubiderik ez"
+
+#: includes/functions/metadata.php:1018
+msgid "No Known Copyright"
+msgstr "Ez dira ezagutzen egile-eskubideak"
+
+#: includes/functions/metadata.php:1019
+msgid "Custom…"
+msgstr "Pertsonalizatu"
+
+#: includes/functions/metadata.php:1027
+msgid "Choose a license or rights"
+msgstr "Aukeratu lizentzia bat edo eskubide batzuk"
+
+#: includes/functions/metadata.php:1031
+msgid "Custom license or rights"
+msgstr "Lizentzia edo eskubide pertsonalizatuak"
+
+#: includes/functions/metadata.php:1037
+msgid "Custom license or rights statement."
+msgstr "Lizentzia pertsonalizatua edo eskubideen aitorpena."
+
+#: includes/functions/metadata.php:1038
+msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
+msgstr ""
+"Hori aktibatu egiten da \"pertsonalizatu...\" hautatzen denean \"lizentzia "
+"edo eskubideak\" atalean."
+
+#: includes/functions/metadata.php:1086
+msgid "Archival Links"
+msgstr "Artxiboko estekak"
+
+#: includes/functions/metadata.php:1096
+msgid ""
+"Links to archive copy on perma.cc. Specify multiple links if the resource "
+"spans multiple pages."
+msgstr ""
+"Fitxategiaren kopiarako estekak Zehaztu esteka anizkunak baliabideak "
+"orrialde bat baino gehiago hartzen baditu."
+
+#. translators: link to https://perma.cc
+#: includes/functions/metadata.php:1098
+msgid "%s provides web archiving for scholars, journals, courts, and others."
+msgstr ""
+"%s artxibo bat eskaintzen du webgunean ikertzaileentzat, aldizkarientzat, "
+"auzitegientzat eta beste batzuentzat."
+
+#: includes/functions/metadata.php:1112
+msgid "Add perma.cc link"
+msgstr "Gehitu perma.cc esteka"
+
+#: includes/functions/metadata.php:1116
+msgid "Perma.cc link"
+msgstr "Perma.cc esteka"
+
+#: includes/functions/metadata.php:1134
+msgid "Internet Archive"
+msgstr "Interneteko Artxiboa"
+
+#: includes/functions/metadata.php:1140
+msgid ""
+"Links to archive copy on the Internet Archive. Specify multiple links if the"
+" resource spans multiple pages."
+msgstr ""
+"Artxiboaren kopiarako estekak Interneteko Artxiboan. Zehaztu hainbat esteka "
+"baliabideak hainbat orrialde hartzen baditu."
+
+#. translators: link to https://web.archive.org
+#: includes/functions/metadata.php:1142
+msgid "%s provides free and open web archiving."
+msgstr "%s-k doako web artxibo irekia eskaintzen du."
+
+#: includes/functions/metadata.php:1156
+msgid "Add Internet Archive link"
+msgstr "Gehitu Interneteko artxiboaren esteka"
+
+#: includes/functions/metadata.php:1160
+msgid "Internet Archive link"
+msgstr "Interneteko artxibo-esteka"
+
+#: includes/functions/metadata.php:1200
+msgid "Catalog Codes"
+msgstr "Katalogoaren kodeak"
+
+#: includes/functions/metadata.php:1207
+msgid "Digital Object Identifier (or DOI) for this resource."
+msgstr "Objektuen Identifikatzaile Digitala (edo OID) baliabide honetarako."
+
+#: includes/functions/metadata.php:1226
+msgid "International Standard Book Number (or ISBN) for this resource."
+msgstr ""
+"Baliabide honetarako Nazioarteko LIburu Estandarraren Zenbakia (edo ISBN)."
+
+#: includes/functions/metadata.php:1245
+msgid "International Standard Serial Number (or ISSN) for this resource."
+msgstr "Baliabide honetarako Nazioarteko Serie-Zenbaki Estandarra (edo ISSN) "
+
+#: includes/functions/metadata.php:1363
+msgid "This is not a valid DOI."
+msgstr "Hau ez da OID baliodun bat."
+
+#: includes/functions/metadata.php:1387
+msgid "This is not a valid ISBN."
+msgstr "Hau ez da ISBN baliodun bat."
+
+#: includes/functions/metadata.php:1413
+msgid "This is not a valid ISSN."
+msgstr "Hau ez da ISSN baliodun abt"
+
+#: includes/functions/metadata.php:1439
+msgid "This is not a valid Perma.cc link."
+msgstr "Hau ez da Perma.cc esteka baliodun bat."
+
+#: includes/functions/metadata.php:1467
+msgid "This is not a valid Internet Archive link."
+msgstr "Hau ez da Interneteko Artxiboaren esteka baliodun bat."
+
+#: assets/js/editor/editor.js:24
+msgid ""
+"The publication day has been reset as there are only %1$d days in the "
+"selected month, and your choice of %2$d is no longer valid."
+msgstr ""
+"Argitalpen-eguna berrezarri egin da, hautatutako hilabetean %1$d egun baino "
+"ez daudelako, eta jada %2$d ez delako baliozkoa."
+
+#. translators: %s: The label of the required field.
+#: assets/js/editor/editor.js:75 assets/js/editor/editor.js:93
+msgid "A %s is required."
+msgstr "%sbat behar da."
+
+#: assets/js/editor/editor.js:88
+msgid "The form contains errors:"
+msgstr "Inprimakiak akatsak ditu:"
