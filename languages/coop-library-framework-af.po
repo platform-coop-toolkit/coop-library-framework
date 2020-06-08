@@ -1,0 +1,1120 @@
+# Copyright (C) 2020 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Co-op Library Framework plugin.
+# Translators:
+# Samuel Murray <leuce.com@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-op Library Framework 1.0.0-rc.1\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
+"POT-Creation-Date: 2020-05-19T14:53:02+00:00\n"
+"PO-Revision-Date: 2020-04-01 17:03+0000\n"
+"Last-Translator: Samuel Murray <leuce.com@gmail.com>, 2020\n"
+"Language-Team: Afrikaans (https://www.transifex.com/platform-cooperative-development-kit/teams/107673/af/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: af\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: coop-library-framework\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Co-op Library Framework"
+msgstr "Koöpbiblioteek-raamwerk"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/coop-library-framework/"
+msgstr "https://github.com/platform-coop-toolkit/coop-library-framework/"
+
+#. Description of the plugin
+msgid ""
+"Custom post type and metadata utilities for the Platform Co-op Resource "
+"Library."
+msgstr ""
+"Pasgemaakte plasingstipe- en metadata-gereedskap vir die platformkoöp-"
+"hulpbronbiblioteek."
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr "Platformkoöp-ontwikkelingstel"
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr "https://github.com/platform-coop-toolkit/"
+
+#: includes/classes/HiddenField.php:21
+msgid "Hidden"
+msgstr "Versteek"
+
+#: includes/functions/core.php:82
+msgid "Resource Language"
+msgstr "Hulpbron se taal"
+
+#: includes/functions/core.php:89
+msgid "Display Language"
+msgstr "Vertoontaal"
+
+#: includes/functions/core.php:93 includes/functions/core.php:506
+#: includes/functions/core.php:531 includes/functions/core.php:535
+msgid "Format"
+msgstr "Formaat"
+
+#: includes/functions/core.php:97 includes/functions/core.php:178
+#: includes/functions/core.php:195 includes/functions/core.php:205
+#: includes/functions/core.php:209
+msgid "Topics"
+msgstr "Onderwerpe"
+
+#: includes/functions/core.php:101
+msgid "Date Published"
+msgstr "Datum gepubliseer"
+
+#: includes/functions/core.php:105
+msgid "Date Added"
+msgstr "Datum bygevoeg"
+
+#: includes/functions/core.php:111 includes/functions/core.php:131
+#: includes/functions/core.php:140 includes/functions/core.php:144
+msgid "Resources"
+msgstr "Hulpbronne"
+
+#: includes/functions/core.php:112 includes/functions/core.php:139
+#: includes/functions/core.php:143
+msgid "Resource"
+msgstr "Hulpbron"
+
+#: includes/functions/core.php:113
+msgid "All Resources"
+msgstr "Alle hulpbronne"
+
+#: includes/functions/core.php:114
+msgid "Resource Archives"
+msgstr "Hulpbronargief"
+
+#: includes/functions/core.php:115
+msgid "Resource Attributes"
+msgstr "Hulpbron se eienskappe"
+
+#: includes/functions/core.php:116
+msgid "Insert into resource"
+msgstr "Voeg by hulpbron in"
+
+#: includes/functions/core.php:117
+msgid "Uploaded to this resource"
+msgstr "Opgelaai na hierdie hulpbron"
+
+#: includes/functions/core.php:118
+msgid "Filter resources list"
+msgstr "Filter hulpbronlys"
+
+#: includes/functions/core.php:119
+msgid "Resources list navigation"
+msgstr "Hulpbronlys-navigasie"
+
+#: includes/functions/core.php:120
+msgid "Resources list"
+msgstr "Hulpbronlys"
+
+#: includes/functions/core.php:121
+msgid "New Resource"
+msgstr "Nuwe hulpbron"
+
+#: includes/functions/core.php:122
+msgid "Add New"
+msgstr "Voeg nuwe by"
+
+#: includes/functions/core.php:123
+msgid "Add New Resource"
+msgstr "Nuwe hulpbron by"
+
+#: includes/functions/core.php:124
+msgid "Edit Resource"
+msgstr "Wysig hulpbron"
+
+#: includes/functions/core.php:125
+msgid "View Resource"
+msgstr "Bekyk hulpbron"
+
+#: includes/functions/core.php:126
+msgid "View Resources"
+msgstr "Bekyk hulpbronne"
+
+#: includes/functions/core.php:127
+msgid "Search resources"
+msgstr "Deursoek hulpbronne"
+
+#: includes/functions/core.php:128
+msgid "No resources found"
+msgstr "Geen hulpbronne gevind nie"
+
+#: includes/functions/core.php:129
+msgid "No resources found in trash"
+msgstr "Geen hulpbronne in asblik gevind nie"
+
+#: includes/functions/core.php:130
+msgid "Parent Resource:"
+msgstr "Ouerhulpbron:"
+
+#: includes/functions/core.php:179 includes/functions/core.php:204
+#: includes/functions/core.php:208
+msgid "Topic"
+msgstr "Onderwerp"
+
+#: includes/functions/core.php:180
+msgid "Search Topics"
+msgstr "Deursoek onderwerpe"
+
+#: includes/functions/core.php:181
+msgid "Popular Topics"
+msgstr "Gewilde onderwerpe"
+
+#: includes/functions/core.php:182
+msgid "All Topics"
+msgstr "Alle onderwerpe"
+
+#: includes/functions/core.php:183
+msgid "Parent Topic"
+msgstr "Oueronderwerp"
+
+#: includes/functions/core.php:184
+msgid "Parent Topic:"
+msgstr "Oueronderwerp:"
+
+#: includes/functions/core.php:185
+msgid "Edit Topic"
+msgstr "Wysig onderwerp"
+
+#: includes/functions/core.php:186
+msgid "Update Topic"
+msgstr "Werk onderwerp by"
+
+#: includes/functions/core.php:187
+msgid "View Topic"
+msgstr "Bekyk onderwerp"
+
+#: includes/functions/core.php:188
+msgid "Add New Topic"
+msgstr "Voeg nuwe onderwerp by"
+
+#: includes/functions/core.php:189
+msgid "New Topic"
+msgstr "Nuwe onderwerp"
+
+#: includes/functions/core.php:190
+msgid "Separate topics with commas"
+msgstr "Skei onderwerpe met kommas"
+
+#: includes/functions/core.php:191
+msgid "Add or remove topics"
+msgstr "Voeg onderwerpe by of verwyder dit"
+
+#: includes/functions/core.php:192
+msgid "Choose from the most used topics"
+msgstr "Kies uit mees gebruikte onderwerpe"
+
+#: includes/functions/core.php:193
+msgid "No topics found."
+msgstr "Geen onderwerpe gevind nie."
+
+#: includes/functions/core.php:194
+msgid "No topics"
+msgstr "Geen onderwerpe nie"
+
+#: includes/functions/core.php:196
+msgid "Topics list navigation"
+msgstr "Onderwerplys-navigasie"
+
+#: includes/functions/core.php:197
+msgid "Topics list"
+msgstr "Onderwerplys"
+
+#: includes/functions/core.php:198
+msgid "&larr; Back to Topics"
+msgstr "← Terug na onderwerpe"
+
+#: includes/functions/core.php:243 includes/functions/core.php:260
+#: includes/functions/core.php:270 includes/functions/core.php:274
+msgid "Goals"
+msgstr "Doelwitte"
+
+#: includes/functions/core.php:244 includes/functions/core.php:269
+#: includes/functions/core.php:273
+msgid "Goal"
+msgstr "Doelwit"
+
+#: includes/functions/core.php:245
+msgid "Search Goals"
+msgstr "Deursoek doelwitte"
+
+#: includes/functions/core.php:246
+msgid "Popular Goals"
+msgstr "Gewilde doelwitte"
+
+#: includes/functions/core.php:247
+msgid "All Goals"
+msgstr "Alle doelwitte"
+
+#: includes/functions/core.php:248
+msgid "Parent Goal"
+msgstr "Ouerdoelwit"
+
+#: includes/functions/core.php:249
+msgid "Parent Goal:"
+msgstr "Ouerdoelwit:"
+
+#: includes/functions/core.php:250
+msgid "Edit Goal"
+msgstr "Wysig doelwit"
+
+#: includes/functions/core.php:251
+msgid "Update Goal"
+msgstr "Werk doelwit by"
+
+#: includes/functions/core.php:252
+msgid "View Goal"
+msgstr "Bekyk doelwit"
+
+#: includes/functions/core.php:253
+msgid "Add New Goal"
+msgstr "Voeg nuwe doelwit by"
+
+#: includes/functions/core.php:254
+msgid "New Goal"
+msgstr "Nuwe doelwit"
+
+#: includes/functions/core.php:255
+msgid "Separate goals with commas"
+msgstr "Skei doelwitte met kommas"
+
+#: includes/functions/core.php:256
+msgid "Add or remove goals"
+msgstr "Voeg doelwitte by of verwyder dit"
+
+#: includes/functions/core.php:257
+msgid "Choose from the most used goals"
+msgstr "Kies uit mees gebruikte doelwitte"
+
+#: includes/functions/core.php:258
+msgid "No goals found."
+msgstr "Geen doelwitte gevind nie."
+
+#: includes/functions/core.php:259
+msgid "No goals"
+msgstr "Geen doelwitte nie"
+
+#: includes/functions/core.php:261
+msgid "Goals list navigation"
+msgstr "Doelwitlys-navigasie"
+
+#: includes/functions/core.php:262
+msgid "Goals list"
+msgstr "Doelwitlys"
+
+#: includes/functions/core.php:263
+msgid "&larr; Back to Goals"
+msgstr "← Terug na doelwitte"
+
+#: includes/functions/core.php:309 includes/functions/core.php:326
+#: includes/functions/core.php:336 includes/functions/core.php:340
+msgid "Regions"
+msgstr "Streke"
+
+#: includes/functions/core.php:310 includes/functions/core.php:335
+#: includes/functions/core.php:339
+msgid "Region"
+msgstr "Streek"
+
+#: includes/functions/core.php:311
+msgid "Search Regions"
+msgstr "Deursoek streke"
+
+#: includes/functions/core.php:312
+msgid "Popular Regions"
+msgstr "Gewilde streke"
+
+#: includes/functions/core.php:313
+msgid "All Regions"
+msgstr "Alle streke"
+
+#: includes/functions/core.php:314
+msgid "Parent Region"
+msgstr "Ouerstreek"
+
+#: includes/functions/core.php:315
+msgid "Parent Region:"
+msgstr "Ouerstreek:"
+
+#: includes/functions/core.php:316
+msgid "Edit Region"
+msgstr "Wysig streek"
+
+#: includes/functions/core.php:317
+msgid "Update Region"
+msgstr "Werk streek by"
+
+#: includes/functions/core.php:318
+msgid "View Region"
+msgstr "Bekyk streek"
+
+#: includes/functions/core.php:319
+msgid "Add New Region"
+msgstr "Voeg nuwe streek by"
+
+#: includes/functions/core.php:320
+msgid "New Region"
+msgstr "Nuwe streek"
+
+#: includes/functions/core.php:321
+msgid "Separate regions with commas"
+msgstr "Skei streke met kommas"
+
+#: includes/functions/core.php:322
+msgid "Add or remove regions"
+msgstr "Voeg streke by of verwyder dit"
+
+#: includes/functions/core.php:323
+msgid "Choose from the most used regions"
+msgstr "Kies uit mees gebruikte streke"
+
+#: includes/functions/core.php:324
+msgid "No regions found."
+msgstr "Geen streke gevind nie."
+
+#: includes/functions/core.php:325
+msgid "No regions"
+msgstr "Geen streke nie"
+
+#: includes/functions/core.php:327
+msgid "Regions list navigation"
+msgstr "Streeklys-navigasie"
+
+#: includes/functions/core.php:328
+msgid "Regions list"
+msgstr "Streeklys"
+
+#: includes/functions/core.php:329
+msgid "&larr; Back to Regions"
+msgstr "← Terug na streke"
+
+#: includes/functions/core.php:375 includes/functions/core.php:392
+#: includes/functions/core.php:402 includes/functions/core.php:406
+msgid "Sectors"
+msgstr "Sektore"
+
+#: includes/functions/core.php:376 includes/functions/core.php:401
+#: includes/functions/core.php:405
+msgid "Sector"
+msgstr "Sektor"
+
+#: includes/functions/core.php:377
+msgid "Search Sectors"
+msgstr "Deursoek sektore"
+
+#: includes/functions/core.php:378
+msgid "Popular Sectors"
+msgstr "Gewilde sektore"
+
+#: includes/functions/core.php:379
+msgid "All Sectors"
+msgstr "Alle sektore"
+
+#: includes/functions/core.php:380
+msgid "Parent Sector"
+msgstr "Ouersektor"
+
+#: includes/functions/core.php:381
+msgid "Parent Sector:"
+msgstr "Ouersektor:"
+
+#: includes/functions/core.php:382
+msgid "Edit Sector"
+msgstr "Wysig sektor"
+
+#: includes/functions/core.php:383
+msgid "Update Sector"
+msgstr "Werk sektor by"
+
+#: includes/functions/core.php:384
+msgid "View Sector"
+msgstr "Bekyk sektor"
+
+#: includes/functions/core.php:385
+msgid "Add New Sector"
+msgstr "Voeg nuwe sektor by"
+
+#: includes/functions/core.php:386
+msgid "New Sector"
+msgstr "Nuwe sektor"
+
+#: includes/functions/core.php:387
+msgid "Separate sectors with commas"
+msgstr "Skei sektore met kommas"
+
+#: includes/functions/core.php:388
+msgid "Add or remove sectors"
+msgstr "Voeg sektore by of verwyder dit"
+
+#: includes/functions/core.php:389
+msgid "Choose from the most used sectors"
+msgstr "Kies uit mees gebruikte sektore"
+
+#: includes/functions/core.php:390
+msgid "No sectors found."
+msgstr "Geen sektore gevind nie."
+
+#: includes/functions/core.php:391
+msgid "No sectors"
+msgstr "Geen sektore nie"
+
+#: includes/functions/core.php:393
+msgid "Sectors list navigation"
+msgstr "Sektorlys-navigasie"
+
+#: includes/functions/core.php:394
+msgid "Sectors list"
+msgstr "Sektorlys"
+
+#: includes/functions/core.php:395
+msgid "&larr; Back to Sectors"
+msgstr "← Terug na sektore"
+
+#: includes/functions/core.php:440 includes/functions/core.php:457
+#: includes/functions/core.php:467 includes/functions/core.php:471
+msgid "Co-op Types"
+msgstr "Koöp-tipes"
+
+#: includes/functions/core.php:441 includes/functions/core.php:466
+#: includes/functions/core.php:470
+msgid "Co-op Type"
+msgstr "Koöp-tipe"
+
+#: includes/functions/core.php:442
+msgid "Search Co-op Types"
+msgstr "Deursoek koöp-tipes"
+
+#: includes/functions/core.php:443
+msgid "Popular Co-op Types"
+msgstr "Gewilde koöp-tipes"
+
+#: includes/functions/core.php:444
+msgid "All Co-op Types"
+msgstr "Alle koöp-tipes"
+
+#: includes/functions/core.php:445
+msgid "Parent Co-op Type"
+msgstr "Ouer-koöp-tipe"
+
+#: includes/functions/core.php:446
+msgid "Parent Co-op Type:"
+msgstr "Ouer-koöp-tipe:"
+
+#: includes/functions/core.php:447
+msgid "Edit Co-op Type"
+msgstr "Wysig koöp-tipe"
+
+#: includes/functions/core.php:448
+msgid "Update Co-op Type"
+msgstr "Werk koöp-tipe by"
+
+#: includes/functions/core.php:449
+msgid "View Co-op Type"
+msgstr "Bekyk koöp-tipe"
+
+#: includes/functions/core.php:450
+msgid "Add New Co-op Type"
+msgstr "Voeg nuwe koöp-tipe by"
+
+#: includes/functions/core.php:451
+msgid "New Co-op Type"
+msgstr "Nuwe koöp-tipe"
+
+#: includes/functions/core.php:452
+msgid "Separate co-op types with commas"
+msgstr "Skei koöp-tipe met kommas"
+
+#: includes/functions/core.php:453
+msgid "Add or remove co-op types"
+msgstr "Voeg koöp-tipe by of verwyder dit"
+
+#: includes/functions/core.php:454
+msgid "Choose from the most used co-op types"
+msgstr "Kies uit die mees gebruikte koöp-tipes"
+
+#: includes/functions/core.php:455
+msgid "No co-op types found."
+msgstr "Geen koöp-tipes gevind nie."
+
+#: includes/functions/core.php:456
+msgid "No co-op types"
+msgstr "Geen koöp-tipes nie"
+
+#: includes/functions/core.php:458
+msgid "Co-op Types list navigation"
+msgstr "Koöptipes-lys-navigasie"
+
+#: includes/functions/core.php:459
+msgid "Co-op Types list"
+msgstr "Koöptipes-lys"
+
+#: includes/functions/core.php:460
+msgid "&larr; Back to Co-op Types"
+msgstr "← Terug na koöp-tipes"
+
+#: includes/functions/core.php:505 includes/functions/core.php:522
+#: includes/functions/core.php:532 includes/functions/core.php:536
+msgid "Formats"
+msgstr "Formate"
+
+#: includes/functions/core.php:507
+msgid "Search Formats"
+msgstr "Deursoek formate"
+
+#: includes/functions/core.php:508
+msgid "Popular Formats"
+msgstr "Gewilde formate"
+
+#: includes/functions/core.php:509
+msgid "All Formats"
+msgstr "Alle formate"
+
+#: includes/functions/core.php:510
+msgid "Parent Format"
+msgstr "Ouerformaat"
+
+#: includes/functions/core.php:511
+msgid "Parent Format:"
+msgstr "Ouerformaat:"
+
+#: includes/functions/core.php:512
+msgid "Edit Format"
+msgstr "Wysig formaat"
+
+#: includes/functions/core.php:513
+msgid "Update Format"
+msgstr "Werk formaat by"
+
+#: includes/functions/core.php:514
+msgid "View Format"
+msgstr "Bekyk formaat"
+
+#: includes/functions/core.php:515
+msgid "Add New Format"
+msgstr "Voeg nuwe formaat by"
+
+#: includes/functions/core.php:516
+msgid "New Format"
+msgstr "Nuwe formaat"
+
+#: includes/functions/core.php:517
+msgid "Separate formats with commas"
+msgstr "Skei formate met kommas"
+
+#: includes/functions/core.php:518
+msgid "Add or remove formats"
+msgstr "Voeg formate by of verwyder dit"
+
+#: includes/functions/core.php:519
+msgid "Choose from the most used formats"
+msgstr "Kies uit mees gebruikte formate"
+
+#: includes/functions/core.php:520
+msgid "No formats found."
+msgstr "Geen formate gevind nie."
+
+#: includes/functions/core.php:521
+msgid "No formats"
+msgstr "Geen formate nie"
+
+#: includes/functions/core.php:523
+msgid "Formats list navigation"
+msgstr "Formaatlys-navigasie"
+
+#: includes/functions/core.php:524
+msgid "Formats list"
+msgstr "Formaatlys"
+
+#: includes/functions/core.php:525
+msgid "&larr; Back to Formats"
+msgstr "← Terug na formate"
+
+#: includes/functions/internationalization.php:33
+#: includes/functions/internationalization.php:48
+msgid "Localization Settings"
+msgstr "Lokaliseringsinstellings"
+
+#: includes/functions/internationalization.php:34
+msgid "Localization"
+msgstr "Lokalisering"
+
+#: includes/functions/internationalization.php:52
+msgid "Enabled Languages"
+msgstr "Geaktiveerde tale"
+
+#: includes/functions/internationalization.php:55
+msgid ""
+"Select the languages you'd like to be displayed to site visitors. English "
+"content will always be displayed."
+msgstr ""
+"Kies die tale wat jy wil hê werfbesoekers moet kan sien. Engelse inhoud sal "
+"altyd gewys word."
+
+#: includes/functions/metadata.php:401
+msgid "General Information"
+msgstr "Algemene inligting"
+
+#: includes/functions/metadata.php:405
+msgid "Link to resource"
+msgstr "Skakel na hulpbron"
+
+#: includes/functions/metadata.php:408
+msgid ""
+"Web address to access the resource (must begin with http:// or https://). "
+"This information is required."
+msgstr ""
+"Webadres vir toegang tot hulpbron (moet begin met http:// of https://). "
+"Hierdie inligting word vereis."
+
+#: includes/functions/metadata.php:421
+msgid "Favorites"
+msgstr "Gunstelinge"
+
+#: includes/functions/metadata.php:424
+msgid "The number of times this resource has been favorited."
+msgstr "Die getal kere wat hierdie hulpbron as gunsteling gemerk is."
+
+#: includes/functions/metadata.php:441
+msgid "Resource language"
+msgstr "Hulpbron se taal"
+
+#: includes/functions/metadata.php:444
+msgid "The language of the resource. This information is required."
+msgstr "Die taal van die hulpbron. Hierdie inligting word vereis."
+
+#: includes/functions/metadata.php:459
+msgid "Choose a language"
+msgstr "Kies ’n taal"
+
+#: includes/functions/metadata.php:463
+msgid "Short title"
+msgstr "Kort titel"
+
+#: includes/functions/metadata.php:466
+msgid "Shorter title used in resource listings. Maximum 72 characters."
+msgstr "Korter titel gebruik in hulpbron-lystings. Maksimum 72 karakters."
+
+#: includes/functions/metadata.php:482
+msgid "Paywall"
+msgstr "Betaalmuur"
+
+#: includes/functions/metadata.php:493
+msgid "Is this resource behind a paywall?"
+msgstr "Is hierdie hulpbron agter ’n betaalmuur?"
+
+#: includes/functions/metadata.php:501
+msgid "Authors"
+msgstr "Outeurs"
+
+#: includes/functions/metadata.php:504
+msgid "Authors of the resource."
+msgstr "Outeurs van hulpbron."
+
+#: includes/functions/metadata.php:516
+msgid "Add author"
+msgstr "Voeg outeur by"
+
+#: includes/functions/metadata.php:520
+msgid "Author"
+msgstr "Outeur"
+
+#: includes/functions/metadata.php:541
+msgid "Editors"
+msgstr "Redakteurs"
+
+#: includes/functions/metadata.php:544
+msgid "Editors of the resource."
+msgstr "Redakteurs van hulpbron."
+
+#: includes/functions/metadata.php:556
+msgid "Add editor"
+msgstr "Voeg redakteur by"
+
+#: includes/functions/metadata.php:560
+msgid "Editor"
+msgstr "Redakteur"
+
+#: includes/functions/metadata.php:581
+msgid "Translators"
+msgstr "Vertalers"
+
+#: includes/functions/metadata.php:584
+msgid "Translators of the resource."
+msgstr "Vertalers van hulpbron."
+
+#: includes/functions/metadata.php:596
+msgid "Add translator"
+msgstr "Voeg vertaler by"
+
+#: includes/functions/metadata.php:600
+msgid "Translator"
+msgstr "Vertaler"
+
+#: includes/functions/metadata.php:621
+msgid "Publication year"
+msgstr "Publikasiejaar"
+
+#: includes/functions/metadata.php:624
+msgid "The year the resource was published."
+msgstr "Jaar waarin hulpbron gepubliseer is."
+
+#: includes/functions/metadata.php:639
+msgid "Choose a year"
+msgstr "Kies ’n jaar"
+
+#: includes/functions/metadata.php:643
+msgid "Publication month"
+msgstr "Publikasiemaand"
+
+#: includes/functions/metadata.php:646
+msgid "The month the resource was published."
+msgstr "Maand waarin hulpbron gepubliseer is."
+
+#: includes/functions/metadata.php:662
+msgid "January"
+msgstr "Januarie"
+
+#: includes/functions/metadata.php:663
+msgid "February"
+msgstr "Februarie"
+
+#: includes/functions/metadata.php:664
+msgid "March"
+msgstr "Maart"
+
+#: includes/functions/metadata.php:665
+msgid "April"
+msgstr "April"
+
+#: includes/functions/metadata.php:666
+msgid "May"
+msgstr "Mei"
+
+#: includes/functions/metadata.php:667
+msgid "June"
+msgstr "Junie"
+
+#: includes/functions/metadata.php:668
+msgid "July"
+msgstr "Julie"
+
+#: includes/functions/metadata.php:669
+msgid "August"
+msgstr "Augustus"
+
+#: includes/functions/metadata.php:670
+msgid "September"
+msgstr "September"
+
+#: includes/functions/metadata.php:671
+msgid "October"
+msgstr "Oktober"
+
+#: includes/functions/metadata.php:672
+msgid "November"
+msgstr "November"
+
+#: includes/functions/metadata.php:673
+msgid "December"
+msgstr "Desember"
+
+#: includes/functions/metadata.php:681
+msgid "Choose a month"
+msgstr "Kies ’n maand"
+
+#: includes/functions/metadata.php:685
+msgid "Publication day"
+msgstr "Publikasiedag"
+
+#: includes/functions/metadata.php:688
+msgid "The numeric day the resource was published."
+msgstr "Numeriese dag waarop hulpbron gepubliseer is."
+
+#: includes/functions/metadata.php:714
+msgid "Choose a day"
+msgstr "Kies ’n dag"
+
+#: includes/functions/metadata.php:718
+msgid "Publication Date"
+msgstr "Publikasiedatum"
+
+#: includes/functions/metadata.php:721
+msgid ""
+"You can set the publication date for this resource using the year, month and"
+" day fields above."
+msgstr ""
+"Jy kan die publikasiedatum vir hierdie hulpbron instel met die jaar-, maand-"
+" en dag-velde hierbo."
+
+#: includes/functions/metadata.php:738
+msgid "Revisions"
+msgstr "Hersienings"
+
+#: includes/functions/metadata.php:741
+msgid "Revisions of the resource."
+msgstr "Hersienings van hulpbron."
+
+#: includes/functions/metadata.php:753
+msgid "Add revision"
+msgstr "Voeg hersiening by"
+
+#: includes/functions/metadata.php:757
+msgid "Revision date"
+msgstr "Hersieningsdatum"
+
+#: includes/functions/metadata.php:760
+msgid "The date of this revision."
+msgstr "Datum van hierdie hersiening."
+
+#: includes/functions/metadata.php:774
+msgid "Revision description"
+msgstr "Hersieningbeskrywing"
+
+#: includes/functions/metadata.php:777
+msgid "A brief description of this revision."
+msgstr "Kort beskrywing van hierdie hersiening."
+
+#: includes/functions/metadata.php:827
+msgid "About the Publication"
+msgstr "Meer oor die publikasie"
+
+#: includes/functions/metadata.php:831
+msgid "Publication name"
+msgstr "Publikasie se naam"
+
+#: includes/functions/metadata.php:834
+msgid "Name of the publication in which the resource appears."
+msgstr "Naam van publikasie waarin die hulpbron verskyn."
+
+#: includes/functions/metadata.php:850
+msgid "Publication link"
+msgstr "Publikasieskakel"
+
+#: includes/functions/metadata.php:853
+msgid "Web address for the publication (must begin with http:// or https://)."
+msgstr "Webadres vir publikasie (moet begin met http:// of https://)."
+
+#: includes/functions/metadata.php:888
+msgid "About the Publisher"
+msgstr "Meer oor die uitgewer"
+
+#: includes/functions/metadata.php:892
+msgid "Publisher name"
+msgstr "Uitgewer se naam"
+
+#: includes/functions/metadata.php:895
+msgid "Name of the resource publisher."
+msgstr "Naam van hulpbron se uitgewer."
+
+#: includes/functions/metadata.php:911
+msgid "Publisher link"
+msgstr "Uitgewerskakel"
+
+#: includes/functions/metadata.php:914
+msgid "Web address for the publisher (must begin with http:// or https://)."
+msgstr "Webadres vir uitgewer (moet begin met http:// of https://)."
+
+#: includes/functions/metadata.php:927
+msgid "Publisher city"
+msgstr "Uitgewer se dorp/stad"
+
+#: includes/functions/metadata.php:930
+msgid "Town or city where the publisher is located."
+msgstr "Dorp/stad waar uitgewer is."
+
+#: includes/functions/metadata.php:946
+msgid "Publisher country"
+msgstr "Uitgewer se land"
+
+#: includes/functions/metadata.php:949
+msgid "Country where the publisher is located."
+msgstr "Land waar uitgewer is."
+
+#: includes/functions/metadata.php:964
+msgid "Select a country"
+msgstr "Kies ’n land"
+
+#: includes/functions/metadata.php:993
+msgid "Distribution License or Rights"
+msgstr "Verspreidingslisensie of -regte"
+
+#: includes/functions/metadata.php:997
+msgid "License or rights"
+msgstr "Lisensie of regte"
+
+#: includes/functions/metadata.php:1000
+msgid "License or rights under which the resource is distributed."
+msgstr "Lisensie of regte ingevolge waarvan die hulpbron versprei word."
+
+#: includes/functions/metadata.php:1009
+msgid "All Rights Reserved"
+msgstr "Alle regte voorbehou"
+
+#: includes/functions/metadata.php:1010
+msgid "Creative Commons Attribution"
+msgstr "Creative Commons, erkenning"
+
+#: includes/functions/metadata.php:1011
+msgid "Creative Commons Attribution-NonCommercial"
+msgstr "Creative Commons, erkenning, niekommersieel"
+
+#: includes/functions/metadata.php:1012
+msgid "Creative Commons Attribution-NoDerivatives"
+msgstr "Creative Commons, erkenning, geen afgeleides"
+
+#: includes/functions/metadata.php:1013
+msgid "Creative Commons Attribution-ShareAlike"
+msgstr "Creative Commons, erkenning, gee dieselfde regte"
+
+#: includes/functions/metadata.php:1014
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
+msgstr "Creative Commons, erkenning, niekommersieel, geen afgeleides"
+
+#: includes/functions/metadata.php:1015
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
+msgstr "Creative Commons, erkenning, niekommersieel, gee dieselfde regte"
+
+#: includes/functions/metadata.php:1016
+msgid "Educational Community License"
+msgstr "Opvoedkundige gemeenskapslisensie"
+
+#: includes/functions/metadata.php:1017
+msgid "No Rights Reserved"
+msgstr "Geen regte voorbehou nie"
+
+#: includes/functions/metadata.php:1018
+msgid "No Known Copyright"
+msgstr "Geen bekende kopiereg nie"
+
+#: includes/functions/metadata.php:1019
+msgid "Custom…"
+msgstr "Pasmaak..."
+
+#: includes/functions/metadata.php:1027
+msgid "Choose a license or rights"
+msgstr "Kies ’n lisensie of regte"
+
+#: includes/functions/metadata.php:1031
+msgid "Custom license or rights"
+msgstr "Pasgemaakte lisensie of regte"
+
+#: includes/functions/metadata.php:1037
+msgid "Custom license or rights statement."
+msgstr "Pasgemaakte lisensie of regteverklaring."
+
+#: includes/functions/metadata.php:1038
+msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
+msgstr ""
+"Dit word geaktiveer wanneer “Pasmaak...” gekies word by “Lisensie of regte”."
+
+#: includes/functions/metadata.php:1086
+msgid "Archival Links"
+msgstr "Argiefskakels"
+
+#: includes/functions/metadata.php:1096
+msgid ""
+"Links to archive copy on perma.cc. Specify multiple links if the resource "
+"spans multiple pages."
+msgstr ""
+"Skakels na argiefkopie op perma.cc. Gee meerdere skakels indien hulpbron oor"
+" meerdere bladsye strek."
+
+#. translators: link to https://perma.cc
+#: includes/functions/metadata.php:1098
+msgid "%s provides web archiving for scholars, journals, courts, and others."
+msgstr "%s bied webargief aan akademici, vaktydskrifte, howe en andere."
+
+#: includes/functions/metadata.php:1112
+msgid "Add perma.cc link"
+msgstr "Voeg perma.cc-skakel by"
+
+#: includes/functions/metadata.php:1116
+msgid "Perma.cc link"
+msgstr "Perma.cc-skakel"
+
+#: includes/functions/metadata.php:1134
+msgid "Internet Archive"
+msgstr "Internet Archive"
+
+#: includes/functions/metadata.php:1140
+msgid ""
+"Links to archive copy on the Internet Archive. Specify multiple links if the"
+" resource spans multiple pages."
+msgstr ""
+"Skakels na argiefkopie op die Internet Archive. Gee meerdere skakels indien "
+"hulpbron oor meerdere bladsye strek."
+
+#. translators: link to https://web.archive.org
+#: includes/functions/metadata.php:1142
+msgid "%s provides free and open web archiving."
+msgstr "%s bied vrye, oop webargief."
+
+#: includes/functions/metadata.php:1156
+msgid "Add Internet Archive link"
+msgstr "Voeg Internet Archive-skakel by"
+
+#: includes/functions/metadata.php:1160
+msgid "Internet Archive link"
+msgstr "Internet Archive-skakel"
+
+#: includes/functions/metadata.php:1200
+msgid "Catalog Codes"
+msgstr "Kataloguskodes"
+
+#: includes/functions/metadata.php:1207
+msgid "Digital Object Identifier (or DOI) for this resource."
+msgstr "DOI (digitaleobjek-identifiseerder) vir hierdie hulpbron."
+
+#: includes/functions/metadata.php:1226
+msgid "International Standard Book Number (or ISBN) for this resource."
+msgstr "ISBN (internasionale standaardboeknommer) vir hierdie hulpbron."
+
+#: includes/functions/metadata.php:1245
+msgid "International Standard Serial Number (or ISSN) for this resource."
+msgstr "ISSN (internasionale standaardreeksnommer) vir hierdie hulpbron."
+
+#: includes/functions/metadata.php:1363
+msgid "This is not a valid DOI."
+msgstr "Dit is nie ’n geldige DOI nie."
+
+#: includes/functions/metadata.php:1387
+msgid "This is not a valid ISBN."
+msgstr "Dit is nie ’n geldige ISBN nie."
+
+#: includes/functions/metadata.php:1413
+msgid "This is not a valid ISSN."
+msgstr "Dit is nie ’n geldige ISSN nie."
+
+#: includes/functions/metadata.php:1439
+msgid "This is not a valid Perma.cc link."
+msgstr "Dit is nie ’n geldige Perma.cc-skakel nie."
+
+#: includes/functions/metadata.php:1467
+msgid "This is not a valid Internet Archive link."
+msgstr "Dit is nie ’n geldige Internet Archive-skakel nie."
+
+#: assets/js/editor/editor.js:24
+msgid ""
+"The publication day has been reset as there are only %1$d days in the "
+"selected month, and your choice of %2$d is no longer valid."
+msgstr ""
+"Die publikasiedag is teruggestel omdat daar slegs %1$d dae in die gekose "
+"maand is, en jou keuse van %2$d is nie meer geldig nie."
+
+#. translators: %s: The label of the required field.
+#: assets/js/editor/editor.js:75 assets/js/editor/editor.js:93
+msgid "A %s is required."
+msgstr "’n %s word vereis."
+
+#: assets/js/editor/editor.js:88
+msgid "The form contains errors:"
+msgstr "Die vorm bevat foute:"
