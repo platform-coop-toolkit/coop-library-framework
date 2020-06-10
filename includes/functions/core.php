@@ -294,7 +294,6 @@ function add_goal_to_pll( $taxonomies, $is_settings ) {
 	return $taxonomies;
 }
 
-
 /**
  * Registers the `lc_region` taxonomy for use with 'lc_resource'.
  */
