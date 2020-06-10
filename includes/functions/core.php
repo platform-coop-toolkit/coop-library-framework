@@ -296,8 +296,7 @@ function add_goal_to_pll( $taxonomies, $is_settings ) {
 
 
 /**
- * Registers the `lc_region` taxonomy,
- * for use with 'lc_resource'.
+ * Registers the `lc_region` taxonomy for use with 'lc_resource'.
  */
 function region_init() {
 	register_extended_taxonomy(
@@ -362,8 +361,7 @@ function add_region_to_pll( $taxonomies, $is_settings ) {
 
 
 /**
- * Registers the `lc_sector` taxonomy,
- * for use with 'lc_resource'.
+ * Registers the `lc_sector` taxonomy for use with 'lc_resource'.
  */
 function sector_init() {
 	register_extended_taxonomy(
@@ -427,8 +425,7 @@ function add_sector_to_pll( $taxonomies, $is_settings ) {
 }
 
 /**
- * Registers the `lc_sector` taxonomy,
- * for use with 'lc_resource'.
+ * Registers the `lc_sector` taxonomy for use with 'lc_resource'.
  */
 function coop_type_init() {
 	register_extended_taxonomy(
@@ -492,8 +489,7 @@ function add_coop_type_to_pll( $taxonomies, $is_settings ) {
 }
 
 /**
- * Registers the `lc_format` taxonomy,
- * for use with 'lc_resource'.
+ * Registers the `lc_format` taxonomy for use with 'lc_resource'.
  */
 function format_init() {
 	register_extended_taxonomy(
