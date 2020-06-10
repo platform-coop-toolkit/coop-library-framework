@@ -25,6 +25,7 @@ jobs:
         commit_message: 'chore(localization): update translation files'
 
   update-pot:
+    needs: generate-mo
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
