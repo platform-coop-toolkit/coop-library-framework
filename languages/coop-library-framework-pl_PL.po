@@ -1,0 +1,1130 @@
+# Copyright (C) 2020 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Co-op Library Framework plugin.
+# Translators:
+# Petra Meterc <petra.meterc@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-op Library Framework 1.0.0-rc.1\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
+"POT-Creation-Date: 2020-05-19T14:53:02+00:00\n"
+"PO-Revision-Date: 2020-04-01 17:03+0000\n"
+"Last-Translator: Petra Meterc <petra.meterc@gmail.com>, 2020\n"
+"Language-Team: Polish (Poland) (https://www.transifex.com/platform-cooperative-development-kit/teams/107673/pl_PL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Domain: coop-library-framework\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Co-op Library Framework"
+msgstr "Framework biblioteki kooperatyw"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/coop-library-framework/"
+msgstr ""
+"https://github.com/platform-coop-toolkit/struktura-biblioteki-kooperatyw/"
+
+#. Description of the plugin
+msgid ""
+"Custom post type and metadata utilities for the Platform Co-op Resource "
+"Library."
+msgstr ""
+"Niestandardowe typy wpisów i narzędzia metadanych dla biblioteki zasobów "
+"kooperatyw platformowych."
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr "Zestaw deweloperski kooperatyw platformowych"
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr "https://github.com/zestaw-deweloperski-kooperatyw/"
+
+#: includes/classes/HiddenField.php:21
+msgid "Hidden"
+msgstr "Ukryte"
+
+#: includes/functions/core.php:82
+msgid "Resource Language"
+msgstr "Język zasobu"
+
+#: includes/functions/core.php:89
+msgid "Display Language"
+msgstr "Język wyświetlania"
+
+#: includes/functions/core.php:93 includes/functions/core.php:506
+#: includes/functions/core.php:531 includes/functions/core.php:535
+msgid "Format"
+msgstr "Format"
+
+#: includes/functions/core.php:97 includes/functions/core.php:178
+#: includes/functions/core.php:195 includes/functions/core.php:205
+#: includes/functions/core.php:209
+msgid "Topics"
+msgstr "Tematy"
+
+#: includes/functions/core.php:101
+msgid "Date Published"
+msgstr "Data opublikowania"
+
+#: includes/functions/core.php:105
+msgid "Date Added"
+msgstr "Data dodania"
+
+#: includes/functions/core.php:111 includes/functions/core.php:131
+#: includes/functions/core.php:140 includes/functions/core.php:144
+msgid "Resources"
+msgstr "Zasoby"
+
+#: includes/functions/core.php:112 includes/functions/core.php:139
+#: includes/functions/core.php:143
+msgid "Resource"
+msgstr "Zasób"
+
+#: includes/functions/core.php:113
+msgid "All Resources"
+msgstr "Wszystkie zasoby"
+
+#: includes/functions/core.php:114
+msgid "Resource Archives"
+msgstr "Archiwa zasobów"
+
+#: includes/functions/core.php:115
+msgid "Resource Attributes"
+msgstr "Atrybuty zasobów"
+
+#: includes/functions/core.php:116
+msgid "Insert into resource"
+msgstr "Wstaw do zasobu"
+
+#: includes/functions/core.php:117
+msgid "Uploaded to this resource"
+msgstr "Przesłano do tego zasobu"
+
+#: includes/functions/core.php:118
+msgid "Filter resources list"
+msgstr "Filtruj listę zasobów"
+
+#: includes/functions/core.php:119
+msgid "Resources list navigation"
+msgstr "Nawigacja po liście zasobów"
+
+#: includes/functions/core.php:120
+msgid "Resources list"
+msgstr "Lista zasobów"
+
+#: includes/functions/core.php:121
+msgid "New Resource"
+msgstr "Nowy zasób"
+
+#: includes/functions/core.php:122
+msgid "Add New"
+msgstr "Dodaj nowy"
+
+#: includes/functions/core.php:123
+msgid "Add New Resource"
+msgstr "Dodaj nowy zasób"
+
+#: includes/functions/core.php:124
+msgid "Edit Resource"
+msgstr "Edytuj zasób"
+
+#: includes/functions/core.php:125
+msgid "View Resource"
+msgstr "Zobacz zasób"
+
+#: includes/functions/core.php:126
+msgid "View Resources"
+msgstr "Przeglądaj zasoby"
+
+#: includes/functions/core.php:127
+msgid "Search resources"
+msgstr "Szukaj zasoby"
+
+#: includes/functions/core.php:128
+msgid "No resources found"
+msgstr "Nie znaleziono zasobów"
+
+#: includes/functions/core.php:129
+msgid "No resources found in trash"
+msgstr "Nie znaleziono zasobów w koszu"
+
+#: includes/functions/core.php:130
+msgid "Parent Resource:"
+msgstr "Zasób nadrzędny:"
+
+#: includes/functions/core.php:179 includes/functions/core.php:204
+#: includes/functions/core.php:208
+msgid "Topic"
+msgstr "Temat"
+
+#: includes/functions/core.php:180
+msgid "Search Topics"
+msgstr "Szukaj tematów"
+
+#: includes/functions/core.php:181
+msgid "Popular Topics"
+msgstr "Popularne tematy"
+
+#: includes/functions/core.php:182
+msgid "All Topics"
+msgstr "Wszystkie tematy"
+
+#: includes/functions/core.php:183
+msgid "Parent Topic"
+msgstr "Temat nadrzędny"
+
+#: includes/functions/core.php:184
+msgid "Parent Topic:"
+msgstr "Temat nadrzędny: "
+
+#: includes/functions/core.php:185
+msgid "Edit Topic"
+msgstr "Edytuj temat"
+
+#: includes/functions/core.php:186
+msgid "Update Topic"
+msgstr "Zaktualizuj temat"
+
+#: includes/functions/core.php:187
+msgid "View Topic"
+msgstr "Zobacz temat"
+
+#: includes/functions/core.php:188
+msgid "Add New Topic"
+msgstr "Dodaj nowy temat"
+
+#: includes/functions/core.php:189
+msgid "New Topic"
+msgstr "Nowy temat"
+
+#: includes/functions/core.php:190
+msgid "Separate topics with commas"
+msgstr "Oddziel tematy przecinkami"
+
+#: includes/functions/core.php:191
+msgid "Add or remove topics"
+msgstr "Dodaj lub usuń tematy"
+
+#: includes/functions/core.php:192
+msgid "Choose from the most used topics"
+msgstr "Wybierz spośród najczęściej używanych tematów"
+
+#: includes/functions/core.php:193
+msgid "No topics found."
+msgstr "Nie znaleziono tematów."
+
+#: includes/functions/core.php:194
+msgid "No topics"
+msgstr "Żadnych tematów"
+
+#: includes/functions/core.php:196
+msgid "Topics list navigation"
+msgstr "Nawigacja po liście tematów"
+
+#: includes/functions/core.php:197
+msgid "Topics list"
+msgstr "Lista tematów"
+
+#: includes/functions/core.php:198
+msgid "&larr; Back to Topics"
+msgstr "&larr; Powrót do tematów"
+
+#: includes/functions/core.php:243 includes/functions/core.php:260
+#: includes/functions/core.php:270 includes/functions/core.php:274
+msgid "Goals"
+msgstr "Cele"
+
+#: includes/functions/core.php:244 includes/functions/core.php:269
+#: includes/functions/core.php:273
+msgid "Goal"
+msgstr "Cel"
+
+#: includes/functions/core.php:245
+msgid "Search Goals"
+msgstr "Szukaj celów"
+
+#: includes/functions/core.php:246
+msgid "Popular Goals"
+msgstr "Popularne cele"
+
+#: includes/functions/core.php:247
+msgid "All Goals"
+msgstr "Wszystkie cele"
+
+#: includes/functions/core.php:248
+msgid "Parent Goal"
+msgstr "Cel nadrzędny"
+
+#: includes/functions/core.php:249
+msgid "Parent Goal:"
+msgstr "Cel nadrzędny: "
+
+#: includes/functions/core.php:250
+msgid "Edit Goal"
+msgstr "Edytuj cel"
+
+#: includes/functions/core.php:251
+msgid "Update Goal"
+msgstr "Zaktualizuj cel"
+
+#: includes/functions/core.php:252
+msgid "View Goal"
+msgstr "Zobacz cel"
+
+#: includes/functions/core.php:253
+msgid "Add New Goal"
+msgstr "Dodaj nowy cel"
+
+#: includes/functions/core.php:254
+msgid "New Goal"
+msgstr "Nowy cel"
+
+#: includes/functions/core.php:255
+msgid "Separate goals with commas"
+msgstr "Oddziel cele przecinkami"
+
+#: includes/functions/core.php:256
+msgid "Add or remove goals"
+msgstr "Dodaj lub usuń cele"
+
+#: includes/functions/core.php:257
+msgid "Choose from the most used goals"
+msgstr "Wybierz spośród najczęściej używanych celów"
+
+#: includes/functions/core.php:258
+msgid "No goals found."
+msgstr "Nie znaleziono celów."
+
+#: includes/functions/core.php:259
+msgid "No goals"
+msgstr "Żadnych celów"
+
+#: includes/functions/core.php:261
+msgid "Goals list navigation"
+msgstr "Nawigacja po liście celów"
+
+#: includes/functions/core.php:262
+msgid "Goals list"
+msgstr "Lista celów"
+
+#: includes/functions/core.php:263
+msgid "&larr; Back to Goals"
+msgstr "&larr; Powrót do celów"
+
+#: includes/functions/core.php:309 includes/functions/core.php:326
+#: includes/functions/core.php:336 includes/functions/core.php:340
+msgid "Regions"
+msgstr "Regiony"
+
+#: includes/functions/core.php:310 includes/functions/core.php:335
+#: includes/functions/core.php:339
+msgid "Region"
+msgstr "Region"
+
+#: includes/functions/core.php:311
+msgid "Search Regions"
+msgstr "Szukaj regionów"
+
+#: includes/functions/core.php:312
+msgid "Popular Regions"
+msgstr "Popularne regiony"
+
+#: includes/functions/core.php:313
+msgid "All Regions"
+msgstr "Wszystkie regiony"
+
+#: includes/functions/core.php:314
+msgid "Parent Region"
+msgstr "Region nadrzędny"
+
+#: includes/functions/core.php:315
+msgid "Parent Region:"
+msgstr "Region nadrzędny: "
+
+#: includes/functions/core.php:316
+msgid "Edit Region"
+msgstr "Edytuj region"
+
+#: includes/functions/core.php:317
+msgid "Update Region"
+msgstr "Zaktualizuj region"
+
+#: includes/functions/core.php:318
+msgid "View Region"
+msgstr "Zobacz region"
+
+#: includes/functions/core.php:319
+msgid "Add New Region"
+msgstr "Dodaj nowy region"
+
+#: includes/functions/core.php:320
+msgid "New Region"
+msgstr "Nowy region"
+
+#: includes/functions/core.php:321
+msgid "Separate regions with commas"
+msgstr "Oddziel regiony przecinkami "
+
+#: includes/functions/core.php:322
+msgid "Add or remove regions"
+msgstr "Dodaj lub usuń regiony"
+
+#: includes/functions/core.php:323
+msgid "Choose from the most used regions"
+msgstr "Wybierz spośród najczęściej używanych regionów"
+
+#: includes/functions/core.php:324
+msgid "No regions found."
+msgstr "Nie znaleziono regionów."
+
+#: includes/functions/core.php:325
+msgid "No regions"
+msgstr "Żadnych regionów"
+
+#: includes/functions/core.php:327
+msgid "Regions list navigation"
+msgstr "Nawigacja po liście regionów"
+
+#: includes/functions/core.php:328
+msgid "Regions list"
+msgstr "Lista regionów"
+
+#: includes/functions/core.php:329
+msgid "&larr; Back to Regions"
+msgstr "&larr; Powrót do regionów"
+
+#: includes/functions/core.php:375 includes/functions/core.php:392
+#: includes/functions/core.php:402 includes/functions/core.php:406
+msgid "Sectors"
+msgstr "Sektory"
+
+#: includes/functions/core.php:376 includes/functions/core.php:401
+#: includes/functions/core.php:405
+msgid "Sector"
+msgstr "Sektor"
+
+#: includes/functions/core.php:377
+msgid "Search Sectors"
+msgstr "Szukaj sektorów"
+
+#: includes/functions/core.php:378
+msgid "Popular Sectors"
+msgstr "Popularne sektory"
+
+#: includes/functions/core.php:379
+msgid "All Sectors"
+msgstr "Wszystkie sektory"
+
+#: includes/functions/core.php:380
+msgid "Parent Sector"
+msgstr "Sektor nadrzędny"
+
+#: includes/functions/core.php:381
+msgid "Parent Sector:"
+msgstr "Sektor nadrzędny:"
+
+#: includes/functions/core.php:382
+msgid "Edit Sector"
+msgstr "Edytuj sektor"
+
+#: includes/functions/core.php:383
+msgid "Update Sector"
+msgstr "Zaktualizuj sektor"
+
+#: includes/functions/core.php:384
+msgid "View Sector"
+msgstr "Zobacz sektor"
+
+#: includes/functions/core.php:385
+msgid "Add New Sector"
+msgstr "Dodaj nowy sektor"
+
+#: includes/functions/core.php:386
+msgid "New Sector"
+msgstr "Nowy sektor"
+
+#: includes/functions/core.php:387
+msgid "Separate sectors with commas"
+msgstr "Oddziel sektory przecinkami"
+
+#: includes/functions/core.php:388
+msgid "Add or remove sectors"
+msgstr "Dodaj lub usuń sektory"
+
+#: includes/functions/core.php:389
+msgid "Choose from the most used sectors"
+msgstr "Wybierz spośród najczęściej używanych sektorów"
+
+#: includes/functions/core.php:390
+msgid "No sectors found."
+msgstr "Nie znaleziono sektorów."
+
+#: includes/functions/core.php:391
+msgid "No sectors"
+msgstr "Żadnych sektorów"
+
+#: includes/functions/core.php:393
+msgid "Sectors list navigation"
+msgstr "Nawigacja po liście sektorów"
+
+#: includes/functions/core.php:394
+msgid "Sectors list"
+msgstr "Lista sektorów"
+
+#: includes/functions/core.php:395
+msgid "&larr; Back to Sectors"
+msgstr "&larr; Powrót do sektorów"
+
+#: includes/functions/core.php:440 includes/functions/core.php:457
+#: includes/functions/core.php:467 includes/functions/core.php:471
+msgid "Co-op Types"
+msgstr "Typy kooperatyw"
+
+#: includes/functions/core.php:441 includes/functions/core.php:466
+#: includes/functions/core.php:470
+msgid "Co-op Type"
+msgstr "Typ kooperatywy"
+
+#: includes/functions/core.php:442
+msgid "Search Co-op Types"
+msgstr "Szukaj typy kooperatyw"
+
+#: includes/functions/core.php:443
+msgid "Popular Co-op Types"
+msgstr "Popularne typy kooperatyw"
+
+#: includes/functions/core.php:444
+msgid "All Co-op Types"
+msgstr "Wszystkie typy kooperatyw"
+
+#: includes/functions/core.php:445
+msgid "Parent Co-op Type"
+msgstr "Typ kooperatywy nadrzędny"
+
+#: includes/functions/core.php:446
+msgid "Parent Co-op Type:"
+msgstr "Typ kooperatywy nadrzędny:"
+
+#: includes/functions/core.php:447
+msgid "Edit Co-op Type"
+msgstr "Edytuj typ kooperatywy: "
+
+#: includes/functions/core.php:448
+msgid "Update Co-op Type"
+msgstr "Zaktualizuj typ kooperatywy"
+
+#: includes/functions/core.php:449
+msgid "View Co-op Type"
+msgstr "Zobacz typ kooperatywy"
+
+#: includes/functions/core.php:450
+msgid "Add New Co-op Type"
+msgstr "Dodaj nowy typ kooperatywy"
+
+#: includes/functions/core.php:451
+msgid "New Co-op Type"
+msgstr "Nowy typ kooperatywy"
+
+#: includes/functions/core.php:452
+msgid "Separate co-op types with commas"
+msgstr "Odzziel typy kooperatyw przecinkami"
+
+#: includes/functions/core.php:453
+msgid "Add or remove co-op types"
+msgstr "Dodaj lub usuń typy kooperatyw"
+
+#: includes/functions/core.php:454
+msgid "Choose from the most used co-op types"
+msgstr "Wybierz spośród najczęściej używanych typów kooperatyw"
+
+#: includes/functions/core.php:455
+msgid "No co-op types found."
+msgstr "Nie znaleziono typów kooperatyw."
+
+#: includes/functions/core.php:456
+msgid "No co-op types"
+msgstr "Żadnych typów kooperatyw"
+
+#: includes/functions/core.php:458
+msgid "Co-op Types list navigation"
+msgstr "Nawigacja po liście typów kooperatyw"
+
+#: includes/functions/core.php:459
+msgid "Co-op Types list"
+msgstr "Lista typów kooperatyw"
+
+#: includes/functions/core.php:460
+msgid "&larr; Back to Co-op Types"
+msgstr "&larr; Powrót do typów kooperatyw"
+
+#: includes/functions/core.php:505 includes/functions/core.php:522
+#: includes/functions/core.php:532 includes/functions/core.php:536
+msgid "Formats"
+msgstr "Formaty"
+
+#: includes/functions/core.php:507
+msgid "Search Formats"
+msgstr "Szukaj formatów"
+
+#: includes/functions/core.php:508
+msgid "Popular Formats"
+msgstr "Popularne formaty"
+
+#: includes/functions/core.php:509
+msgid "All Formats"
+msgstr "Wszystkie formaty"
+
+#: includes/functions/core.php:510
+msgid "Parent Format"
+msgstr "Format nadrzędny"
+
+#: includes/functions/core.php:511
+msgid "Parent Format:"
+msgstr "Format nadrzędny:"
+
+#: includes/functions/core.php:512
+msgid "Edit Format"
+msgstr "Edytuj format"
+
+#: includes/functions/core.php:513
+msgid "Update Format"
+msgstr "Zaktualizuj format"
+
+#: includes/functions/core.php:514
+msgid "View Format"
+msgstr "Zobacz format"
+
+#: includes/functions/core.php:515
+msgid "Add New Format"
+msgstr "Dodaj nowy format"
+
+#: includes/functions/core.php:516
+msgid "New Format"
+msgstr "Nowy format"
+
+#: includes/functions/core.php:517
+msgid "Separate formats with commas"
+msgstr "Oddziel formaty przecinkami"
+
+#: includes/functions/core.php:518
+msgid "Add or remove formats"
+msgstr "Dodaj lub usuń formaty"
+
+#: includes/functions/core.php:519
+msgid "Choose from the most used formats"
+msgstr "Wybierz spośród najczęściej używanych formatów"
+
+#: includes/functions/core.php:520
+msgid "No formats found."
+msgstr "Nie znaleziono formatów."
+
+#: includes/functions/core.php:521
+msgid "No formats"
+msgstr "Żadnych formatów"
+
+#: includes/functions/core.php:523
+msgid "Formats list navigation"
+msgstr "Nawigacja po liście formatów"
+
+#: includes/functions/core.php:524
+msgid "Formats list"
+msgstr "Lista formatów"
+
+#: includes/functions/core.php:525
+msgid "&larr; Back to Formats"
+msgstr "&larr; Powrót do formatów"
+
+#: includes/functions/internationalization.php:33
+#: includes/functions/internationalization.php:48
+msgid "Localization Settings"
+msgstr "Ustawienia lokalizacji"
+
+#: includes/functions/internationalization.php:34
+msgid "Localization"
+msgstr "Lokalizacja"
+
+#: includes/functions/internationalization.php:52
+msgid "Enabled Languages"
+msgstr "Włączone języki"
+
+#: includes/functions/internationalization.php:55
+msgid ""
+"Select the languages you'd like to be displayed to site visitors. English "
+"content will always be displayed."
+msgstr ""
+"Wybierz języki, które mają być wyświetlane użytkownikom strony. Zawartość w "
+"języku angielskim będzie zawsze wyświetlana."
+
+#: includes/functions/metadata.php:401
+msgid "General Information"
+msgstr "Informacje ogólne"
+
+#: includes/functions/metadata.php:405
+msgid "Link to resource"
+msgstr "Link do zasobu"
+
+#: includes/functions/metadata.php:408
+msgid ""
+"Web address to access the resource (must begin with http:// or https://). "
+"This information is required."
+msgstr ""
+"Adres internetowy aby uzyskać dostęp do zasobu (musi zaczynać się od http: "
+"// lub https: //). Ta informacja jest wymagana."
+
+#: includes/functions/metadata.php:421
+msgid "Favorites"
+msgstr "Ulubione"
+
+#: includes/functions/metadata.php:424
+msgid "The number of times this resource has been favorited."
+msgstr "Liczba wyborów tego zasobu jako ulubionego."
+
+#: includes/functions/metadata.php:441
+msgid "Resource language"
+msgstr "Język zasobu"
+
+#: includes/functions/metadata.php:444
+msgid "The language of the resource. This information is required."
+msgstr "Język zasobu. Ta Informacja jest wymagana."
+
+#: includes/functions/metadata.php:459
+msgid "Choose a language"
+msgstr "Wybierz język"
+
+#: includes/functions/metadata.php:463
+msgid "Short title"
+msgstr "Krótki tytuł"
+
+#: includes/functions/metadata.php:466
+msgid "Shorter title used in resource listings. Maximum 72 characters."
+msgstr "Krótszy tytuł używany na listach zasobów. Maksymalnie 72 znaków."
+
+#: includes/functions/metadata.php:482
+msgid "Paywall"
+msgstr "Paywall"
+
+#: includes/functions/metadata.php:493
+msgid "Is this resource behind a paywall?"
+msgstr "Czy ten zasób jest za paywallem?"
+
+#: includes/functions/metadata.php:501
+msgid "Authors"
+msgstr "Autorzy"
+
+#: includes/functions/metadata.php:504
+msgid "Authors of the resource."
+msgstr "Autorzy zasobu."
+
+#: includes/functions/metadata.php:516
+msgid "Add author"
+msgstr "Dodaj autora"
+
+#: includes/functions/metadata.php:520
+msgid "Author"
+msgstr "Autor"
+
+#: includes/functions/metadata.php:541
+msgid "Editors"
+msgstr "Redaktorzy"
+
+#: includes/functions/metadata.php:544
+msgid "Editors of the resource."
+msgstr "Redaktorzy zasobu"
+
+#: includes/functions/metadata.php:556
+msgid "Add editor"
+msgstr "Dodaj redaktora"
+
+#: includes/functions/metadata.php:560
+msgid "Editor"
+msgstr "Redaktor"
+
+#: includes/functions/metadata.php:581
+msgid "Translators"
+msgstr "Tłumacze"
+
+#: includes/functions/metadata.php:584
+msgid "Translators of the resource."
+msgstr "Tłumacze zasobu."
+
+#: includes/functions/metadata.php:596
+msgid "Add translator"
+msgstr "Dodaj tłumacza"
+
+#: includes/functions/metadata.php:600
+msgid "Translator"
+msgstr "Tłumacz"
+
+#: includes/functions/metadata.php:621
+msgid "Publication year"
+msgstr "Rok opublikowania"
+
+#: includes/functions/metadata.php:624
+msgid "The year the resource was published."
+msgstr "Rok opublikowania zasobu."
+
+#: includes/functions/metadata.php:639
+msgid "Choose a year"
+msgstr "Wybierz rok"
+
+#: includes/functions/metadata.php:643
+msgid "Publication month"
+msgstr "Miesiąc opublikowania"
+
+#: includes/functions/metadata.php:646
+msgid "The month the resource was published."
+msgstr "Miesiąc opublikowania zasobu."
+
+#: includes/functions/metadata.php:662
+msgid "January"
+msgstr "Styczeń"
+
+#: includes/functions/metadata.php:663
+msgid "February"
+msgstr "Luty"
+
+#: includes/functions/metadata.php:664
+msgid "March"
+msgstr "Marzec"
+
+#: includes/functions/metadata.php:665
+msgid "April"
+msgstr "Kwiecień"
+
+#: includes/functions/metadata.php:666
+msgid "May"
+msgstr "Maj"
+
+#: includes/functions/metadata.php:667
+msgid "June"
+msgstr "Czerwiec"
+
+#: includes/functions/metadata.php:668
+msgid "July"
+msgstr "Lipiec"
+
+#: includes/functions/metadata.php:669
+msgid "August"
+msgstr "Sierpień"
+
+#: includes/functions/metadata.php:670
+msgid "September"
+msgstr "Wrzesień"
+
+#: includes/functions/metadata.php:671
+msgid "October"
+msgstr "Październik"
+
+#: includes/functions/metadata.php:672
+msgid "November"
+msgstr "Listopad"
+
+#: includes/functions/metadata.php:673
+msgid "December"
+msgstr "Grudzień"
+
+#: includes/functions/metadata.php:681
+msgid "Choose a month"
+msgstr "Wybierz miesiąc"
+
+#: includes/functions/metadata.php:685
+msgid "Publication day"
+msgstr "Dzień opublikowania"
+
+#: includes/functions/metadata.php:688
+msgid "The numeric day the resource was published."
+msgstr "Numeryczny dzień opublikowania zasobu."
+
+#: includes/functions/metadata.php:714
+msgid "Choose a day"
+msgstr "Wybierz dzień"
+
+#: includes/functions/metadata.php:718
+msgid "Publication Date"
+msgstr "Data opublikowania"
+
+#: includes/functions/metadata.php:721
+msgid ""
+"You can set the publication date for this resource using the year, month and"
+" day fields above."
+msgstr ""
+"Możesz ustawić datę publikacji tego zasobu, korzystając z powyższych pól "
+"roku, miesiąca i dnia."
+
+#: includes/functions/metadata.php:738
+msgid "Revisions"
+msgstr "Zmiany"
+
+#: includes/functions/metadata.php:741
+msgid "Revisions of the resource."
+msgstr "Zmiany zasobu."
+
+#: includes/functions/metadata.php:753
+msgid "Add revision"
+msgstr "Dodaj zmianę"
+
+#: includes/functions/metadata.php:757
+msgid "Revision date"
+msgstr "Data zmiany"
+
+#: includes/functions/metadata.php:760
+msgid "The date of this revision."
+msgstr "Data tej zmiany."
+
+#: includes/functions/metadata.php:774
+msgid "Revision description"
+msgstr "Opis zmiany"
+
+#: includes/functions/metadata.php:777
+msgid "A brief description of this revision."
+msgstr "Krótki opis tej zmiany."
+
+#: includes/functions/metadata.php:827
+msgid "About the Publication"
+msgstr "O publikacji"
+
+#: includes/functions/metadata.php:831
+msgid "Publication name"
+msgstr "Nazwa publikacji"
+
+#: includes/functions/metadata.php:834
+msgid "Name of the publication in which the resource appears."
+msgstr "Nazwa publikacji, w której pojawia się zasób."
+
+#: includes/functions/metadata.php:850
+msgid "Publication link"
+msgstr "Link publikacji"
+
+#: includes/functions/metadata.php:853
+msgid "Web address for the publication (must begin with http:// or https://)."
+msgstr ""
+"Adres internetowy publikacji (musi zaczynać się od http: // lub https: //)."
+
+#: includes/functions/metadata.php:888
+msgid "About the Publisher"
+msgstr "O wydawcy"
+
+#: includes/functions/metadata.php:892
+msgid "Publisher name"
+msgstr "Nazwa wydawcy"
+
+#: includes/functions/metadata.php:895
+msgid "Name of the resource publisher."
+msgstr "Nazwa wydawcy zasobów."
+
+#: includes/functions/metadata.php:911
+msgid "Publisher link"
+msgstr "Link wydawcy"
+
+#: includes/functions/metadata.php:914
+msgid "Web address for the publisher (must begin with http:// or https://)."
+msgstr ""
+"Adres internetowy wydawcy (musi zaczynać się od http: // lub https: //)."
+
+#: includes/functions/metadata.php:927
+msgid "Publisher city"
+msgstr "Miasto wydawcy"
+
+#: includes/functions/metadata.php:930
+msgid "Town or city where the publisher is located."
+msgstr "Miasto, w którym znajduje się wydawca."
+
+#: includes/functions/metadata.php:946
+msgid "Publisher country"
+msgstr "Kraj wydawcy"
+
+#: includes/functions/metadata.php:949
+msgid "Country where the publisher is located."
+msgstr "Kraj, w którym znajduje się wydawca."
+
+#: includes/functions/metadata.php:964
+msgid "Select a country"
+msgstr "Wybierz kraj"
+
+#: includes/functions/metadata.php:993
+msgid "Distribution License or Rights"
+msgstr "Licenjca dystrybucyjna lub prawa"
+
+#: includes/functions/metadata.php:997
+msgid "License or rights"
+msgstr "Licencja lub prawa"
+
+#: includes/functions/metadata.php:1000
+msgid "License or rights under which the resource is distributed."
+msgstr "Licencja lub prawa, na podstawie których dystrybuowany jest zasób."
+
+#: includes/functions/metadata.php:1009
+msgid "All Rights Reserved"
+msgstr "Wszelkie prawa zastrzeżone"
+
+#: includes/functions/metadata.php:1010
+msgid "Creative Commons Attribution"
+msgstr "Creative Commons Uznanie autorstwa"
+
+#: includes/functions/metadata.php:1011
+msgid "Creative Commons Attribution-NonCommercial"
+msgstr "Creative Commons Uznanie autorstwa - Użycie niekomercyjne"
+
+#: includes/functions/metadata.php:1012
+msgid "Creative Commons Attribution-NoDerivatives"
+msgstr "Creative Commons Uznanie autorstwa - Bez utworów zależnych"
+
+#: includes/functions/metadata.php:1013
+msgid "Creative Commons Attribution-ShareAlike"
+msgstr "Creative Commons Uznanie autorstwa - Na tych samych warunkach"
+
+#: includes/functions/metadata.php:1014
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
+msgstr ""
+"Creative Commons Uznanie autorstwa - Użycie niekomercyjne-Bez utworów "
+"zależnych"
+
+#: includes/functions/metadata.php:1015
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
+msgstr ""
+"Creative Commons Uznanie autorstwa - Użycie niekomercyjne-Na tych samych "
+"warunkach"
+
+#: includes/functions/metadata.php:1016
+msgid "Educational Community License"
+msgstr "Licencja społeczności edukacyjnej"
+
+#: includes/functions/metadata.php:1017
+msgid "No Rights Reserved"
+msgstr "Żadne prawa zastrzeżone"
+
+#: includes/functions/metadata.php:1018
+msgid "No Known Copyright"
+msgstr "Brak znanych praw autorskich"
+
+#: includes/functions/metadata.php:1019
+msgid "Custom…"
+msgstr "Spersonalizowane..."
+
+#: includes/functions/metadata.php:1027
+msgid "Choose a license or rights"
+msgstr "Wybierz licencję lub prawa"
+
+#: includes/functions/metadata.php:1031
+msgid "Custom license or rights"
+msgstr "Wybierz licencję lub prawa"
+
+#: includes/functions/metadata.php:1037
+msgid "Custom license or rights statement."
+msgstr "Wybierz licencję lub prawa"
+
+#: includes/functions/metadata.php:1038
+msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
+msgstr ""
+"Ta funkcja jest włączona, gdy w polu „Licencja lub prawa” wybrano "
+"„Spersonalizowane…”."
+
+#: includes/functions/metadata.php:1086
+msgid "Archival Links"
+msgstr "Linki archiwalne"
+
+#: includes/functions/metadata.php:1096
+msgid ""
+"Links to archive copy on perma.cc. Specify multiple links if the resource "
+"spans multiple pages."
+msgstr ""
+"Linki do kopii archiwalnej na perma.cc. Podaj wiele linków, jeśli zasób "
+"obejmuje wiele stron."
+
+#. translators: link to https://perma.cc
+#: includes/functions/metadata.php:1098
+msgid "%s provides web archiving for scholars, journals, courts, and others."
+msgstr ""
+"%s zapewnia archiwizację internetową dla uczonych, czasopism, sądów i "
+"innych."
+
+#: includes/functions/metadata.php:1112
+msgid "Add perma.cc link"
+msgstr "Dodaj perma.cc link"
+
+#: includes/functions/metadata.php:1116
+msgid "Perma.cc link"
+msgstr "Perma.cc link"
+
+#: includes/functions/metadata.php:1134
+msgid "Internet Archive"
+msgstr "Archiwum internetowe"
+
+#: includes/functions/metadata.php:1140
+msgid ""
+"Links to archive copy on the Internet Archive. Specify multiple links if the"
+" resource spans multiple pages."
+msgstr ""
+"Linki do kopii archiwalnej na archiwum internetowym. Podaj wiele linków, "
+"jeśli zasób obejmuje wiele stron."
+
+#. translators: link to https://web.archive.org
+#: includes/functions/metadata.php:1142
+msgid "%s provides free and open web archiving."
+msgstr "%s zapewnia bezpłatną i otwartą archiwizację internetową."
+
+#: includes/functions/metadata.php:1156
+msgid "Add Internet Archive link"
+msgstr "Dodaj link do archiwum internetowego"
+
+#: includes/functions/metadata.php:1160
+msgid "Internet Archive link"
+msgstr "Link archiwum internetowego"
+
+#: includes/functions/metadata.php:1200
+msgid "Catalog Codes"
+msgstr "Kody katalogowe"
+
+#: includes/functions/metadata.php:1207
+msgid "Digital Object Identifier (or DOI) for this resource."
+msgstr "Cyfrowy identyfikator obiektu (lub DOI) dla tego zasobu."
+
+#: includes/functions/metadata.php:1226
+msgid "International Standard Book Number (or ISBN) for this resource."
+msgstr "Międzynarodowy Standardowy Numer Książki (lub ISBN) dla tego zasobu."
+
+#: includes/functions/metadata.php:1245
+msgid "International Standard Serial Number (or ISSN) for this resource."
+msgstr "Międzynarodowy Standardowy Numer Seryjny (lub ISSN) dla tego zasobu."
+
+#: includes/functions/metadata.php:1363
+msgid "This is not a valid DOI."
+msgstr "To nie jest prawidłowy DOI."
+
+#: includes/functions/metadata.php:1387
+msgid "This is not a valid ISBN."
+msgstr "To nie jest prawidłowy ISBN."
+
+#: includes/functions/metadata.php:1413
+msgid "This is not a valid ISSN."
+msgstr "To nie jest prawidłowy ISSN."
+
+#: includes/functions/metadata.php:1439
+msgid "This is not a valid Perma.cc link."
+msgstr "To nie jest prawidłowy Perma.cc link."
+
+#: includes/functions/metadata.php:1467
+msgid "This is not a valid Internet Archive link."
+msgstr "To nie jest prawidłowy link do archiwum internetowego."
+
+#: assets/js/editor/editor.js:24
+msgid ""
+"The publication day has been reset as there are only %1$d days in the "
+"selected month, and your choice of %2$d is no longer valid."
+msgstr ""
+"Dzień publikacji został zresetowany, ponieważ w wybranym miesiącu jest tylko"
+" %1$d dni, a twój wybór %2$d jest już nieważny."
+
+#. translators: %s: The label of the required field.
+#: assets/js/editor/editor.js:75 assets/js/editor/editor.js:93
+msgid "A %s is required."
+msgstr "%s jest wymagane,"
+
+#: assets/js/editor/editor.js:88
+msgid "The form contains errors:"
+msgstr "Formularz zawiera błędy:"
