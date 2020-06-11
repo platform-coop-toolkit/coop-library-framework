@@ -1,0 +1,1132 @@
+# Copyright (C) 2020 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Co-op Library Framework plugin.
+# Translators:
+# Priya Ponmalai <priiyap@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-op Library Framework 1.0.0-rc.1\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
+"POT-Creation-Date: 2020-06-10T00:41:25+00:00\n"
+"PO-Revision-Date: 2020-04-01 17:03+0000\n"
+"Last-Translator: Priya Ponmalai <priiyap@gmail.com>, 2020\n"
+"Language-Team: Malayalam (https://www.transifex.com/platform-cooperative-development-kit/teams/107673/ml/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ml\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: coop-library-framework\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Co-op Library Framework"
+msgstr "കോ-ഓപ്പ് ലൈബ്രറി ഫ്രെയിംവർക്ക്"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/coop-library-framework/"
+msgstr "https://github.com/platform-coop-toolkit/coop-library-framework/"
+
+#. Description of the plugin
+msgid ""
+"Custom post type and metadata utilities for the Platform Co-op Resource "
+"Library."
+msgstr ""
+"കോ-ഓപ്പ് റിസോഴ്സ് ലൈബ്രറി പ്ലാറ്റ്ഫോമിന് വേണ്ടിയുള്ള കസ്റ്റം പോസ്റ്റ് തരവും "
+"മെറ്റാഡാറ്റ ഉപയുക്തതകളും."
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr "പ്ലാറ്റ്ഫോം കോഓപ്പറേറ്റീവ് ഡെവലപ്മെന്റ് കിറ്റ്"
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr "https://github.com/platform-coop-toolkit/"
+
+#: includes/classes/HiddenField.php:21
+msgid "Hidden"
+msgstr "മറച്ചത്"
+
+#: includes/functions/core.php:82
+msgid "Resource Language"
+msgstr "റിസോഴ്സ് ഭാഷ"
+
+#: includes/functions/core.php:89
+msgid "Display Language"
+msgstr "പ്രദർശന ഭാഷ"
+
+#: includes/functions/core.php:93 includes/functions/core.php:501
+#: includes/functions/core.php:526 includes/functions/core.php:530
+msgid "Format"
+msgstr "ഫോർമാറ്റ്"
+
+#: includes/functions/core.php:97 includes/functions/core.php:178
+#: includes/functions/core.php:195 includes/functions/core.php:205
+#: includes/functions/core.php:209
+msgid "Topics"
+msgstr "വിഷയങ്ങൾ"
+
+#: includes/functions/core.php:101
+msgid "Date Published"
+msgstr "പ്രസിദ്ധീകരിച്ച തീയതി"
+
+#: includes/functions/core.php:105
+msgid "Date Added"
+msgstr "ചേർത്ത തീയതി"
+
+#: includes/functions/core.php:111 includes/functions/core.php:131
+#: includes/functions/core.php:140 includes/functions/core.php:144
+msgid "Resources"
+msgstr "റിസോഴ്സുകൾ"
+
+#: includes/functions/core.php:112 includes/functions/core.php:139
+#: includes/functions/core.php:143
+msgid "Resource"
+msgstr "റിസോഴ്സ്"
+
+#: includes/functions/core.php:113
+msgid "All Resources"
+msgstr "എല്ലാ റിസോഴ്സുകളും"
+
+#: includes/functions/core.php:114
+msgid "Resource Archives"
+msgstr "റിസോഴ്സ് ആർ‌ക്കൈവ്"
+
+#: includes/functions/core.php:115
+msgid "Resource Attributes"
+msgstr "റിസോഴ്സിന്റെ ഗുണങ്ങൾ"
+
+#: includes/functions/core.php:116
+msgid "Insert into resource"
+msgstr "റിസോഴ്സുകളിലേക്ക് ഉൾപ്പെടുത്തുക"
+
+#: includes/functions/core.php:117
+msgid "Uploaded to this resource"
+msgstr "ഈ റിസോഴ്സിലേക്ക് അപ്ലോഡ് ചെയ്തു"
+
+#: includes/functions/core.php:118
+msgid "Filter resources list"
+msgstr "റിസോഴ്സുകളുടെ പട്ടിക തരംതിതിരിക്കുക"
+
+#: includes/functions/core.php:119
+msgid "Resources list navigation"
+msgstr "റിസോഴ്സുകളുടെ ലിസ്റ്റ് നാവിഗേഷൻ"
+
+#: includes/functions/core.php:120
+msgid "Resources list"
+msgstr "റിസോഴ്സുകളുടെ പട്ടിക"
+
+#: includes/functions/core.php:121
+msgid "New Resource"
+msgstr "പുതിയ റിസോഴ്സ്"
+
+#: includes/functions/core.php:122
+msgid "Add New"
+msgstr "പുതിയത് ചേർക്കുക"
+
+#: includes/functions/core.php:123
+msgid "Add New Resource"
+msgstr "പുതിയ റിസോഴ്സ് ചേർക്കുക"
+
+#: includes/functions/core.php:124
+msgid "Edit Resource"
+msgstr "റിസോഴ്സ് തിരുത്തുക"
+
+#: includes/functions/core.php:125
+msgid "View Resource"
+msgstr "റിസോഴ്സ് കാണുക"
+
+#: includes/functions/core.php:126
+msgid "View Resources"
+msgstr "റിസോഴ്സുകൾ കാണുക"
+
+#: includes/functions/core.php:127
+msgid "Search resources"
+msgstr "റിസോഴ്സുകൾ തിരയുക"
+
+#: includes/functions/core.php:128
+msgid "No resources found"
+msgstr "റിസോഴ്സുകളൊന്നും കണ്ടെത്തിയില്ല"
+
+#: includes/functions/core.php:129
+msgid "No resources found in trash"
+msgstr "ട്രാഷിൽ റിസോഴ്സുകളൊന്നും കണ്ടെത്തിയില്ല"
+
+#: includes/functions/core.php:130
+msgid "Parent Resource:"
+msgstr "പേരന്റ് റിസോഴ്സ്:"
+
+#: includes/functions/core.php:179 includes/functions/core.php:204
+#: includes/functions/core.php:208
+msgid "Topic"
+msgstr "വിഷയം"
+
+#: includes/functions/core.php:180
+msgid "Search Topics"
+msgstr "വിഷയങ്ങൾ തിരയുക"
+
+#: includes/functions/core.php:181
+msgid "Popular Topics"
+msgstr "ജനപ്രിയമായ വിഷയങ്ങൾ"
+
+#: includes/functions/core.php:182
+msgid "All Topics"
+msgstr "എല്ലാ വിഷയങ്ങളും"
+
+#: includes/functions/core.php:183
+msgid "Parent Topic"
+msgstr "പേരന്റ് വിഷയം"
+
+#: includes/functions/core.php:184
+msgid "Parent Topic:"
+msgstr "പേരന്റ് വിഷയം:"
+
+#: includes/functions/core.php:185
+msgid "Edit Topic"
+msgstr "വിഷയം തിരുത്തുക"
+
+#: includes/functions/core.php:186
+msgid "Update Topic"
+msgstr "വിഷയം അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: includes/functions/core.php:187
+msgid "View Topic"
+msgstr "വിഷയം കാണുക"
+
+#: includes/functions/core.php:188
+msgid "Add New Topic"
+msgstr "പുതിയ വിഷയം ചേർക്കുക"
+
+#: includes/functions/core.php:189
+msgid "New Topic"
+msgstr "പുതിയ വിഷയം"
+
+#: includes/functions/core.php:190
+msgid "Separate topics with commas"
+msgstr "വിഷയങ്ങൾ കോമ കൊണ്ട് വേർതിരിക്കുക"
+
+#: includes/functions/core.php:191
+msgid "Add or remove topics"
+msgstr "വിഷയങ്ങൾ ചേർക്കുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യുക"
+
+#: includes/functions/core.php:192
+msgid "Choose from the most used topics"
+msgstr "ഏറ്റവും ഉപയോഗിക്കപ്പെട്ട വിഷയങ്ങളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/core.php:193
+msgid "No topics found."
+msgstr "വിഷയങ്ങളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: includes/functions/core.php:194
+msgid "No topics"
+msgstr "വിഷയങ്ങൾ ഇല്ല"
+
+#: includes/functions/core.php:196
+msgid "Topics list navigation"
+msgstr "വിഷയങ്ങളുടെ പട്ടിക നാവിഗേഷൻ"
+
+#: includes/functions/core.php:197
+msgid "Topics list"
+msgstr "വിഷയങ്ങളുടെ പട്ടിക"
+
+#: includes/functions/core.php:198
+msgid "&larr; Back to Topics"
+msgstr "&larr; വിഷയങ്ങളിലേക്ക് തിരികെ"
+
+#: includes/functions/core.php:243 includes/functions/core.php:260
+#: includes/functions/core.php:270 includes/functions/core.php:274
+msgid "Goals"
+msgstr "ലക്ഷ്യങ്ങൾ"
+
+#: includes/functions/core.php:244 includes/functions/core.php:269
+#: includes/functions/core.php:273
+msgid "Goal"
+msgstr "ലക്ഷ്യം"
+
+#: includes/functions/core.php:245
+msgid "Search Goals"
+msgstr "ലക്ഷ്യങ്ങൾ തിരയുക"
+
+#: includes/functions/core.php:246
+msgid "Popular Goals"
+msgstr "ജനപ്രിയമായ ലക്ഷ്യങ്ങൾ"
+
+#: includes/functions/core.php:247
+msgid "All Goals"
+msgstr "എല്ലാ ലക്ഷ്യങ്ങളും"
+
+#: includes/functions/core.php:248
+msgid "Parent Goal"
+msgstr "ഉത്ഭവ ലക്ഷ്യം"
+
+#: includes/functions/core.php:249
+msgid "Parent Goal:"
+msgstr "ഉത്ഭവ ലക്ഷ്യം:"
+
+#: includes/functions/core.php:250
+msgid "Edit Goal"
+msgstr "ലക്ഷ്യം തിരുത്തുക"
+
+#: includes/functions/core.php:251
+msgid "Update Goal"
+msgstr "ലക്ഷ്യം അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: includes/functions/core.php:252
+msgid "View Goal"
+msgstr "ലക്ഷ്യം കാണുക"
+
+#: includes/functions/core.php:253
+msgid "Add New Goal"
+msgstr "പുതിയ ലക്ഷ്യം ചേർക്കുക"
+
+#: includes/functions/core.php:254
+msgid "New Goal"
+msgstr "പുതിയ ലക്ഷ്യം"
+
+#: includes/functions/core.php:255
+msgid "Separate goals with commas"
+msgstr "ലക്ഷ്യങ്ങൾ കോമ കൊണ്ട് വേർതിരിക്കുക"
+
+#: includes/functions/core.php:256
+msgid "Add or remove goals"
+msgstr "ലക്ഷ്യങ്ങൾ ചേർക്കുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യുക"
+
+#: includes/functions/core.php:257
+msgid "Choose from the most used goals"
+msgstr "ഏറ്റവും ഉപയോഗിക്കപ്പെട്ട ലക്ഷ്യങ്ങളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/core.php:258
+msgid "No goals found."
+msgstr "ഒരു ലക്ഷ്യവും കണ്ടെത്തിയില്ല."
+
+#: includes/functions/core.php:259
+msgid "No goals"
+msgstr "ലക്ഷ്യങ്ങളില്ല"
+
+#: includes/functions/core.php:261
+msgid "Goals list navigation"
+msgstr "ലക്ഷ്യങ്ങളുടെ പട്ടിക നാവിഗേഷൻ"
+
+#: includes/functions/core.php:262
+msgid "Goals list"
+msgstr "ലക്ഷ്യങ്ങളുടെ പട്ടിക"
+
+#: includes/functions/core.php:263
+msgid "&larr; Back to Goals"
+msgstr "&larr; ലക്ഷ്യങ്ങളിലേക്ക് തിരികെ"
+
+#: includes/functions/core.php:307 includes/functions/core.php:324
+#: includes/functions/core.php:334 includes/functions/core.php:338
+msgid "Regions"
+msgstr "പ്രദേശങ്ങൾ"
+
+#: includes/functions/core.php:308 includes/functions/core.php:333
+#: includes/functions/core.php:337
+msgid "Region"
+msgstr "പ്രദേശം"
+
+#: includes/functions/core.php:309
+msgid "Search Regions"
+msgstr "പ്രദേശങ്ങൾ തിരയുക"
+
+#: includes/functions/core.php:310
+msgid "Popular Regions"
+msgstr "ജനപ്രിയമായ ലക്ഷ്യങ്ങൾ"
+
+#: includes/functions/core.php:311
+msgid "All Regions"
+msgstr "എല്ലാ പ്രദേശങ്ങളും"
+
+#: includes/functions/core.php:312
+msgid "Parent Region"
+msgstr "ഉത്ഭവ പ്രദേശം"
+
+#: includes/functions/core.php:313
+msgid "Parent Region:"
+msgstr "ഉത്ഭവ പ്രദേശം:"
+
+#: includes/functions/core.php:314
+msgid "Edit Region"
+msgstr "പ്രദേശം തിരുത്തുക"
+
+#: includes/functions/core.php:315
+msgid "Update Region"
+msgstr "പ്രദേശം അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: includes/functions/core.php:316
+msgid "View Region"
+msgstr "പ്രദേശം കാണുക"
+
+#: includes/functions/core.php:317
+msgid "Add New Region"
+msgstr "പുതിയ പ്രദേശം ചേർക്കുക"
+
+#: includes/functions/core.php:318
+msgid "New Region"
+msgstr "പുതിയ പ്രദേശം"
+
+#: includes/functions/core.php:319
+msgid "Separate regions with commas"
+msgstr "പ്രദേശങ്ങൾ കോമ കൊണ്ട് വേർതിരിക്കുക"
+
+#: includes/functions/core.php:320
+msgid "Add or remove regions"
+msgstr "പ്രദേശങ്ങൾ ചേർക്കുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യുക"
+
+#: includes/functions/core.php:321
+msgid "Choose from the most used regions"
+msgstr "ഏറ്റവും ഉപയോഗിക്കപ്പെട്ട പ്രദേശങ്ങളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/core.php:322
+msgid "No regions found."
+msgstr "പ്രദേശങ്ങളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: includes/functions/core.php:323
+msgid "No regions"
+msgstr "പ്രദേശങ്ങളില്ല"
+
+#: includes/functions/core.php:325
+msgid "Regions list navigation"
+msgstr "പ്രദേശങ്ങളുടെ പട്ടിക നാവിഗേഷൻ"
+
+#: includes/functions/core.php:326
+msgid "Regions list"
+msgstr "പ്രദേശങ്ങളുടെ പട്ടിക"
+
+#: includes/functions/core.php:327
+msgid "&larr; Back to Regions"
+msgstr "&larr; പ്രദേശങ്ങളിലേക്ക് തിരികെ"
+
+#: includes/functions/core.php:372 includes/functions/core.php:389
+#: includes/functions/core.php:399 includes/functions/core.php:403
+msgid "Sectors"
+msgstr "മേഖലകൾ"
+
+#: includes/functions/core.php:373 includes/functions/core.php:398
+#: includes/functions/core.php:402
+msgid "Sector"
+msgstr "മേഖല"
+
+#: includes/functions/core.php:374
+msgid "Search Sectors"
+msgstr "മേഖലകൾ തിരയുക"
+
+#: includes/functions/core.php:375
+msgid "Popular Sectors"
+msgstr "ജനപ്രിയമായ മേഖലകൾ"
+
+#: includes/functions/core.php:376
+msgid "All Sectors"
+msgstr "എല്ലാ മേഖലകളും"
+
+#: includes/functions/core.php:377
+msgid "Parent Sector"
+msgstr "ഉത്ഭവ മേഖല"
+
+#: includes/functions/core.php:378
+msgid "Parent Sector:"
+msgstr "ഉത്ഭവ മേഖല:"
+
+#: includes/functions/core.php:379
+msgid "Edit Sector"
+msgstr "മേഖല തിരുത്തുക"
+
+#: includes/functions/core.php:380
+msgid "Update Sector"
+msgstr "മേഖല അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: includes/functions/core.php:381
+msgid "View Sector"
+msgstr "മേഖല കാണുക"
+
+#: includes/functions/core.php:382
+msgid "Add New Sector"
+msgstr "പുതിയ മേഖല ചേർക്കുക"
+
+#: includes/functions/core.php:383
+msgid "New Sector"
+msgstr "പുതിയ മേഖല"
+
+#: includes/functions/core.php:384
+msgid "Separate sectors with commas"
+msgstr "മേഖലകൾ കോമ കൊണ്ട് വേർതിരിക്കുക"
+
+#: includes/functions/core.php:385
+msgid "Add or remove sectors"
+msgstr "മേഖലകൾ ചേർക്കുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യുക"
+
+#: includes/functions/core.php:386
+msgid "Choose from the most used sectors"
+msgstr "ഏറ്റവും ഉപയോഗിക്കപ്പെട്ട മേഖലകളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/core.php:387
+msgid "No sectors found."
+msgstr "മേഖലകളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: includes/functions/core.php:388
+msgid "No sectors"
+msgstr "മേഖലകളൊന്നുമില്ല"
+
+#: includes/functions/core.php:390
+msgid "Sectors list navigation"
+msgstr "മേഖലകളുടെ പട്ടിക നാവിഗേഷൻ"
+
+#: includes/functions/core.php:391
+msgid "Sectors list"
+msgstr "മേഖലകളുടെ പട്ടിക"
+
+#: includes/functions/core.php:392
+msgid "&larr; Back to Sectors"
+msgstr "&larr; മേഖലകളിലേക്ക് തിരികെ"
+
+#: includes/functions/core.php:436 includes/functions/core.php:453
+#: includes/functions/core.php:463 includes/functions/core.php:467
+msgid "Co-op Types"
+msgstr "കോ-ഓപ്പ് തരങ്ങൾ"
+
+#: includes/functions/core.php:437 includes/functions/core.php:462
+#: includes/functions/core.php:466
+msgid "Co-op Type"
+msgstr "കോ-ഓപ്പ് തരം"
+
+#: includes/functions/core.php:438
+msgid "Search Co-op Types"
+msgstr "കോ-ഓപ്പ് തരങ്ങൾ തിരയുക"
+
+#: includes/functions/core.php:439
+msgid "Popular Co-op Types"
+msgstr "ജനപ്രിയമായ കോ-ഓപ്പ് തരങ്ങൾ"
+
+#: includes/functions/core.php:440
+msgid "All Co-op Types"
+msgstr "എല്ലാ കോ-ഓപ്പ് തരങ്ങളും"
+
+#: includes/functions/core.php:441
+msgid "Parent Co-op Type"
+msgstr "ഉത്ഭവ പേരന്റ് തരം"
+
+#: includes/functions/core.php:442
+msgid "Parent Co-op Type:"
+msgstr "ഉത്ഭവ പേരന്റ് തരം:"
+
+#: includes/functions/core.php:443
+msgid "Edit Co-op Type"
+msgstr "കോ-ഓപ്പ് തരം തിരുത്തുക"
+
+#: includes/functions/core.php:444
+msgid "Update Co-op Type"
+msgstr "കോ-ഓപ്പ് തരം അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: includes/functions/core.php:445
+msgid "View Co-op Type"
+msgstr "കോ-ഓപ്പ് തരം കാണുക"
+
+#: includes/functions/core.php:446
+msgid "Add New Co-op Type"
+msgstr "പുതിയ കോ-ഓപ്പ് തരം ചേർക്കുക"
+
+#: includes/functions/core.php:447
+msgid "New Co-op Type"
+msgstr "പുതിയ കോ-ഓപ്പ് തരം"
+
+#: includes/functions/core.php:448
+msgid "Separate co-op types with commas"
+msgstr "കോ-ഓപ്പ് തരങ്ങൾ കോമ കൊണ്ട് വേർതിരിക്കുക"
+
+#: includes/functions/core.php:449
+msgid "Add or remove co-op types"
+msgstr "കോ-ഓപ്പ് തരങ്ങൾ ചേർക്കുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യുക"
+
+#: includes/functions/core.php:450
+msgid "Choose from the most used co-op types"
+msgstr "ഏറ്റവും ഉപയോഗിക്കപ്പെട്ട കോ-ഓപ്പ് തരങ്ങളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/core.php:451
+msgid "No co-op types found."
+msgstr "ഒരു കോ-ഓപ്പ് തരവും കണ്ടെത്തിയില്ല."
+
+#: includes/functions/core.php:452
+msgid "No co-op types"
+msgstr "കോ-ഓപ്പ് തരങ്ങളൊന്നുമില്ല"
+
+#: includes/functions/core.php:454
+msgid "Co-op Types list navigation"
+msgstr "കോ-ഓപ്പ് തരങ്ങളുടെ പട്ടിക നാവിഗേഷൻ"
+
+#: includes/functions/core.php:455
+msgid "Co-op Types list"
+msgstr "കോ-ഓപ്പ് തരങ്ങളുടെ പട്ടിക"
+
+#: includes/functions/core.php:456
+msgid "&larr; Back to Co-op Types"
+msgstr "&larr; കോ-ഓപ്പ് തരങ്ങളിലേക്ക് തിരികെ"
+
+#: includes/functions/core.php:500 includes/functions/core.php:517
+#: includes/functions/core.php:527 includes/functions/core.php:531
+msgid "Formats"
+msgstr "ഫോർമാറ്റുകൾ"
+
+#: includes/functions/core.php:502
+msgid "Search Formats"
+msgstr "ഫോർമാറ്റുകൾ തിരയുക"
+
+#: includes/functions/core.php:503
+msgid "Popular Formats"
+msgstr "ജനപ്രിയമായ ഫോർമാറ്റുകൾ"
+
+#: includes/functions/core.php:504
+msgid "All Formats"
+msgstr "എല്ലാ ഫോർമാറ്റുകളും"
+
+#: includes/functions/core.php:505
+msgid "Parent Format"
+msgstr "പേരന്റ് ഫോർമാറ്റ്"
+
+#: includes/functions/core.php:506
+msgid "Parent Format:"
+msgstr "പേരന്റ് ഫോർമാറ്റ്:"
+
+#: includes/functions/core.php:507
+msgid "Edit Format"
+msgstr "ഫോർമാറ്റ് തിരുത്തുക"
+
+#: includes/functions/core.php:508
+msgid "Update Format"
+msgstr "ഫോർമാറ്റ് അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: includes/functions/core.php:509
+msgid "View Format"
+msgstr "ഫോർമാറ്റ് കാണുക"
+
+#: includes/functions/core.php:510
+msgid "Add New Format"
+msgstr "പുതിയ ഫോർമാറ്റ് ചേർക്കുക"
+
+#: includes/functions/core.php:511
+msgid "New Format"
+msgstr "പുതിയ ഫോർമാറ്റ്"
+
+#: includes/functions/core.php:512
+msgid "Separate formats with commas"
+msgstr "ഫോർമാറ്റുകൾ കോമ കൊണ്ട് വേർതിരിക്കുക"
+
+#: includes/functions/core.php:513
+msgid "Add or remove formats"
+msgstr "ഫോർമാറ്റുകൾ ചേർക്കുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യുക"
+
+#: includes/functions/core.php:514
+msgid "Choose from the most used formats"
+msgstr "ഏറ്റവും ഉപയോഗിക്കപ്പെട്ട ഫോർമാറ്റുകളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/core.php:515
+msgid "No formats found."
+msgstr "ഫോർമാറ്റുകളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: includes/functions/core.php:516
+msgid "No formats"
+msgstr "ഫോർമാറ്റുകളൊന്നുമില്ല"
+
+#: includes/functions/core.php:518
+msgid "Formats list navigation"
+msgstr "ഫോർമാറ്റുകളുടെ പട്ടിക നാവിഗേഷൻ"
+
+#: includes/functions/core.php:519
+msgid "Formats list"
+msgstr "ഫോർമാറ്റുകളുടെ പട്ടിക"
+
+#: includes/functions/core.php:520
+msgid "&larr; Back to Formats"
+msgstr "&larr; ഫോർമാറ്റുകളിലേക്ക് തിരികെ"
+
+#: includes/functions/internationalization.php:33
+#: includes/functions/internationalization.php:48
+msgid "Localization Settings"
+msgstr "ലോക്കലൈസേഷൻ ക്രമീകരണങ്ങൾ"
+
+#: includes/functions/internationalization.php:34
+msgid "Localization"
+msgstr "ലോക്കലൈസേഷൻ"
+
+#: includes/functions/internationalization.php:52
+msgid "Enabled Languages"
+msgstr "പ്രാപ്തമാക്കിയ ഭാഷകൾ"
+
+#: includes/functions/internationalization.php:55
+msgid ""
+"Select the languages you'd like to be displayed to site visitors. English "
+"content will always be displayed."
+msgstr ""
+"സൈറ്റ് സന്ദർശകർക്കായി നിങ്ങൾ പ്രദർശിപ്പിക്കാൻ ആഗ്രഹിക്കുന്ന ഭാഷകൾ "
+"തിരഞ്ഞെടുക്കുക. ഇംഗ്ലീഷ് ഉള്ളടക്കം എല്ലായ്പ്പോഴും പ്രദർശിപ്പിക്കും."
+
+#: includes/functions/metadata.php:401
+msgid "General Information"
+msgstr "പൊതുവായ വിവരം"
+
+#: includes/functions/metadata.php:405
+msgid "Link to resource"
+msgstr "റിസോഴ്സിലേക്കുള്ള ലിങ്ക്"
+
+#: includes/functions/metadata.php:408
+msgid ""
+"Web address to access the resource (must begin with http:// or https://). "
+"This information is required."
+msgstr ""
+"റിസോഴ്സ് സ്വീകരിക്കാനുള്ള വെബ് വിലാസം (http:// അല്ലെങ്കിൽ  https:// എന്ന് "
+"ആരംഭിക്കണം). ഈ വിവരം ആവശ്യമാണ്."
+
+#: includes/functions/metadata.php:421
+msgid "Favorites"
+msgstr "പ്രിയപ്പെട്ടവ"
+
+#: includes/functions/metadata.php:424
+msgid "The number of times this resource has been favorited."
+msgstr "ഈ റിസോഴ്സ് പ്രിയപ്പെട്ടതാക്കിയ തവണകളുടെ എണ്ണം."
+
+#: includes/functions/metadata.php:441
+msgid "Resource language"
+msgstr "റിസോഴ്സ് ഭാഷ"
+
+#: includes/functions/metadata.php:444
+msgid "The language of the resource. This information is required."
+msgstr "റിസോഴ്സിന്റെ ഭാഷ. ഈ വിവരം ആവശ്യമാണ്."
+
+#: includes/functions/metadata.php:459
+msgid "Choose a language"
+msgstr "ഒരു ഭാഷ തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/metadata.php:463
+msgid "Short title"
+msgstr "ഹ്രസ്വമായ ശീർഷകം"
+
+#: includes/functions/metadata.php:466
+msgid "Shorter title used in resource listings. Maximum 72 characters."
+msgstr ""
+"ഹ്രസ്വമായ ശീർഷകം റിസോഴ്സ് പട്ടികകളിൽ ഉപയോഗിക്കും. പരമാവധി 72 അക്ഷരങ്ങൾ."
+
+#: includes/functions/metadata.php:482
+msgid "Paywall"
+msgstr "പേവാൾ"
+
+#: includes/functions/metadata.php:493
+msgid "Is this resource behind a paywall?"
+msgstr "ഇത് ഒരു പേവാളിന് പിന്നിലുള്ള റിസോഴ്സ് ആണോ?"
+
+#: includes/functions/metadata.php:501
+msgid "Authors"
+msgstr "സൃഷ്ടാക്കൾ"
+
+#: includes/functions/metadata.php:504
+msgid "Authors of the resource."
+msgstr "റിസോഴ്സുകളുടെ സൃഷ്ടാക്കൾ."
+
+#: includes/functions/metadata.php:516
+msgid "Add author"
+msgstr "സൃഷ്ടാവിനെ ചേർക്കുക"
+
+#: includes/functions/metadata.php:520
+msgid "Author"
+msgstr "സൃഷ്ടാവ്"
+
+#: includes/functions/metadata.php:541
+msgid "Editors"
+msgstr "എഡിറ്റർമാർ‌"
+
+#: includes/functions/metadata.php:544
+msgid "Editors of the resource."
+msgstr "റിസോഴ്സിന്റെ എഡിറ്റർ."
+
+#: includes/functions/metadata.php:556
+msgid "Add editor"
+msgstr "എഡിറ്ററെ ചേർക്കുക"
+
+#: includes/functions/metadata.php:560
+msgid "Editor"
+msgstr "എഡിറ്റർ"
+
+#: includes/functions/metadata.php:581
+msgid "Translators"
+msgstr "വിവർത്തകർ"
+
+#: includes/functions/metadata.php:584
+msgid "Translators of the resource."
+msgstr "റിസോഴ്സിന്റെ വിവർത്തകർ."
+
+#: includes/functions/metadata.php:596
+msgid "Add translator"
+msgstr "വിവർത്തകനെ ചേർക്കുക"
+
+#: includes/functions/metadata.php:600
+msgid "Translator"
+msgstr "വിവർത്തകൻ"
+
+#: includes/functions/metadata.php:621
+msgid "Publication year"
+msgstr "പ്രസാധന തീയതി"
+
+#: includes/functions/metadata.php:624
+msgid "The year the resource was published."
+msgstr "റിസോഴ്സ് പ്രസിദ്ധീകരിച്ച തീയതി."
+
+#: includes/functions/metadata.php:639
+msgid "Choose a year"
+msgstr "ഒരു വർഷം തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/metadata.php:643
+msgid "Publication month"
+msgstr "പ്രസാധം ചെയ്ത മാസം"
+
+#: includes/functions/metadata.php:646
+msgid "The month the resource was published."
+msgstr "റിസോഴ്സ് പ്രസിദ്ധീകരിച്ച മാസം."
+
+#: includes/functions/metadata.php:662
+msgid "January"
+msgstr "ജനുവരി"
+
+#: includes/functions/metadata.php:663
+msgid "February"
+msgstr "ഫെബ്രുവരി"
+
+#: includes/functions/metadata.php:664
+msgid "March"
+msgstr "മാർച്ച്"
+
+#: includes/functions/metadata.php:665
+msgid "April"
+msgstr "ഏപ്രിൽ"
+
+#: includes/functions/metadata.php:666
+msgid "May"
+msgstr "മെയ്"
+
+#: includes/functions/metadata.php:667
+msgid "June"
+msgstr "ജൂൺ"
+
+#: includes/functions/metadata.php:668
+msgid "July"
+msgstr "ജൂലൈ"
+
+#: includes/functions/metadata.php:669
+msgid "August"
+msgstr "ആഗസ്റ്റ്"
+
+#: includes/functions/metadata.php:670
+msgid "September"
+msgstr "സെപ്തംബർ"
+
+#: includes/functions/metadata.php:671
+msgid "October"
+msgstr "ഒക്ടോബർ"
+
+#: includes/functions/metadata.php:672
+msgid "November"
+msgstr "നവംബർ"
+
+#: includes/functions/metadata.php:673
+msgid "December"
+msgstr "ഡിസംബർ"
+
+#: includes/functions/metadata.php:681
+msgid "Choose a month"
+msgstr "ഒരു മാസം തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/metadata.php:685
+msgid "Publication day"
+msgstr "പ്രസാധന തീയതി"
+
+#: includes/functions/metadata.php:688
+msgid "The numeric day the resource was published."
+msgstr "റിസോഴ്സ് പ്രസിദ്ധീകരിച്ച ദിവസം അക്കത്തിൽ."
+
+#: includes/functions/metadata.php:714
+msgid "Choose a day"
+msgstr "ഒരു ദിവസം തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/metadata.php:718
+msgid "Publication Date"
+msgstr "പ്രസാധന തീയതി"
+
+#: includes/functions/metadata.php:721
+msgid ""
+"You can set the publication date for this resource using the year, month and"
+" day fields above."
+msgstr ""
+"നിങ്ങൾക്ക് മുകളിലുള്ള വർഷം, മാസം, ദിവസ ഫീൽഡുകൾ ഉപയോഗിച്ച് ഈ റിസോഴ്സിനുള്ള "
+"പ്രസാധന തീയതി ക്രമീകരിക്കാം."
+
+#: includes/functions/metadata.php:738
+msgid "Revisions"
+msgstr "ആവർത്തനങ്ങൾ"
+
+#: includes/functions/metadata.php:741
+msgid "Revisions of the resource."
+msgstr "റിസോഴ്സിന്റെ ആവർത്തനങ്ങൾ."
+
+#: includes/functions/metadata.php:753
+msgid "Add revision"
+msgstr "ആവർത്തനം ചേർക്കുക"
+
+#: includes/functions/metadata.php:757
+msgid "Revision date"
+msgstr "ആവർത്തന തീയതി"
+
+#: includes/functions/metadata.php:760
+msgid "The date of this revision."
+msgstr "ഈ ആവർത്തനത്തിന്റെ തീയതി."
+
+#: includes/functions/metadata.php:774
+msgid "Revision description"
+msgstr "ആവർത്തനത്തിന്റെ വിവരണം"
+
+#: includes/functions/metadata.php:777
+msgid "A brief description of this revision."
+msgstr "ഈ ആവർത്തനത്തിന്റെ ചുരുക്ക വിവരണം."
+
+#: includes/functions/metadata.php:827
+msgid "About the Publication"
+msgstr "പ്രസിദ്ധീകരണം സംബന്ധിച്ച്"
+
+#: includes/functions/metadata.php:831
+msgid "Publication name"
+msgstr "പ്രസിദ്ധീകരണത്തിന്റെ പേര്"
+
+#: includes/functions/metadata.php:834
+msgid "Name of the publication in which the resource appears."
+msgstr "റിസോഴ്സ് പ്രത്യക്ഷപ്പെട്ട പ്രസിദ്ധീകരണത്തിന്റെ പേര്."
+
+#: includes/functions/metadata.php:850
+msgid "Publication link"
+msgstr "പ്രസിദ്ധീകരണത്തിന്റെ ലിങ്ക്"
+
+#: includes/functions/metadata.php:853
+msgid "Web address for the publication (must begin with http:// or https://)."
+msgstr ""
+"പ്രസിദ്ധീകരണത്തിന്റെ വെബ് വിലാസം (http:// അല്ലെങ്കിൽ https:// എന്ന് "
+"ആരംഭിക്കണം)."
+
+#: includes/functions/metadata.php:888
+msgid "About the Publisher"
+msgstr "പ്രസാധകനെക്കുറിച്ച്"
+
+#: includes/functions/metadata.php:892
+msgid "Publisher name"
+msgstr "പ്രസാധകന്റെ പേര്"
+
+#: includes/functions/metadata.php:895
+msgid "Name of the resource publisher."
+msgstr "റിസോഴ്സ് പ്രസാധകന്റെ പേര്."
+
+#: includes/functions/metadata.php:911
+msgid "Publisher link"
+msgstr "പ്രസാധകന്റെ ലിങ്ക്"
+
+#: includes/functions/metadata.php:914
+msgid "Web address for the publisher (must begin with http:// or https://)."
+msgstr ""
+"പ്രസാധകന്റെ വെബ് വിലാസം (http:// അല്ലെങ്കിൽ https:// എന്ന് ആരംഭിക്കണം)."
+
+#: includes/functions/metadata.php:927
+msgid "Publisher city"
+msgstr "പ്രസാധകന്റെ നഗരം"
+
+#: includes/functions/metadata.php:930
+msgid "Town or city where the publisher is located."
+msgstr "പ്രസാധകൻ ഉള്ള ടൗൺ അല്ലെങ്കിൽ നഗരം."
+
+#: includes/functions/metadata.php:946
+msgid "Publisher country"
+msgstr "പ്രസാധകന്റെ രാജ്യം"
+
+#: includes/functions/metadata.php:949
+msgid "Country where the publisher is located."
+msgstr "പ്രസാധകൻ ഉള്ള രാജ്യം."
+
+#: includes/functions/metadata.php:964
+msgid "Select a country"
+msgstr "ഒരു രാജ്യം തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/metadata.php:993
+msgid "Distribution License or Rights"
+msgstr "വിതരണ ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങൾ"
+
+#: includes/functions/metadata.php:997
+msgid "License or rights"
+msgstr "ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങൾ"
+
+#: includes/functions/metadata.php:1000
+msgid "License or rights under which the resource is distributed."
+msgstr "റിസോഴ്സ് വിതരണം ചെയ്യുന്ന ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങൾക്ക് കീഴിൽ."
+
+#: includes/functions/metadata.php:1009
+msgid "All Rights Reserved"
+msgstr "എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തമാണ്"
+
+#: includes/functions/metadata.php:1010
+msgid "Creative Commons Attribution"
+msgstr "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ"
+
+#: includes/functions/metadata.php:1011
+msgid "Creative Commons Attribution-NonCommercial"
+msgstr "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ - വാണിജ്യേതരം"
+
+#: includes/functions/metadata.php:1012
+msgid "Creative Commons Attribution-NoDerivatives"
+msgstr "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ - ഡെറിവേറ്റീവ്സ് അല്ലാത്തത്"
+
+#: includes/functions/metadata.php:1013
+msgid "Creative Commons Attribution-ShareAlike"
+msgstr "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ - ഷെയർഅലൈക്ക്"
+
+#: includes/functions/metadata.php:1014
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
+msgstr ""
+"ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ - വാണിജ്യേതരം-ഡെറിവേറ്റീവ്സ് അല്ലാത്തത്"
+
+#: includes/functions/metadata.php:1015
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
+msgstr "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ - വാണിജ്യേതരം-ഷെയർഅലൈക്ക്"
+
+#: includes/functions/metadata.php:1016
+msgid "Educational Community License"
+msgstr "എജ്യുക്കേഷണൽ കമ്മിറ്റി ലൈസൻസ്"
+
+#: includes/functions/metadata.php:1017
+msgid "No Rights Reserved"
+msgstr "അവകാശങ്ങളൊന്നും നിക്ഷിപ്തമല്ല"
+
+#: includes/functions/metadata.php:1018
+msgid "No Known Copyright"
+msgstr "അറിയാവുന്ന പകർപ്പവകാശങ്ങളില്ല"
+
+#: includes/functions/metadata.php:1019
+msgid "Custom…"
+msgstr "കസ്റ്റം…"
+
+#: includes/functions/metadata.php:1027
+msgid "Choose a license or rights"
+msgstr "ഒരു ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങൾ തിരഞ്ഞെടുക്കുക"
+
+#: includes/functions/metadata.php:1031
+msgid "Custom license or rights"
+msgstr "കസ്റ്റം ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങൾ"
+
+#: includes/functions/metadata.php:1037
+msgid "Custom license or rights statement."
+msgstr "കസ്റ്റം ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങളുടെ സ്റ്റേറ്റ്മെന്റ്."
+
+#: includes/functions/metadata.php:1038
+msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
+msgstr ""
+"‘കസ്റ്റം…’ എന്നത് ‘ലൈസൻസ് അല്ലെങ്കിൽ അവകാശങ്ങൾ’ എന്നതിന് കീഴിൽ "
+"തിരഞ്ഞെടുക്കുമ്പോൾ ഇത് പ്രാപ്തമാക്കും."
+
+#: includes/functions/metadata.php:1086
+msgid "Archival Links"
+msgstr "ആർക്കൈവൽ ലിങ്കുകൾ"
+
+#: includes/functions/metadata.php:1096
+msgid ""
+"Links to archive copy on perma.cc. Specify multiple links if the resource "
+"spans multiple pages."
+msgstr ""
+"perma.cc-ലെ ആർക്കൈവ് കോപ്പിയിലേക്കുള്ള ലിങ്കുകൾ. പല പേജുകളിലായാണ് റിസോഴ്സ് "
+"പരന്നു കിടക്കുന്നതെങ്കിൽ പല ലിങ്കുകൾ പ്രസ്താവിക്കുക."
+
+#. translators: link to https://perma.cc
+#: includes/functions/metadata.php:1098
+msgid "%s provides web archiving for scholars, journals, courts, and others."
+msgstr ""
+"%s സ്കോളറുകൾ, ജേർണലുകൾ, കോടതികൾ, മറ്റുള്ളവ എന്നിവയ്ക്ക് വേണ്ടി വെബ് "
+"ആർക്കൈവിങ്ങ് ലഭ്യമാക്കുന്നു."
+
+#: includes/functions/metadata.php:1112
+msgid "Add perma.cc link"
+msgstr "perma.cc ലിങ്ക് ചേർക്കുക"
+
+#: includes/functions/metadata.php:1116
+msgid "Perma.cc link"
+msgstr "perma.cc ലിങ്ക്"
+
+#: includes/functions/metadata.php:1134
+msgid "Internet Archive"
+msgstr "ഇന്റർനെറ്റ് ആർക്കൈവ്"
+
+#: includes/functions/metadata.php:1140
+msgid ""
+"Links to archive copy on the Internet Archive. Specify multiple links if the"
+" resource spans multiple pages."
+msgstr ""
+"ഇന്റർനെറ്റ് ആർക്കൈവിലെ ആർക്കൈവ് കോപ്പിയിലേക്കുള്ള ലിങ്കുകൾ. പല പേജുകളിലായാണ്"
+" റിസോഴ്സ് പരന്നു കിടക്കുന്നതെങ്കിൽ പല ലിങ്കുകൾ പ്രസ്താവിക്കുക."
+
+#. translators: link to https://web.archive.org
+#: includes/functions/metadata.php:1142
+msgid "%s provides free and open web archiving."
+msgstr "%s സൗജന്യവും തുറന്നതുമായ വെബ് ആർക്കൈവിംഗ് ലഭ്യമാക്കുന്നു."
+
+#: includes/functions/metadata.php:1156
+msgid "Add Internet Archive link"
+msgstr "ഇന്റർനെറ്റ് ആർക്കൈവ് ലിങ്ക് ചേർക്കുക"
+
+#: includes/functions/metadata.php:1160
+msgid "Internet Archive link"
+msgstr "ഇന്റർനെറ്റ് ആർക്കൈവ് ലിങ്ക്"
+
+#: includes/functions/metadata.php:1200
+msgid "Catalog Codes"
+msgstr "കാറ്റലോഗ് കോഡുകൾ"
+
+#: includes/functions/metadata.php:1207
+msgid "Digital Object Identifier (or DOI) for this resource."
+msgstr "റിസോഴ്സിനുള്ള ഡിജിറ്റൽ ഒബ്ജക്ടീവ് ഐഡന്റിഫയർ (DOI-യ്ക്ക് വേണ്ടി)."
+
+#: includes/functions/metadata.php:1226
+msgid "International Standard Book Number (or ISBN) for this resource."
+msgstr ""
+"ഈ റിസോഴ്സിന് വേണ്ടിയുള്ള ഇന്റർനാഷണൽ സ്റ്റാൻഡേർഡ് ബുക്ക് നമ്പർ (അല്ലെങ്കിൽ "
+"ISBN)"
+
+#: includes/functions/metadata.php:1245
+msgid "International Standard Serial Number (or ISSN) for this resource."
+msgstr ""
+"ഈ റിസോഴ്സിന് വേണ്ടിയുള്ള ഇന്റർനാഷണൽ സ്റ്റാൻഡേർഡ് സീരിയൽ നമ്പർ (അല്ലെങ്കിൽ "
+"ISSN)"
+
+#: includes/functions/metadata.php:1363
+msgid "This is not a valid DOI."
+msgstr "ഇത് സാധുതയുള്ള ഒരു DOI അല്ല."
+
+#: includes/functions/metadata.php:1387
+msgid "This is not a valid ISBN."
+msgstr "ഇത് സാധുതയുള്ള ഒരു ISBN അല്ല."
+
+#: includes/functions/metadata.php:1413
+msgid "This is not a valid ISSN."
+msgstr "ഇത് സാധുതയുള്ള ഒരു ISSN അല്ല."
+
+#: includes/functions/metadata.php:1439
+msgid "This is not a valid Perma.cc link."
+msgstr "ഇത് സാധുതയുള്ള ഒരു Perma.cc ലിങ്ക് അല്ല."
+
+#: includes/functions/metadata.php:1467
+msgid "This is not a valid Internet Archive link."
+msgstr "ഇത് സാധുതയുള്ള ഒരു ഇന്റർനെറ്റ് ആർക്കൈവ് ലിങ്ക് അല്ല."
+
+#: assets/js/editor/editor.js:24
+msgid ""
+"The publication day has been reset as there are only %1$d days in the "
+"selected month, and your choice of %2$d is no longer valid."
+msgstr ""
+"തിരഞ്ഞെടുത്ത മാസത്തിൽ %1$d ദിവസങ്ങൾ മാത്രം ഉള്ളതിനാൽ പ്രസിദ്ധീകരണ തീയതി "
+"പുനക്രമീകരിച്ചു, നിങ്ങൾ %2$d തിരഞ്ഞെടുത്തതിന് ഇനി സാധുതയില്ല."
+
+#. translators: %s: The label of the required field.
+#: assets/js/editor/editor.js:75 assets/js/editor/editor.js:93
+msgid "A %s is required."
+msgstr "ഒരു %s ആവശ്യമാണ്."
+
+#: assets/js/editor/editor.js:88
+msgid "The form contains errors:"
+msgstr "ഫോമിൽ പിശകുകളുണ്ട്:"
