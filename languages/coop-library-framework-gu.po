@@ -1,0 +1,1122 @@
+# Copyright (C) 2020 Platform Cooperative Development Kit
+# This file is distributed under the same license as the Co-op Library Framework plugin.
+# Translators:
+# Pallavi Mehta <priya09.mehta@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-op Library Framework 1.0.0-rc.1\n"
+"Report-Msgid-Bugs-To: https://github.com/platform-coop-toolkit/coop-library-framework/issues\n"
+"POT-Creation-Date: 2020-06-10T00:41:25+00:00\n"
+"PO-Revision-Date: 2020-04-01 17:03+0000\n"
+"Last-Translator: Pallavi Mehta <priya09.mehta@gmail.com>, 2020\n"
+"Language-Team: Gujarati (https://www.transifex.com/platform-cooperative-development-kit/teams/107673/gu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: coop-library-framework\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Co-op Library Framework"
+msgstr "કો-ઓપ લાઇબ્રેરી ફ્રેમવર્ક"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/coop-library-framework/"
+msgstr "https://github.com/platform-coop-toolkit/coop-library-framework/"
+
+#. Description of the plugin
+msgid ""
+"Custom post type and metadata utilities for the Platform Co-op Resource "
+"Library."
+msgstr ""
+"પ્લેટફોર્મ કો-ઓપ સંસાધન લાઇબ્રેરી માટે કસ્ટમ પોસ્ટ પ્રકાર અને મેટાડેટા "
+"ઉપયોગિતાઓ."
+
+#. Author of the plugin
+msgid "Platform Cooperative Development Kit"
+msgstr "પ્લેટફોર્મ કોઓપરેટિવ ડેવલપમેન્ટ કીટ"
+
+#. Author URI of the plugin
+msgid "https://github.com/platform-coop-toolkit/"
+msgstr "https://github.com/platform-coop-toolkit/"
+
+#: includes/classes/HiddenField.php:21
+msgid "Hidden"
+msgstr "છુપાયેલું"
+
+#: includes/functions/core.php:82
+msgid "Resource Language"
+msgstr "સંસાધન ભાષા"
+
+#: includes/functions/core.php:89
+msgid "Display Language"
+msgstr "ભાષા પ્રદર્શિત કરો"
+
+#: includes/functions/core.php:93 includes/functions/core.php:501
+#: includes/functions/core.php:526 includes/functions/core.php:530
+msgid "Format"
+msgstr "ફોર્મેટ"
+
+#: includes/functions/core.php:97 includes/functions/core.php:178
+#: includes/functions/core.php:195 includes/functions/core.php:205
+#: includes/functions/core.php:209
+msgid "Topics"
+msgstr "વિષય"
+
+#: includes/functions/core.php:101
+msgid "Date Published"
+msgstr "પ્રકાશન તારીખ"
+
+#: includes/functions/core.php:105
+msgid "Date Added"
+msgstr "ઉમેરેલ તારીખ"
+
+#: includes/functions/core.php:111 includes/functions/core.php:131
+#: includes/functions/core.php:140 includes/functions/core.php:144
+msgid "Resources"
+msgstr "સંસાધન"
+
+#: includes/functions/core.php:112 includes/functions/core.php:139
+#: includes/functions/core.php:143
+msgid "Resource"
+msgstr "સંસાધન"
+
+#: includes/functions/core.php:113
+msgid "All Resources"
+msgstr "તમામ સંસાધન"
+
+#: includes/functions/core.php:114
+msgid "Resource Archives"
+msgstr "સંસાધન આર્કાઇવ"
+
+#: includes/functions/core.php:115
+msgid "Resource Attributes"
+msgstr "સંસાધન ગુણધર્મ"
+
+#: includes/functions/core.php:116
+msgid "Insert into resource"
+msgstr "સંસાધનમાં દાખલ કરો"
+
+#: includes/functions/core.php:117
+msgid "Uploaded to this resource"
+msgstr "આ સંસાધન પર અપલોડ કરેલ છે"
+
+#: includes/functions/core.php:118
+msgid "Filter resources list"
+msgstr "સંસાધન સૂચિ ફિલ્ટર કરો"
+
+#: includes/functions/core.php:119
+msgid "Resources list navigation"
+msgstr "સંસાધન સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:120
+msgid "Resources list"
+msgstr "સંસાધન સૂચિ"
+
+#: includes/functions/core.php:121
+msgid "New Resource"
+msgstr "નવું સંસાધન"
+
+#: includes/functions/core.php:122
+msgid "Add New"
+msgstr "નવું ઉમેરો"
+
+#: includes/functions/core.php:123
+msgid "Add New Resource"
+msgstr "નવું સંસાધન ઉમેરો"
+
+#: includes/functions/core.php:124
+msgid "Edit Resource"
+msgstr "સંસાધન સંપાદિત કરો"
+
+#: includes/functions/core.php:125
+msgid "View Resource"
+msgstr "સંસાધન જુઓ"
+
+#: includes/functions/core.php:126
+msgid "View Resources"
+msgstr "સંસાધન જુઓ"
+
+#: includes/functions/core.php:127
+msgid "Search resources"
+msgstr "સંસાધન શોધો"
+
+#: includes/functions/core.php:128
+msgid "No resources found"
+msgstr "કોઈ સંસાધન મળ્યાં નથી"
+
+#: includes/functions/core.php:129
+msgid "No resources found in trash"
+msgstr "ટ્રેશમાં કોઈ સંસાધન મળ્યાં નથી"
+
+#: includes/functions/core.php:130
+msgid "Parent Resource:"
+msgstr "મૂળ સંસાધન"
+
+#: includes/functions/core.php:179 includes/functions/core.php:204
+#: includes/functions/core.php:208
+msgid "Topic"
+msgstr "વિષય"
+
+#: includes/functions/core.php:180
+msgid "Search Topics"
+msgstr "વિષય શોધો"
+
+#: includes/functions/core.php:181
+msgid "Popular Topics"
+msgstr "લોકપ્રિય વિષય"
+
+#: includes/functions/core.php:182
+msgid "All Topics"
+msgstr "તમામ વિષય"
+
+#: includes/functions/core.php:183
+msgid "Parent Topic"
+msgstr "મૂળ વિષય"
+
+#: includes/functions/core.php:184
+msgid "Parent Topic:"
+msgstr "મૂળ વિષય:"
+
+#: includes/functions/core.php:185
+msgid "Edit Topic"
+msgstr "વિષય સંપાદિત કરો"
+
+#: includes/functions/core.php:186
+msgid "Update Topic"
+msgstr "વિષય અપડેટ કરો"
+
+#: includes/functions/core.php:187
+msgid "View Topic"
+msgstr "વિષય જુઓ"
+
+#: includes/functions/core.php:188
+msgid "Add New Topic"
+msgstr "નવો વિષય ઉમેરો"
+
+#: includes/functions/core.php:189
+msgid "New Topic"
+msgstr "નવો વિષય"
+
+#: includes/functions/core.php:190
+msgid "Separate topics with commas"
+msgstr "વિષયને અલ્પવિરામથી અલગ કરો"
+
+#: includes/functions/core.php:191
+msgid "Add or remove topics"
+msgstr "વિષય ઉમેરો અથવા કાઢી નાખો"
+
+#: includes/functions/core.php:192
+msgid "Choose from the most used topics"
+msgstr "સૌથી વધું ઉપયોગ કરેલ વિષયમાંથી પસંદ કરો"
+
+#: includes/functions/core.php:193
+msgid "No topics found."
+msgstr "કોઈ વિષય મળ્યાં નથી."
+
+#: includes/functions/core.php:194
+msgid "No topics"
+msgstr "કોઈ વિષય નથી."
+
+#: includes/functions/core.php:196
+msgid "Topics list navigation"
+msgstr "વિષય સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:197
+msgid "Topics list"
+msgstr "વિષય સૂચિ"
+
+#: includes/functions/core.php:198
+msgid "&larr; Back to Topics"
+msgstr "&larr; વિષય પર પાછાં ફરો"
+
+#: includes/functions/core.php:243 includes/functions/core.php:260
+#: includes/functions/core.php:270 includes/functions/core.php:274
+msgid "Goals"
+msgstr "લક્ષ્ય"
+
+#: includes/functions/core.php:244 includes/functions/core.php:269
+#: includes/functions/core.php:273
+msgid "Goal"
+msgstr "લક્ષ્ય"
+
+#: includes/functions/core.php:245
+msgid "Search Goals"
+msgstr "લક્ષ્ય શોધો"
+
+#: includes/functions/core.php:246
+msgid "Popular Goals"
+msgstr "લોકપ્રિય લક્ષ્ય"
+
+#: includes/functions/core.php:247
+msgid "All Goals"
+msgstr "તમામ લક્ષ્ય"
+
+#: includes/functions/core.php:248
+msgid "Parent Goal"
+msgstr "મૂળ લક્ષ્ય"
+
+#: includes/functions/core.php:249
+msgid "Parent Goal:"
+msgstr "મૂળ લક્ષ્ય:"
+
+#: includes/functions/core.php:250
+msgid "Edit Goal"
+msgstr "લક્ષ્ય સંપાદિત કરો"
+
+#: includes/functions/core.php:251
+msgid "Update Goal"
+msgstr "લક્ષ્ય અપડેટ કરો"
+
+#: includes/functions/core.php:252
+msgid "View Goal"
+msgstr "લક્ષ્ય જુઓ"
+
+#: includes/functions/core.php:253
+msgid "Add New Goal"
+msgstr "નવું લક્ષ્ય ઉમેરો"
+
+#: includes/functions/core.php:254
+msgid "New Goal"
+msgstr "નવું લક્ષ્ય"
+
+#: includes/functions/core.php:255
+msgid "Separate goals with commas"
+msgstr "લક્ષ્યને અલ્પવિરામથી અલગ કરો"
+
+#: includes/functions/core.php:256
+msgid "Add or remove goals"
+msgstr "લક્ષ્ય ઉમેરો અથવા કાઢી નાખો"
+
+#: includes/functions/core.php:257
+msgid "Choose from the most used goals"
+msgstr "સૌથી વધું ઉપયોગ કરેલ લક્ષ્યમાંથી પસંદ કરો"
+
+#: includes/functions/core.php:258
+msgid "No goals found."
+msgstr "કોઈ લક્ષ્ય મળ્યાં નથી."
+
+#: includes/functions/core.php:259
+msgid "No goals"
+msgstr "કોઈ લક્ષ્ય નથી."
+
+#: includes/functions/core.php:261
+msgid "Goals list navigation"
+msgstr "લક્ષ્ય સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:262
+msgid "Goals list"
+msgstr "લક્ષ્ય સૂચિ"
+
+#: includes/functions/core.php:263
+msgid "&larr; Back to Goals"
+msgstr "&larr; લક્ષ્ય પર પાછાં ફરો"
+
+#: includes/functions/core.php:307 includes/functions/core.php:324
+#: includes/functions/core.php:334 includes/functions/core.php:338
+msgid "Regions"
+msgstr "પ્રદેશ"
+
+#: includes/functions/core.php:308 includes/functions/core.php:333
+#: includes/functions/core.php:337
+msgid "Region"
+msgstr "પ્રદેશ"
+
+#: includes/functions/core.php:309
+msgid "Search Regions"
+msgstr "પ્રદેશ શોધો"
+
+#: includes/functions/core.php:310
+msgid "Popular Regions"
+msgstr "લોકપ્રિય પ્રદેશ"
+
+#: includes/functions/core.php:311
+msgid "All Regions"
+msgstr "તમામ પ્રદેશ"
+
+#: includes/functions/core.php:312
+msgid "Parent Region"
+msgstr "મૂળ પ્રદેશ"
+
+#: includes/functions/core.php:313
+msgid "Parent Region:"
+msgstr "મૂળ પ્રદેશ:"
+
+#: includes/functions/core.php:314
+msgid "Edit Region"
+msgstr "પ્રદેશ સંપાદિત કરો"
+
+#: includes/functions/core.php:315
+msgid "Update Region"
+msgstr "પ્રદેશ અપડેટ કરો"
+
+#: includes/functions/core.php:316
+msgid "View Region"
+msgstr "પ્રદેશ જુઓ"
+
+#: includes/functions/core.php:317
+msgid "Add New Region"
+msgstr "નવો પ્રદેશ ઉમેરો"
+
+#: includes/functions/core.php:318
+msgid "New Region"
+msgstr "નવો પ્રદેશ"
+
+#: includes/functions/core.php:319
+msgid "Separate regions with commas"
+msgstr "પ્રદેશને અલ્પવિરામથી અલગ કરો"
+
+#: includes/functions/core.php:320
+msgid "Add or remove regions"
+msgstr "પ્રદેશ ઉમેરો અથવા કાઢી નાખો"
+
+#: includes/functions/core.php:321
+msgid "Choose from the most used regions"
+msgstr "સૌથી વધું ઉપયોગ કરેલ પ્રદેશમાંથી પસંદ કરો"
+
+#: includes/functions/core.php:322
+msgid "No regions found."
+msgstr "કોઈ પ્રદેશ મળ્યાં નથી."
+
+#: includes/functions/core.php:323
+msgid "No regions"
+msgstr "કોઈ મળ્યાં નથી."
+
+#: includes/functions/core.php:325
+msgid "Regions list navigation"
+msgstr "પ્રદેશ સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:326
+msgid "Regions list"
+msgstr "પ્રદેશ સૂચિ"
+
+#: includes/functions/core.php:327
+msgid "&larr; Back to Regions"
+msgstr "&larr; પ્રદેશ પર પાછાં ફરો"
+
+#: includes/functions/core.php:372 includes/functions/core.php:389
+#: includes/functions/core.php:399 includes/functions/core.php:403
+msgid "Sectors"
+msgstr "ક્ષેત્ર"
+
+#: includes/functions/core.php:373 includes/functions/core.php:398
+#: includes/functions/core.php:402
+msgid "Sector"
+msgstr "ક્ષેત્ર"
+
+#: includes/functions/core.php:374
+msgid "Search Sectors"
+msgstr "ક્ષેત્ર શોધો"
+
+#: includes/functions/core.php:375
+msgid "Popular Sectors"
+msgstr "લોકપ્રિય ક્ષેત્ર"
+
+#: includes/functions/core.php:376
+msgid "All Sectors"
+msgstr "તમામ ક્ષેત્ર"
+
+#: includes/functions/core.php:377
+msgid "Parent Sector"
+msgstr "મૂળ ક્ષેત્ર"
+
+#: includes/functions/core.php:378
+msgid "Parent Sector:"
+msgstr "મૂળ ક્ષેત્ર:"
+
+#: includes/functions/core.php:379
+msgid "Edit Sector"
+msgstr "ક્ષેત્ર સંપાદિત કરો"
+
+#: includes/functions/core.php:380
+msgid "Update Sector"
+msgstr "ક્ષેત્ર અપડેટ કરો"
+
+#: includes/functions/core.php:381
+msgid "View Sector"
+msgstr "ક્ષેત્ર જુઓ"
+
+#: includes/functions/core.php:382
+msgid "Add New Sector"
+msgstr "નવું ક્ષેત્ર ઉમેરો"
+
+#: includes/functions/core.php:383
+msgid "New Sector"
+msgstr "નવું ક્ષેત્ર"
+
+#: includes/functions/core.php:384
+msgid "Separate sectors with commas"
+msgstr "ક્ષેત્રને અલ્પવિરામથી અલગ કરો"
+
+#: includes/functions/core.php:385
+msgid "Add or remove sectors"
+msgstr "ક્ષેત્ર ઉમેરો અથવા કાઢી નાખો"
+
+#: includes/functions/core.php:386
+msgid "Choose from the most used sectors"
+msgstr "સૌથી વધું ઉપયોગ કરેલ ક્ષેત્રમાંથી પસંદ કરો"
+
+#: includes/functions/core.php:387
+msgid "No sectors found."
+msgstr "કોઈ ક્ષેત્ર મળ્યાં નથી."
+
+#: includes/functions/core.php:388
+msgid "No sectors"
+msgstr "કોઈ ક્ષેત્ર નથી."
+
+#: includes/functions/core.php:390
+msgid "Sectors list navigation"
+msgstr "ક્ષેત્ર સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:391
+msgid "Sectors list"
+msgstr "ક્ષેત્ર સૂચિ"
+
+#: includes/functions/core.php:392
+msgid "&larr; Back to Sectors"
+msgstr "&larr; ક્ષેત્ર પર પાછાં ફરો"
+
+#: includes/functions/core.php:436 includes/functions/core.php:453
+#: includes/functions/core.php:463 includes/functions/core.php:467
+msgid "Co-op Types"
+msgstr "કો-ઓપ પ્રકાર"
+
+#: includes/functions/core.php:437 includes/functions/core.php:462
+#: includes/functions/core.php:466
+msgid "Co-op Type"
+msgstr "કો-ઓપ પ્રકાર"
+
+#: includes/functions/core.php:438
+msgid "Search Co-op Types"
+msgstr "કો-ઓપ પ્રકાર શોધો"
+
+#: includes/functions/core.php:439
+msgid "Popular Co-op Types"
+msgstr "લોકપ્રિય કો-ઓપ પ્રકાર"
+
+#: includes/functions/core.php:440
+msgid "All Co-op Types"
+msgstr "તમામ કો-ઓપ પ્રકાર"
+
+#: includes/functions/core.php:441
+msgid "Parent Co-op Type"
+msgstr "મૂળ કો-ઓપ પ્રકાર"
+
+#: includes/functions/core.php:442
+msgid "Parent Co-op Type:"
+msgstr "મૂળ કો-ઓપ પ્રકાર:"
+
+#: includes/functions/core.php:443
+msgid "Edit Co-op Type"
+msgstr "કો-ઓપ પ્રકાર સંપાદિત કરો"
+
+#: includes/functions/core.php:444
+msgid "Update Co-op Type"
+msgstr "કો-ઓપ પ્રકાર અપડેટ કરો"
+
+#: includes/functions/core.php:445
+msgid "View Co-op Type"
+msgstr "કો-ઓપ પ્રકાર જુઓ"
+
+#: includes/functions/core.php:446
+msgid "Add New Co-op Type"
+msgstr "નવો કો-ઓપ પ્રકાર ઉમેરો"
+
+#: includes/functions/core.php:447
+msgid "New Co-op Type"
+msgstr "નવો કો-ઓપ પ્રકાર"
+
+#: includes/functions/core.php:448
+msgid "Separate co-op types with commas"
+msgstr "કો-ઓપ પ્રકારને અલ્પવિરામથી અલગ કરો"
+
+#: includes/functions/core.php:449
+msgid "Add or remove co-op types"
+msgstr "કો-ઓપ પ્રકાર ઉમેરો અથવા કાઢી નાખો"
+
+#: includes/functions/core.php:450
+msgid "Choose from the most used co-op types"
+msgstr "સૌથી વધું ઉપયોગ કરેલ કો-ઓપ પ્રકારમાંથી પસંદ કરો"
+
+#: includes/functions/core.php:451
+msgid "No co-op types found."
+msgstr "કોઈ કો-ઓપ પ્રકાર મળ્યાં નથી."
+
+#: includes/functions/core.php:452
+msgid "No co-op types"
+msgstr "કોઈ કો-ઓપ પ્રકાર નથી."
+
+#: includes/functions/core.php:454
+msgid "Co-op Types list navigation"
+msgstr "કો-ઓપ પ્રકાર સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:455
+msgid "Co-op Types list"
+msgstr "કો-ઓપ પ્રકાર સૂચિ"
+
+#: includes/functions/core.php:456
+msgid "&larr; Back to Co-op Types"
+msgstr "&larr; કો-ઓપ પ્રકાર પર પાછાં ફરો"
+
+#: includes/functions/core.php:500 includes/functions/core.php:517
+#: includes/functions/core.php:527 includes/functions/core.php:531
+msgid "Formats"
+msgstr "ફોર્મેટ"
+
+#: includes/functions/core.php:502
+msgid "Search Formats"
+msgstr "ફોર્મેટ શોધો"
+
+#: includes/functions/core.php:503
+msgid "Popular Formats"
+msgstr "લોકપ્રિય ફોર્મેટ"
+
+#: includes/functions/core.php:504
+msgid "All Formats"
+msgstr "તમામ ફોર્મેટ"
+
+#: includes/functions/core.php:505
+msgid "Parent Format"
+msgstr "મૂળ ફોર્મેટ"
+
+#: includes/functions/core.php:506
+msgid "Parent Format:"
+msgstr "મૂળ ફોર્મેટ:"
+
+#: includes/functions/core.php:507
+msgid "Edit Format"
+msgstr "ફોર્મેટ સંપાદિત કરો"
+
+#: includes/functions/core.php:508
+msgid "Update Format"
+msgstr "ફોર્મેટ અપડેટ કરો"
+
+#: includes/functions/core.php:509
+msgid "View Format"
+msgstr "ફોર્મેટ જુઓ"
+
+#: includes/functions/core.php:510
+msgid "Add New Format"
+msgstr "નવું ફોર્મેટ ઉમેરો"
+
+#: includes/functions/core.php:511
+msgid "New Format"
+msgstr "નવું ફોર્મેટ"
+
+#: includes/functions/core.php:512
+msgid "Separate formats with commas"
+msgstr "ફોર્મેટને અલ્પવિરામથી અલગ કરો"
+
+#: includes/functions/core.php:513
+msgid "Add or remove formats"
+msgstr "ફોર્મેટ ઉમેરો અથવા કાઢી નાખો"
+
+#: includes/functions/core.php:514
+msgid "Choose from the most used formats"
+msgstr "સૌથી વધું ઉપયોગ કરેલ ફોર્મેટમાંથી પસંદ કરો"
+
+#: includes/functions/core.php:515
+msgid "No formats found."
+msgstr "કોઈ ફોર્મેટ મળ્યાં નથી."
+
+#: includes/functions/core.php:516
+msgid "No formats"
+msgstr "કોઈ ફોર્મેટ નથી."
+
+#: includes/functions/core.php:518
+msgid "Formats list navigation"
+msgstr "ફોર્મેટ સૂચિ નેવગેશન"
+
+#: includes/functions/core.php:519
+msgid "Formats list"
+msgstr "ફોર્મેટ સૂચિ"
+
+#: includes/functions/core.php:520
+msgid "&larr; Back to Formats"
+msgstr "&larr; ફોર્મેટ પર પાછાં ફરો"
+
+#: includes/functions/internationalization.php:33
+#: includes/functions/internationalization.php:48
+msgid "Localization Settings"
+msgstr "સ્થાનિકીકરણ સેટિંગ્સ"
+
+#: includes/functions/internationalization.php:34
+msgid "Localization"
+msgstr "સ્થાનિકીકરણ"
+
+#: includes/functions/internationalization.php:52
+msgid "Enabled Languages"
+msgstr "સક્ષમ કરેલ ભાષાઓ"
+
+#: includes/functions/internationalization.php:55
+msgid ""
+"Select the languages you'd like to be displayed to site visitors. English "
+"content will always be displayed."
+msgstr ""
+"તમે સાઇટ મુલાકાતીઓને પ્રદર્શિત કરવા માંગતા હોવ તે ભાષાઓ પસંદ કરો. અંગ્રેજી "
+"સામગ્રી હંમેશા દર્શાવવામાં આવશે."
+
+#: includes/functions/metadata.php:401
+msgid "General Information"
+msgstr "સામાન્ય માહિતી"
+
+#: includes/functions/metadata.php:405
+msgid "Link to resource"
+msgstr "સંસાધન સાથે લિંક કરો"
+
+#: includes/functions/metadata.php:408
+msgid ""
+"Web address to access the resource (must begin with http:// or https://). "
+"This information is required."
+msgstr ""
+"સંસાધનને એક્સેસ કરવા માટેનું વેબ એડ્રેસ (http:// અથવા https:// થી પ્રારંભ "
+"થવું જોઈએ). આ માહિતી જરૂરી છે."
+
+#: includes/functions/metadata.php:421
+msgid "Favorites"
+msgstr "મનપસંદ"
+
+#: includes/functions/metadata.php:424
+msgid "The number of times this resource has been favorited."
+msgstr "વખત આ સંસાધનને પસંદ કરવામાં આવ્યું છે."
+
+#: includes/functions/metadata.php:441
+msgid "Resource language"
+msgstr "સંસાધન ભાષા"
+
+#: includes/functions/metadata.php:444
+msgid "The language of the resource. This information is required."
+msgstr "સંસાધન ભાષા. આ માહિતી જરૂરી છે."
+
+#: includes/functions/metadata.php:459
+msgid "Choose a language"
+msgstr "એક ભાષા પસંદ કરો"
+
+#: includes/functions/metadata.php:463
+msgid "Short title"
+msgstr "ટૂંકું નામ"
+
+#: includes/functions/metadata.php:466
+msgid "Shorter title used in resource listings. Maximum 72 characters."
+msgstr "સંસાધન સૂચિઓમાં ટૂંકું નામ વપરાય છે. મહત્તમ 72 અક્ષરો."
+
+#: includes/functions/metadata.php:482
+msgid "Paywall"
+msgstr "પેવોલ"
+
+#: includes/functions/metadata.php:493
+msgid "Is this resource behind a paywall?"
+msgstr "શું આ સંસાધન પેવોલ પાછળ છે?"
+
+#: includes/functions/metadata.php:501
+msgid "Authors"
+msgstr "નિર્માતા"
+
+#: includes/functions/metadata.php:504
+msgid "Authors of the resource."
+msgstr "સંસાધનના નિર્માતા."
+
+#: includes/functions/metadata.php:516
+msgid "Add author"
+msgstr "નિર્માતા ઉમેરો"
+
+#: includes/functions/metadata.php:520
+msgid "Author"
+msgstr "નિર્માતા"
+
+#: includes/functions/metadata.php:541
+msgid "Editors"
+msgstr "સંપાદક"
+
+#: includes/functions/metadata.php:544
+msgid "Editors of the resource."
+msgstr "સંસાધનના સંપાદક."
+
+#: includes/functions/metadata.php:556
+msgid "Add editor"
+msgstr "સંપાદક ઉમેરો"
+
+#: includes/functions/metadata.php:560
+msgid "Editor"
+msgstr "સંપાદક"
+
+#: includes/functions/metadata.php:581
+msgid "Translators"
+msgstr "અનુવાદક"
+
+#: includes/functions/metadata.php:584
+msgid "Translators of the resource."
+msgstr "સંસાધનના અનુવાદક."
+
+#: includes/functions/metadata.php:596
+msgid "Add translator"
+msgstr "અનુવાદક ઉમેરો"
+
+#: includes/functions/metadata.php:600
+msgid "Translator"
+msgstr "અનુવાદક"
+
+#: includes/functions/metadata.php:621
+msgid "Publication year"
+msgstr "પ્રકાશન વર્ષ"
+
+#: includes/functions/metadata.php:624
+msgid "The year the resource was published."
+msgstr "સંસાધન પ્રકાશિત કરવામાં આવ્યું હતું તે વર્ષ."
+
+#: includes/functions/metadata.php:639
+msgid "Choose a year"
+msgstr "એક વર્ષ પસંદ કરો"
+
+#: includes/functions/metadata.php:643
+msgid "Publication month"
+msgstr "પ્રકાશન મહિનો"
+
+#: includes/functions/metadata.php:646
+msgid "The month the resource was published."
+msgstr "સંસાધન પ્રકાશિત કરવામાં આવ્યું હતું તે મહિનો."
+
+#: includes/functions/metadata.php:662
+msgid "January"
+msgstr "જાન્યુઆરી"
+
+#: includes/functions/metadata.php:663
+msgid "February"
+msgstr "ફેબ્રુઆરી"
+
+#: includes/functions/metadata.php:664
+msgid "March"
+msgstr "માર્ચ"
+
+#: includes/functions/metadata.php:665
+msgid "April"
+msgstr "એપ્રિલ"
+
+#: includes/functions/metadata.php:666
+msgid "May"
+msgstr "મે"
+
+#: includes/functions/metadata.php:667
+msgid "June"
+msgstr "જુન"
+
+#: includes/functions/metadata.php:668
+msgid "July"
+msgstr "જુલાઈ"
+
+#: includes/functions/metadata.php:669
+msgid "August"
+msgstr "ઓગસ્ટ"
+
+#: includes/functions/metadata.php:670
+msgid "September"
+msgstr "સપ્ટેમ્બર"
+
+#: includes/functions/metadata.php:671
+msgid "October"
+msgstr "ઓક્ટોબર"
+
+#: includes/functions/metadata.php:672
+msgid "November"
+msgstr "નવેમ્બર"
+
+#: includes/functions/metadata.php:673
+msgid "December"
+msgstr "ડિસેમ્બર"
+
+#: includes/functions/metadata.php:681
+msgid "Choose a month"
+msgstr "એક મહિનો પસંદ કરો"
+
+#: includes/functions/metadata.php:685
+msgid "Publication day"
+msgstr "પ્રકાશન દિવસ"
+
+#: includes/functions/metadata.php:688
+msgid "The numeric day the resource was published."
+msgstr "સંસાધન પ્રકાશિત થયું હતું તે દિવસ"
+
+#: includes/functions/metadata.php:714
+msgid "Choose a day"
+msgstr "એક દિવસ પસંદ કરો"
+
+#: includes/functions/metadata.php:718
+msgid "Publication Date"
+msgstr "પ્રકાશન તારીખ"
+
+#: includes/functions/metadata.php:721
+msgid ""
+"You can set the publication date for this resource using the year, month and"
+" day fields above."
+msgstr ""
+"આ સંસાધન માટે તમે ઉપરનાં વર્ષ, મહિના અને દિવસ ક્ષેત્રોનો ઉપયોગ કરીને પ્રકાશન"
+" તારીખ સેટ કરી શકો છો."
+
+#: includes/functions/metadata.php:738
+msgid "Revisions"
+msgstr "પુનરાવર્તન"
+
+#: includes/functions/metadata.php:741
+msgid "Revisions of the resource."
+msgstr "સંસાધનના પુનરાવર્તન."
+
+#: includes/functions/metadata.php:753
+msgid "Add revision"
+msgstr "પુનરાવર્તન ઉમેરો"
+
+#: includes/functions/metadata.php:757
+msgid "Revision date"
+msgstr "પુનરાવર્તન તારીખ"
+
+#: includes/functions/metadata.php:760
+msgid "The date of this revision."
+msgstr "આ પુનરાવર્તનની તારીખ."
+
+#: includes/functions/metadata.php:774
+msgid "Revision description"
+msgstr "પુનરાવર્તન વર્ણન"
+
+#: includes/functions/metadata.php:777
+msgid "A brief description of this revision."
+msgstr "આ પુનરાવર્તનનું ટૂંકું વર્ણન."
+
+#: includes/functions/metadata.php:827
+msgid "About the Publication"
+msgstr "પ્રકાશન વિશે"
+
+#: includes/functions/metadata.php:831
+msgid "Publication name"
+msgstr "પ્રકાશન નામ"
+
+#: includes/functions/metadata.php:834
+msgid "Name of the publication in which the resource appears."
+msgstr "જેમાં સંસાધન દેખાય છે તે પ્રકાશનનું નામ."
+
+#: includes/functions/metadata.php:850
+msgid "Publication link"
+msgstr "પ્રકાશન લિંક"
+
+#: includes/functions/metadata.php:853
+msgid "Web address for the publication (must begin with http:// or https://)."
+msgstr "પ્રકાશન માટે વેબ એડ્રેસ (http:// અથવા https:// થી પ્રારંભ થવું જોઈએ)."
+
+#: includes/functions/metadata.php:888
+msgid "About the Publisher"
+msgstr "પ્રકાશક વિશે"
+
+#: includes/functions/metadata.php:892
+msgid "Publisher name"
+msgstr "પ્રકાશક નામ"
+
+#: includes/functions/metadata.php:895
+msgid "Name of the resource publisher."
+msgstr "સંસાધન પ્રકાશકનું નામ."
+
+#: includes/functions/metadata.php:911
+msgid "Publisher link"
+msgstr "પ્રકાશક લિંક"
+
+#: includes/functions/metadata.php:914
+msgid "Web address for the publisher (must begin with http:// or https://)."
+msgstr "પ્રકાશક માટે વેબ એડ્રેસ (http:// અથવા https:// થી પ્રારંભ થવું જોઈએ)."
+
+#: includes/functions/metadata.php:927
+msgid "Publisher city"
+msgstr "પ્રકાશક શહેર"
+
+#: includes/functions/metadata.php:930
+msgid "Town or city where the publisher is located."
+msgstr "નગર કે શહેર જ્યાં પ્રકાશક સ્થિત છે."
+
+#: includes/functions/metadata.php:946
+msgid "Publisher country"
+msgstr "પ્રકાશક દેશ"
+
+#: includes/functions/metadata.php:949
+msgid "Country where the publisher is located."
+msgstr "દેશ જ્યાં પ્રકાશક સ્થિત છે."
+
+#: includes/functions/metadata.php:964
+msgid "Select a country"
+msgstr "એક દેશ પસંદ કરો"
+
+#: includes/functions/metadata.php:993
+msgid "Distribution License or Rights"
+msgstr "વિતરણ લાઇસન્સ અથવા અધિકાર"
+
+#: includes/functions/metadata.php:997
+msgid "License or rights"
+msgstr "લાઇસન્સ અથવા અધિકાર"
+
+#: includes/functions/metadata.php:1000
+msgid "License or rights under which the resource is distributed."
+msgstr "લાઇસન્સ અથવા અધિકાર કે જેના હેઠળ સંસાધનનું વિતરણ કરવામાં આવ્યું છે."
+
+#: includes/functions/metadata.php:1009
+msgid "All Rights Reserved"
+msgstr "તમામ અધિકાર અનામત રાખેલ છે"
+
+#: includes/functions/metadata.php:1010
+msgid "Creative Commons Attribution"
+msgstr "ક્રિએટીવ કોમન એટ્રિબ્યુશન"
+
+#: includes/functions/metadata.php:1011
+msgid "Creative Commons Attribution-NonCommercial"
+msgstr "ક્રિએટીવ કોમન એટ્રિબ્યુશન-બિન-વાણિજિયક"
+
+#: includes/functions/metadata.php:1012
+msgid "Creative Commons Attribution-NoDerivatives"
+msgstr "ક્રિએટીવ કોમન એટ્રિબ્યુશન-કોઈ વ્યુત્પન્ન નથી"
+
+#: includes/functions/metadata.php:1013
+msgid "Creative Commons Attribution-ShareAlike"
+msgstr "ક્રિએટીવ કોમન એટ્રિબ્યુશન-એકસરખું શેર કરો"
+
+#: includes/functions/metadata.php:1014
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives"
+msgstr "ક્રિએટીવ કોમન એટ્રિબ્યુશન-બિન-વાણિજિયક-કોઈ વ્યુત્પન્ન નથી"
+
+#: includes/functions/metadata.php:1015
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike"
+msgstr "ક્રિએટીવ કોમન એટ્રિબ્યુશન-બિન-વાણિજિયક-એકસરખું શેર કરો"
+
+#: includes/functions/metadata.php:1016
+msgid "Educational Community License"
+msgstr "શૈક્ષણિક સમુદાય લાઇસન્સ"
+
+#: includes/functions/metadata.php:1017
+msgid "No Rights Reserved"
+msgstr "કોઈ અધિકાર અનામત નથી"
+
+#: includes/functions/metadata.php:1018
+msgid "No Known Copyright"
+msgstr "કોઈ જ્ઞાત કોપિરાઇટ નથી"
+
+#: includes/functions/metadata.php:1019
+msgid "Custom…"
+msgstr "કસ્ટમ..."
+
+#: includes/functions/metadata.php:1027
+msgid "Choose a license or rights"
+msgstr "લાઇસન્સ અથવા અધિકાર પસંદ કરો"
+
+#: includes/functions/metadata.php:1031
+msgid "Custom license or rights"
+msgstr "કસ્ટમ લાઇસન્સ અથવા અધિકાર"
+
+#: includes/functions/metadata.php:1037
+msgid "Custom license or rights statement."
+msgstr "કસ્ટમ લાઇસન્સ અથવા અધિકાર નિવેદન."
+
+#: includes/functions/metadata.php:1038
+msgid "This is enabled when ‘Custom…’ is selected under ‘License or rights’."
+msgstr ""
+"જ્યારે 'લાઇસન્સ અથવા અધિકાર' હેઠળ 'કસ્ટમ...' પસંદ કરવામાં આવે છે ત્યારે આ "
+"સક્ષમ કરેલ હોય છે."
+
+#: includes/functions/metadata.php:1086
+msgid "Archival Links"
+msgstr "આર્કાઈવલ લિંક"
+
+#: includes/functions/metadata.php:1096
+msgid ""
+"Links to archive copy on perma.cc. Specify multiple links if the resource "
+"spans multiple pages."
+msgstr ""
+"perma.cc પર આર્કાઇવ કોપીની લિંક. જો સંસાધન બહુવિધ પૃષ્ઠ પર વિસ્તરેલ છે તો "
+"બહુવિધ લિંકનો ઉલ્લેખ કરો."
+
+#. translators: link to https://perma.cc
+#: includes/functions/metadata.php:1098
+msgid "%s provides web archiving for scholars, journals, courts, and others."
+msgstr ""
+"%s વિદ્વાન, જર્નલ, અદાલત અને અન્ય લોકો માટે વેબ આર્કાઈવિંગ પ્રદાન કરે છે."
+
+#: includes/functions/metadata.php:1112
+msgid "Add perma.cc link"
+msgstr "perma.cc લિંક ઉમેરો"
+
+#: includes/functions/metadata.php:1116
+msgid "Perma.cc link"
+msgstr "Perma.cc link"
+
+#: includes/functions/metadata.php:1134
+msgid "Internet Archive"
+msgstr "ઇન્ટરનેટ આર્કાઇવ"
+
+#: includes/functions/metadata.php:1140
+msgid ""
+"Links to archive copy on the Internet Archive. Specify multiple links if the"
+" resource spans multiple pages."
+msgstr ""
+"ઇન્ટરનેટ આર્કાઇવ પર આર્કાઇવ કોપિની લિંક. જો સંસાધન બહુવિધ પૃષ્ઠ પર વિસ્તરેલ "
+"છે તો બહુવિધ લિંકનો ઉલ્લેખ કરો."
+
+#. translators: link to https://web.archive.org
+#: includes/functions/metadata.php:1142
+msgid "%s provides free and open web archiving."
+msgstr "%s નિ:શુલ્ક અને ઓપન વેબ આર્કાઇવિંગ પ્રદાન કરે છે."
+
+#: includes/functions/metadata.php:1156
+msgid "Add Internet Archive link"
+msgstr "ઇન્ટરનેટ આર્કાઇવ લિંક ઉમેરો"
+
+#: includes/functions/metadata.php:1160
+msgid "Internet Archive link"
+msgstr "ઇન્ટરનેટ આર્કાઇવ લિંક"
+
+#: includes/functions/metadata.php:1200
+msgid "Catalog Codes"
+msgstr "કેટલોગ કોડ"
+
+#: includes/functions/metadata.php:1207
+msgid "Digital Object Identifier (or DOI) for this resource."
+msgstr "આ સંસાધન માટે ડિજિટલ ઓબ્જેક્ટ આઇડેન્ટિફાયર (અથવા DOI)."
+
+#: includes/functions/metadata.php:1226
+msgid "International Standard Book Number (or ISBN) for this resource."
+msgstr "આ સંસાધન માટે ઈન્ટરનેશનલ સ્ટાન્ડર્ડ બુક નંબર (અથવા ISBN)."
+
+#: includes/functions/metadata.php:1245
+msgid "International Standard Serial Number (or ISSN) for this resource."
+msgstr "આ સંસાધન માટે ઈન્ટરનેશનલ સિરિયલ બુક નંબર (અથવા ISSN)."
+
+#: includes/functions/metadata.php:1363
+msgid "This is not a valid DOI."
+msgstr "આ માન્ય DOI નથી."
+
+#: includes/functions/metadata.php:1387
+msgid "This is not a valid ISBN."
+msgstr "આ માન્ય ISBN નથી."
+
+#: includes/functions/metadata.php:1413
+msgid "This is not a valid ISSN."
+msgstr "આ માન્ય ISSN નથી."
+
+#: includes/functions/metadata.php:1439
+msgid "This is not a valid Perma.cc link."
+msgstr "આ માન્ય Perma.cc લિંક નથી."
+
+#: includes/functions/metadata.php:1467
+msgid "This is not a valid Internet Archive link."
+msgstr "આ માન્ય ઇન્ટરનેટ આર્કાઇવ લિંક નથી."
+
+#: assets/js/editor/editor.js:24
+msgid ""
+"The publication day has been reset as there are only %1$d days in the "
+"selected month, and your choice of %2$d is no longer valid."
+msgstr ""
+"પસંદ કરેલા મહિનામાં માત્ર %1$d દિવસ હોવાથી પ્રકાશનનો દિવસ ફરીથી સેટ કરવામાં "
+"આવ્યો છે, અને તમારી %2$d  ની પસંદગી હવે માન્ય નથી."
+
+#. translators: %s: The label of the required field.
+#: assets/js/editor/editor.js:75 assets/js/editor/editor.js:93
+msgid "A %s is required."
+msgstr "એક %s જરૂરી છે."
+
+#: assets/js/editor/editor.js:88
+msgid "The form contains errors:"
+msgstr "ફોર્મમાં ભૂલ છે:"
