@@ -30,8 +30,8 @@
   {
     "name": "WP Term Order",
     "host": "github",
-    "slug": "wp-term-order/wp-term-order.php",
-    "uri": "platform-coop-toolkit/wp-term-order",
+    "slug": "wp-term-order-pcc/wp-term-order.php",
+    "uri": "platform-coop-toolkit/wp-term-order-pcc",
     "branch": "master",
     "optional": false
   }
