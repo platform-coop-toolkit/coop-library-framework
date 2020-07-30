@@ -17,9 +17,34 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
+	add_filter( 'pll_copy_post_metas', $n( 'copy_post_metas' ) );
 	add_action( 'init', $n( 'add_localization_options_page' ) );
-
 }
+
+/**
+ * Determine which post meta should be synchronized between translations.
+ *
+ * @param array $metas The array of metadata keys to synchronize.
+ */
+function copy_post_metas( $metas ) {
+	$unset = [
+		// Link will differ for the translated version.
+		'lc_resource_permanent_link',
+		// Language wil differ for the translated version.
+		'language',
+		// Translator will be specific to the translated version.
+		'lc_resource_translator',
+	];
+
+	foreach ( $metas as $key => $value ) {
+		if ( in_array( $value, $unset, true ) ) {
+			unset( $metas[ $key ] );
+		}
+	}
+
+	return $metas;
+}
+
 
 /**
  * Add localization options page.
