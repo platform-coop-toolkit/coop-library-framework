@@ -78,23 +78,23 @@ function resource_init() {
 		array(
 			'admin_cols'          => [
 				'title',
-				'display-language'  => [
+				'display-language' => [
 					'title'    => __( 'Language', 'coop-library-framework' ),
 					'taxonomy' => 'language',
 				],
-				'format'            => [
+				'format'           => [
 					'title'    => __( 'Format', 'coop-library-framework' ),
 					'taxonomy' => 'lc_format',
 				],
-				'topic'             => [
+				'topic'            => [
 					'title'    => __( 'Topics', 'coop-library-framework' ),
 					'taxonomy' => 'lc_topic',
 				],
-				'published'         => [
+				'published'        => [
 					'title'    => __( 'Date Published', 'coop-library-framework' ),
 					'meta_key' => 'lc_resource_publication_date',
 				],
-				'added'             => [
+				'added'            => [
 					'title'      => __( 'Date Added', 'coop-library-framework' ),
 					'post_field' => 'post_date',
 					'default'    => 'DESC',
