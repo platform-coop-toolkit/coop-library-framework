@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-08-04T14:43:15+00:00\n"
+"POT-Creation-Date: 2020-08-31T13:48:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: coop-library-framework\n"
@@ -38,613 +38,637 @@ msgstr ""
 msgid "Hidden"
 msgstr ""
 
-#: includes/functions/core.php:82
+#: includes/functions/core.php:84
 msgid "Language"
 msgstr ""
 
-#: includes/functions/core.php:86
-#: includes/functions/core.php:494
-#: includes/functions/core.php:519
-#: includes/functions/core.php:523
+#: includes/functions/core.php:88
+#: includes/functions/core.php:496
+#: includes/functions/core.php:521
+#: includes/functions/core.php:525
 msgid "Format"
 msgstr ""
 
-#: includes/functions/core.php:90
-#: includes/functions/core.php:171
-#: includes/functions/core.php:188
-#: includes/functions/core.php:198
-#: includes/functions/core.php:202
+#: includes/functions/core.php:92
+#: includes/functions/core.php:173
+#: includes/functions/core.php:190
+#: includes/functions/core.php:200
+#: includes/functions/core.php:204
 msgid "Topics"
 msgstr ""
 
-#: includes/functions/core.php:94
+#: includes/functions/core.php:96
 msgid "Date Published"
 msgstr ""
 
-#: includes/functions/core.php:98
+#: includes/functions/core.php:100
 msgid "Date Added"
 msgstr ""
 
-#: includes/functions/core.php:104
-#: includes/functions/core.php:124
-#: includes/functions/core.php:133
-#: includes/functions/core.php:137
+#: includes/functions/core.php:106
+#: includes/functions/core.php:126
+#: includes/functions/core.php:135
+#: includes/functions/core.php:139
 msgid "Resources"
 msgstr ""
 
-#: includes/functions/core.php:105
-#: includes/functions/core.php:132
-#: includes/functions/core.php:136
+#: includes/functions/core.php:107
+#: includes/functions/core.php:134
+#: includes/functions/core.php:138
 msgid "Resource"
 msgstr ""
 
-#: includes/functions/core.php:106
+#: includes/functions/core.php:108
 msgid "All Resources"
 msgstr ""
 
-#: includes/functions/core.php:107
+#: includes/functions/core.php:109
 msgid "Resource Archives"
 msgstr ""
 
-#: includes/functions/core.php:108
+#: includes/functions/core.php:110
 msgid "Resource Attributes"
 msgstr ""
 
-#: includes/functions/core.php:109
+#: includes/functions/core.php:111
 msgid "Insert into resource"
 msgstr ""
 
-#: includes/functions/core.php:110
+#: includes/functions/core.php:112
 msgid "Uploaded to this resource"
 msgstr ""
 
-#: includes/functions/core.php:111
+#: includes/functions/core.php:113
 msgid "Filter resources list"
 msgstr ""
 
-#: includes/functions/core.php:112
+#: includes/functions/core.php:114
 msgid "Resources list navigation"
 msgstr ""
 
-#: includes/functions/core.php:113
+#: includes/functions/core.php:115
 msgid "Resources list"
 msgstr ""
 
-#: includes/functions/core.php:114
+#: includes/functions/core.php:116
 msgid "New Resource"
 msgstr ""
 
-#: includes/functions/core.php:115
+#: includes/functions/core.php:117
 msgid "Add New"
 msgstr ""
 
-#: includes/functions/core.php:116
+#: includes/functions/core.php:118
 msgid "Add New Resource"
 msgstr ""
 
-#: includes/functions/core.php:117
+#: includes/functions/core.php:119
 msgid "Edit Resource"
 msgstr ""
 
-#: includes/functions/core.php:118
+#: includes/functions/core.php:120
 msgid "View Resource"
 msgstr ""
 
-#: includes/functions/core.php:119
+#: includes/functions/core.php:121
 msgid "View Resources"
 msgstr ""
 
-#: includes/functions/core.php:120
+#: includes/functions/core.php:122
 msgid "Search resources"
 msgstr ""
 
-#: includes/functions/core.php:121
+#: includes/functions/core.php:123
 msgid "No resources found"
 msgstr ""
 
-#: includes/functions/core.php:122
+#: includes/functions/core.php:124
 msgid "No resources found in trash"
 msgstr ""
 
-#: includes/functions/core.php:123
+#: includes/functions/core.php:125
 msgid "Parent Resource:"
 msgstr ""
 
-#: includes/functions/core.php:172
-#: includes/functions/core.php:197
-#: includes/functions/core.php:201
+#: includes/functions/core.php:174
+#: includes/functions/core.php:199
+#: includes/functions/core.php:203
 msgid "Topic"
 msgstr ""
 
-#: includes/functions/core.php:173
+#: includes/functions/core.php:175
 msgid "Search Topics"
 msgstr ""
 
-#: includes/functions/core.php:174
+#: includes/functions/core.php:176
 msgid "Popular Topics"
 msgstr ""
 
-#: includes/functions/core.php:175
+#: includes/functions/core.php:177
 msgid "All Topics"
 msgstr ""
 
-#: includes/functions/core.php:176
+#: includes/functions/core.php:178
 msgid "Parent Topic"
 msgstr ""
 
-#: includes/functions/core.php:177
+#: includes/functions/core.php:179
 msgid "Parent Topic:"
 msgstr ""
 
-#: includes/functions/core.php:178
+#: includes/functions/core.php:180
 msgid "Edit Topic"
 msgstr ""
 
-#: includes/functions/core.php:179
+#: includes/functions/core.php:181
 msgid "Update Topic"
 msgstr ""
 
-#: includes/functions/core.php:180
+#: includes/functions/core.php:182
 msgid "View Topic"
 msgstr ""
 
-#: includes/functions/core.php:181
+#: includes/functions/core.php:183
 msgid "Add New Topic"
 msgstr ""
 
-#: includes/functions/core.php:182
+#: includes/functions/core.php:184
 msgid "New Topic"
 msgstr ""
 
-#: includes/functions/core.php:183
+#: includes/functions/core.php:185
 msgid "Separate topics with commas"
 msgstr ""
 
-#: includes/functions/core.php:184
+#: includes/functions/core.php:186
 msgid "Add or remove topics"
 msgstr ""
 
-#: includes/functions/core.php:185
+#: includes/functions/core.php:187
 msgid "Choose from the most used topics"
 msgstr ""
 
-#: includes/functions/core.php:186
+#: includes/functions/core.php:188
 msgid "No topics found."
 msgstr ""
 
-#: includes/functions/core.php:187
+#: includes/functions/core.php:189
 msgid "No topics"
 msgstr ""
 
-#: includes/functions/core.php:189
+#: includes/functions/core.php:191
 msgid "Topics list navigation"
 msgstr ""
 
-#: includes/functions/core.php:190
+#: includes/functions/core.php:192
 msgid "Topics list"
 msgstr ""
 
-#: includes/functions/core.php:191
+#: includes/functions/core.php:193
 msgid "&larr; Back to Topics"
 msgstr ""
 
-#: includes/functions/core.php:236
-#: includes/functions/core.php:253
-#: includes/functions/core.php:263
-#: includes/functions/core.php:267
+#: includes/functions/core.php:238
+#: includes/functions/core.php:255
+#: includes/functions/core.php:265
+#: includes/functions/core.php:269
 msgid "Goals"
 msgstr ""
 
-#: includes/functions/core.php:237
-#: includes/functions/core.php:262
-#: includes/functions/core.php:266
+#: includes/functions/core.php:239
+#: includes/functions/core.php:264
+#: includes/functions/core.php:268
 msgid "Goal"
 msgstr ""
 
-#: includes/functions/core.php:238
+#: includes/functions/core.php:240
 msgid "Search Goals"
 msgstr ""
 
-#: includes/functions/core.php:239
+#: includes/functions/core.php:241
 msgid "Popular Goals"
 msgstr ""
 
-#: includes/functions/core.php:240
+#: includes/functions/core.php:242
 msgid "All Goals"
 msgstr ""
 
-#: includes/functions/core.php:241
+#: includes/functions/core.php:243
 msgid "Parent Goal"
 msgstr ""
 
-#: includes/functions/core.php:242
+#: includes/functions/core.php:244
 msgid "Parent Goal:"
 msgstr ""
 
-#: includes/functions/core.php:243
+#: includes/functions/core.php:245
 msgid "Edit Goal"
 msgstr ""
 
-#: includes/functions/core.php:244
+#: includes/functions/core.php:246
 msgid "Update Goal"
 msgstr ""
 
-#: includes/functions/core.php:245
+#: includes/functions/core.php:247
 msgid "View Goal"
 msgstr ""
 
-#: includes/functions/core.php:246
+#: includes/functions/core.php:248
 msgid "Add New Goal"
 msgstr ""
 
-#: includes/functions/core.php:247
+#: includes/functions/core.php:249
 msgid "New Goal"
 msgstr ""
 
-#: includes/functions/core.php:248
+#: includes/functions/core.php:250
 msgid "Separate goals with commas"
 msgstr ""
 
-#: includes/functions/core.php:249
+#: includes/functions/core.php:251
 msgid "Add or remove goals"
 msgstr ""
 
-#: includes/functions/core.php:250
+#: includes/functions/core.php:252
 msgid "Choose from the most used goals"
 msgstr ""
 
-#: includes/functions/core.php:251
+#: includes/functions/core.php:253
 msgid "No goals found."
 msgstr ""
 
-#: includes/functions/core.php:252
+#: includes/functions/core.php:254
 msgid "No goals"
 msgstr ""
 
-#: includes/functions/core.php:254
+#: includes/functions/core.php:256
 msgid "Goals list navigation"
 msgstr ""
 
-#: includes/functions/core.php:255
+#: includes/functions/core.php:257
 msgid "Goals list"
 msgstr ""
 
-#: includes/functions/core.php:256
+#: includes/functions/core.php:258
 msgid "&larr; Back to Goals"
 msgstr ""
 
-#: includes/functions/core.php:300
-#: includes/functions/core.php:317
-#: includes/functions/core.php:327
-#: includes/functions/core.php:331
+#: includes/functions/core.php:302
+#: includes/functions/core.php:319
+#: includes/functions/core.php:329
+#: includes/functions/core.php:333
 msgid "Regions"
 msgstr ""
 
-#: includes/functions/core.php:301
-#: includes/functions/core.php:326
-#: includes/functions/core.php:330
+#: includes/functions/core.php:303
+#: includes/functions/core.php:328
+#: includes/functions/core.php:332
 msgid "Region"
 msgstr ""
 
-#: includes/functions/core.php:302
+#: includes/functions/core.php:304
 msgid "Search Regions"
 msgstr ""
 
-#: includes/functions/core.php:303
+#: includes/functions/core.php:305
 msgid "Popular Regions"
 msgstr ""
 
-#: includes/functions/core.php:304
+#: includes/functions/core.php:306
 msgid "All Regions"
 msgstr ""
 
-#: includes/functions/core.php:305
+#: includes/functions/core.php:307
 msgid "Parent Region"
 msgstr ""
 
-#: includes/functions/core.php:306
+#: includes/functions/core.php:308
 msgid "Parent Region:"
 msgstr ""
 
-#: includes/functions/core.php:307
+#: includes/functions/core.php:309
 msgid "Edit Region"
 msgstr ""
 
-#: includes/functions/core.php:308
+#: includes/functions/core.php:310
 msgid "Update Region"
 msgstr ""
 
-#: includes/functions/core.php:309
+#: includes/functions/core.php:311
 msgid "View Region"
 msgstr ""
 
-#: includes/functions/core.php:310
+#: includes/functions/core.php:312
 msgid "Add New Region"
 msgstr ""
 
-#: includes/functions/core.php:311
+#: includes/functions/core.php:313
 msgid "New Region"
 msgstr ""
 
-#: includes/functions/core.php:312
+#: includes/functions/core.php:314
 msgid "Separate regions with commas"
 msgstr ""
 
-#: includes/functions/core.php:313
+#: includes/functions/core.php:315
 msgid "Add or remove regions"
 msgstr ""
 
-#: includes/functions/core.php:314
+#: includes/functions/core.php:316
 msgid "Choose from the most used regions"
 msgstr ""
 
-#: includes/functions/core.php:315
+#: includes/functions/core.php:317
 msgid "No regions found."
 msgstr ""
 
-#: includes/functions/core.php:316
+#: includes/functions/core.php:318
 msgid "No regions"
 msgstr ""
 
-#: includes/functions/core.php:318
+#: includes/functions/core.php:320
 msgid "Regions list navigation"
 msgstr ""
 
-#: includes/functions/core.php:319
+#: includes/functions/core.php:321
 msgid "Regions list"
 msgstr ""
 
-#: includes/functions/core.php:320
+#: includes/functions/core.php:322
 msgid "&larr; Back to Regions"
 msgstr ""
 
-#: includes/functions/core.php:365
-#: includes/functions/core.php:382
-#: includes/functions/core.php:392
-#: includes/functions/core.php:396
+#: includes/functions/core.php:367
+#: includes/functions/core.php:384
+#: includes/functions/core.php:394
+#: includes/functions/core.php:398
 msgid "Sectors"
 msgstr ""
 
-#: includes/functions/core.php:366
-#: includes/functions/core.php:391
-#: includes/functions/core.php:395
+#: includes/functions/core.php:368
+#: includes/functions/core.php:393
+#: includes/functions/core.php:397
 msgid "Sector"
 msgstr ""
 
-#: includes/functions/core.php:367
+#: includes/functions/core.php:369
 msgid "Search Sectors"
 msgstr ""
 
-#: includes/functions/core.php:368
+#: includes/functions/core.php:370
 msgid "Popular Sectors"
 msgstr ""
 
-#: includes/functions/core.php:369
+#: includes/functions/core.php:371
 msgid "All Sectors"
 msgstr ""
 
-#: includes/functions/core.php:370
+#: includes/functions/core.php:372
 msgid "Parent Sector"
 msgstr ""
 
-#: includes/functions/core.php:371
+#: includes/functions/core.php:373
 msgid "Parent Sector:"
 msgstr ""
 
-#: includes/functions/core.php:372
+#: includes/functions/core.php:374
 msgid "Edit Sector"
 msgstr ""
 
-#: includes/functions/core.php:373
+#: includes/functions/core.php:375
 msgid "Update Sector"
 msgstr ""
 
-#: includes/functions/core.php:374
+#: includes/functions/core.php:376
 msgid "View Sector"
 msgstr ""
 
-#: includes/functions/core.php:375
+#: includes/functions/core.php:377
 msgid "Add New Sector"
 msgstr ""
 
-#: includes/functions/core.php:376
+#: includes/functions/core.php:378
 msgid "New Sector"
 msgstr ""
 
-#: includes/functions/core.php:377
+#: includes/functions/core.php:379
 msgid "Separate sectors with commas"
 msgstr ""
 
-#: includes/functions/core.php:378
+#: includes/functions/core.php:380
 msgid "Add or remove sectors"
 msgstr ""
 
-#: includes/functions/core.php:379
+#: includes/functions/core.php:381
 msgid "Choose from the most used sectors"
 msgstr ""
 
-#: includes/functions/core.php:380
+#: includes/functions/core.php:382
 msgid "No sectors found."
 msgstr ""
 
-#: includes/functions/core.php:381
+#: includes/functions/core.php:383
 msgid "No sectors"
 msgstr ""
 
-#: includes/functions/core.php:383
+#: includes/functions/core.php:385
 msgid "Sectors list navigation"
 msgstr ""
 
-#: includes/functions/core.php:384
+#: includes/functions/core.php:386
 msgid "Sectors list"
 msgstr ""
 
-#: includes/functions/core.php:385
+#: includes/functions/core.php:387
 msgid "&larr; Back to Sectors"
 msgstr ""
 
-#: includes/functions/core.php:429
-#: includes/functions/core.php:446
-#: includes/functions/core.php:456
-#: includes/functions/core.php:460
+#: includes/functions/core.php:431
+#: includes/functions/core.php:448
+#: includes/functions/core.php:458
+#: includes/functions/core.php:462
 msgid "Co-op Types"
 msgstr ""
 
-#: includes/functions/core.php:430
-#: includes/functions/core.php:455
-#: includes/functions/core.php:459
+#: includes/functions/core.php:432
+#: includes/functions/core.php:457
+#: includes/functions/core.php:461
 msgid "Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:431
+#: includes/functions/core.php:433
 msgid "Search Co-op Types"
 msgstr ""
 
-#: includes/functions/core.php:432
+#: includes/functions/core.php:434
 msgid "Popular Co-op Types"
 msgstr ""
 
-#: includes/functions/core.php:433
+#: includes/functions/core.php:435
 msgid "All Co-op Types"
 msgstr ""
 
-#: includes/functions/core.php:434
+#: includes/functions/core.php:436
 msgid "Parent Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:435
+#: includes/functions/core.php:437
 msgid "Parent Co-op Type:"
 msgstr ""
 
-#: includes/functions/core.php:436
+#: includes/functions/core.php:438
 msgid "Edit Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:437
+#: includes/functions/core.php:439
 msgid "Update Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:438
+#: includes/functions/core.php:440
 msgid "View Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:439
+#: includes/functions/core.php:441
 msgid "Add New Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:440
+#: includes/functions/core.php:442
 msgid "New Co-op Type"
 msgstr ""
 
-#: includes/functions/core.php:441
+#: includes/functions/core.php:443
 msgid "Separate co-op types with commas"
 msgstr ""
 
-#: includes/functions/core.php:442
+#: includes/functions/core.php:444
 msgid "Add or remove co-op types"
 msgstr ""
 
-#: includes/functions/core.php:443
+#: includes/functions/core.php:445
 msgid "Choose from the most used co-op types"
 msgstr ""
 
-#: includes/functions/core.php:444
+#: includes/functions/core.php:446
 msgid "No co-op types found."
 msgstr ""
 
-#: includes/functions/core.php:445
+#: includes/functions/core.php:447
 msgid "No co-op types"
 msgstr ""
 
-#: includes/functions/core.php:447
+#: includes/functions/core.php:449
 msgid "Co-op Types list navigation"
 msgstr ""
 
-#: includes/functions/core.php:448
+#: includes/functions/core.php:450
 msgid "Co-op Types list"
 msgstr ""
 
-#: includes/functions/core.php:449
+#: includes/functions/core.php:451
 msgid "&larr; Back to Co-op Types"
 msgstr ""
 
-#: includes/functions/core.php:493
-#: includes/functions/core.php:510
-#: includes/functions/core.php:520
-#: includes/functions/core.php:524
+#: includes/functions/core.php:495
+#: includes/functions/core.php:512
+#: includes/functions/core.php:522
+#: includes/functions/core.php:526
 msgid "Formats"
 msgstr ""
 
-#: includes/functions/core.php:495
+#: includes/functions/core.php:497
 msgid "Search Formats"
 msgstr ""
 
-#: includes/functions/core.php:496
+#: includes/functions/core.php:498
 msgid "Popular Formats"
 msgstr ""
 
-#: includes/functions/core.php:497
+#: includes/functions/core.php:499
 msgid "All Formats"
 msgstr ""
 
-#: includes/functions/core.php:498
+#: includes/functions/core.php:500
 msgid "Parent Format"
 msgstr ""
 
-#: includes/functions/core.php:499
+#: includes/functions/core.php:501
 msgid "Parent Format:"
 msgstr ""
 
-#: includes/functions/core.php:500
+#: includes/functions/core.php:502
 msgid "Edit Format"
 msgstr ""
 
-#: includes/functions/core.php:501
+#: includes/functions/core.php:503
 msgid "Update Format"
 msgstr ""
 
-#: includes/functions/core.php:502
+#: includes/functions/core.php:504
 msgid "View Format"
 msgstr ""
 
-#: includes/functions/core.php:503
+#: includes/functions/core.php:505
 msgid "Add New Format"
 msgstr ""
 
-#: includes/functions/core.php:504
+#: includes/functions/core.php:506
 msgid "New Format"
 msgstr ""
 
-#: includes/functions/core.php:505
+#: includes/functions/core.php:507
 msgid "Separate formats with commas"
 msgstr ""
 
-#: includes/functions/core.php:506
+#: includes/functions/core.php:508
 msgid "Add or remove formats"
 msgstr ""
 
-#: includes/functions/core.php:507
+#: includes/functions/core.php:509
 msgid "Choose from the most used formats"
 msgstr ""
 
-#: includes/functions/core.php:508
+#: includes/functions/core.php:510
 msgid "No formats found."
 msgstr ""
 
-#: includes/functions/core.php:509
+#: includes/functions/core.php:511
 msgid "No formats"
 msgstr ""
 
-#: includes/functions/core.php:511
+#: includes/functions/core.php:513
 msgid "Formats list navigation"
 msgstr ""
 
-#: includes/functions/core.php:512
+#: includes/functions/core.php:514
 msgid "Formats list"
 msgstr ""
 
-#: includes/functions/core.php:513
+#: includes/functions/core.php:515
 msgid "&larr; Back to Formats"
+msgstr ""
+
+#: includes/functions/core.php:848
+msgid "You are currently editing the front page."
+msgstr ""
+
+#: includes/functions/core.php:854
+msgid "You are currently editing the page that displays a user’s favorites."
+msgstr ""
+
+#: includes/functions/core.php:860
+msgid "You are currently editing the page that displays a user’s saved resources."
+msgstr ""
+
+#: includes/functions/core.php:866
+msgid "You are currently editing the page that displays a user’s saved searches."
+msgstr ""
+
+#: includes/functions/core.php:872
+msgid "You are currently editing the settings page."
+msgstr ""
+
+#: includes/functions/core.php:878
+msgid "You are currently editing a page that displays a list of filter terms."
 msgstr ""
 
 #: includes/functions/internationalization.php:58
