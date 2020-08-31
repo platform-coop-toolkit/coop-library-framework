@@ -30,8 +30,10 @@ function setup() {
 	add_action( 'init', $n( 'sector_init' ) );
 	add_action( 'init', $n( 'region_init' ) );
 	add_action( 'init', $n( 'format_init' ) );
+	add_action( 'init', $n( 'remove_editor_support' ) );
 	add_filter( 'use_block_editor_for_post_type', $n( 'supports_block_editor' ), 10, 2 );
 
+	add_action( 'edit_form_after_title', $n( 'show_editor_message' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
@@ -797,4 +799,86 @@ function supports_block_editor( $use_block_editor, $post_type ) {
 	}
 
 	return $use_block_editor;
+}
+
+/**
+ * Remove editor from pages with no user-generated content.
+ */
+function remove_editor_support() {
+	if ( isset( $_GET['post'] ) ) { // @codingStandardsIgnoreLine
+		$post_id = $_GET['post']; // @codingStandardsIgnoreLine
+	} elseif ( isset( $_POST['post_ID'] ) ) { // @codingStandardsIgnoreLine
+		$post_id = $_POST['post_ID']; // @codingStandardsIgnoreLine
+	} else {
+		return;
+	}
+	$template_file = get_post_meta( $post_id, '_wp_page_template', true );
+	switch ( $template_file ) {
+		case 'views/front-page.blade.php':
+		case 'views/page-favorites.blade.php':
+		case 'views/page-my-resources.blade.php':
+		case 'views/page-saved-searches.blade.php':
+		case 'views/page-settings.blade.php':
+		case 'views/term-list.blade.php':
+				remove_post_type_support( 'page', 'editor' );
+			break;
+		default:
+			break;
+	}
+}
+
+/**
+ * Display message on pages with no user-generated content.
+ */
+function show_editor_message() {
+	if ( isset( $_GET['post'] ) ) { // @codingStandardsIgnoreLine
+		$post_id = $_GET['post']; // @codingStandardsIgnoreLine
+	} elseif ( isset( $_POST['post_ID'] ) ) { // @codingStandardsIgnoreLine
+		$post_id = $_POST['post_ID']; // @codingStandardsIgnoreLine
+	} else {
+		return;
+	}
+
+	$template_file = get_post_meta( $post_id, '_wp_page_template', true );
+
+	switch ( $template_file ) {
+		case 'views/front-page.blade.php':
+			echo sprintf(
+				'<div class="notice notice-warning inline"><p>%s</p></div>',
+				esc_attr__( 'You are currently editing the front page.', 'coop-library-framework' )
+			);
+			break;
+		case 'views/page-favorites.blade.php':
+			echo sprintf(
+				'<div class="notice notice-warning inline"><p>%s</p></div>',
+				esc_attr__( 'You are currently editing the page that displays a user’s favorites.', 'coop-library-framework' )
+			);
+			break;
+		case 'views/page-my-resources.blade.php':
+			echo sprintf(
+				'<div class="notice notice-warning inline"><p>%s</p></div>',
+				esc_attr__( 'You are currently editing the page that displays a user’s saved resources.', 'coop-library-framework' )
+			);
+			break;
+		case 'views/page-saved-searches.blade.php':
+			echo sprintf(
+				'<div class="notice notice-warning inline"><p>%s</p></div>',
+				esc_attr__( 'You are currently editing the page that displays a user’s saved searches.', 'coop-library-framework' )
+			);
+			break;
+		case 'views/page-settings.blade.php':
+			echo sprintf(
+				'<div class="notice notice-warning inline"><p>%s</p></div>',
+				esc_attr__( 'You are currently editing the settings page.', 'coop-library-framework' )
+			);
+			break;
+		case 'views/term-list.blade.php':
+			echo sprintf(
+				'<div class="notice notice-warning inline"><p>%s</p></div>',
+				esc_attr__( 'You are currently editing a page that displays a list of filter terms.', 'coop-library-framework' )
+			);
+			break;
+		default:
+			break;
+	}
 }
